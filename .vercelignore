@@ -1,0 +1,6 @@
+simlab
+.git
+.DS_Store
+*.md
+task.md
+DEPLOYMENT_GUIDE.md

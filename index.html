@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FALAk - Opening Pathways Into Space</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Starfield Canvas */
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Floating Planets */
+        .floating-planet {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.5;
+            border-radius: 50%;
+        }
+
+        .planet-earth {
+            width: 90px;
+            top: 25%;
+            right: 8%;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        .planet-mars {
+            width: 60px;
+            top: 55%;
+            left: 5%;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        .planet-saturn {
+            width: 120px;
+            bottom: 20%;
+            right: 6%;
+            animation: float3 22s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-15px) translateX(10px);
+            }
+        }
+
+        @keyframes float3 {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .shooting-star::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
+            transform: translateX(-100px);
+        }
+
+        .shooting-star-1 {
+            top: 15%;
+            left: 30%;
+            animation: shoot 9s ease-in-out infinite 2s;
+        }
+
+        .shooting-star-2 {
+            top: 40%;
+            left: 70%;
+            animation: shoot 11s ease-in-out infinite 6s;
+        }
+
+        @keyframes shoot {
+            0% {
+                opacity: 0;
+                transform: translateX(0) translateY(0);
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            15% {
+                opacity: 0;
+                transform: translateX(200px) translateY(100px);
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, transparent 100%);
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+        }
+
+        /* Integrated Logo from Extracted Elements */
+        .logo-container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin-bottom: 48px;
+        }
+
+        /* Orbital Rings - Extracted */
+        .logo-rings {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: contain;
+            animation: ringsGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes ringsGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.5));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.8));
+            }
+        }
+
+        /* Star - Extracted */
+        .logo-star {
+            position: absolute;
+            width: 40px;
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: starTwinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes starTwinkle {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: translateX(-50%) scale(1.15);
+            }
+        }
+
+        /* Rocket - Extracted */
+        .logo-rocket {
+            position: absolute;
+            width: 100px;
+            top: 15%;
+            right: 10%;
+            animation: rocketFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes rocketFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(8px, -12px);
+            }
+        }
+
+        /* Logo Text Overlay */
+        .logo-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 5;
+        }
+
+        .logo-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            letter-spacing: 10px;
+            color: #fff;
+            text-shadow: 0 0 60px rgba(56, 189, 248, 0.6);
+        }
+
+        .logo-tagline {
+            font-size: 1.1rem;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 10px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-text p {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: #fff;
+            box-shadow: 0 4px 25px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(56, 189, 248, 0.5);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-badge {
+            margin-top: 48px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 140px 48px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Learning Path */
+        .path-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .path-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .path-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #0ea5e9, #6366f1);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .path-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .path-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .path-number {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            color: #38bdf8;
+            display: inline-block;
+        }
+
+        .path-number svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .path-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .path-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 48px;
+            transition: all 0.3s;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .feature-card:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(56, 189, 248, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-content p {
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.7;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            padding: 100px 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 160px 48px;
+            background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.08) 0%, transparent 60%);
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            max-width: 500px;
+            margin: 48px auto 0;
+        }
+
+        .cta-form input {
+            flex: 1;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .cta-form input:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+
+        .cta-form input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .path-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 100px 24px;
+            }
+
+            .logo-container {
+                width: 350px;
+                height: 250px;
+            }
+
+            .logo-title {
+                font-size: 2.5rem;
+                letter-spacing: 5px;
+            }
+
+            .logo-tagline {
+                font-size: 0.85rem;
+            }
+
+            .logo-rocket {
+                width: 60px;
+            }
+
+            .logo-star {
+                width: 25px;
+            }
+
+            .path-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                flex-wrap: wrap;
+                gap: 48px;
+            }
+
+            .stat-value {
+                font-size: 2.5rem;
+            }
+
+            .cta-form {
+                flex-direction: column;
+            }
+
+            .floating-planet {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Starfield Canvas -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Floating Planets -->
+    <img src="planet_earth.png" alt="" class="floating-planet planet-earth">
+    <img src="planet_mars.png" alt="" class="floating-planet planet-mars">
+    <img src="planet_saturn.png" alt="" class="floating-planet planet-saturn">
+
+    <!-- Shooting Stars -->
+    <div class="shooting-star shooting-star-1"></div>
+    <div class="shooting-star shooting-star-2"></div>
+
+    <div class="content">
+        <nav>
+            <div class="nav-brand">FALAk</div>
+            <ul class="nav-links">
+                <li><a href="#journey">Learning Path</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#join">Join</a></li>
+            </ul>
+            <a href="#join" class="nav-cta">Follow Progress</a>
+        </nav>
+
+        <section class="hero">
+            <!-- Integrated Logo -->
+            <div class="logo-container">
+                <img src="OfficialFALAk.png" alt="FALAk Logo" class="logo-main"
+                    style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.3));">
+            </div>
+
+            <div class="hero-text">
+                <h1>AI-Powered Space Education</h1>
+                <p>A student-led initiative exploring how people learn, reason about, and prepare for space — starting
+                    with first principles.</p>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#journey" class="btn btn-primary">Explore the Framework</a>
+            </div>
+
+            <div class="hero-badge">Launching Q2 2026 · Abu Dhabi, UAE</div>
+
+            <!-- Banner Image -->
+            <div
+                style="margin-top: 60px; width: 100%; max-width: 1000px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+                <img src="FALAkLinkedinBanner.png" alt="FALAk Banner" style="width: 100%; display: block;">
+            </div>
+        </section>
+
+        <section id="vision" style="padding: 100px 48px; text-align: center;">
+            <div class="section-header">
+                <div class="section-tag">Our Vision</div>
+                <h2>Beyond Boundaries</h2>
+            </div>
+            <div
+                style="max-width: 900px; margin: 0 auto; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; justify-content: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="OfficialFALAk2.png" alt="FALAk Vision"
+                        style="width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                </div>
+                <div style="flex: 1; min-width: 300px; text-align: left;">
+                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); line-height: 1.8;">
+                        FALAk is a long-term initiative focused on building understanding before infrastructure.
+                        <br><br>
+                        We begin with education, systems thinking, and exploration — creating a foundation that can
+                        later support real missions, teams, and capabilities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="simlab-section" style="padding: 100px 48px; text-align: center; position: relative;">
+            <div class="section-header">
+                <div class="section-tag">Interactive Learning</div>
+                <h2>Learning Through Structured Exploration</h2>
+                <p class="section-desc">FALAk focuses on helping learners understand how space systems work before
+                    attempting to build them.</p>
+            </div>
+
+            <div
+                style="max-width: 800px; margin: 40px auto; padding: 40px; background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1)); border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
+                    Simulation tools will be introduced later as part of a staged learning approach.
+                </p>
+            </div>
+        </section>
+
+        <section id="journey">
+            <div class="section-header">
+                <div class="section-tag">Learning Journey</div>
+                <h2>Your Path to the Stars</h2>
+                <p class="section-desc">Framework 001: From Earth to Space — 7 Sections, 24 Lessons</p>
+                <p class="section-desc" style="margin-top: 10px; font-size: 0.9rem;">
+                    Framework 001 is the first learning framework developed by the FALAk founding team, mapping the
+                    journey from Earth to space through physics, systems, operations, and ethics.
+                </p>
+            </div>
+
+            <!-- Dynamic Section Grid (from curriculum.js) -->
+            <div class="path-grid" id="curriculum-grid">
+                <!-- Section cards will be injected by JS -->
+            </div>
+
+            <!-- Lesson Viewer Modal -->
+            <div id="lesson-modal"
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; overflow-y: auto;">
+                <div
+                    style="max-width: 900px; margin: 80px auto; padding: 40px; background: rgba(15, 23, 42, 0.9); border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                        <div>
+                            <span id="lesson-section-tag"
+                                style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: #38bdf8;"></span>
+                            <h3 id="lesson-title" style="font-size: 1.75rem; margin-top: 8px;"></h3>
+                        </div>
+                        <button onclick="closeLessonModal()"
+                            style="background: none; border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-family: inherit;">Close
+                            ✕</button>
+                    </div>
+                    <div id="lesson-content"
+                        style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 30px;">
+                    </div>
+                    <div
+                        style="background: rgba(56, 189, 248, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #38bdf8;">
+                        <div
+                            style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #38bdf8; margin-bottom: 8px;">
+                            Learning Outcome</div>
+                        <div id="lesson-outcome" style="font-size: 1rem; color: #fff;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                        <button id="btn-prev-lesson" onclick="navigateLesson(-1)" class="btn btn-ghost">←
+                            Previous</button>
+                        <span id="lesson-progress" style="color: rgba(255,255,255,0.5); font-size: 0.9rem;"></span>
+                        <button id="btn-next-lesson" onclick="navigateLesson(1)" class="btn btn-primary">Next
+                            →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-value" style="font-size: 2rem;">Early Interest</div>
+                <div class="stat-label">From students & educators</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" style="font-size: 2rem;">Guided</div>
+                <div class="stat-label">By student contributors</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Learning Stages</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">UAE</div>
+                <div class="stat-label">Abu Dhabi</div>
+            </div>
+        </div>
+
+        <section id="features">
+            <div class="section-header">
+                <div class="section-tag">Why FALAk</div>
+                <h2>Education Built for Space</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <div class="feature-content">
+                        <h4>AI-Powered Learning</h4>
+                        <p>Personalized curriculum that adapts to your pace, background, and goals.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <div class="feature-content">
+                        <h4>Built for MENA</h4>
+                        <p>Content in Arabic and English. Designed for learners across the region.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-content">
+                        <h4>Community-Driven</h4>
+                        <p>Learn alongside peers. Connect with mentors from the space industry.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <div class="feature-content">
+                        <h4>Skill-Focused</h4>
+                        <p>Developing relevant skills for the future space sector. Grounded in reality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="cta-section">
+            <div class="section-tag">Open Initiative</div>
+            <h2>Building openly. Starting at the university level.</h2>
+            <p class="section-desc">
+                FALAk is currently being developed alongside a university society and early educational activities.<br>
+                Public access will expand as the initiative matures.
+            </p>
+
+            <div class="cta-form" style="display: block;">
+                <a href="#" class="btn btn-primary" style="margin: 0 auto; display: inline-block;">Follow Our
+                    Progress</a>
+            </div>
+        </section>
+
+        <footer>© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space</footer>
+    </div>
+
+    <!-- Optimized script is loaded externally -->
+    <script src="orbital_simulation.js"></script>
+    <script src="curriculum.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Curriculum UI Controller
+        let curriculumNav = null;
+
+        function initCurriculumUI() {
+            if (typeof FALAK_CURRICULUM === 'undefined') return;
+            curriculumNav = new CurriculumNavigator(FALAK_CURRICULUM);
+
+            const grid = document.getElementById('curriculum-grid');
+            if (!grid) return;
+
+            grid.innerHTML = '';
+            FALAK_CURRICULUM.sections.forEach((section, idx) => {
+                const card = document.createElement('div');
+                card.className = 'path-card';
+                card.style.cursor = 'pointer';
+                card.onclick = () => openSection(section.id);
+                card.innerHTML = `
+                    <div class="path-number">${section.icon}</div>
+                    <h3>${section.title}</h3>
+                    <p>${section.lessons.length} lesson${section.lessons.length > 1 ? 's' : ''}</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openSection(sectionId) {
+            curriculumNav.goToLesson(sectionId, FALAK_CURRICULUM.sections.find(s => s.id === sectionId).lessons[0].id);
+            renderLesson();
+            document.getElementById('lesson-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLessonModal() {
+            document.getElementById('lesson-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function renderLesson() {
+            const lesson = curriculumNav.getCurrentLesson();
+            const section = curriculumNav.getCurrentSection();
+            const progress = curriculumNav.getProgress();
+
+            document.getElementById('lesson-section-tag').textContent = `Section ${section.id} · ${section.title}`;
+            document.getElementById('lesson-title').textContent = `${lesson.id} ${lesson.title}`;
+            document.getElementById('lesson-content').textContent = lesson.content;
+            document.getElementById('lesson-outcome').textContent = lesson.learningOutcome;
+            document.getElementById('lesson-progress').textContent = `Lesson ${progress.current} of ${progress.total}`;
+        }
+
+        function navigateLesson(direction) {
+            if (direction > 0) {
+                curriculumNav.nextLesson();
+            } else {
+                curriculumNav.prevLesson();
+            }
+            renderLesson();
+        }
+
+        document.addEventListener('DOMContentLoaded', initCurriculumUI);
+    </script>
+</body>
+
+</html>

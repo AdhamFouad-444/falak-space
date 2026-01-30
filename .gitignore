@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist
+.env
+.idea
+.vscode
+simlab/dist
+simlab/node_modules
+simlab/.vite
+simlab/
