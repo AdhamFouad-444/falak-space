@@ -152,6 +152,35 @@
             white-space: nowrap;
         }
 
+        /* Particle Logo Reveal */
+        .logo-reveal-container {
+            position: relative;
+            width: 140px;
+            /* Expanded for canvas to fit logo */
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-base {
+            height: 100%;
+            width: auto;
+            opacity: 0;
+            /* Hidden initially, revealed by JS */
+            display: block;
+        }
+
+        #logo-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
         .nav-links a {
             color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
@@ -192,12 +221,25 @@
             position: relative;
         }
 
-        /* Integrated Logo from Extracted Elements */
+        /* Integrated Logo */
         .logo-container {
             position: relative;
             width: 600px;
             height: 400px;
             margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hero-logo-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
         }
 
         /* Orbital Rings - Extracted */
@@ -879,9 +921,40 @@
 
         <section class="hero">
             <!-- Integrated Logo -->
-            <div class="logo-container">
-                <img src="OfficialFALAk.png" alt="FALAk Logo" class="logo-main"
-                    style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.3));">
+            <!-- Integrated Logo with Swoop Reveal -->
+            <div class="logo-container" id="hero-logo-container"
+                style="position: relative; width: 600px; height: 320px; overflow: visible;">
+
+                <!-- The Main Logo: Hidden by clip-path initially -->
+                <!-- Uses a CSS clip-path which will be animated by JS -->
+                <!-- The Main Logo: Hidden by clip-path initially -->
+                <!-- Uses a CSS clip-path which will be animated by JS -->
+                <!-- Vignette Mask to hide box edges + Lighten Blend for seamless background -->
+                <div id="logo-reveal-mask"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip-path: circle(0% at 0% 100%); -webkit-clip-path: circle(0% at 0% 100%); z-index: 2;">
+                    <img src="OfficialFALAk.png" alt="FALAk Logo" class="logo-main" id="hero-logo-img"
+                        style="width: 100%; height: 100%; object-fit: contain; filter: contrast(1.2) brightness(0.9); mix-blend-mode: lighten; -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%); mask-image: radial-gradient(circle at center, black 40%, transparent 80%);">
+                </div>
+
+                <!-- Ghost/Placeholder (Optional: subtle outline so user knows something is there? No, user requested seamless) -->
+                <!-- We leave it empty as requested, purely background stars -->
+
+                <!-- The Rocket Actor -->
+                <div id="rocket-actor"
+                    style="position: absolute; top: 0; left: 0; width: 40px; height: 80px; z-index: 10; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 10px #38bdf8);">
+                    <!-- Sleek SVG Rocket -->
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="width: 100%; height: 100%; transform: rotate(45deg);">
+                        <path
+                            d="M12 2.5C12 2.5 16 6.5 16 11.5C16 16.5 14 20 14 20L12 18L10 20C10 20 8 16.5 8 11.5C8 6.5 12 2.5 12 2.5Z"
+                            fill="white" />
+                        <path d="M12 18V22" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <!-- Engine Glow -->
+                    <div
+                        style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 8px; height: 20px; background: linear-gradient(to bottom, #38bdf8, transparent); opacity: 0.8; border-radius: 10px;">
+                    </div>
+                </div>
             </div>
 
             <div class="hero-text">

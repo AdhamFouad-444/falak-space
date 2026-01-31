@@ -60,8 +60,8 @@ class CosmicStarfield {
 
     createStars() {
         this.stars = [];
-        // Reduced density for performance (was /5000)
-        const numStars = Math.floor((this.width * this.height) / 10000);
+        // Increased density for better blending (was /10000)
+        const numStars = Math.floor((this.width * this.height) / 4000);
 
         for (let i = 0; i < numStars; i++) {
             this.stars.push({
@@ -268,20 +268,246 @@ function initSmoothScroll() {
 // ============================================
 // Initialize
 // ============================================
+// ============================================
+// Particle Logo Reveal
+// ============================================
+class ParticleLogo {
+    constructor(canvasId, imageId) {
+        this.canvas = document.getElementById(canvasId);
+        this.ctx = this.canvas.getContext('2d');
+        this.image = document.getElementById(imageId);
+        this.particles = [];
+        this.width = 0;
+        this.height = 0;
+
+        // Wait for image load
+        if (this.image.complete) {
+            this.init();
+        } else {
+            this.image.onload = () => this.init();
+        }
+    }
+
+    init() {
+        this.width = this.canvas.clientWidth;
+        this.height = this.canvas.clientHeight;
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+
+        // Draw image effectively to read data
+        // We need to scale the image to fit the canvas 
+        // Aspect ratio is key
+        const aspect = this.image.naturalWidth / this.image.naturalHeight;
+        let drawWidth = this.height * aspect;
+        let drawHeight = this.height;
+
+        if (drawWidth > this.width) {
+            drawWidth = this.width;
+            drawHeight = this.width / aspect;
+        }
+
+        const startX = (this.width - drawWidth) / 2;
+        const startY = (this.height - drawHeight) / 2;
+
+        this.ctx.drawImage(this.image, startX, startY, drawWidth, drawHeight);
+
+        // Get Pixel Data
+        const imageData = this.ctx.getImageData(0, 0, this.width, this.height);
+        this.ctx.clearRect(0, 0, this.width, this.height);
+
+        // Create Particles
+        // Skip pixels for performance (High density caused crash, reducing to 6)
+        const density = 6;
+        for (let y = 0; y < this.height; y += density) {
+            for (let x = 0; x < this.width; x += density) {
+                const index = (y * this.width + x) * 4;
+                const alpha = imageData.data[index + 3];
+
+                // Filter out dark/black background pixels
+                if (alpha > 128 && (imageData.data[index] + imageData.data[index + 1] + imageData.data[index + 2] > 50)) {
+                    const r = imageData.data[index];
+                    const g = imageData.data[index + 1];
+                    const b = imageData.data[index + 2];
+
+                    // Star properties
+                    const radius = Math.random() * 1.5 + 0.5;
+                    const baseAlpha = Math.random() * 0.5 + 0.5;
+
+                    this.particles.push({
+                        x: Math.random() * this.width * 2 - this.width / 2,
+                        y: Math.random() * this.height * 2 - this.height / 2,
+                        originX: x,
+                        originY: y,
+                        color: `rgba(${r},${g},${b}`,
+                        alpha: baseAlpha,
+                        radius: radius,
+                        vx: (Math.random() - 0.5) * 2,
+                        vy: (Math.random() - 0.5) * 2,
+                        ease: Math.random() * 0.15 + 0.08,
+                        phase: Math.random() * Math.PI * 2
+                    });
+                }
+            }
+        }
+
+        this.animate();
+    }
+
+    animate() {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+        this.ctx.globalCompositeOperation = 'screen';
+
+        // Removed expensive shadowBlur for performance
+
+        let settled = 0;
+        const time = Date.now() * 0.003;
+
+        this.particles.forEach(p => {
+            const dx = p.originX - p.x;
+            const dy = p.originY - p.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 0.5) {
+                p.x = p.originX;
+                p.y = p.originY;
+                settled++;
+            } else {
+                p.x += dx * p.ease;
+                p.y += dy * p.ease;
+            }
+
+            // Simplified drawing
+            // Twinkle only if settled to save power during movement? 
+            // Actually, remove twinkle logic from draw loop color string creation for speed during heavy movement
+
+            this.ctx.fillStyle = `${p.color},${p.alpha})`;
+            this.ctx.fillRect(p.x, p.y, p.radius * 1.5, p.radius * 1.5); // rect is faster than arc
+        });
+
+        // STOP loop when done to save CPU
+        if (settled < this.particles.length * 0.99) {
+            requestAnimationFrame(() => this.animate());
+        }
+    }
+}
+
+// ============================================
+// Swoop Reveal Logo Animation
+// ============================================
+class SwoopReveal {
+    constructor() {
+        this.rocket = document.getElementById('rocket-actor');
+        this.mask = document.getElementById('logo-reveal-mask');
+        this.container = document.getElementById('hero-logo-container');
+
+        if (!this.rocket || !this.mask) return;
+
+        this.startTime = null;
+        this.duration = 2000; // 2 seconds for the swoop
+
+        // Start animation after a short delay
+        setTimeout(() => {
+            this.rocket.style.opacity = '1';
+            requestAnimationFrame(this.animate.bind(this));
+        }, 500);
+    }
+
+    easeOutQuad(t) { return t * (2 - t); }
+
+    animate(timestamp) {
+        if (!this.startTime) this.startTime = timestamp;
+        const progress = (timestamp - this.startTime) / this.duration;
+
+        if (progress < 1) {
+            // Easing
+            const ease = this.easeOutQuad(progress);
+
+            // Flight Path: Swoop from Bottom-Left (-50, 400) to Top-Right (650, -50)
+            // Using a Quadratic Bezier Curve logic or simple parametric
+
+            // Let's define specific waypoints for a nice curve
+            // Start: x=-100, y=350 (Bottom Left)
+            // Control: x=300, y=350 
+            // End: x=700, y=-100
+
+            // Simple interpolation for "Swoop"
+            // X moves linearly-ish
+            const startX = -100;
+            const endX = 800;
+            const currentX = startX + (endX - startX) * ease;
+
+            // Y moves with a curve (dip then go up? or just arc up?)
+            // Let's do a simple diagonal arc
+            const startY = 400;
+            const endY = -100;
+            // Add some curve: y = lerp(startY, endY, ease) - arc
+            const linearY = startY + (endY - startY) * ease;
+            const arc = Math.sin(ease * Math.PI) * 50; // Slight curve upwards
+            const currentY = linearY - arc;
+
+            // Rotation calculation
+            // approx tangent
+            const dx = (endX - startX);
+            const dy = (endY - startY);
+            // Simple fixed rotation for now as the arc is subtle, or dynamic
+            const angle = Math.atan2(dy, dx) * 180 / Math.PI + 90; // +90 to align rocket nose
+
+            // Apply to Rocket
+            this.rocket.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angle}deg)`;
+
+            // REVEAL MASK LOGIC
+            // The mask should expand following the rocket
+            // We use clip-path: polygon or circle.
+            // Let's use a slanted rectangle reveal that follows x
+
+            // We want to reveal everything TO THE LEFT of the rocket
+            // mask X should lag slightly behind rocket X
+            const maskX = (currentX / this.container.clientWidth) * 100;
+
+            // Using clip-path: polygon. 
+            // 0 0 (top left) -> maskX 0 (top right dynamic) -> maskX-20 100% (bottom right dynamic slanted) -> 0 100% (bottom left)
+            const slope = 20; // percent slant
+            const topX = Math.min(100, Math.max(0, (currentX + 50) / 6)); // approximate %
+            const botX = Math.min(100, Math.max(0, (currentX - 50) / 6));
+
+            // Better approach: Circle growing? Or simple curtain?
+            // User asked for "Swoop".
+            // Let's map the mask to exactly the rocket position + a large radius
+            // clip-path: circle( [radius]% at [rocketX]% [rocketY]% ) ? No that reveals a spot. 
+            // We want to reveal the TRAIL.
+
+            // Efficient approach:
+            // Clip the image from Left to Right.
+            this.mask.style.clipPath = `polygon(0% 0%, ${topX}% 0%, ${botX}% 100%, 0% 100%)`;
+            this.mask.style.webkitClipPath = `polygon(0% 0%, ${topX}% 0%, ${botX}% 100%, 0% 100%)`;
+
+            requestAnimationFrame(this.animate.bind(this));
+        } else {
+            // Finish
+            this.mask.style.clipPath = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
+            this.mask.style.webkitClipPath = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
+
+            // Fly rocket out completely
+            this.rocket.style.opacity = '0';
+            this.rocket.style.transition = 'opacity 0.5s';
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('starfield');
     if (canvas) {
         new CosmicStarfield(canvas);
     }
 
+    // Init Swoop Reveal
+    new SwoopReveal();
+
+    // Old Particle Logic Removed
+    // initNavigation(); ...
     initNavigation();
     initSmoothScroll();
 
-    // Disable high-cost effects unless requested
-    // initMagneticButtons(); // Disabled for performance
-    // initCardTilt(); // Disabled for performance
-    // initHeroParallax(); // Disabled to reduce scroll jank
-
-    console.log('✦ FALAk initialized (Performance Mode)');
+    console.log('✦ FALAk initialized (Swoop Mode)');
 });
 
