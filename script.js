@@ -137,17 +137,75 @@ class CosmicStarfield {
         this.ctx.fill();
     }
 
+    createShootingStar() {
+        // Spawn from top-left or top-right quadrant mostly
+        const startX = Math.random() * this.width;
+        const startY = Math.random() * (this.height * 0.3); // Top 30%
+
+        // Angle: mostly downwards diagonal
+        const angle = Math.PI / 4 + (Math.random() * 0.5 - 0.25);
+
+        this.shootingStars.push({
+            x: startX,
+            y: startY,
+            length: Math.random() * 80 + 20,
+            speed: Math.random() * 10 + 10,
+            angle: angle,
+            opacity: 1,
+            life: 1 // Full life
+        });
+    }
+
+    drawShootingStars() {
+        for (let i = this.shootingStars.length - 1; i >= 0; i--) {
+            const s = this.shootingStars[i];
+
+            // Update
+            s.x += Math.cos(s.angle) * s.speed;
+            s.y += Math.sin(s.angle) * s.speed;
+            s.life -= 0.02; // Fade out
+
+            // Draw
+            if (s.life > 0) {
+                const endX = s.x - Math.cos(s.angle) * s.length;
+                const endY = s.y - Math.sin(s.angle) * s.length;
+
+                const gradient = this.ctx.createLinearGradient(s.x, s.y, endX, endY);
+                gradient.addColorStop(0, `rgba(255, 255, 255, ${s.life})`);
+                gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+
+                this.ctx.beginPath();
+                this.ctx.moveTo(s.x, s.y);
+                this.ctx.lineTo(endX, endY);
+                this.ctx.strokeStyle = gradient;
+                this.ctx.lineWidth = 2;
+                this.ctx.stroke();
+            } else {
+                this.shootingStars.splice(i, 1);
+            }
+
+            // Remove if out of bounds
+            if (s.x > this.width + 100 || s.y > this.height + 100) {
+                this.shootingStars.splice(i, 1);
+            }
+        }
+    }
+
     animate(time = 0) {
-        // Clear with fillRect for efficiency instead of clearRect if opaque background, 
-        // but here we need transparency possibly? No, body is black.
-        // Using clearRect is fine.
+        // Clear with fillRect for efficiency instead of clearRect if opaque background
         this.ctx.clearRect(0, 0, this.width, this.height);
 
         // Batch drawing could be optimized but keep logic simple for now
         this.nebulaClouds.forEach(cloud => this.drawNebula(cloud, time));
         this.stars.forEach(star => this.drawStar(star, time));
 
-        /* Shooting stars removed for performance or greatly simplified */
+        // Randomly spawn shooting stars
+        // Chance: 1 in 100 frames (~1.5 per second at 60fps), increased for effect
+        if (Math.random() < 0.015) {
+            this.createShootingStar();
+        }
+
+        this.drawShootingStars();
 
         requestAnimationFrame((t) => this.animate(t));
     }
