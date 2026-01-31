@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FALAk - Opening Pathways Into Space</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
         * {
@@ -751,6 +752,108 @@
             }
         }
 
+        /* RTL & Language Support */
+        body.rtl {
+            font-family: 'IBM Plex Sans Arabic', 'Outfit', sans-serif;
+            direction: rtl;
+        }
+
+        body.rtl .nav-links {
+            flex-direction: row-reverse;
+        }
+
+        body.rtl .nav-links li:last-child {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        body.rtl .section-tag,
+        body.rtl .framework-label,
+        body.rtl .stat-label,
+        body.rtl .logo-title,
+        body.rtl .hero-text h1,
+        body.rtl .nav-brand {
+            letter-spacing: 0;
+        }
+
+        body.rtl .feature-card {
+            text-align: right;
+        }
+
+        body.rtl .cta-form input {
+            text-align: right;
+        }
+
+        .lang-toggle {
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            transition: all 0.3s;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .lang-toggle:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* RTL & Language Support */
+        body.rtl {
+            font-family: 'IBM Plex Sans Arabic', 'Outfit', sans-serif;
+            direction: rtl;
+        }
+
+        body.rtl .nav-links {
+            flex-direction: row-reverse;
+        }
+
+        body.rtl .nav-links li:last-child {
+            margin-right: auto;
+            /* Push CTA to left in RTL */
+            margin-left: 0;
+        }
+
+        /* Reset spacing for RTL */
+        body.rtl .section-tag,
+        body.rtl .framework-label,
+        body.rtl .stat-label,
+        body.rtl .logo-title,
+        body.rtl .hero-text h1,
+        body.rtl .nav-brand {
+            letter-spacing: 0;
+        }
+
+        body.rtl .feature-card {
+            text-align: right;
+        }
+
+        body.rtl .cta-form input {
+            text-align: right;
+        }
+
+        .lang-toggle {
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            transition: all 0.3s;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .lang-toggle:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+
         @media (max-width: 900px) {
             nav {
                 padding: 16px 24px;
@@ -851,11 +954,12 @@
         <nav>
             <div class="nav-brand">FALAk</div>
             <ul class="nav-links">
-                <li><a href="#journey">Learning Path</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#join">Join</a></li>
+                <li><a href="#journey" id="nav-journey">Learning Path</a></li>
+                <li><a href="#features" id="nav-features">Features</a></li>
+                <li><a href="#join" id="nav-join">Join</a></li>
+                <li><button id="lang-toggle" class="lang-toggle">AR</button></li>
             </ul>
-            <a href="#join" class="nav-cta">Follow Progress</a>
+            <a href="#join" class="nav-cta" id="nav-cta">Follow Progress</a>
         </nav>
 
         <section class="hero">
@@ -866,16 +970,17 @@
             </div>
 
             <div class="hero-text">
-                <h1>AI-Powered Space Education</h1>
-                <p>A student-led initiative exploring how people learn, reason about, and prepare for space — starting
+                <h1 id="hero-title">AI-Powered Space Education</h1>
+                <p id="hero-desc">A student-led initiative exploring how people learn, reason about, and prepare for
+                    space — starting
                     with first principles.</p>
             </div>
 
             <div class="hero-cta">
-                <a href="#journey" class="btn btn-primary">Explore the Framework</a>
+                <a href="#journey" class="btn btn-primary" id="hero-btn-primary">Explore the Framework</a>
             </div>
 
-            <div class="hero-badge">Launching Q2 2026 · Abu Dhabi, UAE</div>
+            <div class="hero-badge" id="hero-badge">Launching Q2 2026 · Abu Dhabi, UAE</div>
 
             <!-- Banner Image -->
             <div
@@ -886,8 +991,8 @@
 
         <section id="vision" style="padding: 100px 48px; text-align: center;">
             <div class="section-header">
-                <div class="section-tag">Our Vision</div>
-                <h2>Beyond Boundaries</h2>
+                <div class="section-tag" id="intro-tag">Our Vision</div>
+                <h2 id="intro-title">Beyond Boundaries</h2>
             </div>
             <div
                 style="max-width: 900px; margin: 0 auto; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; justify-content: center;">
@@ -896,9 +1001,11 @@
                         style="width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                 </div>
                 <div style="flex: 1; min-width: 300px; text-align: left;">
-                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); line-height: 1.8;" id="intro-p1">
                         FALAk is a long-term initiative focused on building understanding before infrastructure.
-                        <br><br>
+                    </p>
+                    <br>
+                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); line-height: 1.8;" id="intro-p2">
                         We begin with education, systems thinking, and exploration — creating a foundation that can
                         later support real missions, teams, and capabilities.
                     </p>
@@ -908,15 +1015,16 @@
 
         <section id="simlab-section" style="padding: 100px 48px; text-align: center; position: relative;">
             <div class="section-header">
-                <div class="section-tag">Interactive Learning</div>
-                <h2>Learning Through Structured Exploration</h2>
-                <p class="section-desc">FALAk focuses on helping learners understand how space systems work before
+                <div class="section-tag" id="sim-tag">Interactive Learning</div>
+                <h2 id="sim-title">Learning Through Structured Exploration</h2>
+                <p class="section-desc" id="sim-desc">FALAk focuses on helping learners understand how space systems
+                    work before
                     attempting to build them.</p>
             </div>
 
             <div
                 style="max-width: 800px; margin: 40px auto; padding: 40px; background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1)); border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">
-                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.6;">
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.6;" id="sim-note">
                     Simulation tools will be introduced later as part of a staged learning approach.
                 </p>
             </div>
@@ -924,11 +1032,12 @@
 
         <section id="journey">
             <div class="section-header">
-                <div class="section-tag">Learning Journey</div>
-                <h2>Your Path to the Stars</h2>
+                <div class="section-tag" id="edu-tag">Learning Journey</div>
+                <h2 id="edu-title">Your Path to the Stars</h2>
                 <div class="framework-header">
-                    <div class="framework-label">Framework 001</div>
-                    <div class="framework-subtitle">From first principles to applied space systems</div>
+                    <div class="framework-label" id="fw-label">Framework 001</div>
+                    <div class="framework-subtitle" id="fw-subtitle">From first principles to applied space systems
+                    </div>
                     <div class="framework-divider"></div>
                 </div>
             </div>
@@ -977,95 +1086,102 @@
 
         <div class="stats-container" style="align-items: center;">
             <div class="stat">
-                <div class="stat-value" style="font-size: 2.2rem;">Early Interest</div>
-                <div class="stat-label">From students & educators</div>
+                <div class="stat-value" style="font-size: 2.2rem;" id="stat-1-val">Early Interest</div>
+                <div class="stat-label" id="stat-1-lbl">From students & educators</div>
             </div>
             <div class="stat">
-                <div class="stat-value" style="font-size: 2.2rem;">Guided</div>
-                <div class="stat-label">By student contributors</div>
+                <div class="stat-value" style="font-size: 2.2rem;" id="stat-2-val">Guided</div>
+                <div class="stat-label" id="stat-2-lbl">By student contributors</div>
             </div>
             <div class="stat">
                 <div class="stat-value" style="font-size: 3rem;">4</div>
-                <div class="stat-label">Learning Stages</div>
+                <div class="stat-label" id="stat-3-lbl">Learning Stages</div>
             </div>
             <div class="stat">
-                <div class="stat-value" style="font-size: 3rem;">UAE</div>
-                <div class="stat-label">Abu Dhabi</div>
+                <div class="stat-value" style="font-size: 3rem;" id="stat-4-val">UAE</div>
+                <div class="stat-label" id="stat-4-lbl">Abu Dhabi</div>
             </div>
         </div>
 
         <section id="features">
             <div class="section-header">
-                <div class="section-tag">Why FALAk</div>
-                <h2>Education Built for Space</h2>
+                <div class="section-tag" id="feat-tag">Why FALAk</div>
+                <h2 id="feat-title">Education Built for Space</h2>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
                     <div class="feature-content">
-                        <h4>AI-Powered Learning</h4>
-                        <p>Personalized curriculum that adapts to your pace, background, and goals.</p>
+                        <h4 id="feat-1-h">AI-Powered Learning</h4>
+                        <p id="feat-1-p">Personalized curriculum that adapts to your pace, background, and goals.</p>
                     </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <div class="feature-content">
-                        <h4>Built for MENA</h4>
-                        <p>Content in Arabic and English. Designed for learners across the region.</p>
+                        <h4 id="feat-2-h">Built for MENA</h4>
+                        <p id="feat-2-p">Content in Arabic and English. Designed for learners across the region.</p>
                     </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">👥</div>
                     <div class="feature-content">
-                        <h4>Community-Driven</h4>
-                        <p>Learn alongside peers. Connect with mentors from the space industry.</p>
+                        <h4 id="feat-3-h">Community-Driven</h4>
+                        <p id="feat-3-p">Learn alongside peers. Connect with mentors from the space industry.</p>
                     </div>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💼</div>
                     <div class="feature-content">
-                        <h4>Skill-Focused</h4>
-                        <p>Developing relevant skills for the future space sector. Grounded in reality.</p>
+                        <h4 id="feat-4-h">Skill-Focused</h4>
+                        <p id="feat-4-p">Developing relevant skills for the future space sector. Grounded in reality.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="join" class="cta-section">
-            <div class="section-tag">Open Initiative</div>
-            <h2>Building openly. Starting at the university level.</h2>
-            <p class="section-desc">
+            <div class="section-tag" id="cta-tag">Open Initiative</div>
+            <h2 id="cta-title">Building openly. Starting at the university level.</h2>
+            <p class="section-desc" id="cta-desc">
                 FALAk is currently being developed alongside a university society and early educational activities.<br>
                 Public access will expand as the initiative matures.
             </p>
 
             <div class="cta-form" style="display: block;">
-                <a href="#" class="btn btn-primary" style="margin: 0 auto; display: inline-block;">Follow Our
+                <a href="#" class="btn btn-primary" style="margin: 0 auto; display: inline-block;" id="cta-btn">Follow
+                    Our
                     Progress</a>
             </div>
         </section>
 
-        <footer>© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space</footer>
+        <footer id="footer-copy">© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space</footer>
     </div>
 
     <!-- Optimized script is loaded externally -->
     <script src="orbital_simulation.js"></script>
     <script src="curriculum.js"></script>
+    <script src="translations.js"></script>
     <script src="script.js"></script>
     <script>
         // Curriculum UI Controller
         let curriculumNav = null;
 
         function initCurriculumUI() {
-            if (typeof FALAK_CURRICULUM === 'undefined') return;
-            curriculumNav = new CurriculumNavigator(FALAK_CURRICULUM);
+            // Bilingual Support
+            const isAr = window.appTranslator && window.appTranslator.currentLang === 'ar';
+            const data = (window.appTranslator) ? window.appTranslator.getCurriculumData(FALAK_CURRICULUM) : FALAK_CURRICULUM;
+
+            if (!data) return;
+            curriculumNav = new CurriculumNavigator(data);
 
             const grid = document.getElementById('curriculum-grid');
             if (!grid) return;
 
             // Microcopy data
-            const subtitles = {
+            let subtitles = {
                 "1": "Understanding the environment we operate in",
                 "2": "Energy, propulsion, and constraints",
                 "3": "Where theory meets risk",
@@ -1074,6 +1190,10 @@
                 "6": "Pushing physics to the limit",
                 "7": "Responsible exploration"
             };
+
+            if (isAr && window.appTranslator.getLocalizedSubtitles()) {
+                subtitles = window.appTranslator.getLocalizedSubtitles();
+            }
 
             const animations = {
                 "1": "anim-orbit",
