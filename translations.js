@@ -340,7 +340,10 @@ class TranslationManager {
 }
 
 // Global instance
-let appTranslator;
+// Global instance
+window.appTranslator = null;
 document.addEventListener('DOMContentLoaded', () => {
-    appTranslator = new TranslationManager();
+    window.appTranslator = new TranslationManager();
+    // Force immediate update if DOM is already ready or just to be safe
+    window.appTranslator.init();
 });
