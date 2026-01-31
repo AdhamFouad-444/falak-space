@@ -463,67 +463,164 @@
         }
 
         /* Learning Path */
+        /* Learning Path - Framework 001 Identity */
+        .framework-header {
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .framework-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #94a3b8;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 8px 16px;
+            border-radius: 4px;
+            background: rgba(15, 23, 42, 0.4);
+            margin-bottom: 12px;
+        }
+
+        .framework-subtitle {
+            font-size: 0.9rem;
+            color: rgba(148, 163, 184, 0.6);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .framework-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+            margin-top: 20px;
+        }
+
         .path-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
+            margin-top: 40px;
         }
 
         .path-card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.8));
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 40px 32px;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.3), rgba(15, 23, 42, 0.6));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 32px 24px;
             text-align: center;
-            transition: all 0.4s;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
-        }
-
-        .path-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #0ea5e9, #6366f1);
-            transform: scaleX(0);
-            transition: transform 0.4s;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         .path-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(56, 189, 248, 0.3);
-        }
-
-        .path-card:hover::before {
-            transform: scaleX(1);
+            transform: scale(1.02);
+            border-color: rgba(56, 189, 248, 0.2);
+            box-shadow:
+                inset 0 0 30px rgba(56, 189, 248, 0.05),
+                0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .path-number {
             width: 48px;
             height: 48px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: #38bdf8;
             display: inline-block;
+            opacity: 0.8;
+            transition: all 0.5s ease;
         }
 
-        .path-number svg {
-            width: 100%;
-            height: 100%;
+        .path-card:hover .path-number {
+            opacity: 1;
+            color: #7dd3fc;
+        }
+
+        /* Animations */
+        @keyframes orbit-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes vector-flow {
+            0% {
+                transform: translateY(-3px);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(3px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-3px);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes ignition-pulse {
+            0% {
+                filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.3));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.3));
+            }
+        }
+
+        .anim-orbit {
+            animation: orbit-slow 60s linear infinite;
+        }
+
+        .anim-flow {
+            animation: vector-flow 4s ease-in-out infinite;
+        }
+
+        .anim-pulse {
+            animation: ignition-pulse 3s ease-in-out infinite;
         }
 
         .path-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #f1f5f9;
+            letter-spacing: -0.01em;
         }
 
-        .path-card p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.6;
+        .microcopy {
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.5);
+            margin-bottom: 20px;
+            line-height: 1.4;
+            min-height: 2.8em;
+            display: block;
+        }
+
+        .lesson-count-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            color: rgba(56, 189, 248, 0.6);
+            background: rgba(56, 189, 248, 0.05);
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         /* Features */
@@ -829,11 +926,11 @@
             <div class="section-header">
                 <div class="section-tag">Learning Journey</div>
                 <h2>Your Path to the Stars</h2>
-                <p class="section-desc">Framework 001: From Earth to Space — 7 Sections, 24 Lessons</p>
-                <p class="section-desc" style="margin-top: 10px; font-size: 0.9rem;">
-                    Framework 001 is the first learning framework developed by the FALAk founding team, mapping the
-                    journey from Earth to space through physics, systems, operations, and ethics.
-                </p>
+                <div class="framework-header">
+                    <div class="framework-label">Framework 001</div>
+                    <div class="framework-subtitle">From first principles to applied space systems</div>
+                    <div class="framework-divider"></div>
+                </div>
             </div>
 
             <!-- Dynamic Section Grid (from curriculum.js) -->
@@ -967,16 +1064,51 @@
             const grid = document.getElementById('curriculum-grid');
             if (!grid) return;
 
+            // Microcopy data
+            const subtitles = {
+                "1": "Understanding the environment we operate in",
+                "2": "Energy, propulsion, and constraints",
+                "3": "Where theory meets risk",
+                "4": "Surviving the void of space",
+                "5": "Virtual proving grounds",
+                "6": "Pushing physics to the limit",
+                "7": "Responsible exploration"
+            };
+
+            const animations = {
+                "1": "anim-orbit",
+                "2": "anim-flow",
+                "3": "anim-pulse"
+            };
+
             grid.innerHTML = '';
             FALAK_CURRICULUM.sections.forEach((section, idx) => {
                 const card = document.createElement('div');
                 card.className = 'path-card';
                 card.style.cursor = 'pointer';
                 card.onclick = () => openSection(section.id);
+
+                const animClass = animations[section.id] || '';
+                const subtitle = subtitles[section.id] || '';
+                const lessonCount = section.lessons.length;
+
+                // Inject animation class into the SVG 
+                // We do a simple string replace on the icon HTML to add the class to the svg or path if needed
+                // But for simplicity, we wrap the icon in a div that handles the animation if it's a transform
+                // actually the css rules .anim-orbit apply to the element itself.
+                // Let's modify the icon string to inject the class.
+                let iconHtml = section.icon;
+                if (animClass) {
+                    iconHtml = iconHtml.replace('<svg', `<svg class="${animClass}"`);
+                }
+
                 card.innerHTML = `
-                    <div class="path-number">${section.icon}</div>
+                    <div class="path-number">${iconHtml}</div>
                     <h3>${section.title}</h3>
-                    <p>${section.lessons.length} lesson${section.lessons.length > 1 ? 's' : ''}</p>
+                    <span class="microcopy">${subtitle}</span>
+                    <div class="lesson-count-tag">
+                        <span>●</span> ${lessonCount} Lesson${lessonCount !== 1 ? 's' : ''}
+                    </div>
                 `;
                 grid.appendChild(card);
             });
