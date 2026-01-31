@@ -62,7 +62,17 @@ const TRANSLATIONS = {
         "cta-btn": "Follow Our Progress",
 
         // Footer
-        "footer-copy": "© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space"
+        "footer-copy": "© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space",
+
+        // UI / Dynamic (New)
+        "ui-section-prefix": "Section",
+        "ui-lesson-label": "Lessons",
+        "ui-close": "Close",
+        "ui-prev": "Previous",
+        "ui-next": "Next",
+        "ui-outcome": "Learning Outcome",
+        "ui-lesson-n": "Lesson",
+        "ui-of": "of"
     },
     ar: {
         // Nav
@@ -123,7 +133,17 @@ const TRANSLATIONS = {
         "cta-btn": "تابع تقدمنا",
 
         // Footer
-        "footer-copy": "© 2026 فلك · أبوظبي، الإمارات · فتح مسارات نحو الفضاء"
+        "footer-copy": "© 2026 فلك · أبوظبي، الإمارات · فتح مسارات نحو الفضاء",
+
+        // UI / Dynamic (New)
+        "ui-section-prefix": "القسم",
+        "ui-lesson-label": "دروس",
+        "ui-close": "إغلاق",
+        "ui-prev": "السابق",
+        "ui-next": "التالي",
+        "ui-outcome": "مخرجات التعلم",
+        "ui-lesson-n": "الدرس",
+        "ui-of": "من"
     }
 };
 
@@ -224,6 +244,14 @@ class TranslationManager {
         this.applyLanguage(this.currentLang);
     }
 
+    t(key) {
+        if (TRANSLATIONS[this.currentLang] && TRANSLATIONS[this.currentLang][key]) {
+            return TRANSLATIONS[this.currentLang][key];
+        }
+        // Fallback to EN
+        return TRANSLATIONS['en'] ? TRANSLATIONS['en'][key] : key;
+    }
+
     toggleLanguage() {
         this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
         localStorage.setItem('falak-lang', this.currentLang);
@@ -265,11 +293,12 @@ class TranslationManager {
 
         // Re-render Curriculum if it exists
         if (typeof initCurriculumUI === 'function') {
-            // We need to temporarily pass AR data if lang is AR, 
-            // or we rely on initCurriculumUI to check the TranslationManager or global state.
-            // A clean way is to trigger a re-render.
-            // We will modify initCurriculumUI in index.html to handle this.
             initCurriculumUI();
+        }
+
+        // Re-render Lesson Modal if open
+        if (typeof renderLesson === 'function' && document.getElementById('lesson-modal') && document.getElementById('lesson-modal').style.display === 'block') {
+            renderLesson();
         }
     }
 
@@ -289,6 +318,9 @@ class TranslationManager {
                 if (CURRICULUM_AR.sections[idx].lessons[lIdx]) {
                     less.title = CURRICULUM_AR.sections[idx].lessons[lIdx].title;
                     less.content = CURRICULUM_AR.sections[idx].lessons[lIdx].content;
+                    if (CURRICULUM_AR.sections[idx].lessons[lIdx].learningOutcome) {
+                        less.learningOutcome = CURRICULUM_AR.sections[idx].lessons[lIdx].learningOutcome;
+                    }
                 }
             });
         });

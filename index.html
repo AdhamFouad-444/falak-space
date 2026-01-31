@@ -788,71 +788,24 @@
             cursor: pointer;
             font-size: 0.8rem;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.6);
-            padding: 6px 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 6px 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
             transition: all 0.3s;
             display: inline-block;
             vertical-align: middle;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .lang-toggle:hover {
             color: #fff;
-            border-color: #fff;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        /* RTL & Language Support */
-        body.rtl {
-            font-family: 'IBM Plex Sans Arabic', 'Outfit', sans-serif;
-            direction: rtl;
-        }
-
-        body.rtl .nav-links {
-            flex-direction: row-reverse;
-        }
-
-        body.rtl .nav-links li:last-child {
-            margin-right: auto;
-            /* Push CTA to left in RTL */
-            margin-left: 0;
-        }
-
-        /* Reset spacing for RTL */
-        body.rtl .section-tag,
-        body.rtl .framework-label,
-        body.rtl .stat-label,
-        body.rtl .logo-title,
-        body.rtl .hero-text h1,
-        body.rtl .nav-brand {
-            letter-spacing: 0;
-        }
-
-        body.rtl .feature-card {
-            text-align: right;
-        }
-
-        body.rtl .cta-form input {
-            text-align: right;
-        }
-
-        .lang-toggle {
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.6);
-            padding: 6px 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-            transition: all 0.3s;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .lang-toggle:hover {
-            color: #fff;
-            border-color: #fff;
-        }
 
         @media (max-width: 900px) {
             nav {
@@ -1059,16 +1012,17 @@
                                 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: #38bdf8;"></span>
                             <h3 id="lesson-title" style="font-size: 1.75rem; margin-top: 8px;"></h3>
                         </div>
-                        <button onclick="closeLessonModal()"
-                            style="background: none; border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-family: inherit;">Close
-                            ✕</button>
+                        <button onclick="closeLessonModal()" id="btn-close"
+                            style="background: none; border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 10px 20px; border-radius: 50px; cursor: pointer; font-family: inherit;">
+                            <span id="btn-close-text">Close</span> ✕
+                        </button>
                     </div>
                     <div id="lesson-content"
                         style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 30px;">
                     </div>
                     <div
                         style="background: rgba(56, 189, 248, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #38bdf8;">
-                        <div
+                        <div id="lbl-outcome-header"
                             style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #38bdf8; margin-bottom: 8px;">
                             Learning Outcome</div>
                         <div id="lesson-outcome" style="font-size: 1rem; color: #fff;"></div>
@@ -1201,8 +1155,11 @@
                 "3": "anim-pulse"
             };
 
+            const t = (k) => (window.appTranslator) ? window.appTranslator.t(k) : k; // Helper
+            const lblLessons = (window.appTranslator) ? window.appTranslator.t('ui-lesson-label') : 'Lessons';
+
             grid.innerHTML = '';
-            FALAK_CURRICULUM.sections.forEach((section, idx) => {
+            data.sections.forEach((section, idx) => {
                 const card = document.createElement('div');
                 card.className = 'path-card';
                 card.style.cursor = 'pointer';
@@ -1212,11 +1169,6 @@
                 const subtitle = subtitles[section.id] || '';
                 const lessonCount = section.lessons.length;
 
-                // Inject animation class into the SVG 
-                // We do a simple string replace on the icon HTML to add the class to the svg or path if needed
-                // But for simplicity, we wrap the icon in a div that handles the animation if it's a transform
-                // actually the css rules .anim-orbit apply to the element itself.
-                // Let's modify the icon string to inject the class.
                 let iconHtml = section.icon;
                 if (animClass) {
                     iconHtml = iconHtml.replace('<svg', `<svg class="${animClass}"`);
@@ -1227,7 +1179,7 @@
                     <h3>${section.title}</h3>
                     <span class="microcopy">${subtitle}</span>
                     <div class="lesson-count-tag">
-                        <span>●</span> ${lessonCount} Lesson${lessonCount !== 1 ? 's' : ''}
+                        <span>●</span> ${lessonCount} ${lblLessons}
                     </div>
                 `;
                 grid.appendChild(card);
@@ -1251,12 +1203,46 @@
             const section = curriculumNav.getCurrentSection();
             const progress = curriculumNav.getProgress();
 
-            document.getElementById('lesson-section-tag').textContent = `Section ${section.id} · ${section.title}`;
-            document.getElementById('lesson-title').textContent = `${lesson.id} ${lesson.title}`;
+            // Labels
+            const t = (k) => (window.appTranslator) ? window.appTranslator.t(k) : k;
+
+            const lblSec = t('ui-section-prefix') || 'Section';
+            const lblOutcome = t('ui-outcome') || 'Learning Outcome';
+            const lblLesson = t('ui-lesson-n') || 'Lesson';
+            const lblOf = t('ui-of') || 'of';
+            const lblPrev = t('ui-prev') || 'Previous';
+            const lblNext = t('ui-next') || 'Next';
+            const lblClose = t('ui-close') || 'Close';
+
+            document.getElementById('lesson-section-tag').textContent = `${lblSec} ${section.id} · ${section.title}`;
+            document.getElementById('lesson-title').textContent = `${lblLesson} ${lesson.id} ${lesson.title}`;
             document.getElementById('lesson-content').textContent = lesson.content;
             document.getElementById('lesson-outcome').textContent = lesson.learningOutcome;
-            document.getElementById('lesson-progress').textContent = `Lesson ${progress.current} of ${progress.total}`;
+
+            // Update labels that aren't dynamic content but part of the UI structure
+            // We need to target the static elements for translation or update them here
+            document.getElementById('lbl-outcome-header').textContent = lblOutcome;
+            document.getElementById('btn-close-text').textContent = lblClose;
+
+            // Update buttons
+            const btnPrev = document.getElementById('btn-prev-lesson');
+            btnPrev.innerHTML = (window.appTranslator && window.appTranslator.currentLang === 'ar')
+                ? `${lblPrev} →` // RTL arrow
+                : `← ${lblPrev}`;
+
+            const btnNext = document.getElementById('btn-next-lesson');
+            btnNext.innerHTML = (window.appTranslator && window.appTranslator.currentLang === 'ar')
+                ? `← ${lblNext}` // RTL arrow
+                : `${lblNext} →`;
+
+            document.getElementById('lesson-progress').textContent = `${lblLesson} ${progress.current} ${lblOf} ${progress.total}`;
         }
+
+        // Add IDs to modal elements for targeting
+        document.addEventListener('DOMContentLoaded', () => {
+            // One-time static label updates if needed, though renderLesson handles most.
+            // We need to ensure the HTML structure has IDs for 'lbl-outcome-header' etc.
+        });
 
         function navigateLesson(direction) {
             if (direction > 0) {
