@@ -11,8 +11,8 @@ const TRANSLATIONS = {
         "nav-cta": "Follow Progress",
 
         // Hero
-        "hero-title": "AI-Powered Space Education",
-        "hero-desc": "A specialized education system exploring how people learn, reason about, and prepare for space — starting with first principles.",
+        "hero-title": "Space systems, made learnable.",
+        "hero-desc": "An open initiative building a pathway into space education — exploring first principles before systems.",
         "hero-btn-primary": "Explore the Framework",
         "hero-badge": "Launching Q2 2026 · Abu Dhabi, UAE",
 
@@ -51,7 +51,7 @@ const TRANSLATIONS = {
         "feat-2-h": "Built for MENA",
         "feat-2-p": "Content in Arabic and English. Designed for learners across the region.",
         "feat-3-h": "Community-Driven",
-        "feat-3-p": "Learn alongside peers. Connect with mentors from the space industry.",
+        "feat-3-p": "Learn alongside peers. Connect with early advisors as we grow.",
         "feat-4-h": "Skill-Focused",
         "feat-4-p": "Developing relevant skills for the future space sector. Grounded in reality.",
 

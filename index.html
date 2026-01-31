@@ -932,10 +932,9 @@
             </div>
 
             <div class="hero-text">
-                <h1 id="hero-title">AI-Powered Space Education</h1>
-                <p id="hero-desc">A student-led initiative exploring how people learn, reason about, and prepare for
-                    space — starting
-                    with first principles.</p>
+                <h1 id="hero-title">Space systems, made learnable.</h1>
+                <p id="hero-desc">An open initiative building a pathway into space education — exploring first
+                    principles before systems.</p>
             </div>
 
             <div class="hero-cta">
@@ -1010,7 +1009,8 @@
             </div>
 
             <!-- Lesson Viewer Modal -->
-            <div id="lesson-modal"
+            <!-- Lesson Viewer Modal -->
+            <div id="lesson-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lesson-title"
                 style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; overflow-y: auto;">
                 <div
                     style="max-width: 900px; margin: 80px auto; padding: 40px; background: rgba(15, 23, 42, 0.9); border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">
@@ -1091,7 +1091,7 @@
                     <div class="feature-icon">👥</div>
                     <div class="feature-content">
                         <h4 id="feat-3-h">Community-Driven</h4>
-                        <p id="feat-3-p">Learn alongside peers. Connect with mentors from the space industry.</p>
+                        <p id="feat-3-p">Learn alongside peers. Connect with early advisors as we grow.</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -1198,12 +1198,16 @@
         function openSection(sectionId) {
             curriculumNav.goToLesson(sectionId, FALAK_CURRICULUM.sections.find(s => s.id === sectionId).lessons[0].id);
             renderLesson();
-            document.getElementById('lesson-modal').style.display = 'block';
+            const modal = document.getElementById('lesson-modal');
+            modal.style.display = 'block';
+            modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
         }
 
         function closeLessonModal() {
-            document.getElementById('lesson-modal').style.display = 'none';
+            const modal = document.getElementById('lesson-modal');
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
         }
 
