@@ -11,16 +11,16 @@ const TRANSLATIONS = {
         "nav-cta": "Follow Progress",
 
         // Hero
-        "hero-title": "Space systems, made learnable.",
-        "hero-desc": "An open initiative building a pathway into space education — exploring first principles before systems.",
-        "hero-btn-primary": "Explore the Framework",
+        "hero-title": "Learn how space works — from fundamentals to real systems.",
+        "hero-desc": "FALAk is a platform designed to help anyone understand space through structured frameworks, simulation, and AI-guided learning.",
+        "hero-btn-primary": "Explore the Platform",
         "hero-badge": "Launching Q2 2026 · Abu Dhabi, UAE",
 
         // Vision / Intro
         "intro-tag": "Our Vision",
         "intro-title": "Beyond Boundaries",
-        "intro-p1": "FALAk is a long-term initiative focused on building understanding before infrastructure.",
-        "intro-p2": "We begin with education, systems thinking, and exploration — creating a foundation that can later support real missions, teams, and capabilities.",
+        "intro-p1": "We focus on building clear learning paths that help people understand space environments, systems, and operations.",
+        "intro-p2": "We begin with fundamentals, systems thinking, and exploration — creating a foundation for understanding complex space capabilities.",
 
         // SimLab Section
         "sim-tag": "Interactive Learning",
@@ -32,11 +32,11 @@ const TRANSLATIONS = {
         "edu-tag": "Learning Journey",
         "edu-title": "Your Path to the Stars",
         "fw-label": "Framework 001",
-        "fw-subtitle": "From first principles to applied space systems",
+        "fw-subtitle": "From first principles to applied systems",
 
         // Stats
-        "stat-1-val": "Early Interest",
-        "stat-1-lbl": "From students & educators",
+        "stat-1-val": "Global Interest",
+        "stat-1-lbl": "From learners & educators",
         "stat-2-val": "Guided",
         "stat-2-lbl": "By subject matter experts",
         "stat-3-lbl": "Learning Stages",
@@ -50,15 +50,15 @@ const TRANSLATIONS = {
         "feat-1-p": "Personalized curriculum that adapts to your pace, background, and goals.",
         "feat-2-h": "Built for MENA",
         "feat-2-p": "Content in Arabic and English. Designed for learners across the region.",
-        "feat-3-h": "Community-Driven",
-        "feat-3-p": "Learn alongside peers. Connect with early advisors as we grow.",
+        "feat-3-h": "Accessible Learning",
+        "feat-3-p": "A platform built for everyone. Designed to make space education accessible to all backgrounds.",
         "feat-4-h": "Skill-Focused",
         "feat-4-p": "Developing relevant skills for the future space sector. Grounded in reality.",
 
         // CTA
-        "cta-tag": "Open Initiative",
-        "cta-title": "Building openly. Starting at the university level.",
-        "cta-desc": "FALAk is currently being developed alongside a university society and early educational activities.<br>Public access will expand as the initiative matures.",
+        "cta-tag": "Start Learning",
+        "cta-title": "Space education limits, removed.",
+        "cta-desc": "FALAk is a dedicated platform for space education.<br>We are constantly expanding our curriculum to cover more advanced topics.",
         "cta-btn": "Follow Our Progress",
 
         // Footer
