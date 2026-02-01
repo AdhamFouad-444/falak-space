@@ -1026,48 +1026,26 @@
 
             /* Mobile Planet Adjustments */
             .floating-planet {
-                display: none !important;
-                /* Force hide on mobile to prevent overflow/overlap */
+                display: block;
+                opacity: 0.3;
             }
 
-            /* Framework 001 Mobile Fixes */
-            #journey {
-                width: 100%;
-                max-width: 100vw;
-                padding: 60px 16px;
-                /* Ensure lateral padding */
-                overflow-x: hidden;
+            .planet-earth {
+                width: 50px;
+                top: 12%;
+                right: 5%;
             }
 
-            .path-grid {
-                grid-template-columns: 1fr !important;
-                width: 100% !important;
-                gap: 16px !important;
-                padding: 0 !important;
-                margin: 0 !important;
+            .planet-mars {
+                width: 30px;
+                top: 45%;
+                left: -5px;
             }
 
-            .path-card {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 0 !important;
-                box-sizing: border-box;
-                /* Ensure padding doesn't add to width */
-            }
-
-            /* Prevent expanded content from breaking layout */
-            #lesson-content {
-                word-break: break-word;
-                overflow-wrap: break-word;
-            }
-
-            /* General Safety */
-            .section-header,
-            .hero-text,
-            .hero-cta {
-                width: 100%;
-                max-width: 100%;
-                box-sizing: border-box;
+            .planet-saturn {
+                width: 70px;
+                bottom: 15%;
+                right: -10px;
             }
         }
     </style>
@@ -1146,7 +1124,7 @@
             <div class="hero-text">
                 <h1 id="hero-title">Learn how space works — from fundamentals to real systems.</h1>
                 <p id="hero-desc">FALAk is a platform designed to help anyone understand space through structured
-                    frameworks, simulation, and AI-assisted learning.</p>
+                    frameworks, simulation, and AI-guided learning.</p>
             </div>
 
             <div class="hero-cta" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
@@ -1166,7 +1144,7 @@
                 </a>
             </div>
 
-
+            <div class="hero-badge" id="hero-badge">Launching Q2 2026 · Abu Dhabi, UAE</div>
 
             <!-- Banner Image -->
             <div
@@ -1481,10 +1459,6 @@
                     <div class="framework-label" id="fw-label">Framework 001</div>
                     <div class="framework-subtitle" id="fw-subtitle">From first principles to applied systems
                     </div>
-                    <p
-                        style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 10px auto 0; max-width: 600px; line-height: 1.6;">
-                        Framework 001 is the foundation of how FALAk structures learning about space.
-                    </p>
                     <div class="framework-divider"></div>
                 </div>
             </div>
@@ -1562,7 +1536,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
                     <div class="feature-content">
-                        <h4 id="feat-1-h">Adaptive Learning</h4>
+                        <h4 id="feat-1-h">AI-Powered Learning</h4>
                         <p id="feat-1-p">Personalized curriculum that adapts to your pace, background, and goals.</p>
                     </div>
                 </div>
@@ -1613,8 +1587,8 @@
     <!-- Optimized script is loaded externally -->
     <script src="orbital_simulation.js"></script>
     <script src="curriculum.js"></script>
-    <script src="translations.js?v=2"></script>
-    <script src="script.js?v=2"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
     <script>
         // Curriculum UI Controller
         let curriculumNav = null;
@@ -1664,7 +1638,6 @@
                 const animClass = animations[section.id] || '';
                 const subtitle = subtitles[section.id] || '';
                 const lessonCount = section.lessons.length;
-                const layerNum = String(idx + 1).padStart(2, '0');
 
                 let iconHtml = section.icon;
                 if (animClass) {
@@ -1672,11 +1645,10 @@
                 }
 
                 card.innerHTML = `
-                    <div style="font-family: monospace; color: rgba(56, 189, 248, 0.5); font-size: 0.75rem; margin-bottom: 12px; letter-spacing: 1px;">LAYER ${layerNum}</div>
                     <div class="path-number">${iconHtml}</div>
                     <h3>${section.title}</h3>
                     <span class="microcopy">${subtitle}</span>
-                    <div class="lesson-count-tag" style="opacity: 0.5; font-size: 0.8rem; transform: scale(0.9);">
+                    <div class="lesson-count-tag">
                         <span>●</span> ${lessonCount} ${lblLessons}
                     </div>
                 `;
