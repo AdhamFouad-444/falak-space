@@ -1026,26 +1026,48 @@
 
             /* Mobile Planet Adjustments */
             .floating-planet {
-                display: block;
-                opacity: 0.3;
+                display: none !important;
+                /* Force hide on mobile to prevent overflow/overlap */
             }
 
-            .planet-earth {
-                width: 50px;
-                top: 12%;
-                right: 5%;
+            /* Framework 001 Mobile Fixes */
+            #journey {
+                width: 100%;
+                max-width: 100vw;
+                padding: 60px 16px;
+                /* Ensure lateral padding */
+                overflow-x: hidden;
             }
 
-            .planet-mars {
-                width: 30px;
-                top: 45%;
-                left: -5px;
+            .path-grid {
+                grid-template-columns: 1fr !important;
+                width: 100% !important;
+                gap: 16px !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
 
-            .planet-saturn {
-                width: 70px;
-                bottom: 15%;
-                right: -10px;
+            .path-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                box-sizing: border-box;
+                /* Ensure padding doesn't add to width */
+            }
+
+            /* Prevent expanded content from breaking layout */
+            #lesson-content {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+
+            /* General Safety */
+            .section-header,
+            .hero-text,
+            .hero-cta {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
             }
         }
     </style>
