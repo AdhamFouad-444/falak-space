@@ -12,9 +12,9 @@ const TRANSLATIONS = {
 
         // Hero
         "hero-title": "Learn how space works — from fundamentals to real systems.",
-        "hero-desc": "FALAk is a platform designed to help anyone understand space through structured frameworks, simulation, and AI-guided learning.",
+        "hero-desc": "FALAk is a platform designed to help anyone understand space through structured frameworks, simulation, and AI-assisted learning.",
         "hero-btn-primary": "Explore the Platform",
-        "hero-badge": "Launching Q2 2026 · Abu Dhabi, UAE",
+
 
         // Vision / Intro
         "intro-tag": "Our Vision",
@@ -26,7 +26,7 @@ const TRANSLATIONS = {
         "sim-tag": "Interactive Learning",
         "sim-title": "Learning Through Structured Exploration",
         "sim-desc": "FALAk focuses on helping learners understand how space systems work before attempting to build them.",
-        "sim-note": "Simulation tools will be introduced later as part of a staged learning approach.",
+        "sim-note": "Simulation tools are introduced later as part of a staged learning approach.",
 
         // Education Header
         "edu-tag": "Learning Journey",
@@ -46,7 +46,7 @@ const TRANSLATIONS = {
         // Features
         "feat-tag": "Why FALAk",
         "feat-title": "Education Built for Space",
-        "feat-1-h": "AI-Powered Learning",
+        "feat-1-h": "Adaptive Learning",
         "feat-1-p": "Personalized curriculum that adapts to your pace, background, and goals.",
         "feat-2-h": "Built for MENA",
         "feat-2-p": "Content in Arabic and English. Designed for learners across the region.",
@@ -85,7 +85,7 @@ const TRANSLATIONS = {
         "hero-title": "تعليم فضائي مدعوم بالذكاء الاصطناعي",
         "hero-desc": "نظام تعليمي متخصص يستكشف كيف يتعلم الناس ويفكرون ويستعدون للفضاء — بدءًا من المبادئ الأولى.",
         "hero-btn-primary": "استكشف الإطار",
-        "hero-badge": "الإطلاق في الربع الثاني 2026 · أبوظبي، الإمارات",
+
 
         // Vision / Intro
         "intro-tag": "رؤيتنا",

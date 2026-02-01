@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>FALAk - Opening Pathways Into Space</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
@@ -1024,28 +1025,77 @@
                 flex-direction: column;
             }
 
-            /* Mobile Planet Adjustments */
+            /* Mobile Planet Adjustments - GUARANTEED VISIBILITY & NO OVERLAP */
             .floating-planet {
-                display: block;
-                opacity: 0.3;
+                display: block !important;
+                position: fixed !important;
+                opacity: 0.6 !important;
+                /* Slightly reduced for better text readability */
+                z-index: 5 !important;
+                pointer-events: none;
             }
 
             .planet-earth {
-                width: 50px;
-                top: 12%;
-                right: 5%;
+                width: 70px !important;
+                top: 10% !important;
+                right: -25px !important;
+                /* Push off-screen to frame content */
+                left: auto !important;
             }
 
             .planet-mars {
-                width: 30px;
-                top: 45%;
-                left: -5px;
+                width: 45px !important;
+                top: 40% !important;
+                left: -15px !important;
+                /* Push off-screen */
+                right: auto !important;
             }
 
             .planet-saturn {
-                width: 70px;
-                bottom: 15%;
-                right: -10px;
+                width: 90px !important;
+                bottom: 12% !important;
+                right: -30px !important;
+                left: auto !important;
+            }
+
+            /* Framework 001 Mobile Fixes */
+            #journey {
+                width: 100%;
+                max-width: 100vw;
+                padding: 60px 16px;
+                /* Ensure lateral padding */
+                overflow-x: hidden;
+            }
+
+            .path-grid {
+                grid-template-columns: 1fr !important;
+                width: 100% !important;
+                gap: 16px !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .path-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                box-sizing: border-box;
+                /* Ensure padding doesn't add to width */
+            }
+
+            /* Prevent expanded content from breaking layout */
+            #lesson-content {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+
+            /* General Safety */
+            .section-header,
+            .hero-text,
+            .hero-cta {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
             }
         }
     </style>
@@ -1087,7 +1137,7 @@
             <!-- Integrated Logo -->
             <!-- Integrated Logo with Swoop Reveal -->
             <div class="logo-container" id="hero-logo-container"
-                style="position: relative; width: 600px; height: 320px; overflow: visible;">
+                style="position: relative; width: 100%; max-width: 600px; height: 320px; overflow: visible;">
 
                 <!-- The Main Logo: Hidden by clip-path initially -->
                 <!-- Uses a CSS clip-path which will be animated by JS -->
@@ -1124,7 +1174,7 @@
             <div class="hero-text">
                 <h1 id="hero-title">Learn how space works — from fundamentals to real systems.</h1>
                 <p id="hero-desc">FALAk is a platform designed to help anyone understand space through structured
-                    frameworks, simulation, and AI-guided learning.</p>
+                    frameworks, simulation, and AI-assisted learning.</p>
             </div>
 
             <div class="hero-cta" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
@@ -1144,7 +1194,7 @@
                 </a>
             </div>
 
-            <div class="hero-badge" id="hero-badge">Launching Q2 2026 · Abu Dhabi, UAE</div>
+
 
             <!-- Banner Image -->
             <div
@@ -1411,6 +1461,25 @@
                     mix-blend-mode: screen;
                 }
 
+                @media (max-width: 768px) {
+                    .milky-way {
+                        width: 100vw;
+                        height: 100vw;
+                        max-width: 300px !important;
+                        /* Strict constraint to fit 375px */
+                        max-height: 300px !important;
+                        left: 50% !important;
+                        top: 50% !important;
+                    }
+
+                    html,
+                    body {
+                        width: 100%;
+                        overflow-x: hidden !important;
+                        position: relative;
+                    }
+                }
+
                 .orbit-center {
                     position: absolute;
                     top: 50%;
@@ -1459,6 +1528,10 @@
                     <div class="framework-label" id="fw-label">Framework 001</div>
                     <div class="framework-subtitle" id="fw-subtitle">From first principles to applied systems
                     </div>
+                    <p
+                        style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 10px auto 0; max-width: 600px; line-height: 1.6;">
+                        Framework 001 is the foundation of how FALAk structures learning about space.
+                    </p>
                     <div class="framework-divider"></div>
                 </div>
             </div>
@@ -1536,7 +1609,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
                     <div class="feature-content">
-                        <h4 id="feat-1-h">AI-Powered Learning</h4>
+                        <h4 id="feat-1-h">Adaptive Learning</h4>
                         <p id="feat-1-p">Personalized curriculum that adapts to your pace, background, and goals.</p>
                     </div>
                 </div>
@@ -1587,8 +1660,8 @@
     <!-- Optimized script is loaded externally -->
     <script src="orbital_simulation.js"></script>
     <script src="curriculum.js"></script>
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+    <script src="translations.js?v=2"></script>
+    <script src="script.js?v=2"></script>
     <script>
         // Curriculum UI Controller
         let curriculumNav = null;
@@ -1638,6 +1711,7 @@
                 const animClass = animations[section.id] || '';
                 const subtitle = subtitles[section.id] || '';
                 const lessonCount = section.lessons.length;
+                const layerNum = String(idx + 1).padStart(2, '0');
 
                 let iconHtml = section.icon;
                 if (animClass) {
@@ -1645,10 +1719,11 @@
                 }
 
                 card.innerHTML = `
+                    <div style="font-family: monospace; color: rgba(56, 189, 248, 0.5); font-size: 0.75rem; margin-bottom: 12px; letter-spacing: 1px;">LAYER ${layerNum}</div>
                     <div class="path-number">${iconHtml}</div>
                     <h3>${section.title}</h3>
                     <span class="microcopy">${subtitle}</span>
-                    <div class="lesson-count-tag">
+                    <div class="lesson-count-tag" style="opacity: 0.5; font-size: 0.8rem; transform: scale(0.9);">
                         <span>●</span> ${lessonCount} ${lblLessons}
                     </div>
                 `;
