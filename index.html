@@ -15,6 +15,26 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <style>
+        /* ============================================================================
+           CSS ORGANIZATION GUIDE
+           ============================================================================
+           This stylesheet is organized by device breakpoints for clarity:
+           
+           1. DESKTOP/DEFAULT STYLES (no media query) - Lines 18-910
+              - Base styles for desktop (>1100px width)
+              - All default component styles
+           
+           2. LARGE TABLET/SMALL DESKTOP (max-width: 1100px) - Lines 911-921
+              - Path grid: 4 columns → 2 columns
+           
+           3. TABLET/SMALL LAPTOP (max-width: 900px) - Lines 977-1147
+              - Features grid: 2 columns → 1 column
+              - Hero text size adjustments
+              - Navigation changes
+           
+           When editing, make sure to apply changes in the correct section!
+           ============================================================================ */
+
         * {
             margin: 0;
             padding: 0;
@@ -907,6 +927,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
+
+        /* ============================================================================
+           LARGE TABLET / SMALL DESKTOP STYLES (max-width: 1100px)
+           - Applies to: Large iPads, small desktop windows
+           - Features: Path grid changes from 4 columns to 2 columns
+           ============================================================================ */
         /* Responsive */
         @media (max-width: 1100px) {
             .path-grid {
@@ -969,7 +995,11 @@
         }
 
 
-        /* === CONSOLIDATED RESPONSIVE DESIGN (Phase 4 Refinement) === */
+        /* ============================================================================
+           TABLET & SMALL LAPTOP STYLES (max-width: 900px)
+           - Applies to: iPads, small laptops, portrait tablets
+           - Features: 2-column grids, adjusted spacing, hidden desktop nav
+           ============================================================================ */
         @media (max-width: 900px) {
             nav {
                 padding: 12px 16px !important;
@@ -1033,11 +1063,16 @@
             }
 
             h1 {
-                font-size: 2rem !important;
+                font-size: 1.5rem !important;
             }
 
             h2 {
                 font-size: 1.8rem !important;
+            }
+
+            .hero-text h1 {
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
             }
 
             .section-desc {
