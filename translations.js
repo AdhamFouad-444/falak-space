@@ -14,6 +14,7 @@ const TRANSLATIONS = {
         "hero-title": "Learn how space works — from fundamentals to real systems.",
         "hero-desc": "FALAk is a platform designed to help anyone understand space through structured frameworks, simulation, and AI-assisted learning.",
         "hero-btn-primary": "Explore the Platform",
+        "hero-btn-solar": "Launch Solar System 🪐",
 
 
         // Vision / Intro
@@ -33,6 +34,7 @@ const TRANSLATIONS = {
         "edu-title": "Your Path to the Stars",
         "fw-label": "Framework 001",
         "fw-subtitle": "From first principles to applied systems",
+        "fw-desc": "Framework 001 is the foundation of how FALAk structures learning about space.",
 
         // Stats
         "stat-1-val": "Global Interest",
@@ -72,7 +74,28 @@ const TRANSLATIONS = {
         "ui-next": "Next",
         "ui-outcome": "Learning Outcome",
         "ui-lesson-n": "Lesson",
-        "ui-of": "of"
+        "ui-of": "of",
+
+        // Digital Twin (Artemis)
+        "twin-tag": "Mission Architecture",
+        "twin-title": "Artemis II Crew",
+        "twin-desc": "The most powerful rocket NASA has ever built. Designed to loft the Orion spacecraft on a trans-lunar trajectory, enabling sustained presence on the Moon.",
+        "twin-stat1-lbl": "Max Thrust",
+        "twin-stat1-val": "8.8M lbs",
+        "twin-stat2-val": "27 metric tons",
+
+        // Stack Header
+        "artemis-stack-title": "Artemis II Vehicle Stack",
+        "artemis-stack-desc": "Breaking down the super-heavy lift launch vehicle designed to return humans to the Moon",
+
+        // Solar System
+        "solar-tag": "Visualization",
+        "solar-title": "Solar System Journey",
+        "solar-desc": "Explore the planets of our solar system",
+
+        // Misc
+        "pm-btn": "Start Learning",
+        "footer-copy": "© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space"
     },
     ar: {
         // Nav
@@ -85,6 +108,7 @@ const TRANSLATIONS = {
         "hero-title": "تعليم فضائي مدعوم بالذكاء الاصطناعي",
         "hero-desc": "نظام تعليمي متخصص يستكشف كيف يتعلم الناس ويفكرون ويستعدون للفضاء — بدءًا من المبادئ الأولى.",
         "hero-btn-primary": "استكشف الإطار",
+        "hero-btn-solar": "إطلاق النظام الشمسي 🪐",
 
 
         // Vision / Intro
@@ -104,6 +128,7 @@ const TRANSLATIONS = {
         "edu-title": "مسارك نحو النجوم",
         "fw-label": "إطار العمل 001",
         "fw-subtitle": "من المبادئ الأولى إلى النظم الفضائية التطبيقية",
+        "fw-desc": "إطار العمل 001 هو الأساس الذي تنظم به فلك تعليم الفضاء.",
 
         // Stats
         "stat-1-val": "اهتمام مبكر",
@@ -143,7 +168,28 @@ const TRANSLATIONS = {
         "ui-next": "التالي",
         "ui-outcome": "مخرجات التعلم",
         "ui-lesson-n": "الدرس",
-        "ui-of": "من"
+        "ui-of": "من",
+
+        // Digital Twin (Artemis)
+        "twin-tag": "هندسة المهمة",
+        "twin-title": "طاقم أرتميس الثاني",
+        "twin-desc": "أقوى صاروخ بنته ناسا على الإطلاق. صُمم لإطلاق مركبة أوريون في مسار إلى القمر، مما يمهد لوجود مستدام.",
+        "twin-stat1-lbl": "أقصى دفع",
+        "twin-stat1-val": "٨.٨ مليون رطل",
+        "twin-stat2-val": "٢٧ طن متري",
+
+        // Stack Header
+        "artemis-stack-title": "نظام إطلاق أرتميس ٢",
+        "artemis-stack-desc": "تحليل لصاروخ الإطلاق فائق الثقل المصمم لإعادة البشر إلى القمر.",
+
+        // Solar System
+        "solar-tag": "تصور مرئي",
+        "solar-title": "رحلة النظام الشمسي",
+        "solar-desc": "استكشف كواكب نظامنا الشمسي",
+
+        // Misc
+        "pm-btn": "ابدأ التعلم",
+        "footer-copy": "© ٢٠٢٦ فلك · أبوظبي، الإمارات · نمهد الطريق نحو الفضاء"
     }
 };
 
@@ -380,16 +426,21 @@ class TranslationManager {
             body.classList.remove('rtl');
         }
 
-        // Apply string translations
+        // Apply string translations via IDs (Legacy)
         const strings = TRANSLATIONS[lang];
         for (const [id, text] of Object.entries(strings)) {
             const el = document.getElementById(id);
-            if (el) {
-                // If special handling is needed (e.g. keeping icon in button)
-                // For now assuming pure text replacement or innerHTML keying
-                el.innerHTML = text;
-            }
+            if (el) el.innerHTML = text;
         }
+
+        // Apply string translations via data-i18n (Modern)
+        const i18nElements = document.querySelectorAll('[data-i18n]');
+        i18nElements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (strings[key]) {
+                el.innerHTML = strings[key];
+            }
+        });
 
         // Re-render Curriculum if it exists
         if (typeof initCurriculumUI === 'function') {
@@ -441,6 +492,214 @@ class TranslationManager {
 
 // Global instance
 // Global instance
+// ============================================
+// Planet Content Dictionary
+// ============================================
+const PLANET_CONTENT = {
+    en: {
+        sun: {
+            title: "The Sun",
+            level: "Star",
+            desc: "The heart of our system. 99.86% of the solar system's mass. The source of energy that drives space weather and climates across all planets.",
+            stats: [
+                { label: "Type", value: "Yellow Dwarf Star" },
+                { label: "Surface Temp", value: "5,500°C" },
+                { label: "Mass", value: "333,000 x Earth" },
+                { label: "Composition", value: "Hydrogen / Helium" }
+            ]
+        },
+        mercury: {
+            title: "Mercury",
+            level: "Inner System",
+            desc: "The closest planet to the Sun. It experiences extreme temperature variations and has a unique orbital resonance.",
+            stats: [
+                { label: "Type", value: "Terrestrial" },
+                { label: "Day Length", value: "59 Earth Days" },
+                { label: "Gravity", value: "3.7 m/s²" },
+                { label: "Year", value: "88 Earth Days" }
+            ]
+        },
+        venus: {
+            title: "Venus",
+            level: "Hostile Environments",
+            desc: "Earth's toxic twin. A runaway greenhouse effect creates crushing surface pressures and lead-melting temperatures.",
+            stats: [
+                { label: "Type", value: "Terrestrial" },
+                { label: "Temp", value: "462°C (Avg)" },
+                { label: "Gravity", value: "8.87 m/s²" },
+                { label: "Atmosphere", value: "CO₂ (Thick)" }
+            ]
+        },
+        earth: {
+            title: "Earth",
+            level: "Home Base",
+            desc: "The only known world to harbor life. A dynamic system of water, plate tectonics, and a protective magnetosphere.",
+            stats: [
+                { label: "Type", value: "Terrestrial" },
+                { label: "Population", value: "~8 Billion" },
+                { label: "Gravity", value: "9.8 m/s²" },
+                { label: "Atmosphere", value: "N₂ / O₂" }
+            ]
+        },
+        mars: {
+            title: "Mars",
+            level: "The Frontier",
+            desc: "Percentage of Earth's gravity. The primary target for future human exploration, with evidence of ancient water.",
+            stats: [
+                { label: "Type", value: "Terrestrial" },
+                { label: "Gravity", value: "3.7 m/s²" },
+                { label: "Day Length", value: "24h 37m" },
+                { label: "Atmosphere", value: "Thin CO₂" }
+            ]
+        },
+        jupiter: {
+            title: "Jupiter",
+            level: "Gas Giant Physics",
+            desc: "The King of Planets. A massive gravity well protecting the inner system, with a mini solar system of 90+ moons.",
+            stats: [
+                { label: "Type", value: "Gas Giant" },
+                { label: "Mass", value: "318 x Earth" },
+                { label: "Gravity", value: "24.79 m/s²" },
+                { label: "Day Length", value: "9.9 Hours" }
+            ]
+        },
+        saturn: {
+            title: "Saturn",
+            level: "Orbital Mechanics",
+            desc: "The Jewel of the Solar System. Known for its complex ring system and potential life-harboring moons like Enceladus.",
+            stats: [
+                { label: "Type", value: "Gas Giant" },
+                { label: "Rings", value: "7 Main Groups" },
+                { label: "Gravity", value: "10.4 m/s²" },
+                { label: "Year", value: "29 Earth Years" }
+            ]
+        },
+        uranus: {
+            title: "Uranus",
+            level: "Ice Giants",
+            desc: "The Sideways Planet. It rotates on its side, likely due to a massive ancient collision. Cold and mysterious.",
+            stats: [
+                { label: "Type", value: "Ice Giant" },
+                { label: "Tilt", value: "98 Degrees" },
+                { label: "Temp", value: "-224°C" },
+                { label: "Year", value: "84 Earth Years" }
+            ]
+        },
+        neptune: {
+            title: "Neptune",
+            level: "Outer Limits",
+            desc: "The Windy Giant. Features the fastest winds in the solar system and a deep blue atmosphere of methane.",
+            stats: [
+                { label: "Type", value: "Ice Giant" },
+                { label: "Winds", value: "2,100 km/h" },
+                { label: "Gravity", value: "11.15 m/s²" },
+                { label: "Year", value: "165 Earth Years" }
+            ]
+        }
+    },
+    ar: {
+        sun: {
+            title: "الشمس",
+            level: "النجم",
+            desc: "قلب نظامنا الشمسي. تشكل ٩٩.٨٦٪ من كتلة النظام الشمسي. مصدر الطاقة الذي يحرك الطقس والمناخ عبر جميع الكواكب.",
+            stats: [
+                { label: "النوع", value: "نجم قزم أصفر" },
+                { label: "حرارة السطح", value: "٥,٥٠٠° مئوية" },
+                { label: "الكتلة", value: "٣٣٣,٠٠٠ ضعف الأرض" },
+                { label: "التركيب", value: "هيدروجين / هيليوم" }
+            ]
+        },
+        mercury: {
+            title: "عطارد",
+            level: "النظام الداخلي",
+            desc: "أقرب كوكب للشمس. يشهد تقلبات حرارية شديدة وله رنين مداري فريد.",
+            stats: [
+                { label: "النوع", value: "كوكب صخري" },
+                { label: "طول اليوم", value: "٥٩ يوم أرضي" },
+                { label: "الجاذبية", value: "٣.٧ م/ث²" },
+                { label: "السنة", value: "٨٨ يوم أرضي" }
+            ]
+        },
+        venus: {
+            title: "الزهرة",
+            level: "بيئات معادية",
+            desc: "توأم الأرض السام. ظاهرة الاحتباس الحراري الجامح تخلق ضغطًا ساحقًا ودرجات حرارة تذيب الرصاص.",
+            stats: [
+                { label: "النوع", value: "كوكب صخري" },
+                { label: "الحرارة", value: "٤٦٢° مئوية (المتوسط)" },
+                { label: "الجاذبية", value: "٨.٨٧ م/ث²" },
+                { label: "الغلاف الجوي", value: "ثاني أكسيد الكربون (كثيف)" }
+            ]
+        },
+        earth: {
+            title: "الأرض",
+            level: "القاعدة الرئيسية",
+            desc: "العالم الوحيد المعروف باحتوائه على الحياة. نظام ديناميكي من المياه، والصفائح التكتونية، وغلاف مغناطيسي واقٍ.",
+            stats: [
+                { label: "النوع", value: "كوكب صخري" },
+                { label: "السكان", value: "~٨ مليار" },
+                { label: "الجاذبية", value: "٩.٨ م/ث²" },
+                { label: "الغلاف الجوي", value: "نيتروجين / أكسجين" }
+            ]
+        },
+        mars: {
+            title: "المريخ",
+            level: "الحدود الجديدة",
+            desc: "جاذبيته ثلث جاذبية الأرض. الهدف الرئيسي للاستكشاف البشري المستقبلي، مع وجود أدلة على مياه قديمة.",
+            stats: [
+                { label: "النوع", value: "كوكب صخري" },
+                { label: "الجاذبية", value: "٣.٧ م/ث² (٣٨٪)" },
+                { label: "طول اليوم", value: "٢٤ ساعة و ٣٧ دقيقة" },
+                { label: "الغلاف الجوي", value: "ثاني أكسيد الكربون رقيق" }
+            ]
+        },
+        jupiter: {
+            title: "المشتري",
+            level: "فيزياء العمالقة الغازية",
+            desc: "ملك الكواكب. بئر جاذبية هائل يحمي النظام الداخلي، مع نظام شمسي مصغر يضم أكثر من ٩٠ قمراً.",
+            stats: [
+                { label: "النوع", value: "عملاق غازي" },
+                { label: "الكتلة", value: "٣١٨ ضعف الأرض" },
+                { label: "الجاذبية", value: "٢٤.٧٩ م/ث²" },
+                { label: "طول اليوم", value: "٩.٩ ساعات" }
+            ]
+        },
+        saturn: {
+            title: "زحل",
+            level: "الميكانيكا المدارية",
+            desc: "جوهرة النظام الشمسي. معروف بنظامه الحلقي المعقد وأقمار قد تحتضن الحياة مثل إنسيلادوس.",
+            stats: [
+                { label: "النوع", value: "عملاق غازي" },
+                { label: "الحلقات", value: "٧ مجموعات رئيسية" },
+                { label: "الجاذبية", value: "١٠.٤ م/ث²" },
+                { label: "السنة", value: "٢٩ سنة أرضية" }
+            ]
+        },
+        uranus: {
+            title: "أورانوس",
+            level: "العمالقة الجليدية",
+            desc: "الكوكب الجانبي. يدور على جانبه، ربما بسبب اصطدام قديم هائل. بارد وغامض.",
+            stats: [
+                { label: "النوع", value: "عملاق جليدي" },
+                { label: "الميل", value: "٩٨ درجة" },
+                { label: "الحرارة", value: "-٢٢٤° مئوية" },
+                { label: "السنة", value: "٨٤ سنة أرضية" }
+            ]
+        },
+        neptune: {
+            title: "نبتون",
+            level: "الحدود الخارجية",
+            desc: "العملاق العاصف. يتميز بأسرع رياح في النظام الشمسي وغلاف جوي أزرق عميق من الميثان.",
+            stats: [
+                { label: "النوع", value: "عملاق جليدي" },
+                { label: "الرياح", value: "٢,١٠٠ كم/ساعة" },
+                { label: "الجاذبية", value: "١١.١٥ م/ث²" },
+                { label: "السنة", value: "١٦٥ سنة أرضية" }
+            ]
+        }
+    }
+};
+
 window.appTranslator = null;
 document.addEventListener('DOMContentLoaded', () => {
     window.appTranslator = new TranslationManager();

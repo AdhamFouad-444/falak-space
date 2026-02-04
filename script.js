@@ -515,107 +515,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================
 // Interactive Planets Logic
 // ============================================
-const planetData = {
-    sun: {
-        title: "The Sun",
-        level: "Star",
-        desc: "The heart of our system. 99.86% of the solar system's mass. The source of energy that drives space weather and climates across all planets.",
-        stats: [
-            { label: "Type", value: "Yellow Dwarf Star" },
-            { label: "Surface Temp", value: "5,500°C" },
-            { label: "Mass", value: "333,000 x Earth" },
-            { label: "Composition", value: "Hydrogen / Helium" }
-        ]
-    },
-    mercury: {
-        title: "Mercury",
-        level: "Inner System",
-        desc: "The closest planet to the Sun. It experiences extreme temperature variations and has a unique orbital resonance.",
-        stats: [
-            { label: "Type", value: "Terrestrial" },
-            { label: "Day Length", value: "59 Earth Days" },
-            { label: "Gravity", value: "3.7 m/s²" },
-            { label: "Year", value: "88 Earth Days" }
-        ]
-    },
-    venus: {
-        title: "Venus",
-        level: "Hostile Environments",
-        desc: "Earth's toxic twin. A runaway greenhouse effect creates crushing surface pressures and lead-melting temperatures.",
-        stats: [
-            { label: "Type", value: "Terrestrial" },
-            { label: "Temp", value: "462°C (Avg)" },
-            { label: "Gravity", value: "8.87 m/s²" },
-            { label: "Atmosphere", value: "CO₂ (Thick)" }
-        ]
-    },
-    earth: {
-        title: "Earth",
-        level: "Home Base",
-        desc: "The only known world to harbor life. A dynamic system of water, plate tectonics, and a protective magnetosphere.",
-        stats: [
-            { label: "Type", value: "Terrestrial" },
-            { label: "Population", value: "~8 Billion" },
-            { label: "Gravity", value: "9.8 m/s²" },
-            { label: "Atmosphere", value: "N₂ / O₂" }
-        ]
-    },
-    mars: {
-        title: "Mars",
-        level: "The Frontier",
-        desc: "Percentage of Earth's gravity. The primary target for future human exploration, with evidence of ancient water.",
-        stats: [
-            { label: "Type", value: "Terrestrial" },
-            { label: "Gravity", value: "3.7 m/s² (38%)" },
-            { label: "Day Length", value: "24h 37m" },
-            { label: "Atmosphere", value: "Thin CO₂" }
-        ]
-    },
-    jupiter: {
-        title: "Jupiter",
-        level: "Gas Giant Physics",
-        desc: "The King of Planets. A massive gravity well protecting the inner system, with a mini solar system of 90+ moons.",
-        stats: [
-            { label: "Type", value: "Gas Giant" },
-            { label: "Mass", value: "318 x Earth" },
-            { label: "Gravity", value: "24.79 m/s²" },
-            { label: "Day Length", value: "9.9 Hours" }
-        ]
-    },
-    saturn: {
-        title: "Saturn",
-        level: "Orbital Mechanics",
-        desc: "The Jewel of the Solar System. Known for its complex ring system and potential life-harboring moons like Enceladus.",
-        stats: [
-            { label: "Type", value: "Gas Giant" },
-            { label: "Rings", value: "7 Main Groups" },
-            { label: "Gravity", value: "10.4 m/s²" },
-            { label: "Year", value: "29 Earth Years" }
-        ]
-    },
-    uranus: {
-        title: "Uranus",
-        level: "Ice Giants",
-        desc: "The Sideways Planet. It rotates on its side, likely due to a massive ancient collision. Cold and mysterious.",
-        stats: [
-            { label: "Type", value: "Ice Giant" },
-            { label: "Tilt", value: "98 Degrees" },
-            { label: "Temp", value: "-224°C" },
-            { label: "Year", value: "84 Earth Years" }
-        ]
-    },
-    neptune: {
-        title: "Neptune",
-        level: "Outer Limits",
-        desc: "The Windy Giant. Features the fastest winds in the solar system and a deep blue atmosphere of methane.",
-        stats: [
-            { label: "Type", value: "Ice Giant" },
-            { label: "Winds", value: "2,100 km/h" },
-            { label: "Gravity", value: "11.15 m/s²" },
-            { label: "Year", value: "165 Earth Years" }
-        ]
-    }
-};
+// ============================================
+// Interactive Planets Logic (Localized)
+// ============================================
 
 function openPlanet(type) {
     const modal = document.getElementById('planet-modal-overlay');
@@ -624,8 +526,23 @@ function openPlanet(type) {
     const desc = document.getElementById('pm-desc');
     const statsContainer = document.getElementById('pm-stats');
 
-    if (planetData[type]) {
-        const p = planetData[type];
+    // 1. Determine Data Source
+    let p = null;
+
+    // Try to get localized data
+    if (typeof PLANET_CONTENT !== 'undefined' && window.appTranslator) {
+        const lang = window.appTranslator.currentLang;
+        if (PLANET_CONTENT[lang] && PLANET_CONTENT[lang][type]) {
+            p = PLANET_CONTENT[lang][type];
+        }
+    }
+
+    // Fallback to English if not found
+    if (!p && typeof PLANET_CONTENT !== 'undefined' && PLANET_CONTENT['en']) {
+        p = PLANET_CONTENT['en'][type];
+    }
+
+    if (p) {
         title.textContent = p.title;
         subtitle.textContent = p.level;
         desc.textContent = p.desc;

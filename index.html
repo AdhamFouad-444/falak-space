@@ -969,133 +969,382 @@
         }
 
 
+        /* === CONSOLIDATED RESPONSIVE DESIGN (Phase 4 Refinement) === */
         @media (max-width: 900px) {
             nav {
-                padding: 16px 24px;
+                padding: 12px 16px !important;
             }
 
             .nav-links {
-                display: none;
+                display: none !important;
             }
 
             section {
-                padding: 100px 24px;
+                padding: 60px 20px !important;
             }
 
+            /* Orbit Visualization */
+            .orbit-container {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 400px;
+                aspect-ratio: 1/1;
+                margin: 40px auto 0 !important;
+                transform: scale(0.85);
+            }
+
+            .orbit-ring {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            /* Rocket Launch Scene - Force Stacking */
+            .rocket-scene {
+                flex-direction: column !important;
+                height: auto !important;
+                gap: 40px !important;
+                display: flex !important;
+            }
+
+            .rocket-scene>div:first-child {
+                height: 480px !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+            }
+
+            .rocket-scene #stage-info-content {
+                width: 100% !important;
+                padding: 0 !important;
+            }
+
+            .tech-label-box {
+                margin-top: 20px;
+            }
+
+            /* Navigation & Logo */
             .logo-container {
-                width: 350px;
-                height: 250px;
+                max-width: 100%;
+                height: 240px !important;
             }
 
             .logo-title {
-                font-size: 2.5rem;
-                letter-spacing: 5px;
+                font-size: 2.2rem !important;
+                letter-spacing: 3px !important;
             }
 
-            .logo-tagline {
-                font-size: 0.85rem;
+            h1 {
+                font-size: 2rem !important;
             }
 
-            .logo-rocket {
-                width: 60px;
+            h2 {
+                font-size: 1.8rem !important;
             }
 
-            .logo-star {
-                width: 25px;
+            .section-desc {
+                font-size: 1rem !important;
+                padding: 0;
             }
 
-            .path-grid {
-                grid-template-columns: 1fr;
+            /* Mobile Menu & UI */
+            #menu-toggle {
+                display: block !important;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-container {
-                flex-wrap: wrap;
-                gap: 48px;
+            .nav-actions {
+                gap: 8px !important;
             }
 
             .stat-value {
-                font-size: 2.5rem;
+                font-size: 2.5rem !important;
             }
 
-            .cta-form {
-                flex-direction: column;
-            }
-
-            /* Mobile Planet Adjustments - GUARANTEED VISIBILITY & NO OVERLAP */
-            .floating-planet {
-                display: block !important;
-                position: fixed !important;
-                opacity: 0.6 !important;
-                /* Slightly reduced for better text readability */
-                z-index: 5 !important;
-                pointer-events: none;
-            }
-
-            .planet-earth {
-                width: 70px !important;
-                top: 10% !important;
-                right: -25px !important;
-                /* Push off-screen to frame content */
-                left: auto !important;
-            }
-
-            .planet-mars {
-                width: 45px !important;
-                top: 40% !important;
-                left: -15px !important;
-                /* Push off-screen */
-                right: auto !important;
-            }
-
-            .planet-saturn {
-                width: 90px !important;
-                bottom: 12% !important;
-                right: -30px !important;
-                left: auto !important;
-            }
-
-            /* Framework 001 Mobile Fixes */
-            #journey {
-                width: 100%;
-                max-width: 100vw;
-                padding: 60px 16px;
-                /* Ensure lateral padding */
-                overflow-x: hidden;
-            }
-
-            .path-grid {
+            /* Principles Grid */
+            .principles-grid {
                 grid-template-columns: 1fr !important;
-                width: 100% !important;
                 gap: 16px !important;
-                padding: 0 !important;
-                margin: 0 !important;
             }
 
-            .path-card {
+            /* Features Grid - Single column on mobile */
+            .features-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            /* Feature cards - contained width */
+            .feature-card {
+                padding: 24px !important;
                 width: 100% !important;
-                max-width: 100% !important;
-                margin: 0 !important;
-                box-sizing: border-box;
-                /* Ensure padding doesn't add to width */
+                box-sizing: border-box !important;
             }
 
-            /* Prevent expanded content from breaking layout */
-            #lesson-content {
-                word-break: break-word;
-                overflow-wrap: break-word;
+            /* Global overflow prevention */
+            html,
+            body {
+                overflow-x: hidden !important;
+                max-width: 100vw !important;
+            }
+        }
+
+        .stats-container {
+            flex-direction: column;
+            gap: 40px;
+            padding: 60px 24px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+        }
+
+        .cta-form {
+            flex-direction: column;
+        }
+
+        /* Mobile Planet Adjustments - GUARANTEED VISIBILITY & NO OVERLAP */
+        .floating-planet {
+            display: block !important;
+            position: fixed !important;
+            opacity: 0.6 !important;
+            /* Slightly reduced for better text readability */
+            z-index: 5 !important;
+            pointer-events: none;
+        }
+
+        .planet-earth {
+            width: 70px !important;
+            top: 10% !important;
+            right: -25px !important;
+            /* Push off-screen to frame content */
+            left: auto !important;
+        }
+
+        .planet-mars {
+            width: 45px !important;
+            top: 40% !important;
+            left: -15px !important;
+            /* Push off-screen */
+            right: auto !important;
+        }
+
+        .planet-saturn {
+            width: 90px !important;
+            bottom: 12% !important;
+            right: -30px !important;
+            left: auto !important;
+        }
+
+        /* Global overflow prevention */
+        html,
+        body {
+            overflow-x: hidden !important;
+            max-width: 100vw !important;
+        }
+        }
+
+
+
+        /* Additional Utility Fixes */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .principle-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.4));
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: 20px;
+            padding: 32px 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            text-align: left;
+            /* Better readability */
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Hover Glow Effect */
+        .principle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-8px);
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.7));
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(56, 189, 248, 0.05);
+        }
+
+        .principle-card:hover::before {
+            opacity: 1;
+        }
+
+        .principle-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 8px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            color: #38bdf8;
+            transition: all 0.3s ease;
+        }
+
+        .principle-card:hover .principle-icon {
+            background: #38bdf8;
+            color: #0f172a;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+
+        .principle-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .principle-desc {
+            font-size: 0.95rem;
+            color: rgba(148, 163, 184, 0.8);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* === MOBILE OPTIMIZATION (Added Phase 4) === */
+        @media (max-width: 768px) {
+
+            /* Orbit Visualization */
+            .orbit-container {
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: 1/1;
+                transform: scale(0.9);
+                margin-top: 20px;
             }
 
-            /* General Safety */
-            .section-header,
-            .hero-text,
-            .hero-cta {
-                width: 100%;
+            .orbit-ring {
+                /* Scale rings down relative to container */
                 max-width: 100%;
-                box-sizing: border-box;
+                max-height: 100%;
+            }
+
+            .ring-3 {
+                width: 90%;
+                height: 90%;
+            }
+
+            .ring-2 {
+                width: 65%;
+                height: 65%;
+            }
+
+            .ring-1 {
+                width: 40%;
+                height: 40%;
+            }
+
+            /* Rocket Launch Scene */
+            .rocket-scene {
+                flex-direction: column !important;
+                height: auto !important;
+                gap: 40px !important;
+            }
+
+            .rocket-scene>div:first-child {
+                /* Rocket Visual Container */
+                height: 500px !important;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            /* Typography Scaling */
+            h1 {
+                font-size: 2.5rem !important;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .section-desc {
+                font-size: 1rem !important;
+                padding: 0 10px;
+            }
+
+            /* Navigation Tweak */
+            nav {
+                padding: 16px !important;
+            }
+
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+
+            .nav-cta {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .lang-toggle {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+
+            /* Mobile Menu Toggle Visibility */
+            #menu-toggle {
+                display: block !important;
+            }
+
+            .nav-links {
+                display: none !important;
+            }
+
+            .nav-actions {
+                gap: 8px !important;
+            }
+
+            /* Social Icons Hide on Super Small Screens if needed */
+            @media (max-width: 400px) {
+                .nav-actions a[aria-label] {
+                    display: none;
+                }
+            }
+
+            .stat-value {
+                font-size: 3rem;
             }
         }
     </style>
@@ -1128,10 +1377,89 @@
                 <li><a href="#join" id="nav-join">Join</a></li>
             </ul>
             <div class="nav-actions" style="display: flex; align-items: center; gap: 12px;">
+                <!-- Social Icons (Navbar) -->
+                <a href="https://x.com/FALAkPlatforms" target="_blank" aria-label="X (Twitter)"
+                    style="color: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; transition: color 0.3s;"
+                    onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/FALAkPlatforms" target="_blank" aria-label="Instagram"
+                    style="color: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; transition: color 0.3s;"
+                    onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2); margin: 0 4px;"></div>
+
                 <button id="lang-toggle" class="lang-toggle">AR</button>
-                <a href="#join" class="nav-cta" id="nav-cta">Follow Progress</a>
+                <a href="#join" class="btn nav-cta" id="nav-cta">Follow Progress</a>
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" aria-label="Toggle Menu" style="
+                    display: none;
+                    background: none;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    padding: 8px;
+                    z-index: 101;
+                ">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
             </div>
         </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(15px);
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        ">
+            <a href="#journey" onclick="closeMenu()"
+                style="color: white; font-size: 1.5rem; text-decoration: none; font-weight: 500;">Learning Path</a>
+            <a href="#features" onclick="closeMenu()"
+                style="color: white; font-size: 1.5rem; text-decoration: none; font-weight: 500;">Features</a>
+            <a href="#join" onclick="closeMenu()"
+                style="color: white; font-size: 1.5rem; text-decoration: none; font-weight: 500;">Join</a>
+            <div style="display: flex; gap: 24px; margin-top: 20px;">
+                <a href="https://x.com/FALAkPlatforms" target="_blank" style="color: rgba(255,255,255,0.7);"><svg
+                        viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                        </path>
+                    </svg></a>
+                <a href="https://instagram.com/FALAkPlatforms" target="_blank"
+                    style="color: rgba(255,255,255,0.7);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg></a>
+            </div>
+        </div>
 
         <section class="hero">
             <!-- Integrated Logo -->
@@ -1196,11 +1524,7 @@
 
 
 
-            <!-- Banner Image -->
-            <div
-                style="margin-top: 60px; width: 100%; max-width: 1000px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-                <img src="FALAkLinkedinBanner.png" alt="FALAk Banner" style="width: 100%; display: block;">
-            </div>
+            <!-- Banner Image Removed by User Request -->
         </section>
 
         <section id="vision" style="padding: 100px 48px; text-align: center;">
@@ -1226,6 +1550,9 @@
                     </p>
                 </div>
             </div>
+
+            <!-- Relocated Principles Grid -->
+            <!-- Principles Grid Removed by User Request -->
         </section>
 
         <section id="simlab-section" style="padding: 100px 48px; text-align: center; position: relative;">
@@ -1245,12 +1572,608 @@
             </div>
         </section>
 
+        <!-- New Earth & Beyond Section -->
+        <section id="earth-system"
+            style="padding: 100px 20px; text-align: center; position: relative; overflow: visible; background: transparent; perspective: 1000px;">
+            <div class="section-header" style="position: relative; z-index: 10;">
+                <div class="section-tag" style="color: #4ade80; border-color: rgba(74, 222, 128, 0.3);">Launch Systems
+                </div>
+                <!-- Language Toggle for this Section -->
+                <!-- Language Toggle for this Section -->
+                <button id="lang-toggle-section"
+                    onclick="if(window.appTranslator) window.appTranslator.toggleLanguage()" style="
+                    background: rgba(255, 255, 255, 0.05); 
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    color: #fff;
+                    padding: 6px 16px;
+                    border-radius: 20px;
+                    font-size: 0.8rem;
+                    cursor: pointer;
+                    margin: 10px auto;
+                    display: block;
+                    font-family: 'Courier New', monospace;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.background='rgba(56, 189, 248, 0.2)'"
+                    onmouseout="this.style.background='rgba(255, 255, 255, 0.05)'">
+                    EN / AR
+                </button>
+                <h2 data-i18n="artemis-stack-title">Artemis II Vehicle Stack</h2>
+                <p class="section-desc" data-i18n="artemis-stack-desc">Breaking down the super-heavy lift launch vehicle
+                    designed to return humans to
+                    the Moon.</p>
+            </div>
+
+            <!-- Artemis II Rocket Breakdown (Interactive) -->
+            <div class="rocket-scene"
+                style="margin: 0 auto; width: 100%; max-width: 1000px; height: 750px; position: relative; display: flex; gap: 60px; text-align: left;">
+
+                <!-- 1. The Rocket Visual (Left) - Premium Integration -->
+                <div style="flex: 1; position: relative; display: flex; justify-content: center; align-items: center;">
+
+                    <!-- WRAPPER: Matches SVG Aspect Ratio for Perfect Alignment -->
+                    <div style="position: relative; height: 100%; aspect-ratio: 400/1100; margin: 0 auto;">
+                        <svg viewBox="0 -150 400 1100"
+                            style="height: 100%; width: 100%; filter: drop-shadow(0 0 30px rgba(0,0,0,0.5)); overflow: visible;">
+                            <defs>
+                                <linearGradient id="coreTankReal" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#7c2d12" />
+                                    <stop offset="15%" stop-color="#9a3412" />
+                                    <stop offset="35%" stop-color="#ea580c" />
+                                    <stop offset="50%" stop-color="#fb923c" />
+                                    <stop offset="70%" stop-color="#c2410c" />
+                                    <stop offset="100%" stop-color="#431407" />
+                                </linearGradient>
+
+                                <linearGradient id="boosterGloss" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#64748b" />
+                                    <stop offset="10%" stop-color="#cbd5e1" />
+                                    <stop offset="25%" stop-color="#ffffff" />
+                                    <stop offset="50%" stop-color="#f1f5f9" />
+                                    <stop offset="85%" stop-color="#cbd5e1" />
+                                    <stop offset="100%" stop-color="#475569" />
+                                </linearGradient>
+
+                                <pattern id="trussPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 0 0 L 20 20 M 20 0 L 0 20" stroke="#334155" stroke-width="1"
+                                        fill="none" />
+                                    <rect width="20" height="20" fill="none" stroke="#1e293b" stroke-width="1" />
+                                </pattern>
+
+                                <filter id="lineGlow">
+                                    <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <!-- LAUNCH TOWER & ENVIRONMENT (Mobile Launcher V5) -->
+                            <g id="launch-environment" transform="translate(0, 0)">
+                                <!-- === FLAME TRENCH DECKS (Narrowed for support) === -->
+                                <!-- Left Deck (Tower Base) -->
+                                <rect x="-200" y="820" width="330" height="150" fill="#1e293b" rx="2" />
+                                <rect x="-200" y="820" width="330" height="15" fill="#334155" />
+                                <line x1="-180" y1="835" x2="100" y2="835" stroke="#fbbf24" stroke-width="3"
+                                    stroke-dasharray="20,20" />
+
+                                <!-- Right Deck -->
+                                <rect x="270" y="820" width="330" height="150" fill="#1e293b" rx="2" />
+                                <rect x="270" y="820" width="330" height="15" fill="#334155" />
+                                <line x1="300" y1="835" x2="560" y2="835" stroke="#fbbf24" stroke-width="3"
+                                    stroke-dasharray="20,20" />
+
+                                <!-- === VEHICLE SUPPORT POSTS (VSPs) === -->
+                                <!-- Under Left Booster (Center ~125) -->
+                                <rect x="105" y="810" width="40" height="25" fill="#475569" />
+                                <!-- Under Right Booster (Center ~275) -->
+                                <rect x="255" y="810" width="40" height="25" fill="#475569" />
+
+                                <!-- Blast Deflector (Depth in Trench) -->
+                                <path d="M 130 840 L 270 840 L 240 900 L 160 900 Z" fill="#0f172a" opacity="0.6" />
+
+                                <!-- === LAUNCH TOWER (FSS - Fixed Service Structure) === -->
+                                <g transform="translate(-140, -100)"> <!-- Aligned with Left Deck -->
+                                    <!-- Main Truss Framework -->
+                                    <rect x="0" y="0" width="100" height="920" fill="url(#trussPattern)"
+                                        opacity="0.6" />
+                                    <rect x="0" y="0" width="100" height="920" stroke="#475569" stroke-width="4"
+                                        fill="none" />
+
+                                    <!-- Floors (Every 100 units) -->
+                                    <path d="M 0 100 L 100 100 M 0 200 L 100 200 M 0 300 L 100 300 M 0 400 L 100 400"
+                                        stroke="#64748b" stroke-width="2" />
+                                    <path d="M 0 500 L 100 500 M 0 600 L 100 600 M 0 700 L 100 700 M 0 800 L 100 800"
+                                        stroke="#64748b" stroke-width="2" />
+
+                                    <!-- Crew Access Arm (Extending to Y ~0 for Orion) -->
+                                    <g transform="translate(100, 150)"> <!-- Y=150 in Tower Space ~ Absolute 50 -->
+                                        <!-- Arm Truss -->
+                                        <path d="M 0 0 L 220 10 L 220 40 L 0 50 Z" fill="#fff" opacity="0.9"
+                                            stroke="#94a3b8" />
+                                        <!-- White Room (Capsule Entry) -->
+                                        <rect x="210" y="5" width="40" height="40" fill="#f8fafc" stroke="#475569"
+                                            stroke-width="2" />
+                                    </g>
+
+                                    <!-- Crane / Lightning Mast at Top -->
+                                    <line x1="50" y1="0" x2="50" y2="-100" stroke="#cbd5e1" stroke-width="4" />
+                                    <circle cx="50" cy="-100" r="4" fill="#ef4444" />
+                                </g>
+
+                                <!-- === TAIL SERVICE MASTS (TSMs) === -->
+                                <!-- Left TSM -->
+                                <path d="M 40 820 L 40 760 L 80 750 L 100 820 Z" fill="#475569" />
+                                <!-- Right TSM -->
+                                <path d="M 320 820 L 320 760 L 360 750 L 380 820 Z" fill="#475569" />
+
+                                <!-- === RAINBIRDS (Water Deluge System) === -->
+                                <g transform="translate(380, 200)">
+                                    <rect x="-10" y="0" width="20" height="620" fill="#334155" />
+                                    <circle cx="0" cy="0" r="8" fill="#ef4444" />
+                                </g>
+                            </g>
+
+                            <!-- REFLECTION -->
+                            <ellipse cx="200" cy="780" rx="150" ry="15" fill="rgba(56, 189, 248, 0.1)" stroke="none" />
+
+                            <!-- ================= BODY ================= -->
+                            <g transform="translate(200, 450)"> <!-- Center of Mass Shifted Down -->
+
+                                <!-- ATTACHMENT STRUTS -->
+                                <rect x="-70" y="-120" width="140" height="10" fill="#334155" />
+                                <rect x="-70" y="250" width="140" height="10" fill="#334155" />
+
+                                <!-- === RIGHT BOOSTER (Shorter ~54m) === -->
+                                <g transform="translate(75, 120)"> <!-- Lowered 80px for alignment -->
+                                    <!-- Nozzle -->
+                                    <path d="M -16 230 L 16 230 L 22 260 L -22 260 Z" fill="#1e293b" />
+                                    <!-- Body (Shortened) -->
+                                    <rect x="-20" y="-350" width="40" height="580" rx="2" fill="url(#boosterGloss)" />
+                                    <!-- Nose Cone (Angled) -->
+                                    <path d="M -20 -350 L 0 -410 L 20 -350 Z" fill="url(#boosterGloss)" />
+                                    <!-- Detail Bands -->
+                                    <rect x="-20" y="-250" width="40" height="3" fill="#0f172a" opacity="0.7" />
+                                    <rect x="-20" y="-50" width="40" height="3" fill="#0f172a" opacity="0.7" />
+                                    <rect x="-20" y="150" width="40" height="3" fill="#0f172a" opacity="0.7" />
+                                </g>
+
+                                <!-- === LEFT BOOSTER === -->
+                                <g transform="translate(-75, 120)"> <!-- Lowered 80px -->
+                                    <path d="M -16 230 L 16 230 L 22 260 L -22 260 Z" fill="#1e293b" />
+                                    <rect x="-20" y="-350" width="40" height="580" rx="2" fill="url(#boosterGloss)" />
+                                    <path d="M -20 -350 L 0 -410 L 20 -350 Z" fill="url(#boosterGloss)" />
+                                    <rect x="-20" y="-250" width="40" height="3" fill="#0f172a" opacity="0.7" />
+                                    <rect x="-20" y="-50" width="40" height="3" fill="#0f172a" opacity="0.7" />
+                                    <rect x="-20" y="150" width="40" height="3" fill="#0f172a" opacity="0.7" />
+                                </g>
+
+                                <!-- === CORE STAGE (Taller ~65m) === -->
+                                <g transform="translate(0, 50)">
+                                    <!-- Engine Boat Tail -->
+                                    <path d="M -45 280 L 45 280 L 38 310 L -38 310 Z" fill="#334155" />
+                                    <!-- Engines -->
+                                    <circle cx="-25" cy="315" r="10" fill="#000" stroke="#333" stroke-width="2" />
+                                    <circle cx="25" cy="315" r="10" fill="#000" stroke="#333" stroke-width="2" />
+                                    <!-- Main Tank (Lengthened to 650 equivalent logic) -->
+                                    <rect x="-45" y="-350" width="90" height="630" fill="url(#coreTankReal)" />
+
+                                    <!-- Intertank Ribbing -->
+                                    <rect x="-45" y="-350" width="90" height="60" fill="#000" opacity="0.1" />
+
+                                    <!-- Feedline -->
+                                    <rect x="35" y="-330" width="5" height="600" fill="#7c2d12" opacity="0.8" />
+                                </g>
+
+                                <!-- === TOP STACK (LVSA + Orion) === -->
+                                <g transform="translate(0, -300)"> <!-- Shifted Up -->
+                                    <!-- LVSA (Cone) -->
+                                    <path d="M -45 0 L 45 0 L 30 -80 L -30 -80 Z" fill="#f1f5f9" />
+                                    <ellipse cx="0" cy="0" rx="45" ry="5" fill="#000" opacity="0.3" />
+
+                                    <!-- ICPS -->
+                                    <rect x="-28" y="-110" width="56" height="30" fill="#334155" />
+
+                                    <!-- Orion SM -->
+                                    <rect x="-30" y="-150" width="60" height="40" fill="#94a3b8" />
+                                    <!-- Orion Capsule -->
+                                    <path d="M -25 -150 L 25 -150 L 10 -190 L -10 -190 Z" fill="#fff" />
+                                    <!-- LAS Tower -->
+                                    <path d="M -5 -190 L 5 -190 L 0 -240 Z" fill="#ef4444" />
+                                </g>
+                            </g>
+
+                            <!-- Connector Lines Overlay (SVG-to-SVG) -->
+                            <line x1="200" y1="50" x2="200" y2="800" stroke="#38bdf8" stroke-width="1"
+                                stroke-dasharray="20, 20" opacity="0.1" />
+                        </svg>
+
+                        <!-- SVG Overlay for Leader Lines -->
+                        <svg class="leader-lines" viewBox="0 0 500 750"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5;">
+                            <!-- Dynamic Leader Line (Script controls coordinates) -->
+                            <path id="leader-line" d="M 0 0" fill="none" stroke="#38bdf8" stroke-width="2"
+                                style="filter: url(#lineGlow); opacity: 0; transition: opacity 0.3s;" />
+                            <circle id="leader-dot" cx="0" cy="0" r="4" fill="#38bdf8"
+                                style="opacity: 0; transition: opacity 0.3s;" />
+                        </svg>
+
+                        <!-- Interactive Reticles (Pulsing Targets) - REMAPPED to Digital Twin V2 -->
+
+                        <!-- 1. Launch Abort System / Orion -->
+                        <div class="tech-reticle" onmouseover="focusStage('orion', 250, 90)" onmouseout="clearFocus()"
+                            style="top: 12%; left: 50%;">
+                            <div class="reticle-core"></div>
+                            <div class="reticle-ring"></div>
+                            <div class="reticle-label">ORION</div>
+                        </div>
+
+                        <!-- 2. ICPS (Upper Stage) -->
+                        <div class="tech-reticle" onmouseover="focusStage('icps', 250, 120)" onmouseout="clearFocus()"
+                            style="top: 16%; left: 50%;">
+                            <div class="reticle-core"></div>
+                            <div class="reticle-ring"></div>
+                        </div>
+
+                        <!-- 3. Core Stage (Center Tank) -->
+                        <div class="tech-reticle" onmouseover="focusStage('core', 250, 390)" onmouseout="clearFocus()"
+                            style="top: 52%; left: 50%;">
+                            <div class="reticle-core"></div>
+                            <div class="reticle-ring"></div>
+                        </div>
+
+                        <!-- 4. SRBs (Left Booster) -->
+                        <div class="tech-reticle" onmouseover="focusStage('srb', 156, 400)" onmouseout="clearFocus()"
+                            style="top: 53%; left: 31.25%;">
+                            <div class="reticle-core"></div>
+                            <div class="reticle-ring"></div>
+                            <div class="reticle-label">SRB</div>
+                        </div>
+                    </div> <!-- End Wrapper -->
+                </div>
+
+                <style>
+                    /* Premium Tech UI Styles */
+                    .tech-reticle {
+                        position: absolute;
+                        width: 40px;
+                        height: 40px;
+                        transform: translate(-50%, -50%);
+                        cursor: pointer;
+                        z-index: 10;
+                        transition: all 0.3s ease;
+                    }
+
+                    .tech-reticle:hover .reticle-ring {
+                        border-color: #38bdf8;
+                        box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+                        transform: scale(1.2);
+                    }
+
+                    .reticle-core {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 6px;
+                        height: 6px;
+                        background: #fff;
+                        border-radius: 50%;
+                        transform: translate(-50%, -50%);
+                        box-shadow: 0 0 10px #fff;
+                    }
+
+                    .reticle-ring {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        animation: reticlePulse 2s infinite;
+                        box-sizing: border-box;
+                        transition: all 0.3s;
+                    }
+
+                    .reticle-label {
+                        position: absolute;
+                        left: 50px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-family: 'Courier New', monospace;
+                        font-size: 0.7rem;
+                        color: rgba(255, 255, 255, 0.6);
+                        letter-spacing: 2px;
+                        opacity: 0.7;
+                        pointer-events: none;
+                        display: none;
+                        /* Hidden by default, nicer clean look */
+                    }
+
+                    @keyframes reticlePulse {
+                        0% {
+                            transform: scale(0.9);
+                            opacity: 0.5;
+                        }
+
+                        50% {
+                            transform: scale(1.1);
+                            opacity: 1;
+                            border-color: rgba(255, 255, 255, 0.6);
+                        }
+
+                        100% {
+                            transform: scale(0.9);
+                            opacity: 0.5;
+                        }
+                    }
+
+                    /* Glass HUD Panel */
+                    .glass-hud {
+                        background: rgba(15, 23, 42, 0.6);
+                        backdrop-filter: blur(16px);
+                        -webkit-backdrop-filter: blur(16px);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 20px;
+                        padding: 40px;
+                        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+                        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                        position: relative;
+                        overflow: hidden;
+                    }
+
+                    .glass-hud::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(90deg, #38bdf8, #818cf8);
+                        opacity: 0.8;
+                    }
+
+                    .tech-header {
+                        font-family: 'Courier New', monospace;
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+                        color: #38bdf8;
+                        font-size: 0.8rem;
+                        margin-bottom: 12px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .tech-header::after {
+                        content: '';
+                        height: 1px;
+                        flex: 1;
+                        background: rgba(56, 189, 248, 0.3);
+                    }
+
+                    /* Mobile Responsiveness */
+                    @media (max-width: 900px) {
+                        .rocket-scene {
+                            flex-direction: column !important;
+                            height: auto !important;
+                            gap: 0 !important;
+                        }
+
+                        .rocket-scene>div {
+                            width: 100% !important;
+                            height: auto !important;
+                            min-height: 400px;
+                        }
+
+                        .rocket-scene svg {
+                            max-height: 500px !important;
+                        }
+                    }
+
+                    .hud-stat-box {
+                        background: rgba(0, 0, 0, 0.3);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 8px;
+                        padding: 16px;
+                        transition: all 0.3s;
+                    }
+
+                    .hud-stat-box:hover {
+                        border-color: rgba(56, 189, 248, 0.3);
+                        background: rgba(56, 189, 248, 0.05);
+                    }
+                </style>
+
+                <!-- 2. The Info Panel (Right) -->
+                <div style="flex: 1; padding: 40px 0; display: flex; flex-direction: column; justify-content: center;">
+                    <div id="stage-info-content">
+                        <div data-i18n="twin-tag"
+                            style="text-transform: uppercase; letter-spacing: 2px; color: #38bdf8; font-size: 0.9rem; margin-bottom: 10px;">
+                            Mission Architecture</div>
+                        <h3 style="font-size: 3rem; margin-bottom: 20px; line-height: 1.1;" data-i18n="twin-title">
+                            Artemis II Crew</h3>
+                        <p data-i18n="twin-desc"
+                            style="font-size: 1.1rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 40px;">
+                            The most powerful rocket NASA has ever built. Designed to loft the Orion spacecraft on a
+                            trans-lunar trajectory, enabling sustained presence on the Moon.
+                        </p>
+
+                        <div class="stats-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+                                <div data-i18n="twin-stat1-lbl"
+                                    style="font-size: 0.8rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px;">
+                                    Max Thrust</div>
+                                <div data-i18n="twin-stat1-val"
+                                    style="font-size: 1.75rem; font-weight: 700; color: #fff; margin-top: 4px;">8.8M lbs
+                                </div>
+                            </div>
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+                                <div data-i18n="twin-stat2-lbl"
+                                    style="font-size: 0.8rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px;">
+                                    Payload to Moon</div>
+                                <div data-i18n="twin-stat2-val"
+                                    style="font-size: 1.75rem; font-weight: 700; color: #fff; margin-top: 4px;">27
+                                    metric tons</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Styles were moved to main block, removing duplicates -->
+                <script>
+                    const stageData = {
+                        'orion': {
+                            en: {
+                                title: "Orion Spacecraft",
+                                subtitle: "Crew Module & LAS",
+                                desc: "Deep space exploration vehicle. Capable of sustaining 4 crew members for 21 days beyond low Earth orbit.",
+                                stat1: "4 Crew",
+                                statLabel1: "Capacity",
+                                stat2: "Mach 32",
+                                statLabel2: "Re-Entry Speed"
+                            },
+                            ar: {
+                                title: "مركبة أوريون",
+                                subtitle: "وحدة الطاقم ونظام الإلغاء",
+                                desc: "مركبة استكشاف الفضاء العميق. قادرة على دعم 4 رواد فضاء لمدة 21 يومًا خارج المدار الأرضي المنخفض.",
+                                stat1: "4 رواد",
+                                statLabel1: "الطاقة الاستيعابية",
+                                stat2: "32 ماخ",
+                                statLabel2: "سرعة العودة"
+                            }
+                        },
+                        'icps': {
+                            en: {
+                                title: "ICPS Stage",
+                                subtitle: "Propulsion Module",
+                                desc: "Interim Cryogenic Propulsion Stage. Performs the critical Trans-Lunar Injection (TLI) burn to send Orion to the Moon.",
+                                stat1: "RL10B-2",
+                                statLabel1: "Engine Type",
+                                stat2: "24,750 lbf",
+                                statLabel2: "Thrust Power"
+                            },
+                            ar: {
+                                title: "مرحلة الدفع المبرد",
+                                subtitle: "وحدة الدفع المؤقتة",
+                                desc: "المرحلة المسؤولة عن الدفع نحو القمر (TLI). تعمل بالوقود المبرد لإرسال أوريون خارج جاذبية الأرض.",
+                                stat1: "RL10B-2",
+                                statLabel1: "نوع المحرك",
+                                stat2: "24,750 رطل",
+                                statLabel2: "قوة الدفع"
+                            }
+                        },
+                        'core': {
+                            en: {
+                                title: "Core Stage",
+                                subtitle: "Main Fuel Tank",
+                                desc: "The largest rocket stage ever built. Holds 733,000 gallons of super-cooled propellant to power the four RS-25 engines.",
+                                stat1: "4x RS-25",
+                                statLabel1: "Main Engines",
+                                stat2: "212 ft",
+                                statLabel2: "Stage Height"
+                            },
+                            ar: {
+                                title: "المرحلة الرئيسية",
+                                subtitle: "خزان الوقود الرئيسي",
+                                desc: "أكبر مرحلة صاروخية تم بناؤها على الإطلاق. تحتوي على 733,000 جالون من الوقود المبرد لتشغيل المحركات الأربعة.",
+                                stat1: "4x RS-25",
+                                statLabel1: "المحركات الرئيسية",
+                                stat2: "212 قدم",
+                                statLabel2: "ارتفاع المرحلة"
+                            }
+                        },
+                        'srb': {
+                            en: {
+                                title: "Solid Boosters",
+                                subtitle: "Twin SRBs",
+                                desc: "Providing 75% of total thrust at liftoff. These 5-segment giants burn 6 tons of propellant every second.",
+                                stat1: "3.6M lbf",
+                                statLabel1: "Thrust (Each)",
+                                stat2: "126 Sec",
+                                statLabel2: "Burn Time"
+                            },
+                            ar: {
+                                title: "الدفوعات الصلبة",
+                                subtitle: "المعززات الجانبية",
+                                desc: "توفر 75% من إجمالي الدفع عند الإطلاق. تحرق هذه العمالقة 6 أطنان من الوقود في كل ثانية.",
+                                stat1: "3.6M رطل",
+                                statLabel1: "الدفع (لكل واحد)",
+                                stat2: "126 ثانية",
+                                statLabel2: "وقت الاحتراق"
+                            }
+                        }
+                    };
+
+                    function focusStage(id, x, y) {
+                        // 1. Determine Language (Global State)
+                        const currentLang = document.documentElement.lang || 'en';
+                        // Fallback to EN if specific lang missing
+                        const data = stageData[id][currentLang] || stageData[id]['en'];
+                        const isAr = currentLang === 'ar';
+
+                        const content = document.getElementById('stage-info-content');
+
+                        // 2. Update Content with Fade Effect
+                        content.style.opacity = '0.8';
+                        content.style.transform = 'translateX(5px)';
+
+                        setTimeout(() => {
+                            content.innerHTML = `
+                                <div class="tech-header" style="${isAr ? 'flex-direction: row-reverse;' : ''}">${data.subtitle}</div>
+                                <h3 style="font-size: 3rem; margin-bottom: 20px; line-height: 1.1; letter-spacing: -1px; background: linear-gradient(to right, #fff, #94a3b8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: ${isAr ? 'right' : 'left'};">${data.title}</h3>
+                                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 40px; font-family: ${isAr ? "'IBM Plex Sans Arabic', sans-serif" : "inherit"}; text-align: ${isAr ? 'right' : 'left'}; direction: ${isAr ? 'rtl' : 'ltr'};">
+                                    ${data.desc}
+                                </p>
+                                <div class="stats-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; direction: ${isAr ? 'rtl' : 'ltr'};">
+                                    <div class="hud-stat-box" style="text-align: ${isAr ? 'right' : 'left'};">
+                                        <div style="font-size: 0.7rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">${data.statLabel1}</div>
+                                        <div style="font-size: 1.6rem; font-weight: 700; color: #fff; font-family: 'Courier New', monospace;">${data.stat1}</div>
+                                    </div>
+                                    <div class="hud-stat-box" style="text-align: ${isAr ? 'right' : 'left'};">
+                                        <div style="font-size: 0.7rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">${data.statLabel2}</div>
+                                        <div style="font-size: 1.6rem; font-weight: 700; color: #fff; font-family: 'Courier New', monospace;">${data.stat2}</div>
+                                    </div>
+                                </div>
+                            `;
+                            content.style.opacity = '1';
+                            content.style.transform = 'translateX(0)';
+                        }, 100);
+
+                        // 2. Draw Leader Line (Simple Overlay)
+                        const line = document.getElementById('leader-line');
+                        const dot = document.getElementById('leader-dot');
+                        // Coordinates relative to the SVG 500x750 box. 
+                        // x input is visual center ~250. y is height.
+                        // We draw from (x,y) to (500, y) -> connecting to text.
+                        line.setAttribute('d', `M ${x} ${y} L ${x + 50} ${y} L ${x + 100} ${y} L 500 ${y}`);
+                        dot.setAttribute('cx', x);
+                        dot.setAttribute('cy', y);
+
+                        line.style.opacity = '1';
+                        dot.style.opacity = '1';
+                    }
+
+                    function clearFocus() {
+                        const line = document.getElementById('leader-line');
+                        const dot = document.getElementById('leader-dot');
+                        line.style.opacity = '0';
+                        dot.style.opacity = '0';
+                    }
+                </script>
+            </div>
+
+
+        </section>
+
         <!-- New Orbit Visualization Section -->
         <section id="orbit-viz" class="orbit-section">
             <div class="section-header">
-                <div class="section-tag">Visualization</div>
-                <h2>Solar System Journey</h2>
-                <p class="section-desc">Explore the planets of our solar system.</p>
+                <div class="section-tag" data-i18n="solar-tag">Visualization</div>
+                <h2 data-i18n="solar-title">Solar System Journey</h2>
+                <p class="section-desc" data-i18n="solar-desc">Explore the planets of our solar system.</p>
             </div>
 
             <div class="orbit-container">
@@ -1304,7 +2227,8 @@
                         style="bottom: 0; left: 60%; transform: translate(-50%, 50%); width: 70px; height: 70px;"
                         onclick="openPlanet('saturn')">
                         <img src="planet_saturn.png" alt="Saturn"
-                            style="width: 100%; height: 100%; object-fit: contain;"> <!-- Keep Saturn original -->
+                            style="width: 100%; height: 100%; object-fit: contain;">
+                        <!-- Keep Saturn original -->
                     </div>
                 </div>
 
@@ -1528,12 +2452,16 @@
                     <div class="framework-label" id="fw-label">Framework 001</div>
                     <div class="framework-subtitle" id="fw-subtitle">From first principles to applied systems
                     </div>
-                    <p
+                    <p id="fw-desc"
                         style="text-align: center; color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 10px auto 0; max-width: 600px; line-height: 1.6;">
                         Framework 001 is the foundation of how FALAk structures learning about space.
                     </p>
                     <div class="framework-divider"></div>
                 </div>
+
+                <!-- Core Principles -->
+                <!-- Core Principles -->
+
             </div>
 
             <!-- Dynamic Section Grid (from curriculum.js) -->
@@ -1647,21 +2575,61 @@
                 cover more advanced topics.
             </p>
 
-            <div class="cta-form" style="display: block;">
-                <a href="#" class="btn btn-primary" style="margin: 0 auto; display: inline-block;" id="cta-btn">Follow
-                    Our
-                    Progress</a>
+            <div class="cta-form" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://x.com/FALAkPlatforms" target="_blank" class="btn btn-primary"
+                    style="display: inline-flex; align-items: center; gap: 10px;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                        </path>
+                    </svg>
+                    Follow on X
+                </a>
+                <a href="https://instagram.com/FALAkPlatforms" target="_blank" class="btn btn-ghost"
+                    style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    Follow on Instagram
+                </a>
             </div>
         </section>
 
-        <footer id="footer-copy">© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space</footer>
+        <footer id="footer-copy"
+            style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding-bottom: 40px;">
+            <div class="social-links" style="display: flex; gap: 20px;">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/FALAkPlatforms" target="_blank" aria-label="X (Twitter)"
+                    style="color: rgba(255,255,255,0.6); transition: color 0.3s;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                        </path>
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com/FALAkPlatforms" target="_blank" aria-label="Instagram"
+                    style="color: rgba(255,255,255,0.6); transition: color 0.3s;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+            <div data-i18n="footer-copy">© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space</div>
+        </footer>
     </div>
 
     <!-- Optimized script is loaded externally -->
     <script src="orbital_simulation.js"></script>
     <script src="curriculum.js"></script>
-    <script src="translations.js?v=2"></script>
-    <script src="script.js?v=2"></script>
+    <script src="translations.js?v=6"></script>
+    <script src="script.js?v=3"></script>
     <script>
         // Curriculum UI Controller
         let curriculumNav = null;
@@ -1726,7 +2694,7 @@
                     <div class="lesson-count-tag" style="opacity: 0.5; font-size: 0.8rem; transform: scale(0.9);">
                         <span>●</span> ${lessonCount} ${lblLessons}
                     </div>
-                `;
+                    `;
                 grid.appendChild(card);
             });
         }
@@ -1802,6 +2770,33 @@
             renderLesson();
         }
 
+        // Mobile Menu Logic
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.style.display === 'flex') {
+                closeMenu();
+            } else {
+                menu.style.display = 'flex';
+                setTimeout(() => menu.style.opacity = '1', 10);
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.style.opacity = '0';
+            setTimeout(() => {
+                menu.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Add event listener to toggle button
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('menu-toggle');
+            if (toggle) toggle.onclick = toggleMenu;
+        });
+
         document.addEventListener('DOMContentLoaded', initCurriculumUI);
 
     </script>
@@ -1811,7 +2806,7 @@
         <div class="pm-content">
             <button class="pm-close" onclick="closePlanet()">×</button>
             <h3 id="pm-title"
-                style="font-size: 2rem; margin-bottom: 8px; background: linear-gradient(135deg, #fff, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                style="font-size: 2rem; margin-bottom: 8px; background: linear-gradient(135deg, #fff, #38bdf8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 Planet</h3>
             <div id="pm-subtitle"
                 style="text-transform: uppercase; color: #38bdf8; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 24px; opacity: 0.8;">
@@ -1827,7 +2822,7 @@
                 <!-- Stats injected via JS -->
             </div>
 
-            <a href="#join" class="btn btn-primary" onclick="closePlanet()">Start Learning</a>
+            <a href="#join" class="btn btn-primary" onclick="closePlanet()" data-i18n="pm-btn">Start Learning</a>
         </div>
     </div>
 
