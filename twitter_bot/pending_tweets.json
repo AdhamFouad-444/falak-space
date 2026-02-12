@@ -1,0 +1,51 @@
+[
+  {
+    "type": "apod",
+    "text": "\ud83d\udcf7 NASA Astronomy Picture of the Day\n\n\"Supernova Remnant Cassiopeia A\"\n\nMassive stars in our Milky Way Galaxy live spectacular lives.  Collapsing from vast cosmic clouds, their nuclear...\n\n\ud83d\udd17 https://apod.nasa.gov/apod/image/2602/CasA_nircam_4096.jpg",
+    "media_url": "https://apod.nasa.gov/apod/image/2602/CasA_nircam_4096.jpg",
+    "source": "NASA APOD",
+    "date": "2026-02-06",
+    "approved": false,
+    "created_at": "2026-02-06T13:23:51.874798"
+  },
+  {
+    "type": "launch",
+    "text": "\ud83d\udd34 Launch Alert: Soyuz 2.1b/Fregat-M | Kosmos (Unknown Payload)\n\nRussian Space Forces \u2022 Feb 05, 2026 @ 18:59 UTC\nLocation: Plesetsk Cosmodrome, Russian Federation\n\nUnknown classified payload(s) for the Russian military.\n\n\ud83d\udd17 Check provider for livestream",
+    "source": "Launch Library 2",
+    "mission_name": "Soyuz 2.1b/Fregat-M | Kosmos (Unknown Payload)",
+    "approved": false,
+    "created_at": "2026-02-06T13:23:53.766807"
+  },
+  {
+    "type": "educational",
+    "text": "\u2753 Where does space begin?\n\nSpace begins where aerodynamic flight ends and orbital mechanics dominate. The practical boundary is ~100km (K\u00e1rm\u00e1n Line). It's defined by physics, not distance.\n\nThis is part of FALAk's mission: making space education accessible to everyone.\n\n#SpaceEducation",
+    "source": "FALAk Framework 001 - Section 1.1",
+    "approved": false,
+    "created_at": "2026-02-06T13:23:53.767501"
+  },
+  {
+    "type": "apod",
+    "text": "\u2728 Supernova Remnant Cassiopeia A\n\nMassive stars in our Milky Way Galaxy live spectacular lives.  Collapsing from vast cosmic clouds, their nuclear...\n\nSpace reveals something new every day. \ud83d\udd17 https://apod.nasa.gov/apod/image/2602/CasA_nircam_4096.jpg",
+    "media_url": "https://apod.nasa.gov/apod/image/2602/CasA_nircam_4096.jpg",
+    "source": "NASA APOD",
+    "date": "2026-02-06",
+    "approved": false,
+    "created_at": "2026-02-06T13:54:48.926406"
+  },
+  {
+    "type": "launch",
+    "text": "\ud83d\udd34 Launch Alert: Soyuz 2.1b/Fregat-M | Kosmos (Unknown Payload)\n\nRussian Space Forces \u2022 Feb 05, 2026 @ 18:59 UTC\nLocation: Plesetsk Cosmodrome, Russian Federation\n\nUnknown classified payload(s) for the Russian military.\n\n\ud83d\udd17 Check provider for livestream",
+    "source": "Launch Library 2",
+    "mission_name": "Soyuz 2.1b/Fregat-M | Kosmos (Unknown Payload)",
+    "approved": false,
+    "created_at": "2026-02-06T13:54:51.036715"
+  },
+  {
+    "type": "educational",
+    "text": "\u2753 What's the hardest part of launching a rocket?\n\nThe launch itself. Vibration, acceleration, and heating during ascent make it the most failure-prone phase. That's why engines are verified before release.\n\nThis is part of FALAk's mission: making space education accessible to everyone.\n\n#SpaceEducation",
+    "source": "FALAk Framework 001 - Section 2.8",
+    "approved": true,
+    "created_at": "2026-02-06T13:54:51.037412",
+    "last_error": "401 Unauthorized\nUnauthorized"
+  }
+]

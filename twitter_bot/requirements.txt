@@ -1,0 +1,10 @@
+# FALAk Twitter Bot - Python Dependencies
+
+# HTTP requests
+requests>=2.28.0
+
+# Twitter API
+tweepy>=4.14.0
+
+# Environment variables
+python-dotenv>=1.0.0
