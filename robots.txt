@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://falakplatforms.co.uk/sitemap.xml
