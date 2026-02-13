@@ -67,14 +67,14 @@ const FALAK_CURRICULUM = {
                     title: "Why Rockets, Not Planes",
                     content: "Rockets carry their own oxidizer. Thrust works in vacuum. Newton's Third Law: for every action, there is an equal and opposite reaction.",
                     learningOutcome: "Understand why rockets are required.",
-                    simulation: null
+                    simulation: "ROCKET_VS_PLANE"
                 },
                 {
                     id: "2.3",
                     title: "The Rocket as a System",
                     content: "A rocket is not just an engine. It's an integrated system: Propulsion, Structure, Fuel & Oxidizer, Guidance & Control, Avionics, Payload.",
                     learningOutcome: "See rockets as integrated systems, not engines.",
-                    simulation: null
+                    simulation: "ROCKET_SYSTEMS"
                 },
                 {
                     id: "2.5",

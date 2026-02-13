@@ -95,7 +95,73 @@ const TRANSLATIONS = {
 
         // Misc
         "pm-btn": "Start Learning",
-        "footer-copy": "© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space"
+        "footer-copy": "© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space",
+
+        // Nav (new)
+        "nav-news": "News",
+        "nav-community": "Community",
+
+        // News Section
+        "news-tag": "Space News",
+        "news-title": "What's Happening in Space",
+        "news-desc": "Space developments from the MENA region and beyond, with educational context.",
+        "news-1-h": "Hope Probe Continues Extended Science Phase",
+        "news-1-p": "The UAE's Emirates Mars Mission extends its observation campaign, providing new atmospheric data on Mars' upper atmosphere and seasonal dust storms.",
+        "news-1-src": "UAE Space Agency",
+        "news-2-h": "Saudi Astronaut Program Expands Training",
+        "news-2-p": "The Saudi Space Commission announces a new cohort of astronaut candidates, building on the success of the Ax-2 mission to the ISS.",
+        "news-2-src": "Saudi Space Commission",
+        "news-3-h": "Egypt's Domestically Assembled Satellite Nears Completion",
+        "news-3-p": "EgSA's next-generation Earth observation satellite enters final integration and testing, marking a significant step for African space capability.",
+        "news-3-src": "Egyptian Space Agency",
+        "news-4-h": "Artemis III Crew Selection and Timeline Update",
+        "news-4-p": "NASA confirms the next phase of the Artemis program, with updated crew assignments and a refined timeline for the first crewed lunar landing since Apollo.",
+        "news-4-src": "NASA",
+
+        // Resources Section
+        "resources-tag": "Resources",
+        "resources-title": "Curated Space Knowledge",
+        "resources-desc": "Trusted sources to deepen your understanding of space systems.",
+        "res-type-data": "Data Portal",
+        "res-type-edu": "Education",
+        "res-type-video": "Video",
+        "res-type-research": "Research",
+        "res-type-course": "Course",
+        "res-type-tool": "Interactive Tool",
+        "res-1-p": "Access NASA's public datasets — missions, imagery, telemetry, and more.",
+        "res-2-p": "Learning resources from the European Space Agency for all levels.",
+        "res-3-p": "Deep-dive engineering breakdowns of rockets and space systems.",
+        "res-4-p": "Open-access preprints in astrophysics, cosmology, and space science.",
+        "res-5-p": "Full MIT OpenCourseWare on orbital mechanics — lectures, problem sets.",
+        "res-6-p": "3D visualization of the solar system, missions, and Earth from space.",
+
+        // Community Section
+        "community-tag": "Community",
+        "community-title": "Connect With Space Learners",
+        "community-desc": "Join learners, educators, and space enthusiasts from across the MENA region and beyond.",
+        "community-feat-1": "Discussion Forums",
+        "community-feat-2": "Peer Learning",
+        "community-feat-3": "Mentorship",
+        "community-feat-4": "Multilingual",
+        "community-badge": "Coming Soon — We're setting up our community space",
+
+        // Challenges Section
+        "challenges-tag": "Challenges",
+        "challenges-title": "Monthly Space Challenges",
+        "challenges-desc": "Put your knowledge to the test with real engineering problems.",
+        "challenge-soon-lbl": "Coming Soon",
+        "ch-diff-1": "Intermediate",
+        "ch-diff-2": "Advanced",
+        "ch-diff-3": "Intermediate",
+        "ch-1-h": "Hohmann Transfer Budget",
+        "ch-1-p": "Calculate the delta-v budget for a Hohmann transfer from LEO to GEO orbit.",
+        "ch-1-cat": "Orbital Mechanics",
+        "ch-2-h": "CubeSat Thermal Design",
+        "ch-2-p": "Design a passive thermal control system for a 3U CubeSat in Low Earth Orbit.",
+        "ch-2-cat": "Spacecraft Systems",
+        "ch-3-h": "Mars Transfer Mass Ratio",
+        "ch-3-p": "Estimate the total mass ratio for a 3-stage launch vehicle to reach Mars transfer orbit.",
+        "ch-3-cat": "Propulsion"
     },
     ar: {
         // Nav
@@ -189,7 +255,73 @@ const TRANSLATIONS = {
 
         // Misc
         "pm-btn": "ابدأ التعلم",
-        "footer-copy": "© ٢٠٢٦ فلك · أبوظبي، الإمارات · نمهد الطريق نحو الفضاء"
+        "footer-copy": "© ٢٠٢٦ فلك · أبوظبي، الإمارات · نمهد الطريق نحو الفضاء",
+
+        // Nav (new)
+        "nav-news": "أخبار",
+        "nav-community": "المجتمع",
+
+        // News Section
+        "news-tag": "أخبار الفضاء",
+        "news-title": "ما يحدث في الفضاء",
+        "news-desc": "تطورات الفضاء من منطقة الشرق الأوسط وشمال أفريقيا والعالم، مع سياق تعليمي.",
+        "news-1-h": "مسبار الأمل يواصل مرحلة العلوم الموسعة",
+        "news-1-p": "مهمة الإمارات لاستكشاف المريخ تمدد حملة الرصد، وتوفر بيانات جوية جديدة عن الغلاف الجوي العلوي للمريخ والعواصف الترابية الموسمية.",
+        "news-1-src": "وكالة الإمارات للفضاء",
+        "news-2-h": "البرنامج السعودي لرواد الفضاء يتوسع",
+        "news-2-p": "هيئة الفضاء السعودية تعلن عن دفعة جديدة من المرشحين لرواد الفضاء، بناءً على نجاح مهمة Ax-2 إلى محطة الفضاء الدولية.",
+        "news-2-src": "هيئة الفضاء السعودية",
+        "news-3-h": "القمر الصناعي المصري المحلي يقترب من الاكتمال",
+        "news-3-p": "القمر الصناعي المصري الجديد لرصد الأرض يدخل مرحلة التكامل والاختبار النهائي، مما يمثل خطوة مهمة للقدرات الفضائية الأفريقية.",
+        "news-3-src": "وكالة الفضاء المصرية",
+        "news-4-h": "تحديث طاقم وجدول أرتميس الثالث",
+        "news-4-p": "ناسا تؤكد المرحلة التالية من برنامج أرتميس، مع تعيينات محدثة للطاقم وجدول زمني محسن لأول هبوط بشري على القمر منذ أبولو.",
+        "news-4-src": "ناسا",
+
+        // Resources Section
+        "resources-tag": "الموارد",
+        "resources-title": "معرفة فضائية منتقاة",
+        "resources-desc": "مصادر موثوقة لتعميق فهمك لأنظمة الفضاء.",
+        "res-type-data": "بوابة بيانات",
+        "res-type-edu": "تعليم",
+        "res-type-video": "فيديو",
+        "res-type-research": "بحث علمي",
+        "res-type-course": "دورة",
+        "res-type-tool": "أداة تفاعلية",
+        "res-1-p": "الوصول إلى مجموعات بيانات ناسا العامة — مهمات، صور، قياسات عن بُعد، والمزيد.",
+        "res-2-p": "موارد تعليمية من وكالة الفضاء الأوروبية لجميع المستويات.",
+        "res-3-p": "تحليلات هندسية معمقة للصواريخ وأنظمة الفضاء.",
+        "res-4-p": "مسودات بحثية مفتوحة الوصول في الفيزياء الفلكية وعلم الكون وعلوم الفضاء.",
+        "res-5-p": "دورة MIT المفتوحة الكاملة في ميكانيكا المدارات — محاضرات ومسائل.",
+        "res-6-p": "تصور ثلاثي الأبعاد للنظام الشمسي والمهمات والأرض من الفضاء.",
+
+        // Community Section
+        "community-tag": "المجتمع",
+        "community-title": "تواصل مع متعلمي الفضاء",
+        "community-desc": "انضم إلى المتعلمين والمعلمين وعشاق الفضاء من أنحاء المنطقة والعالم.",
+        "community-feat-1": "منتديات نقاش",
+        "community-feat-2": "تعلم الأقران",
+        "community-feat-3": "إرشاد",
+        "community-feat-4": "متعدد اللغات",
+        "community-badge": "قريبًا — نحن نجهز مساحة المجتمع",
+
+        // Challenges Section
+        "challenges-tag": "التحديات",
+        "challenges-title": "تحديات فضائية شهرية",
+        "challenges-desc": "اختبر معرفتك بمسائل هندسية حقيقية.",
+        "challenge-soon-lbl": "قريبًا",
+        "ch-diff-1": "متوسط",
+        "ch-diff-2": "متقدم",
+        "ch-diff-3": "متوسط",
+        "ch-1-h": "ميزانية نقل هوهمان",
+        "ch-1-p": "احسب ميزانية دلتا-في لنقل هوهمان من المدار الأرضي المنخفض إلى المدار الثابت.",
+        "ch-1-cat": "ميكانيكا المدارات",
+        "ch-2-h": "تصميم حراري لقمر مكعب",
+        "ch-2-p": "صمم نظام تحكم حراري سلبي لقمر مكعب 3U في المدار الأرضي المنخفض.",
+        "ch-2-cat": "أنظمة المركبات الفضائية",
+        "ch-3-h": "نسبة كتلة نقل المريخ",
+        "ch-3-p": "قدّر نسبة الكتلة الإجمالية لمركبة إطلاق ثلاثية المراحل للوصول إلى مدار نقل المريخ.",
+        "ch-3-cat": "الدفع"
     }
 };
 

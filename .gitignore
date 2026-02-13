@@ -8,3 +8,6 @@ simlab/dist
 simlab/node_modules
 simlab/.vite
 simlab/
+.env_backup
+.env_test
+__pycache__/

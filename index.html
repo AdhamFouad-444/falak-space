@@ -1412,7 +1412,9 @@
                 <li><a href="#journey" id="nav-journey">Learning Path</a></li>
                 <li><a href="#simlab-section" id="nav-beta" style="position: relative;">Academy <span
                             class="beta-badge">COMING SOON</span></a></li>
+                <li><a href="#news" id="nav-news">News</a></li>
                 <li><a href="#features" id="nav-features">Features</a></li>
+                <li><a href="#community" id="nav-community">Community</a></li>
                 <li><a href="#join" id="nav-join">Join</a></li>
             </ul>
             <div class="nav-actions" style="display: flex; align-items: center; gap: 12px;">
@@ -1479,8 +1481,12 @@
         ">
             <a href="#journey" onclick="closeMenu()"
                 style="color: white; font-size: 1.5rem; text-decoration: none; font-weight: 500;">Learning Path</a>
+            <a href="#news" onclick="closeMenu()"
+                style="color: white; font-size: 1.5rem; text-decoration: none; font-weight: 500;">News</a>
             <a href="#features" onclick="closeMenu()"
                 style="color: white; font-size: 1.5rem; text-decoration: none; font-weight: 500;">Features</a>
+            <a href="#community" onclick="closeMenu()"
+                style="color: white; font-size: 1.5rem; text-decoration: none; font-weight: 500;">Community</a>
             <a href="#join" onclick="closeMenu()"
                 style="color: white; font-size: 1.5rem; text-decoration: none; font-weight: 500;">Join</a>
             <div style="display: flex; gap: 24px; margin-top: 20px;">
@@ -2618,6 +2624,557 @@
                         <p id="feat-4-p">Developing relevant skills for the future space sector. Grounded in reality.
                         </p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             NEW SECTION: Space News / Blog
+             ============================================ -->
+        <style>
+            /* ---- News Section ---- */
+            .news-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .news-card {
+                background: rgba(15, 23, 42, 0.6);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 16px;
+                padding: 28px;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                overflow: hidden;
+                text-align: left;
+            }
+
+            body.rtl .news-card {
+                text-align: right;
+            }
+
+            .news-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, #0ea5e9, #6366f1);
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .news-card:hover {
+                transform: translateY(-4px);
+                border-color: rgba(56, 189, 248, 0.15);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            }
+
+            .news-card:hover::before {
+                opacity: 1;
+            }
+
+            .news-region-tag {
+                display: inline-block;
+                padding: 4px 12px;
+                background: rgba(56, 189, 248, 0.1);
+                border: 1px solid rgba(56, 189, 248, 0.2);
+                border-radius: 20px;
+                font-size: 0.75rem;
+                color: #38bdf8;
+                margin-bottom: 14px;
+                letter-spacing: 0.5px;
+            }
+
+            .news-card h4 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 10px;
+                line-height: 1.4;
+                color: #fff;
+            }
+
+            .news-card p {
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+
+            .news-source {
+                font-size: 0.75rem;
+                color: rgba(255, 255, 255, 0.3);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .news-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                color: #38bdf8;
+                font-size: 0.85rem;
+                text-decoration: none;
+                font-weight: 500;
+                transition: gap 0.3s;
+            }
+
+            .news-link:hover {
+                gap: 10px;
+            }
+
+            /* ---- Resource Library ---- */
+            .resources-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .resource-card {
+                background: rgba(15, 23, 42, 0.5);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 14px;
+                padding: 24px;
+                text-decoration: none;
+                color: inherit;
+                transition: all 0.35s ease;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            body.rtl .resource-card {
+                text-align: right;
+            }
+
+            .resource-card:hover {
+                transform: translateY(-3px);
+                border-color: rgba(99, 102, 241, 0.25);
+                background: rgba(15, 23, 42, 0.8);
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .resource-icon {
+                font-size: 1.5rem;
+            }
+
+            .resource-type-pill {
+                display: inline-block;
+                padding: 3px 10px;
+                background: rgba(99, 102, 241, 0.1);
+                border: 1px solid rgba(99, 102, 241, 0.2);
+                border-radius: 20px;
+                font-size: 0.7rem;
+                color: #a78bfa;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                width: fit-content;
+            }
+
+            .resource-card h4 {
+                font-size: 1rem;
+                font-weight: 600;
+                color: #fff;
+                margin: 0;
+            }
+
+            .resource-card p {
+                color: rgba(255, 255, 255, 0.45);
+                font-size: 0.85rem;
+                line-height: 1.5;
+                margin: 0;
+            }
+
+            /* ---- Community Section ---- */
+            .community-section {
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .community-section::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 600px;
+                height: 600px;
+                transform: translate(-50%, -50%);
+                background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+                pointer-events: none;
+            }
+
+            .community-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 18px;
+                background: rgba(99, 102, 241, 0.1);
+                border: 1px solid rgba(99, 102, 241, 0.25);
+                border-radius: 50px;
+                font-size: 0.8rem;
+                color: #a78bfa;
+                margin-top: 24px;
+                animation: communityPulse 3s ease-in-out infinite;
+            }
+
+            @keyframes communityPulse {
+
+                0%,
+                100% {
+                    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.2);
+                }
+
+                50% {
+                    box-shadow: 0 0 0 12px rgba(99, 102, 241, 0);
+                }
+            }
+
+            .community-features {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin: 32px auto;
+                flex-wrap: wrap;
+            }
+
+            .community-feat {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 0.9rem;
+            }
+
+            .community-feat-icon {
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                font-size: 1.3rem;
+            }
+
+            /* ---- Challenges Section ---- */
+            .challenges-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .challenge-card {
+                background: rgba(15, 23, 42, 0.5);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 16px;
+                padding: 28px;
+                text-align: left;
+                transition: all 0.35s ease;
+                position: relative;
+            }
+
+            body.rtl .challenge-card {
+                text-align: right;
+            }
+
+            .challenge-card:hover {
+                transform: translateY(-4px);
+                border-color: rgba(234, 179, 8, 0.2);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            }
+
+            .challenge-difficulty {
+                display: inline-block;
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 14px;
+            }
+
+            .diff-intermediate {
+                background: rgba(234, 179, 8, 0.12);
+                border: 1px solid rgba(234, 179, 8, 0.25);
+                color: #eab308;
+            }
+
+            .diff-advanced {
+                background: rgba(239, 68, 68, 0.12);
+                border: 1px solid rgba(239, 68, 68, 0.25);
+                color: #ef4444;
+            }
+
+            .challenge-card h4 {
+                font-size: 1.05rem;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+
+            .challenge-category {
+                font-size: 0.75rem;
+                color: rgba(255, 255, 255, 0.35);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .challenge-soon {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                padding: 3px 10px;
+                background: rgba(255, 255, 255, 0.06);
+                border-radius: 20px;
+                font-size: 0.65rem;
+                color: rgba(255, 255, 255, 0.35);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            body.rtl .challenge-soon {
+                right: auto;
+                left: 12px;
+            }
+
+            /* ---- Responsive: New Sections ---- */
+            @media (max-width: 900px) {
+                .news-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .resources-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .challenges-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .community-features {
+                    gap: 24px;
+                }
+            }
+
+            @media (max-width: 600px) {
+
+                #news,
+                #resources,
+                #community,
+                #challenges {
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                }
+            }
+        </style>
+
+        <section id="news" style="padding: 100px 48px; text-align: center;">
+            <div class="section-header">
+                <div class="section-tag" id="news-tag">Space News</div>
+                <h2 id="news-title">What's Happening in Space</h2>
+                <p class="section-desc" id="news-desc">Space developments from the MENA region and beyond, with
+                    educational context.</p>
+            </div>
+
+            <div class="news-grid" id="news-grid">
+                <!-- Dynamically populated from news_data.json -->
+                <div class="news-card" style="grid-column: 1 / -1; text-align: center; opacity: 0.5;">
+                    <p>Loading latest space news…</p>
+                </div>
+            </div>
+
+            <script>
+                (function () {
+                    function loadNews() {
+                        fetch('news_data.json?v=' + Date.now())
+                            .then(function (r) { return r.json(); })
+                            .then(function (data) {
+                                var grid = document.getElementById('news-grid');
+                                if (!data.articles || !data.articles.length) return;
+                                grid.innerHTML = '';
+                                data.articles.forEach(function (article) {
+                                    var card = document.createElement('div');
+                                    card.className = 'news-card';
+                                    card.style.cursor = 'pointer';
+                                    card.setAttribute('role', 'link');
+                                    card.setAttribute('tabindex', '0');
+                                    card.onclick = function (e) {
+                                        e.stopPropagation();
+                                        window.open(article.link, '_blank', 'noopener,noreferrer');
+                                    };
+
+                                    var imgHtml = '';
+                                    if (article.image) {
+                                        imgHtml = '<div class="news-thumb" style="width:100%;height:160px;border-radius:12px 12px 0 0;overflow:hidden;margin:-24px -24px 16px -24px;width:calc(100% + 48px);">'
+                                            + '<img src="' + article.image + '" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.display=\'none\'">'
+                                            + '</div>';
+                                    }
+
+                                    card.innerHTML = imgHtml
+                                        + '<div class="news-region-tag">' + article.region + '</div>'
+                                        + '<h4>' + article.title + '</h4>'
+                                        + '<p>' + article.summary + '</p>'
+                                        + '<div class="news-source">' + article.source + ' · ' + article.date + '</div>';
+
+                                    grid.appendChild(card);
+                                });
+                            })
+                            .catch(function (err) {
+                                console.warn('News fetch failed:', err);
+                                var grid = document.getElementById('news-grid');
+                                grid.innerHTML = '<div class="news-card" style="grid-column:1/-1;text-align:center;opacity:0.6;">'
+                                    + '<p>Space news updating soon…</p></div>';
+                            });
+                    }
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', loadNews);
+                    } else {
+                        loadNews();
+                    }
+                })();
+            </script>
+        </section>
+
+        <!-- ============================================
+             NEW SECTION: Resource Library
+             ============================================ -->
+        <section id="resources" style="padding: 80px 48px; text-align: center;">
+            <div class="section-header">
+                <div class="section-tag" id="resources-tag">Resources</div>
+                <h2 id="resources-title">Curated Space Knowledge</h2>
+                <p class="section-desc" id="resources-desc">Trusted sources to deepen your understanding of space
+                    systems.</p>
+            </div>
+
+            <div class="resources-grid">
+                <a href="https://data.nasa.gov" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon">📄</div>
+                    <div class="resource-type-pill" id="res-type-data">Data Portal</div>
+                    <h4>NASA Open Data</h4>
+                    <p id="res-1-p">Access NASA's public datasets — missions, imagery, telemetry, and more.</p>
+                </a>
+                <a href="https://www.esa.int/Education" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon">📘</div>
+                    <div class="resource-type-pill" id="res-type-edu">Education</div>
+                    <h4>ESA Education</h4>
+                    <p id="res-2-p">Learning resources from the European Space Agency for all levels.</p>
+                </a>
+                <a href="https://www.youtube.com/@EverydayAstronaut" target="_blank" rel="noopener"
+                    class="resource-card">
+                    <div class="resource-icon">🎥</div>
+                    <div class="resource-type-pill" id="res-type-video">Video</div>
+                    <h4>Everyday Astronaut</h4>
+                    <p id="res-3-p">Deep-dive engineering breakdowns of rockets and space systems.</p>
+                </a>
+                <a href="https://arxiv.org/archive/astro-ph" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon">📑</div>
+                    <div class="resource-type-pill" id="res-type-research">Research</div>
+                    <h4>arXiv Astrophysics</h4>
+                    <p id="res-4-p">Open-access preprints in astrophysics, cosmology, and space science.</p>
+                </a>
+                <a href="https://ocw.mit.edu/courses/16-346-astrodynamics-fall-2008/" target="_blank" rel="noopener"
+                    class="resource-card">
+                    <div class="resource-icon">🎓</div>
+                    <div class="resource-type-pill" id="res-type-course">Course</div>
+                    <h4>MIT Astrodynamics</h4>
+                    <p id="res-5-p">Full MIT OpenCourseWare on orbital mechanics — lectures, problem sets.</p>
+                </a>
+                <a href="https://eyes.nasa.gov" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon">🛠</div>
+                    <div class="resource-type-pill" id="res-type-tool">Interactive Tool</div>
+                    <h4>NASA Eyes</h4>
+                    <p id="res-6-p">3D visualization of the solar system, missions, and Earth from space.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============================================
+             NEW SECTION: Community (Coming Soon)
+             ============================================ -->
+        <section id="community" class="community-section" style="padding: 80px 48px;">
+            <div class="section-header">
+                <div class="section-tag" id="community-tag">Community</div>
+                <h2 id="community-title">Connect With Space Learners</h2>
+                <p class="section-desc" id="community-desc">Join learners, educators, and space enthusiasts from across
+                    the MENA region and beyond.</p>
+            </div>
+
+            <div class="community-features">
+                <div class="community-feat">
+                    <div class="community-feat-icon">💬</div>
+                    <span id="community-feat-1">Discussion Forums</span>
+                </div>
+                <div class="community-feat">
+                    <div class="community-feat-icon">🤝</div>
+                    <span id="community-feat-2">Peer Learning</span>
+                </div>
+                <div class="community-feat">
+                    <div class="community-feat-icon">🎯</div>
+                    <span id="community-feat-3">Mentorship</span>
+                </div>
+                <div class="community-feat">
+                    <div class="community-feat-icon">🌐</div>
+                    <span id="community-feat-4">Multilingual</span>
+                </div>
+            </div>
+
+            <div class="community-badge" id="community-badge">
+                <span
+                    style="width: 8px; height: 8px; background: #a78bfa; border-radius: 50%; display: inline-block;"></span>
+                Coming Soon — We're setting up our community space
+            </div>
+        </section>
+
+        <!-- ============================================
+             NEW SECTION: Learning Challenges
+             ============================================ -->
+        <section id="challenges" style="padding: 80px 48px; text-align: center;">
+            <div class="section-header">
+                <div class="section-tag" id="challenges-tag">Challenges</div>
+                <h2 id="challenges-title">Monthly Space Challenges</h2>
+                <p class="section-desc" id="challenges-desc">Put your knowledge to the test with real engineering
+                    problems.</p>
+            </div>
+
+            <div class="challenges-grid">
+                <div class="challenge-card">
+                    <div class="challenge-soon" id="challenge-soon-lbl">Coming Soon</div>
+                    <div class="challenge-difficulty diff-intermediate" id="ch-diff-1">Intermediate</div>
+                    <h4 id="ch-1-h">Hohmann Transfer Budget</h4>
+                    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6; margin-bottom: 14px;"
+                        id="ch-1-p">Calculate the delta-v budget for a Hohmann transfer from LEO to GEO orbit.</p>
+                    <div class="challenge-category" id="ch-1-cat">Orbital Mechanics</div>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-soon">Coming Soon</div>
+                    <div class="challenge-difficulty diff-advanced" id="ch-diff-2">Advanced</div>
+                    <h4 id="ch-2-h">CubeSat Thermal Design</h4>
+                    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6; margin-bottom: 14px;"
+                        id="ch-2-p">Design a passive thermal control system for a 3U CubeSat in Low Earth Orbit.</p>
+                    <div class="challenge-category" id="ch-2-cat">Spacecraft Systems</div>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-soon">Coming Soon</div>
+                    <div class="challenge-difficulty diff-intermediate" id="ch-diff-3">Intermediate</div>
+                    <h4 id="ch-3-h">Mars Transfer Mass Ratio</h4>
+                    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6; margin-bottom: 14px;"
+                        id="ch-3-p">Estimate the total mass ratio for a 3-stage launch vehicle to reach Mars transfer
+                        orbit.</p>
+                    <div class="challenge-category" id="ch-3-cat">Propulsion</div>
                 </div>
             </div>
         </section>
