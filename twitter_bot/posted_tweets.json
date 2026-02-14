@@ -1,1 +1,125 @@
-[]
+[
+  {
+    "type": "educational",
+    "text": "Space is counter-intuitive. \ud83e\udde0\n\nIs orbit about height or speed?\n\nSpeed. Getting to orbit means going sideways fast enough to 'miss' Earth as you fall. Orbit is an energy problem, not an altitude problem.\n\nStay grounded, look up. \ud83d\udd17 FALAk Education Framework, Section 2.9",
+    "source": "FALAk Framework 001 - Section 2.9",
+    "approved": true,
+    "created_at": "2026-02-06T18:58:37.869033",
+    "tweet_id": "2019848436476989658",
+    "posted_at": "2026-02-06T18:59:29.085333"
+  },
+  {
+    "type": "intro",
+    "text": "Space isn\u2019t a secret \u2014 it\u2019s physics.\n\nFALAk is an early-stage, research-led initiative exploring how space can be understood openly, without gatekeeping.\n\nLearning-first. Built carefully.\n\nhttps://falak-space.vercel.app/",
+    "media_path": "/Users/driver444/Desktop/FALAk Space /OfficialFALAk.png",
+    "source": "Manual Intro",
+    "approved": true,
+    "created_at": "2026-02-06T19:11:00.000000",
+    "tweet_id": "2019851418631344146",
+    "posted_at": "2026-02-06T19:11:20.136778"
+  },
+  {
+    "type": "Week 1 - Pillar D (Micro-explainer)",
+    "text": "The Karman line (100km) is a functional boundary, not a physical one. It is the altitude where the atmosphere becomes too thin to support aerodynamic flight at sub-orbital speeds.",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Provide more detail on the transition to orbital mechanics.",
+    "approved": true,
+    "created_at": "2026-02-06T19:23:06.423348",
+    "tweet_id": "2020080391416103413",
+    "posted_at": "2026-02-07T10:21:11.354724"
+  },
+  {
+    "type": "apod",
+    "text": "POV: You're staring into the deep cosmos. \ud83d\udd2d\n\nLatest from NASA: Active Sunspot Region 4366 Crosses the Sun.\n\nAn unusually active sunspot region is now crossing the Sun.  The region, labelled AR 4366, is much larger than the...\n\nFull HD: https://apod.nasa.gov/apod/image/2602/Sunspot4366_Korona_1280.jpg",
+    "media_url": "https://apod.nasa.gov/apod/image/2602/Sunspot4366_Korona_1280.jpg",
+    "source": "NASA APOD",
+    "date": "2026-02-08",
+    "approved": true,
+    "created_at": "2026-02-08T12:17:44.625788",
+    "tweet_id": "2020473548347728153",
+    "posted_at": "2026-02-08T12:23:27.268458"
+  },
+  {
+    "type": "Week 1 - Pillar A (First Principles)",
+    "text": "Space is often discussed in terms of inspiration. We prefer to discuss it in terms of energy. Every mission is fundamentally a managed transfer of energy across high-vibration and vacuum environments.",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Acknowledge technical comments on delta-v or mass fraction.",
+    "approved": true,
+    "created_at": "2026-02-06T19:23:06.423267",
+    "scheduled_for": "2026-02-10T09:30:00",
+    "tweet_id": "2021274112618864804",
+    "posted_at": "2026-02-10T17:24:36.845964"
+  },
+  {
+    "type": "Week 1 - Pillar C (Questions)",
+    "text": "If we treat space as a domain of logistics rather than exploration, how does our approach to launch system design change?",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Engage with responses that focus on reusability and CAD/CAM scalability.",
+    "approved": true,
+    "created_at": "2026-02-06T19:23:06.423328",
+    "scheduled_for": "2026-02-11T09:30:00",
+    "tweet_id": "2021950650783793645",
+    "posted_at": "2026-02-12T14:12:55.956663"
+  },
+  {
+    "type": "Week 1 - Pillar E (Signals & Framing)",
+    "text": "The decreasing cost per kg to LEO is the primary signal we are watching. It shifts space from a government-led frontier to a commercial-led infrastructure challenge.",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Discuss the implications of Starship-class payload capacities.",
+    "approved": true,
+    "created_at": "2026-02-06T19:23:06.423368",
+    "scheduled_for": "2026-02-11T18:30:00",
+    "tweet_id": "2021950651966616035",
+    "posted_at": "2026-02-12T14:12:56.220019"
+  },
+  {
+    "type": "Week 1 - Pillar A (First Principles)",
+    "text": "Systems thinking in space requires accounting for zero-repair environments. Unlike terrestrial engineering, an error in orbital deployment is often irreversible. This necessitates a specific breed of disciplined design.",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Support the importance of redundancy and pre-flight simulation.",
+    "approved": true,
+    "created_at": "2026-02-06T19:23:06.423390",
+    "scheduled_for": "2026-02-12T09:30:00",
+    "tweet_id": "2021950653317169438",
+    "posted_at": "2026-02-12T14:12:56.670927"
+  },
+  {
+    "type": "Week 1 - Pillar C (Questions)",
+    "text": "What is the most significant bottleneck in space education today: the lack of accessible data, or the complexity of the existing framing?",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Listen for feedback on curriculum gaps.",
+    "approved": true,
+    "created_at": "2026-02-06T19:23:06.423427",
+    "scheduled_for": "2026-02-13T09:30:00",
+    "tweet_id": "2022283898290368727",
+    "posted_at": "2026-02-13T12:17:08.412557"
+  },
+  {
+    "type": "Week 1 - Pillar D (Micro-explainer)",
+    "text": "Specific Impulse (Isp) is the efficiency metric of a rocket engine. It measures how much thrust is produced per unit of propellant flow. Higher Isp means better fuel efficiency, not necessarily higher power.",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Use the MPG (miles per gallon) analogy if requested.",
+    "approved": true,
+    "created_at": "2026-02-06T19:23:06.423448",
+    "scheduled_for": "2026-02-13T17:27:46.184723",
+    "tweet_id": "2022377173751931179",
+    "posted_at": "2026-02-13T18:27:46.985849"
+  },
+  {
+    "type": "update",
+    "text": "Space education needs a human element. We've just updated our platform with our story and the team behind FALAk. Check it out: https://falak-space.vercel.app/#about \ud83d\ude80 #SpaceEducation #EdTech",
+    "source": "Manual Update",
+    "approved": true,
+    "created_at": "2026-02-14T12:00:00.000000",
+    "scheduled_for": "2026-02-14T12:00:00",
+    "tweet_id": "2022740901039104052",
+    "posted_at": "2026-02-14T18:33:06.197399"
+  }
+]

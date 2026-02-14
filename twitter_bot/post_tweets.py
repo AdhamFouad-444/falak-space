@@ -18,8 +18,8 @@ except ImportError:
 import config
 
 
-def get_twitter_client() -> tweepy.Client:
-    """Create and return authenticated Twitter API v2 client."""
+def get_twitter_conn():
+    """Create and return authenticated Twitter connections for v1.1 and v2."""
     if not all([
         config.TWITTER_API_KEY,
         config.TWITTER_API_SECRET,
@@ -27,10 +27,9 @@ def get_twitter_client() -> tweepy.Client:
         config.TWITTER_ACCESS_SECRET,
     ]):
         print("❌ Error: Twitter API credentials not configured")
-        print("   1. Copy .env.example to .env")
-        print("   2. Add your Twitter API credentials")
         sys.exit(1)
     
+    # v2 Client (for posting)
     client = tweepy.Client(
         consumer_key=config.TWITTER_API_KEY,
         consumer_secret=config.TWITTER_API_SECRET,
@@ -38,7 +37,16 @@ def get_twitter_client() -> tweepy.Client:
         access_token_secret=config.TWITTER_ACCESS_SECRET,
     )
     
-    return client
+    # v1.1 API (for media upload)
+    auth = tweepy.OAuth1UserHandler(
+        config.TWITTER_API_KEY,
+        config.TWITTER_API_SECRET,
+        config.TWITTER_ACCESS_TOKEN,
+        config.TWITTER_ACCESS_SECRET,
+    )
+    api = tweepy.API(auth)
+    
+    return client, api
 
 
 def load_pending_tweets() -> list:
@@ -76,24 +84,38 @@ def save_posted_log(tweets: list):
         json.dump(tweets, f, indent=2)
 
 
-def post_tweet(client: tweepy.Client, text: str) -> dict:
+def post_tweet(client: tweepy.Client, api: tweepy.API, tweet_data: dict) -> dict:
     """
-    Post a single tweet to Twitter.
+    Post a single tweet to Twitter, with optional media.
     Returns response or error information.
     """
+    text = tweet_data.get("text", "")
+    media_path = tweet_data.get("media_path")
+    
     try:
         # Ensure tweet is within limits
         if len(text) > config.MAX_TWEET_LENGTH:
             text = text[:config.MAX_TWEET_LENGTH - 3] + "..."
         
-        response = client.create_tweet(text=text)
+        media_ids = []
+        if media_path:
+            # Upload media via v1.1 API
+            media = api.media_upload(filename=media_path)
+            media_ids = [media.media_id]
+        
+        # Post tweet via v2 Client
+        if media_ids:
+            response = client.create_tweet(text=text, media_ids=media_ids)
+        else:
+            response = client.create_tweet(text=text)
+            
         return {
             "success": True,
             "tweet_id": response.data["id"],
             "posted_at": datetime.now().isoformat(),
         }
         
-    except tweepy.TweepyException as e:
+    except Exception as e:
         return {
             "success": False,
             "error": str(e),
@@ -145,7 +167,7 @@ def main():
     # Initialize Twitter client
     print()
     print("🔑 Connecting to Twitter...")
-    client = get_twitter_client()
+    client, api = get_twitter_conn()
     
     # Post each approved tweet
     posted_log = load_posted_log()
@@ -153,7 +175,7 @@ def main():
     
     for tweet in approved:
         print(f"📤 Posting: {tweet['type']}...")
-        result = post_tweet(client, tweet["text"])
+        result = post_tweet(client, api, tweet)
         
         if result["success"]:
             print(f"   ✅ Posted! Tweet ID: {result['tweet_id']}")

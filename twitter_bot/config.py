@@ -32,9 +32,11 @@ SOURCES = {
 }
 
 # Files
-PENDING_TWEETS_FILE = "pending_tweets.json"
-POSTED_LOG_FILE = "posted_tweets.json"
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PENDING_TWEETS_FILE = os.path.join(BASE_DIR, "pending_tweets.json")
+POSTED_LOG_FILE = os.path.join(BASE_DIR, "posted_tweets.json")
 
 # FALAk Links
-FALAK_WEBSITE = "https://falakspace.com"  # Update with actual URL
+FALAK_WEBSITE = "https://falakplatforms.co.uk"
 FALAK_EDUCATION = "./EDUCATION_FRAMEWORK_001.md"

@@ -161,7 +161,25 @@ const TRANSLATIONS = {
         "ch-2-cat": "Spacecraft Systems",
         "ch-3-h": "Mars Transfer Mass Ratio",
         "ch-3-p": "Estimate the total mass ratio for a 3-stage launch vehicle to reach Mars transfer orbit.",
-        "ch-3-cat": "Propulsion"
+        "ch-3-cat": "Propulsion",
+
+        // About Section
+        "nav-about": "About",
+        "about-tag": "Who We Are",
+        "about-title": "Building the Infrastructure for Space Learning",
+        "about-mission-h": "Our Mission",
+        "about-mission-p": "FALAk exists to build structured, interactive learning environments for understanding space systems. We believe meaningful participation in space begins with clarity — not just information, but structured understanding.",
+        "about-story-h": "Our Story",
+        "about-story-p": "FALAk was founded by a group of University of Leeds students across Business, Physics with Astrophysics, and Mathematics. We recognised a gap between curiosity about space and structured understanding of how space systems actually work.",
+        "team-tag": "The Team",
+        "team-title": "Meet the Founders",
+        "team-adham-role": "Founder & Product Lead",
+        "team-adham-bio": "International Business & Marketing undergraduate focused on building scalable learning infrastructure and ecosystem partnerships.",
+        "team-senith-role": "Co-Founder & Scientific Director",
+        "team-senith-bio": "Undergraduate in Physics with Astrophysics, responsible for scientific accuracy and systems integrity across the framework.",
+        "team-laxshan-role": "Founding Contributor",
+        "team-laxshan-bio": "Mathematics undergraduate supporting quantitative modelling and systems structure within the learning architecture.",
+        "footer-locations": "Based in Abu Dhabi & Leeds"
     },
     ar: {
         // Nav
@@ -321,7 +339,25 @@ const TRANSLATIONS = {
         "ch-2-cat": "أنظمة المركبات الفضائية",
         "ch-3-h": "نسبة كتلة نقل المريخ",
         "ch-3-p": "قدّر نسبة الكتلة الإجمالية لمركبة إطلاق ثلاثية المراحل للوصول إلى مدار نقل المريخ.",
-        "ch-3-cat": "الدفع"
+        "ch-3-cat": "الدفع",
+
+        // About Section
+        "nav-about": "من نحن",
+        "about-tag": "من نحن",
+        "about-title": "من طلاب، للطلاب",
+        "about-mission-h": "مهمتنا",
+        "about-mission-p": "بناء بنية تحتية تعليمية منظمة قائمة على المبادئ الأولى، تتجاوز \"التعليم الترفيهي\" السطحي وتعد المتعلمين لتعقيد أنظمة الفضاء الحقيقية.",
+        "about-story-h": "قصتنا",
+        "about-story-p": "بدأت فلك كمحادثة بين ثلاثة طلاب في ليدز لاحظوا أنه بينما يتزايد الاهتمام بالفضاء، فإن عمق التعليم المتاح لم يواكب ذلك. قمنا ببناء فلك لسد هذه الفجوة.",
+        "team-tag": "الفريق",
+        "team-title": "مؤسسو فلك",
+        "team-adham-role": "المؤسس وقائد المنتج",
+        "team-adham-bio": "طالب جامعي في الأعمال الدولية والتسويق، يركز على بناء بنية تحتية تعليمية قابلة للتوسع وشراكات في النظام البيئي.",
+        "team-senith-role": "شريك مؤسس والمدير العلمي",
+        "team-senith-bio": "طالب جامعي في الفيزياء والفيزياء الفلكية، مسؤول عن الدقة العلمية وسلامة الأنظمة عبر الإطار.",
+        "team-laxshan-role": "مساهم مؤسس",
+        "team-laxshan-bio": "طالب رياضيات يدعم النمذجة الكمية وهيكلة الأنظمة ضمن البنية التعليمية.",
+        "footer-locations": "مقرنا في أبوظبي وليدز"
     }
 };
 

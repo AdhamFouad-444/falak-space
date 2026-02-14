@@ -17,6 +17,10 @@ APOD_TEMPLATES = [
     "🌌 Today's cosmic view: {title}\n\n{explanation_short}\n\n📸 Credit: NASA/APOD\n🔗 {url}",
     
     "✨ {title}\n\n{explanation_short}\n\nSpace reveals something new every day. 🔗 {url}",
+    
+    "POV: You're staring into the deep cosmos. 🔭\n\nLatest from NASA: {title}.\n\n{explanation_short}\n\nFull HD: {url}",
+    
+    "Your daily dose of cosmic perspective is here. 🌌\n\n\"{title}\"\n\n{explanation_short}\n\n🔗 {url}",
 ]
 
 # =============================================================================
@@ -27,6 +31,8 @@ NEO_TEMPLATES = [
     "☄️ Asteroid Alert\n\n{name} is passing Earth today\n📏 Size: ~{diameter}m\n📍 Distance: {distance} km\n\nNo danger - just a cosmic neighbor passing by.\n\n#SpaceAwareness",
     
     "🌍 Today's cosmic flyby: {name}\n\nDiameter: ~{diameter}m\nClosest approach: {distance} km from Earth\n\nNear-Earth objects remind us space is dynamic.\n\n#Asteroids",
+    
+    "Heads up! ☄️ A {diameter}m asteroid named {name} is buzzing by Earth today at {distance} km.\n\nSpace is a lot crowded than you think. 🏘️\n\n#SpaceSafety",
 ]
 
 # =============================================================================
@@ -47,6 +53,10 @@ EDUCATIONAL_TEMPLATES = [
     "🎓 Space Education\n\n{question}\n\n{answer}\n\nLearn more in our Education Framework: {link}",
     
     "❓ {question}\n\n{answer}\n\nThis is part of FALAk's mission: making space education accessible to everyone.\n\n#SpaceEducation",
+    
+    "Wait, what? 🤯\n\n{question}\n\n{answer}\n\nSpace physics is wild. 🚀 https://falak-space.vercel.app/#",
+    
+    "Space is counter-intuitive. 🧠\n\n{question}\n\n{answer}\n\nStay grounded, look up. 🔗 https://falak-space.vercel.app/#",
 ]
 
 # Educational content library (grounded in Framework 001)
@@ -90,6 +100,16 @@ EDUCATIONAL_CONTENT = [
         "question": "Why are rockets mostly fuel?",
         "answer": "Fuel dominates mass. Payload is a tiny fraction. To lift more, you need more fuel, which adds weight, requiring more fuel. Rockets scale poorly.",
         "section": "Section 2.5"
+    },
+    {
+        "question": "How fast do you need to go to stay in space?",
+        "answer": "To stay in LEO, you need to hit ~28,000 km/h. At that speed, you're literally falling around the curve of the Earth. It's not about height, it's about horizontal velocity.",
+        "section": "Section 2.9"
+    },
+    {
+        "question": "Is there sound in space?",
+        "answer": "Total silence. Sound needs a medium (like air) to travel. Without it, the most violent supernova would be perfectly quiet to the naked ear.",
+        "section": "General Physics"
     },
 ]
 
