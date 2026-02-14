@@ -143,7 +143,12 @@ const TRANSLATIONS = {
         "community-feat-2": "Peer Learning",
         "community-feat-3": "Mentorship",
         "community-feat-4": "Multilingual",
-        "community-badge": "Coming Soon — We're setting up our community space",
+        "community-badge": " Coming Soon — We're setting up our community space",
+
+        // Planet Modal
+        "pm-title": "Planet",
+        "pm-level": "Level",
+        "pm-desc-placeholder": "Description",
 
         // Challenges Section
         "challenges-tag": "Challenges",
@@ -179,7 +184,8 @@ const TRANSLATIONS = {
         "team-senith-bio": "Undergraduate in Physics with Astrophysics, responsible for scientific accuracy and systems integrity across the framework.",
         "team-laxshan-role": "Founding Contributor",
         "team-laxshan-bio": "Mathematics undergraduate supporting quantitative modelling and systems structure within the learning architecture.",
-        "footer-locations": "Based in Abu Dhabi & Leeds"
+        "footer-locations": "Based in Abu Dhabi & Leeds",
+        "footer-loc-desc": "FALAk operates with a long-term focus on strengthening technical learning pathways across the MENA region."
     },
     ar: {
         // Nav
@@ -323,6 +329,11 @@ const TRANSLATIONS = {
         "community-feat-4": "متعدد اللغات",
         "community-badge": "قريبًا — نحن نجهز مساحة المجتمع",
 
+        // Planet Modal
+        "pm-title": "الكوكب",
+        "pm-level": "المستوى",
+        "pm-desc-placeholder": "الوصف",
+
         // Challenges Section
         "challenges-tag": "التحديات",
         "challenges-title": "تحديات فضائية شهرية",
@@ -357,7 +368,8 @@ const TRANSLATIONS = {
         "team-senith-bio": "طالب جامعي في الفيزياء والفيزياء الفلكية، مسؤول عن الدقة العلمية وسلامة الأنظمة عبر الإطار.",
         "team-laxshan-role": "مساهم مؤسس",
         "team-laxshan-bio": "طالب رياضيات يدعم النمذجة الكمية وهيكلة الأنظمة ضمن البنية التعليمية.",
-        "footer-locations": "مقرنا في أبوظبي وليدز"
+        "footer-locations": "مقرنا في أبوظبي وليدز",
+        "footer-loc-desc": "تعمل فلك بتركيز طويل الأمد على تعزيز مسارات التعلم التقني عبر منطقة الشرق الأوسط وشمال إفريقيا."
     }
 };
 

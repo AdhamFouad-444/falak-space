@@ -18,14 +18,14 @@
   },
   {
     "type": "educational",
-    "text": "\ud83c\udf93 Space Education\n\nWhere does space begin?\n\nSpace begins where aerodynamic flight ends and orbital mechanics dominate. The practical boundary is ~100km (K\u00e1rm\u00e1n Line). It's defined by physics, not distance.\n\nLearn more at \ud83d\udd17 https://falak-space.vercel.app/#",
+    "text": "\ud83c\udf93 Space Education\n\nWhere does space begin?\n\nSpace begins where aerodynamic flight ends and orbital mechanics dominate. The practical boundary is ~100km (K\u00e1rm\u00e1n Line). It's defined by physics, not distance.\n\nLearn more at \ud83d\udd17 https://falakplatforms.co.uk/#",
     "source": "FALAk Framework 001 - Section 1.1",
     "approved": false,
     "created_at": "2026-02-06T18:05:01.805370"
   },
   {
     "type": "educational",
-    "text": "Space is counter-intuitive. \ud83e\udde0\n\nIs orbit about height or speed?\n\nSpeed. Getting to orbit means going sideways fast enough to 'miss' Earth as you fall. Orbit is an energy problem, not an altitude problem.\n\nStay grounded, look up. \ud83d\udd17 https://falak-space.vercel.app/#",
+    "text": "Space is counter-intuitive. \ud83e\udde0\n\nIs orbit about height or speed?\n\nSpeed. Getting to orbit means going sideways fast enough to 'miss' Earth as you fall. Orbit is an energy problem, not an altitude problem.\n\nStay grounded, look up. \ud83d\udd17 https://falakplatforms.co.uk/#",
     "source": "FALAk Framework 001 - Section 2.9",
     "approved": false,
     "created_at": "2026-02-06T18:58:37.869033"
@@ -42,7 +42,7 @@
   },
   {
     "type": "Week 1 - Pillar A (First Principles)",
-    "text": "Space isn\u2019t a secret\u2014it\u2019s physics. FALAk is building the intellectual foundations for understanding how these systems interact. Join the exploration: https://falak-space.vercel.app/",
+    "text": "Space isn\u2019t a secret\u2014it\u2019s physics. FALAk is building the intellectual foundations for understanding how these systems interact. Join the exploration: https://falakplatforms.co.uk/",
     "source": "Content Plan - Week 1",
     "post_time_uk": "6:30 PM",
     "reply_strategy": "Welcome users to the framework.",
@@ -142,7 +142,7 @@
   },
   {
     "type": "Week 2 - Pillar D (Explainer)",
-    "text": "Atmospheric drag is why LEO satellites eventually fall. Even at 400km, there are enough particles to slow you down over time. \ud83d\udd17 https://falak-space.vercel.app/",
+    "text": "Atmospheric drag is why LEO satellites eventually fall. Even at 400km, there are enough particles to slow you down over time. \ud83d\udd17 https://falakplatforms.co.uk/",
     "source": "Content Plan - Week 2",
     "post_time_uk": "6:30 PM",
     "reply_strategy": "Discuss station-keeping and fuel requirements.",
@@ -242,7 +242,7 @@
   },
   {
     "type": "Week 3 - Pillar C (Questions)",
-    "text": "As we move toward productization, what systems do you feel are most underserved in the current space-ed market? \ud83d\udd17 https://falak-space.vercel.app/",
+    "text": "As we move toward productization, what systems do you feel are most underserved in the current space-ed market? \ud83d\udd17 https://falakplatforms.co.uk/",
     "source": "Content Plan - Week 3",
     "post_time_uk": "6:30 PM",
     "reply_strategy": "Capture feedback for product roadmap.",
@@ -342,7 +342,7 @@
   },
   {
     "type": "Week 4 - Pillar B (Learning)",
-    "text": "We've spent 4 weeks exploring the intellectual foundations of the orbital domain. The journey from physics to product continues. \ud83d\udd17 https://falak-space.vercel.app/",
+    "text": "We've spent 4 weeks exploring the intellectual foundations of the orbital domain. The journey from physics to product continues. \ud83d\udd17 https://falakplatforms.co.uk/",
     "source": "Content Plan - Week 4",
     "post_time_uk": "6:30 PM",
     "reply_strategy": "Thank the audience for joining the research phase.",
@@ -360,7 +360,7 @@
   },
   {
     "type": "educational",
-    "text": "Space is counter-intuitive. \ud83e\udde0\n\nIs orbit about height or speed?\n\nSpeed. Getting to orbit means going sideways fast enough to 'miss' Earth as you fall. Orbit is an energy problem, not an altitude problem.\n\nStay grounded, look up. \ud83d\udd17 https://falak-space.vercel.app/#",
+    "text": "Space is counter-intuitive. \ud83e\udde0\n\nIs orbit about height or speed?\n\nSpeed. Getting to orbit means going sideways fast enough to 'miss' Earth as you fall. Orbit is an energy problem, not an altitude problem.\n\nStay grounded, look up. \ud83d\udd17 https://falakplatforms.co.uk/#",
     "source": "FALAk Framework 001 - Section 2.9",
     "approved": false,
     "created_at": "2026-02-08T12:17:46.864738"

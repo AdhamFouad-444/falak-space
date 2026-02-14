@@ -121,5 +121,16 @@
     "scheduled_for": "2026-02-14T12:00:00",
     "tweet_id": "2022740901039104052",
     "posted_at": "2026-02-14T18:33:06.197399"
+  },
+  {
+    "type": "update",
+    "text": "Space education needs a human element. We've just updated our platform with our story and the team behind FALAk. Check it out: https://falakplatforms.co.uk/#about \ud83d\ude80 #SpaceEducation #EdTech",
+    "source": "Manual Update (Retry)",
+    "approved": true,
+    "created_at": "2026-02-14T18:45:00.000000",
+    "scheduled_for": "2026-02-14T18:45:00",
+    "last_error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))",
+    "tweet_id": "2022745294350192779",
+    "posted_at": "2026-02-14T18:50:33.790075"
   }
 ]
