@@ -1930,7 +1930,7 @@
             <ul class="nav-links">
                 <li><a href="#journey" id="nav-journey">Learning Path</a></li>
                 <li><a href="#simlab-section" class="nav-beta-link"><span data-i18n="nav-beta">Academy</span> <span
-                            class="beta-badge" data-i18n="beta-badge">COMING SOON</span></a></li>
+                            class="beta-badge" data-i18n="beta-badge">BETA</span></a></li>
                 <li><a href="#news" id="nav-news">News</a></li>
                 <li><a href="#features" id="nav-features">Features</a></li>
                 <li><a href="#about" id="nav-about" data-i18n="nav-about">About</a></li>
@@ -1978,7 +1978,7 @@
                     Path</a>
                 <a href="#simlab-section" onclick="closeMenu()" class="mobile-menu-link"
                     style="position: relative;"><span data-i18n="nav-beta">Academy</span> <span class="beta-badge"
-                        data-i18n="beta-badge" style="top: -10px; right: -45px;">SOON</span></a>
+                        data-i18n="beta-badge" style="top: -10px; right: -45px;">BETA</span></a>
                 <a href="#news" onclick="closeMenu()" data-i18n="nav-news" class="mobile-menu-link">News</a>
                 <a href="#features" onclick="closeMenu()" data-i18n="nav-features" class="mobile-menu-link">Features</a>
                 <a href="#about" onclick="closeMenu()" data-i18n="nav-about" class="mobile-menu-link">About</a>
@@ -2599,10 +2599,11 @@
                         .btn-social {
                             display: inline-flex;
                             align-items: center;
+                            justify-content: center;
                             gap: 10px;
-                            padding: 12px 24px;
-                            border-radius: 8px;
-                            /* Assuming btn style, explicitly adding for safety */
+                            padding: 12px 32px;
+                            border-radius: 50px;
+                            width: 240px;
                             text-decoration: none;
                             font-weight: 500;
                             transition: all 0.3s ease;
@@ -2626,7 +2627,7 @@
                         @media (max-width: 600px) {
                             .cta-social-container {
                                 flex-direction: column;
-                                align-items: stretch;
+                                align-items: center;
                                 gap: 16px;
                                 padding: 0 20px;
                             }
@@ -3627,7 +3628,7 @@
                                 console.warn('News fetch failed:', err);
                                 var grid = document.getElementById('news-grid');
                                 grid.innerHTML = '<div class="news-card" style="grid-column:1/-1;text-align:center;opacity:0.6;">'
-                                    + '<p data-i18n="news-error">Space news updating soon…</p></div>';
+                                    + '<p data-i18n="news-error">Unable to load latest news at this moment. Please check back later.</p></div>';
                             });
                     }
 
@@ -3737,6 +3738,42 @@
                         orbit.</p>
                     <div class="challenge-category" id="ch-3-cat">Propulsion</div>
                 </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+             NEW SECTION: Community
+             ============================================ -->
+        <section id="community" class="community-section" style="padding: 100px 48px; text-align: center;">
+            <div class="section-header">
+                <h2 data-i18n="community-title">Connect with Space Learners</h2>
+                <p class="section-desc" data-i18n="community-desc">Join learners, educators, and space enthusiasts from
+                    across the region and beyond.</p>
+            </div>
+
+            <div class="community-features">
+                <div class="community-feat">
+                    <div class="community-feat-icon">💬</div>
+                    <span data-i18n="community-feat-1">Discussion Forums</span>
+                </div>
+                <div class="community-feat">
+                    <div class="community-feat-icon">🤝</div>
+                    <span data-i18n="community-feat-2">Peer Learning</span>
+                </div>
+                <div class="community-feat">
+                    <div class="community-feat-icon">🚀</div>
+                    <span data-i18n="community-feat-3">Mentorship</span>
+                </div>
+                <div class="community-feat">
+                    <div class="community-feat-icon">🌍</div>
+                    <span data-i18n="community-feat-4">Multilingual</span>
+                </div>
+            </div>
+
+            <div class="community-badge" style="margin: 40px auto 0;">
+                <span class="community-pulse"></span>
+                <span data-i18n="community-badge">Coming Soon — Join our Discord community (Launching Soon)</span>
             </div>
         </section>
 
@@ -4037,22 +4074,18 @@
         // Mobile Menu Logic
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
-            if (menu.style.display === 'flex') {
+            if (menu.classList.contains('active')) {
                 closeMenu();
             } else {
-                menu.style.display = 'flex';
-                setTimeout(() => menu.style.opacity = '1', 10);
+                menu.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
         }
 
         function closeMenu() {
             const menu = document.getElementById('mobile-menu');
-            menu.style.opacity = '0';
-            setTimeout(() => {
-                menu.style.display = 'none';
-                document.body.style.overflow = '';
-            }, 300);
+            menu.classList.remove('active');
+            document.body.style.overflow = '';
         }
 
         // Add event listener to toggle button

@@ -108,24 +108,19 @@ class CosmicStarfield {
         const opacity = star.baseOpacity * (0.6 + 0.4 * twinkle);
 
         // Very simplified mouse interaction check
-        // Only calculate distance if close (taxicab metric for speed approximation)
         let mouseGlow = 0;
-        if (Math.abs(this.mouse.x - star.x) < 200 && Math.abs(this.mouse.y - star.y) < 200) {
+        if (Math.abs(this.mouse.x - star.x) < 150 && Math.abs(this.mouse.y - star.y) < 150) {
             const dx = this.mouse.x - star.x;
             const dy = this.mouse.y - star.y;
-            // Only do sqrt if within box
             const distance = Math.sqrt(dx * dx + dy * dy);
-            mouseGlow = Math.max(0, 1 - distance / 200);
+            mouseGlow = Math.max(0, 1 - distance / 150);
         }
 
         const finalOpacity = Math.min(1, opacity + mouseGlow * 0.3);
 
-        this.ctx.beginPath();
-        this.ctx.arc(star.x, star.y, star.radius * (1 + mouseGlow * 0.3), 0, Math.PI * 2);
+        // Optimization: Use fillRect for stars (faster than arc or circular gradients)
         this.ctx.fillStyle = `rgba(${star.color}, ${finalOpacity})`;
-        this.ctx.fill();
-
-        // Removed expensive gradient glow for every star
+        this.ctx.fillRect(star.x - star.radius, star.y - star.radius, star.radius * 2, star.radius * 2);
     }
 
     drawNebula(cloud, time) {
@@ -215,32 +210,31 @@ class CosmicStarfield {
 // Navigation
 // ============================================
 function initNavigation() {
-    const nav = document.getElementById('nav');
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
+    const navToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    let lastScroll = 0;
-    // Throttled scroll listener
-    window.addEventListener('scroll', throttle(() => {
-        const currentScroll = window.scrollY;
-        if (currentScroll > 50) {
-            nav?.classList.add('scrolled');
-        } else {
-            nav?.classList.remove('scrolled');
-        }
-        lastScroll = currentScroll;
-    }, 100));
-
-    navToggle?.addEventListener('click', () => {
-        navLinks?.classList.toggle('active');
+    // Toggle Mobile Menu
+    navToggle?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu?.classList.toggle('active');
     });
 
-    navLinks?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks?.classList.remove('active');
-        });
+    // Close on overlay click
+    mobileMenu?.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+            closeMenu();
+        }
     });
 }
+
+// Global Close Menu function
+function closeMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu?.classList.remove('active');
+}
+
+// Export to window
+window.closeMenu = closeMenu;
 
 // ============================================
 // Smooth Scroll

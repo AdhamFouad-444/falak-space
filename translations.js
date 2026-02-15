@@ -108,7 +108,7 @@ const TRANSLATIONS = {
         "news-title": "What's Happening in Space",
         "news-desc": "Space developments from the MENA region and beyond, with educational context.",
         "news-loading": "Loading latest space news...",
-        "news-error": "Space news updating soon...",
+        "news-error": "Latest news is being synchronized. Please check back in a moment.",
         "news-1-h": "Hope Probe Continues Extended Science Phase",
         "news-1-p": "The UAE's Emirates Mars Mission extends its observation campaign, providing new atmospheric data on Mars' upper atmosphere and seasonal dust storms.",
         "news-1-src": "UAE Space Agency",
@@ -159,7 +159,7 @@ const TRANSLATIONS = {
         "community-feat-2": "Peer Learning",
         "community-feat-3": "Mentorship",
         "community-feat-4": "Multilingual",
-        "community-badge": " Coming Soon — We're setting up our community space",
+        "community-badge": " Coming Soon — Join our Discord community (Launching Soon)",
 
         // Planet Modal
         "pm-title": "Planet",
@@ -312,7 +312,7 @@ const TRANSLATIONS = {
         "news-title": "ما يحدث في الفضاء",
         "news-desc": "تطورات الفضاء من منطقة الشرق الأوسط وشمال أفريقيا والعالم، مع سياق تعليمي.",
         "news-loading": "جاري تحميل آخر أخبار الفضاء...",
-        "news-error": "تحديث أخبار الفضاء قريباً...",
+        "news-error": "يتم مزامنة آخر الأخبار حالياً. يرجى المحاولة بعد قليل.",
         "news-1-h": "مسبار الأمل يواصل مرحلة العلوم الموسعة",
         "news-1-p": "مهمة الإمارات لاستكشاف المريخ تمدد حملة الرصد، وتوفر بيانات جوية جديدة عن الغلاف الجوي العلوي للمريخ والعواصف الترابية الموسمية.",
         "news-1-src": "وكالة الإمارات للفضاء",
@@ -363,7 +363,7 @@ const TRANSLATIONS = {
         "community-feat-2": "تعلم الأقران",
         "community-feat-3": "إرشاد",
         "community-feat-4": "متعدد اللغات",
-        "community-badge": "قريبًا — نحن نجهز مساحة المجتمع",
+        "community-badge": "قريباً — انضم إلى مجتمع ديسكورد (قريباً)",
 
         // Planet Modal
         "pm-title": "الكوكب",

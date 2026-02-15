@@ -132,5 +132,17 @@
     "last_error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))",
     "tweet_id": "2022745294350192779",
     "posted_at": "2026-02-14T18:50:33.790075"
+  },
+  {
+    "type": "apod",
+    "text": "Your daily dose of cosmic perspective is here. \ud83c\udf0c\n\n\"To Fly Free in Space\"\n\nWhat would it be like to fly free in space?  About 100 meters from the cargo bay of a space shuttle, Bruce McCandless...\n\n\ud83d\udd17 https://apod.nasa.gov/apod/image/2602/freeflyer_nasa_3000.jpg",
+    "media_url": "https://apod.nasa.gov/apod/image/2602/freeflyer_nasa_3000.jpg",
+    "source": "NASA APOD",
+    "date": "2026-02-15",
+    "approved": true,
+    "scheduled_for": "2026-02-15T13:00:00",
+    "created_at": "2026-02-15T13:12:28.296219",
+    "tweet_id": "2023023351845765298",
+    "posted_at": "2026-02-15T13:15:27.830640"
   }
 ]
