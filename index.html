@@ -11,10 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="OfficialFALAk.png">
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Vercel analytics removed for local dev -->
     <style>
         /* ============================================================================
            CSS ORGANIZATION GUIDE
@@ -349,7 +346,8 @@
             margin: 0 auto;
             width: 100%;
             max-width: 1000px;
-            height: 750px;
+            min-height: 750px;
+            height: auto;
             position: relative;
             display: flex;
             gap: 60px;
@@ -389,7 +387,8 @@
         .orbit-container {
             width: 600px;
             height: 600px;
-            margin: 60px auto 0;
+            margin: 120px auto 0;
+            /* Pushed down for header clearance */
             position: relative;
             display: flex;
             justify-content: center;
@@ -416,22 +415,54 @@
         }
 
         .ring-1 {
-            width: 150px;
-            height: 150px;
-            animation: orbitSpin 50s linear infinite;
+            width: 100px;
+            height: 100px;
+            animation: orbitSpin 30s linear infinite;
         }
 
         .ring-2 {
-            width: 260px;
-            height: 260px;
-            animation: orbitSpin 90s linear infinite;
+            width: 150px;
+            height: 150px;
+            animation: orbitSpin 55s linear infinite;
         }
 
         .ring-3 {
-            width: 370px;
-            height: 370px;
-            animation: orbitSpin 160s linear infinite;
+            width: 200px;
+            height: 200px;
+            animation: orbitSpin 90s linear infinite;
         }
+
+        .ring-4 {
+            width: 250px;
+            height: 250px;
+            animation: orbitSpin 140s linear infinite;
+        }
+
+        .ring-5 {
+            width: 310px;
+            height: 310px;
+            animation: orbitSpin 280s linear infinite;
+        }
+
+        .ring-6 {
+            width: 380px;
+            height: 380px;
+            animation: orbitSpin 420s linear infinite;
+        }
+
+        .ring-7 {
+            width: 460px;
+            height: 460px;
+            animation: orbitSpin 600s linear infinite;
+        }
+
+        .ring-8 {
+            width: 550px;
+            height: 550px;
+            animation: orbitSpin 800s linear infinite;
+        }
+
+        /* Intermediate rings removed, standardizing to 8 optimized rings */
 
         .orbit-dot {
             position: absolute;
@@ -1309,11 +1340,21 @@
             /* Orbit Visualization */
             .orbit-container {
                 width: 100% !important;
-                height: auto !important;
-                max-width: 450px;
-                aspect-ratio: 1/1;
+                height: 500px !important;
+                max-width: 500px;
                 margin: 40px auto 0 !important;
-                transform: scale(1.15);
+                transform: scale(1.0) !important;
+                transform-origin: center center;
+            }
+
+            .orbit-section {
+                padding: 40px 20px !important;
+                /* Tighten up gaps */
+                overflow: visible !important;
+            }
+
+            .orbit-planet {
+                pointer-events: auto !important;
             }
 
             .orbit-ring {
@@ -1559,37 +1600,75 @@
         }
 
 
-        /* === MOBILE OPTIMIZATION (Added Phase 4) === */
         @media (max-width: 768px) {
 
-            /* Orbit Visualization */
+            /* Framework / "System Thinking" Block Fix */
+            .framework-container {
+                padding: 30px 20px !important;
+                margin: 20px 10px !important;
+                border-radius: 20px !important;
+            }
+
+            .framework-code {
+                font-size: 0.85rem !important;
+                text-align: center !important;
+                word-break: normal !important;
+                overflow-wrap: break-word !important;
+                white-space: normal !important;
+                margin-bottom: 20px !important;
+                line-height: 1.5 !important;
+            }
+
+            /* Orbit Visualization Scaling */
             .orbit-container {
                 width: 100% !important;
-                height: auto !important;
-                aspect-ratio: 1/1;
-                transform: scale(0.9);
-                margin-top: 20px;
+                height: 400px !important;
+                margin: 40px auto 0 !important;
+                transform: scale(0.85) !important;
             }
 
             .orbit-ring {
-                /* Scale rings down relative to container */
-                max-width: 100%;
-                max-height: 100%;
-            }
-
-            .ring-3 {
-                width: 90%;
-                height: 90%;
-            }
-
-            .ring-2 {
-                width: 65%;
-                height: 65%;
+                border-width: 1px !important;
             }
 
             .ring-1 {
-                width: 40%;
-                height: 40%;
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            .ring-2 {
+                width: 90px !important;
+                height: 90px !important;
+            }
+
+            .ring-3 {
+                width: 120px !important;
+                height: 120px !important;
+            }
+
+            .ring-4 {
+                width: 150px !important;
+                height: 150px !important;
+            }
+
+            .ring-5 {
+                width: 190px !important;
+                height: 190px !important;
+            }
+
+            .ring-6 {
+                width: 230px !important;
+                height: 230px !important;
+            }
+
+            .ring-7 {
+                width: 280px !important;
+                height: 280px !important;
+            }
+
+            .ring-8 {
+                width: 340px !important;
+                height: 340px !important;
             }
 
             /* Rocket Launch Scene */
@@ -1986,8 +2065,7 @@
             </div>
 
             <div class="framework-container">
-                <div class="framework-code" id="sim-code">
-                    &lt;system&gt; initializing_physics_engine... &lt;/system&gt;
+                <div class="framework-code" id="sim-code">&lt;system&gt; initializing_physics_engine... &lt;/system&gt;
                 </div>
                 <span class="btn-launch-beta framework-beta-btn" id="sim-status">
                     CURRENTLY IN DEVELOPMENT
@@ -2008,24 +2086,24 @@
 
             <div class="launch-grid">
                 <!-- Vehicle Visualization -->
+                <!-- Vehicle Visualization (Hidden broken image) -->
+                <!-- 
                 <div class="launch-image-wrapper">
                     <div class="launch-rocket-container">
                         <img src="rocket_v7.png" alt="FALAk Launch Vehicle" class="launch-rocket-img">
                     </div>
-                </div>
+                </div> 
+                -->
 
                 <!-- Artemis II Rocket Breakdown (Interactive) -->
-                <div class="rocket-scene"
-                    style="margin: 0 auto; width: 100%; max-width: 1000px; height: 750px; position: relative; display: flex; gap: 60px; text-align: left;">
+                <div class="rocket-scene">
 
                     <!-- 1. The Rocket Visual (Left) - Premium Integration -->
-                    <div
-                        style="flex: 1; position: relative; display: flex; justify-content: center; align-items: center;">
+                    <div class="rocket-visual-col">
 
                         <!-- WRAPPER: Matches SVG Aspect Ratio for Perfect Alignment -->
-                        <div style="position: relative; height: 100%; aspect-ratio: 400/1100; margin: 0 auto;">
-                            <svg viewBox="0 -150 400 1100"
-                                style="height: 100%; width: 100%; filter: drop-shadow(0 0 30px rgba(0,0,0,0.5)); overflow: visible;">
+                        <div class="rocket-svg-wrapper">
+                            <svg viewBox="0 -150 400 1100" class="rocket-main-svg">
                                 <defs>
                                     <linearGradient id="coreTankReal" x1="0%" y1="0%" x2="100%" y2="0%">
                                         <stop offset="0%" stop-color="#7c2d12" />
@@ -2207,8 +2285,7 @@
                             </svg>
 
                             <!-- SVG Overlay for Leader Lines -->
-                            <svg class="leader-lines" viewBox="0 0 500 750"
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5;">
+                            <svg class="leader-lines leader-lines-svg" viewBox="0 0 500 750">
                                 <!-- Dynamic Leader Line (Script controls coordinates) -->
                                 <path id="leader-line" d="M 0 0" fill="none" stroke="#38bdf8" stroke-width="2"
                                     style="filter: url(#lineGlow); opacity: 0; transition: opacity 0.3s;" />
@@ -2251,6 +2328,59 @@
                     </div>
 
                     <style>
+                        /* Rocket Scene & Interactive Elements */
+                        .rocket-scene {
+                            margin: 0 auto;
+                            width: 100%;
+                            max-width: 1000px;
+                            min-height: 750px;
+                            height: auto;
+                            position: relative;
+                            display: flex;
+                            gap: 60px;
+                            text-align: left;
+                        }
+
+                        .rocket-visual-col {
+                            flex: 1;
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        .rocket-svg-wrapper {
+                            position: relative;
+                            height: 100%;
+                            aspect-ratio: 400/1100;
+                            margin: 0 auto;
+                        }
+
+                        .rocket-main-svg {
+                            height: 100%;
+                            width: 100%;
+                            filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+                            overflow: visible;
+                        }
+
+                        .leader-lines-svg {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            pointer-events: none;
+                            z-index: 5;
+                        }
+
+                        .rocket-info-col {
+                            flex: 1;
+                            padding: 40px 0;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                        }
+
                         /* Premium Tech UI Styles */
                         .tech-reticle {
                             position: absolute;
@@ -2305,7 +2435,6 @@
                             opacity: 0.7;
                             pointer-events: none;
                             display: none;
-                            /* Hidden by default, nicer clean look */
                         }
 
                         @keyframes reticlePulse {
@@ -2370,25 +2499,6 @@
                             background: rgba(56, 189, 248, 0.3);
                         }
 
-                        /* Mobile Responsiveness */
-                        @media (max-width: 900px) {
-                            .rocket-scene {
-                                flex-direction: column !important;
-                                height: auto !important;
-                                gap: 0 !important;
-                            }
-
-                            .rocket-scene>div {
-                                width: 100% !important;
-                                height: auto !important;
-                                min-height: 400px;
-                            }
-
-                            .rocket-scene svg {
-                                max-height: 500px !important;
-                            }
-                        }
-
                         .hud-stat-box {
                             background: rgba(0, 0, 0, 0.3);
                             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2400,6 +2510,89 @@
                         .hud-stat-box:hover {
                             border-color: rgba(56, 189, 248, 0.3);
                             background: rgba(56, 189, 248, 0.05);
+                        }
+
+                        /* Mobile Responsiveness for Rocket Scene */
+                        @media (max-width: 900px) {
+                            .rocket-scene {
+                                flex-direction: column;
+                                height: auto;
+                                gap: 40px;
+                                padding-bottom: 40px;
+                            }
+
+                            .rocket-visual-col {
+                                width: 100%;
+                                height: auto;
+                                min-height: 500px;
+                            }
+
+                            .rocket-main-svg {
+                                max-height: 600px;
+                            }
+
+                            .rocket-info-col {
+                                width: 100%;
+                                padding: 0 20px;
+                                text-align: center;
+                            }
+
+                            .tech-header {
+                                justify-content: center;
+                            }
+
+                            .tech-header::after {
+                                display: none;
+                            }
+                        }
+
+                        /* CTA Social Section Styles */
+                        .cta-social-container {
+                            display: flex;
+                            gap: 20px;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            margin-top: 32px;
+                        }
+
+                        .btn-social {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 10px;
+                            padding: 12px 24px;
+                            border-radius: 8px;
+                            /* Assuming btn style, explicitly adding for safety */
+                            text-decoration: none;
+                            font-weight: 500;
+                            transition: all 0.3s ease;
+                        }
+
+                        .btn-social svg {
+                            flex-shrink: 0;
+                        }
+
+                        .btn-social-ghost {
+                            background: rgba(255, 255, 255, 0.1);
+                            border: 1px solid rgba(255, 255, 255, 0.2);
+                            color: #fff;
+                        }
+
+                        .btn-social-ghost:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                            border-color: rgba(255, 255, 255, 0.4);
+                        }
+
+                        @media (max-width: 600px) {
+                            .cta-social-container {
+                                flex-direction: column;
+                                align-items: stretch;
+                                gap: 16px;
+                                padding: 0 20px;
+                            }
+
+                            .btn-social {
+                                justify-content: center;
+                            }
                         }
                     </style>
 
@@ -2588,6 +2781,7 @@
                 </div>
 
 
+            </div> <!-- End .launch-grid -->
         </section>
 
         <!-- New Orbit Visualization Section -->
@@ -2611,59 +2805,52 @@
                 <!-- Rings & Planets -->
 
                 <div class="orbit-ring ring-1">
-                    <!-- Mercury -->
-                    <div class="orbit-planet p-mercury" style="top: 10%; right: 20%; transform: translate(50%, -50%);"
+                    <div class="orbit-planet p-mercury" style="top: 50%; right: -22px; transform: translate(0, -50%);"
                         onclick="openPlanet('mercury')">
                         <img src="planet_mercury.png?v=5" alt="Mercury" class="planet-visual">
                     </div>
-                    <!-- Venus -->
-                    <div class="orbit-planet p-venus" style="bottom: 15%; left: 10%; transform: translate(-50%, 50%);"
+                </div>
+                <div class="orbit-ring ring-2">
+                    <div class="orbit-planet p-venus" style="top: 50%; left: -22px; transform: translate(0, -50%);"
                         onclick="openPlanet('venus')">
                         <img src="planet_venus.png?v=5" alt="Venus" class="planet-visual">
                     </div>
                 </div>
-
-                <div class="orbit-ring ring-2">
-                    <!-- Earth -->
+                <div class="orbit-ring ring-3">
                     <div class="orbit-planet p-earth" style="top: 0; left: 50%; transform: translate(-50%, -50%);"
                         onclick="openPlanet('earth')">
                         <img src="planet_earth.png" alt="Earth" style="width: 100%; height: 100%; object-fit: contain;">
-                        <!-- Keep Earth original -->
                     </div>
-                    <!-- Mars -->
-                    <div class="orbit-planet p-mars" style="top: 60%; right: 5%; transform: translate(50%, -50%);"
+                </div>
+                <div class="orbit-ring ring-4">
+                    <div class="orbit-planet p-mars" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);"
                         onclick="openPlanet('mars')">
                         <img src="planet_mars.png?v=5" alt="Mars" class="planet-visual">
                     </div>
                 </div>
-
-                <div class="orbit-ring ring-3">
-                    <!-- Jupiter -->
+                <div class="orbit-ring ring-5">
                     <div class="orbit-planet p-jupiter"
-                        style="top: 20%; left: 10%; transform: translate(-50%, -50%); width: 55px; height: 55px;"
+                        style="top: 50%; right: -27px; transform: translate(0, -50%); width: 55px; height: 55px;"
                         onclick="openPlanet('jupiter')">
                         <img src="planet_jupiter.png?v=5" alt="Jupiter" class="planet-visual">
                     </div>
-                    <!-- Saturn -->
+                </div>
+                <div class="orbit-ring ring-6">
                     <div class="orbit-planet p-saturn"
-                        style="bottom: 0; left: 50%; transform: translate(-50%, 50%); width: 70px; height: 70px;"
+                        style="top: 50%; left: -35px; transform: translate(0, -50%); width: 70px; height: 70px;"
                         onclick="openPlanet('saturn')">
                         <img src="planet_saturn.png" alt="Saturn"
                             style="width: 100%; height: 100%; object-fit: contain;">
-                        <!-- Keep Saturn original -->
                     </div>
                 </div>
-
-                <div class="orbit-ring ring-4"
-                    style="width: 480px; height: 480px; animation: orbitSpin 280s linear infinite;">
-                    <div class="orbit-dot" style="display:none;"></div>
-                    <!-- Uranus -->
-                    <div class="orbit-planet p-uranus" style="top: 50%; left: 0; transform: translate(-50%, -50%);"
+                <div class="orbit-ring ring-7">
+                    <div class="orbit-planet p-uranus" style="top: 0; left: 50%; transform: translate(-50%, -50%);"
                         onclick="openPlanet('uranus')">
                         <img src="planet_uranus.png?v=5" alt="Uranus" class="planet-visual">
                     </div>
-                    <!-- Neptune -->
-                    <div class="orbit-planet p-neptune" style="top: 0; left: 50%; transform: translate(-50%, -50%);"
+                </div>
+                <div class="orbit-ring ring-8">
+                    <div class="orbit-planet p-neptune" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);"
                         onclick="openPlanet('neptune')">
                         <img src="planet_neptune.png?v=5" alt="Neptune" class="planet-visual">
                     </div>
@@ -2706,32 +2893,22 @@
                 .orbit-center img {
                     width: 100% !important;
                     height: 100% !important;
-                    object-fit: cover !important;
+                    object-fit: contain !important;
+                    /* Contain to prevent edges clipping */
                     border-radius: 50% !important;
-                    /* RESET GLOBAL CLIP: Only clip the problem planets */
                     clip-path: none !important;
                     -webkit-clip-path: none !important;
                     pointer-events: none;
                     background: transparent !important;
-                    mix-blend-mode: normal;
+                    mix-blend-mode: screen !important;
+                    /* Perfect blend for black backgrounds */
+                    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
                 }
 
-                /* Specific Planet Fixes */
-                .p-jupiter img,
-                .p-uranus img,
-                .p-neptune img {
-                    /* Aggressive trim only for planets with borders */
-                    clip-path: circle(42% at 50% 50%) !important;
-                    -webkit-clip-path: circle(42% at 50% 50%) !important;
-                    mix-blend-mode: lighten;
-                }
-
+                /* Specific fixes removed in favor of universal screen blend */
                 .p-saturn img {
-                    /* Saturn needs to breathe */
-                    clip-path: none !important;
-                    overflow: visible !important;
                     transform: scale(1.4) !important;
-                    /* Make Saturn slightly larger to compensate */
+                    object-fit: contain !important;
                 }
 
                 .orbit-planet:hover {
@@ -3464,15 +3641,7 @@
         </section>
 
 
-        <!-- CTA Section -->
-        <section id="join" class="cta-section">
-            <div class="section-tag" id="cta-tag">Start Learning</div>
-            <h2 id="cta-title">Space education limits, removed.</h2>
-            <p class="section-desc" id="cta-desc">FALAk is a dedicated platform for space education.<br>We are
-                constantly expanding our curriculum to cover more advanced topics.</p>
-            <a href="https://x.com/FALAkPlatforms" target="_blank" class="btn btn-primary" id="cta-btn">Follow Our
-                Progress</a>
-        </section>
+
 
         <!-- ============================================
              NEW SECTION: Learning Challenges
@@ -3615,9 +3784,8 @@
                 cover more advanced topics.
             </p>
 
-            <div class="cta-form" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://x.com/FALAkPlatforms" target="_blank" class="btn btn-primary"
-                    style="display: inline-flex; align-items: center; gap: 10px;">
+            <div class="cta-social-container">
+                <a href="https://x.com/FALAkPlatforms" target="_blank" class="btn btn-primary btn-social">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                         <path
                             d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
@@ -3625,8 +3793,8 @@
                     </svg>
                     Follow on X
                 </a>
-                <a href="https://instagram.com/FALAkPlatforms" target="_blank" class="btn btn-ghost"
-                    style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                <a href="https://instagram.com/FALAkPlatforms" target="_blank"
+                    class="btn btn-ghost btn-social btn-social-ghost">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -3669,7 +3837,7 @@
     <script src="orbital_simulation.js"></script>
     <script src="curriculum.js"></script>
     <script src="translations.js?v=6"></script>
-    <script src="script.js?v=3"></script>
+    <script src="app.js?v=1"></script>
     <script>
         // Curriculum UI Controller
         let curriculumNav = null;
