@@ -103,8 +103,8 @@
         }
 
         .mobile-menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
 
         .mobile-menu-content {
@@ -125,6 +125,8 @@
             display: flex;
             gap: 24px;
             margin-top: 20px;
+            justify-content: center;
+            align-items: center;
         }
 
         .mobile-social-link {
@@ -3930,7 +3932,7 @@
     <script src="orbital_simulation.js"></script>
     <script src="curriculum.js"></script>
     <script src="translations.js?v=6"></script>
-    <script src="app.js?v=1"></script>
+    <script src="main_app.js"></script>
     <script>
         // Curriculum UI Controller
         let curriculumNav = null;
@@ -4123,6 +4125,34 @@
         </div>
     </div>
 
+    <script>
+        // Emergency Fallback for Mobile Menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('mobile-menu');
+
+            if (toggle && menu) {
+                // Remove any existing listeners by cloning (optional, but safe)
+                const newToggle = toggle.cloneNode(true);
+                toggle.parentNode.replaceChild(newToggle, toggle);
+
+                newToggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    menu.classList.toggle('active');
+                    console.log('Mobile menu toggled via inline script. Active:', menu.classList.contains('active'));
+                });
+
+                // Close when clicking links
+                const links = menu.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
