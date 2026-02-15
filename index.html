@@ -307,6 +307,7 @@
         }
 
         .nav-brand {
+            flex-shrink: 0;
             font-weight: 700;
             font-size: 1.25rem;
             letter-spacing: 2px;
@@ -317,16 +318,19 @@
         }
 
         .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
             position: absolute;
             left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
+            display: flex;
+            gap: 32px;
+            list-style: none;
             margin: 0;
             padding: 0;
             white-space: nowrap;
+        }
+
+        .nav-actions {
+            flex-shrink: 0;
         }
 
         /* Particle Logo Reveal */
@@ -1645,7 +1649,7 @@
             </div>
 
             <div class="hero-text">
-                <h1 id="hero-title">Learn how space works — from fundamentals to real systems.</h1>
+                <h1 id="hero-title">LEARN HOW SPACE WORKS — FROM FUNDAMENTALS TO REAL SYSTEMS.</h1>
                 <p id="hero-desc">FALAk is a platform designed to help anyone understand space through structured
                     frameworks, simulation, and AI-assisted learning.</p>
             </div>
@@ -1688,8 +1692,8 @@
                         We focus on building clear learning paths that help people understand space environments,
                         systems, and operations.
                     </p>
-                    <br>
-                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); line-height: 1.8;" id="intro-p2">
+                    <p style="font-size: 1rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-top: 20px;"
+                        id="intro-p2">
                         We begin with fundamentals, systems thinking, and exploration — creating a foundation for
                         understanding complex space capabilities.
                     </p>
@@ -3202,41 +3206,15 @@
             </div>
         </section>
 
-        <!-- ============================================
-             NEW SECTION: Community (Coming Soon)
-             ============================================ -->
-        <section id="community" class="community-section" style="padding: 80px 48px;">
-            <div class="section-header">
-                <div class="section-tag" id="community-tag">Community</div>
-                <h2 id="community-title">Connect With Space Learners</h2>
-                <p class="section-desc" id="community-desc">Join learners, educators, and space enthusiasts from across
-                    the MENA region and beyond.</p>
-            </div>
 
-            <div class="community-features">
-                <div class="community-feat">
-                    <div class="community-feat-icon">💬</div>
-                    <span id="community-feat-1">Discussion Forums</span>
-                </div>
-                <div class="community-feat">
-                    <div class="community-feat-icon">🤝</div>
-                    <span id="community-feat-2">Peer Learning</span>
-                </div>
-                <div class="community-feat">
-                    <div class="community-feat-icon">🎯</div>
-                    <span id="community-feat-3">Mentorship</span>
-                </div>
-                <div class="community-feat">
-                    <div class="community-feat-icon">🌐</div>
-                    <span id="community-feat-4">Multilingual</span>
-                </div>
-            </div>
-
-            <div class="community-badge" id="community-badge">
-                <span
-                    style="width: 8px; height: 8px; background: #a78bfa; border-radius: 50%; display: inline-block;"></span>
-                Coming Soon — We're setting up our community space
-            </div>
+        <!-- CTA Section -->
+        <section id="join" class="cta-section">
+            <div class="section-tag" id="cta-tag">Start Learning</div>
+            <h2 id="cta-title">Space education limits, removed.</h2>
+            <p class="section-desc" id="cta-desc">FALAk is a dedicated platform for space education.<br>We are
+                constantly expanding our curriculum to cover more advanced topics.</p>
+            <a href="https://x.com/FALAkPlatforms" target="_blank" class="btn btn-primary" id="cta-btn">Follow Our
+                Progress</a>
         </section>
 
         <!-- ============================================
