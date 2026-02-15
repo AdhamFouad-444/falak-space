@@ -1405,6 +1405,29 @@
         }
 
         /* About Section Styles */
+        .vision-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .vision-lead {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .vision-text {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1702,13 +1725,12 @@
                     <img src="OfficialFALAk2.png" alt="FALAk Vision"
                         style="width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                 </div>
-                <div style="flex: 1; min-width: 300px; text-align: left;">
-                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); line-height: 1.8;" id="intro-p1">
+                <div class="vision-content" style="flex: 1; min-width: 300px; text-align: left;">
+                    <p class="vision-lead" id="intro-p1">
                         We focus on building clear learning paths that help people understand space environments,
                         systems, and operations.
                     </p>
-                    <p style="font-size: 1rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-top: 20px;"
-                        id="intro-p2">
+                    <p class="vision-text" id="intro-p2">
                         We begin with fundamentals, systems thinking, and exploration — creating a foundation for
                         understanding complex space capabilities.
                     </p>
