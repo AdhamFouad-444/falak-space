@@ -1,41 +1,57 @@
 {
-  "last_updated": "2026-02-13T12:53:20Z",
+  "last_updated": "2026-02-15T12:53:20Z",
   "articles": [
     {
       "title": "NASA’s SpaceX Crew-12 Launches to International Space Station",
-      "summary": "Four crew members of NASA’s SpaceX Crew-12 mission launched at 5:15 a.m. EST Friday from Space Launch Complex 40 at Cape Canaveral Space Force Station in Florida for a science expedition aboard the...",
+      "title_ar": "إقراء مهمة 'سبيس إكس كرو-12' التابعة لناسا إلى محطة الفضاء الدولية",
+      "summary": "Four crew members of NASA’s SpaceX Crew-12 mission launched from Cape Canaveral for a science expedition.",
+      "summary_ar": "انطلق أربعة من أفراد طاقم مهمة 'سبيس إكس كرو-12' التابعة لناسا من كيب كانافيرال في رحلة علمية إلى المحطة الدولية.",
       "source": "NASA",
+      "source_ar": "ناسا",
       "region": "Global 🌍",
+      "region_ar": "عالمي 🌍",
       "date": "Feb 13, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
       "link": "https://www.nasa.gov/news-release/nasas-spacex-crew-12-launches-to-international-space-station/"
     },
     {
-      "title": "Sunlight Extracts Oxygen From Regolith Using Solar Chemistry",
-      "summary": "NASA’s Carbothermal Reduction Demonstration (CaRD) project completed an important step toward using local resources to support human exploration on the Moon. The CaRD team performed integrated prot...",
+      "title": "Hope Probe Continues Extended Science Phase",
+      "title_ar": "مسبار الأمل يواصل مرحلة العلوم الموسعة",
+      "summary": "The Emirates Mars Mission extends its observation campaign, providing new atmospheric data.",
+      "summary_ar": "مهمة الإمارات لاستكشاف المريخ تمدد حملة الرصد، وتوفر بيانات جوية جديدة عن الغلاف الجوي.",
+      "source": "Emirates Space Agency",
+      "source_ar": "وكالة الإمارات للفضاء",
+      "region": "MENA 🚀",
+      "region_ar": "الشرق الأوسط 🚀",
+      "date": "Feb 14, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://www.space.gov.ae/"
+    },
+    {
+      "title": "Sunlight Extracts Oxygen From Regolith",
+      "title_ar": "استخلاص الأكسجين من التربة القمرية باستخدام ضوء الشمس",
+      "summary": "NASA project completes important step toward using local resources to support human exploration on the Moon.",
+      "summary_ar": "مشروع ناسا يكمل خطوة مهمة نحو استخدام الموارد المحلية لدعم الاستكشاف البشري على القمر.",
       "source": "NASA",
+      "source_ar": "ناسا",
       "region": "Global 🌍",
+      "region_ar": "عالمي 🌍",
       "date": "Feb 13, 2026",
       "image": "https://images-assets.nasa.gov/image/KSC-2012-3279/KSC-2012-3279~thumb.jpg",
       "link": "https://www.nasa.gov/centers-and-facilities/johnson/sunlight-extracts-oxygen-from-regolith-using-solar-chemistry/"
     },
     {
-      "title": "Stonebreen’s Beating Heart",
-      "summary": "The glacier in southeastern Svalbard pulses with the changing seasons, speeding up and slowing its flow toward the sea.",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 13, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/stonebreens-beating-heart/"
-    },
-    {
-      "title": "NASA Selects Vast for Sixth Private Mission to Space Station",
-      "summary": "NASA and Vast have signed an order for the sixth private astronaut mission to the International Space Station, targeted to launch no earlier than summer 2027 from Florida. This private astronaut mi...",
-      "source": "NASA",
-      "region": "Global 🌍",
+      "title": "Saudi Astronaut Program Expands",
+      "title_ar": "البرنامج السعودي لرواد الفضاء يتوسع",
+      "summary": "Saudi Space Agency announces new astronaut candidates following the success of Ax-2 mission.",
+      "summary_ar": "هيئة الفضاء السعودية تعلن عن مرشحين جدد لرواد الفضاء بعد نجاح مهمة Ax-2.",
+      "source": "Saudi Space Agency",
+      "source_ar": "هيئة الفضاء السعودية",
+      "region": "MENA 🚀",
+      "region_ar": "الشرق الأوسط 🚀",
       "date": "Feb 12, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/news-release/nasa-selects-vast-for-sixth-private-mission-to-space-station/"
+      "link": "https://ssa.gov.sa/"
     }
   ]
 }

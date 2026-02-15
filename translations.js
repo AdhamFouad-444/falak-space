@@ -81,6 +81,7 @@ const TRANSLATIONS = {
         "twin-desc": "The most powerful rocket NASA has ever built. Designed to loft the Orion spacecraft on a trans-lunar trajectory, enabling sustained presence on the Moon.",
         "twin-stat1-lbl": "Max Thrust",
         "twin-stat1-val": "8.8M lbs",
+        "twin-stat2-lbl": "Max Payload (LEO)",
         "twin-stat2-val": "27 metric tons",
 
         // Stack Header
@@ -99,11 +100,15 @@ const TRANSLATIONS = {
         // Nav (new)
         "nav-news": "News",
         "nav-community": "Community",
+        "nav-beta": "Academy",
+        "beta-badge": "BETA",
 
         // News Section
         "news-tag": "Space News",
         "news-title": "What's Happening in Space",
         "news-desc": "Space developments from the MENA region and beyond, with educational context.",
+        "news-loading": "Loading latest space news...",
+        "news-error": "Space news updating soon...",
         "news-1-h": "Hope Probe Continues Extended Science Phase",
         "news-1-p": "The UAE's Emirates Mars Mission extends its observation campaign, providing new atmospheric data on Mars' upper atmosphere and seasonal dust storms.",
         "news-1-src": "UAE Space Agency",
@@ -117,6 +122,12 @@ const TRANSLATIONS = {
         "news-4-p": "NASA confirms the next phase of the Artemis program, with updated crew assignments and a refined timeline for the first crewed lunar landing since Apollo.",
         "news-4-src": "NASA",
 
+        // Launch Systems Section (New)
+        "launch-tag": "Launch Systems",
+        "launch-title": "The First High-Performance Launch Vehicle",
+        "launch-desc": "Engineered for precision. Explore the anatomical breakdown of our orbital-class launch vehicle.",
+        "sim-btn-dev": "Currently in Development",
+
         // Resources Section
         "resources-tag": "Resources",
         "resources-title": "Curated Space Knowledge",
@@ -127,11 +138,17 @@ const TRANSLATIONS = {
         "res-type-research": "Research",
         "res-type-course": "Course",
         "res-type-tool": "Interactive Tool",
+        "res-1-h": "NASA Open Data",
         "res-1-p": "Access NASA's public datasets — missions, imagery, telemetry, and more.",
+        "res-2-h": "ESA Education",
         "res-2-p": "Learning resources from the European Space Agency for all levels.",
+        "res-3-h": "Everyday Astronaut",
         "res-3-p": "Deep-dive engineering breakdowns of rockets and space systems.",
+        "res-4-h": "arXiv Space",
         "res-4-p": "Open-access preprints in astrophysics, cosmology, and space science.",
+        "res-5-h": "MIT OpenCourseWare",
         "res-5-p": "Full MIT OpenCourseWare on orbital mechanics — lectures, problem sets.",
+        "res-6-h": "NASA Eyes",
         "res-6-p": "3D visualization of the solar system, missions, and Earth from space.",
 
         // Community Section
@@ -177,10 +194,13 @@ const TRANSLATIONS = {
         "about-story-p": "FALAk was founded by a group of University of Leeds students across Business, Physics with Astrophysics, and Mathematics. We recognised a gap between curiosity about space and structured understanding of how space systems actually work.",
         "team-tag": "The Team",
         "team-title": "Meet the Founders",
+        "team-adham-name": "Adham Fouad",
         "team-adham-role": "Founder & Product Lead",
         "team-adham-bio": "International Business & Marketing undergraduate focused on building scalable learning infrastructure and ecosystem partnerships.",
+        "team-senith-name": "Senith Mendis",
         "team-senith-role": "Co-Founder & Scientific Director",
         "team-senith-bio": "Undergraduate in Physics with Astrophysics, responsible for scientific accuracy and systems integrity across the framework.",
+        "team-laxshan-name": "Laxshan Rajaratnam",
         "team-laxshan-role": "Founding Contributor",
         "team-laxshan-bio": "Mathematics undergraduate supporting quantitative modelling and systems structure within the learning architecture.",
         "footer-locations": "Based in Abu Dhabi & Leeds",
@@ -265,6 +285,7 @@ const TRANSLATIONS = {
         "twin-desc": "أقوى صاروخ بنته ناسا على الإطلاق. صُمم لإطلاق مركبة أوريون في مسار إلى القمر، مما يمهد لوجود مستدام.",
         "twin-stat1-lbl": "أقصى دفع",
         "twin-stat1-val": "٨.٨ مليون رطل",
+        "twin-stat2-lbl": "أقصى حمولة (مدار أرضي منخفض)",
         "twin-stat2-val": "٢٧ طن متري",
 
         // Stack Header
@@ -283,11 +304,15 @@ const TRANSLATIONS = {
         // Nav (new)
         "nav-news": "أخبار",
         "nav-community": "المجتمع",
+        "nav-beta": "الأكاديمية",
+        "beta-badge": "تجريبي",
 
         // News Section
         "news-tag": "أخبار الفضاء",
         "news-title": "ما يحدث في الفضاء",
         "news-desc": "تطورات الفضاء من منطقة الشرق الأوسط وشمال أفريقيا والعالم، مع سياق تعليمي.",
+        "news-loading": "جاري تحميل آخر أخبار الفضاء...",
+        "news-error": "تحديث أخبار الفضاء قريباً...",
         "news-1-h": "مسبار الأمل يواصل مرحلة العلوم الموسعة",
         "news-1-p": "مهمة الإمارات لاستكشاف المريخ تمدد حملة الرصد، وتوفر بيانات جوية جديدة عن الغلاف الجوي العلوي للمريخ والعواصف الترابية الموسمية.",
         "news-1-src": "وكالة الإمارات للفضاء",
@@ -301,6 +326,12 @@ const TRANSLATIONS = {
         "news-4-p": "ناسا تؤكد المرحلة التالية من برنامج أرتميس، مع تعيينات محدثة للطاقم وجدول زمني محسن لأول هبوط بشري على القمر منذ أبولو.",
         "news-4-src": "ناسا",
 
+        // Launch Systems Section (New)
+        "launch-tag": "أنظمة الإطلاق",
+        "launch-title": "أول مركبة إطلاق عالية الأداء",
+        "launch-desc": "مصممة بدقة. استكشف التحليل الهيكلي لمركبة الإطلاق ذات التصنيف المداري.",
+        "sim-btn-dev": "تحت التطوير حالياً",
+
         // Resources Section
         "resources-tag": "الموارد",
         "resources-title": "معرفة فضائية منتقاة",
@@ -311,11 +342,17 @@ const TRANSLATIONS = {
         "res-type-research": "بحث علمي",
         "res-type-course": "دورة",
         "res-type-tool": "أداة تفاعلية",
+        "res-1-h": "بيانات ناسا المفتوحة",
         "res-1-p": "الوصول إلى مجموعات بيانات ناسا العامة — مهمات، صور، قياسات عن بُعد، والمزيد.",
+        "res-2-h": "تعليم وكالة الفضاء الأوروبية",
         "res-2-p": "موارد تعليمية من وكالة الفضاء الأوروبية لجميع المستويات.",
+        "res-3-h": "إيفري داي أسترونوت",
         "res-3-p": "تحليلات هندسية معمقة للصواريخ وأنظمة الفضاء.",
+        "res-4-h": "أركسيف فضاء",
         "res-4-p": "مسودات بحثية مفتوحة الوصول في الفيزياء الفلكية وعلم الكون وعلوم الفضاء.",
+        "res-5-h": "دورات MIT المفتوحة",
         "res-5-p": "دورة MIT المفتوحة الكاملة في ميكانيكا المدارات — محاضرات ومسائل.",
+        "res-6-h": "عيون ناسا",
         "res-6-p": "تصور ثلاثي الأبعاد للنظام الشمسي والمهمات والأرض من الفضاء.",
 
         // Community Section
@@ -361,10 +398,13 @@ const TRANSLATIONS = {
         "about-story-p": "بدأت فلك كمحادثة بين ثلاثة طلاب في ليدز لاحظوا أنه بينما يتزايد الاهتمام بالفضاء، فإن عمق التعليم المتاح لم يواكب ذلك. قمنا ببناء فلك لسد هذه الفجوة.",
         "team-tag": "الفريق",
         "team-title": "مؤسسو فلك",
+        "team-adham-name": "أدهم فؤاد",
         "team-adham-role": "المؤسس وقائد المنتج",
         "team-adham-bio": "طالب جامعي في الأعمال الدولية والتسويق، يركز على بناء بنية تحتية تعليمية قابلة للتوسع وشراكات في النظام البيئي.",
+        "team-senith-name": "سينيث مينديس",
         "team-senith-role": "شريك مؤسس والمدير العلمي",
         "team-senith-bio": "طالب جامعي في الفيزياء والفيزياء الفلكية، مسؤول عن الدقة العلمية وسلامة الأنظمة عبر الإطار.",
+        "team-laxshan-name": "لاكشان راجاراتنام",
         "team-laxshan-role": "مساهم مؤسس",
         "team-laxshan-bio": "طالب رياضيات يدعم النمذجة الكمية وهيكلة الأنظمة ضمن البنية التعليمية.",
         "footer-locations": "مقرنا في أبوظبي وليدز",
@@ -615,7 +655,9 @@ class TranslationManager {
         // Apply string translations via data-i18n (Modern)
         const i18nElements = document.querySelectorAll('[data-i18n]');
         i18nElements.forEach(el => {
-            const key = el.getAttribute('data-i18n');
+            const rawKey = el.getAttribute('data-i18n');
+            if (!rawKey) return;
+            const key = rawKey.trim();
             if (strings[key]) {
                 el.innerHTML = strings[key];
             }
