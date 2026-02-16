@@ -12,6 +12,7 @@ from typing import Optional
 
 import config
 import templates
+import link_utils
 
 
 def fetch_apod() -> Optional[dict]:
@@ -160,17 +161,20 @@ def fetch_upcoming_launches() -> Optional[dict]:
             provider = next_launch["launch_service_provider"].get("name", "Unknown")
         
         location = "Unknown"
-        if next_launch.get("pad", {}).get("location"):
-            location = next_launch["pad"]["location"].get("name", "Unknown")
+        pad_name = "Unknown Pad"
+        if next_launch.get("pad"):
+            pad_name = next_launch["pad"].get("name", "Unknown Pad")
+            if next_launch["pad"].get("location"):
+                location = next_launch["pad"]["location"].get("name", "Unknown")
+
+        # Get Orbit
+        orbit = "Orbit"
+        if next_launch.get("mission") and next_launch["mission"].get("orbit"):
+             orbit = next_launch["mission"]["orbit"].get("abbrev", "Orbit")
         
-        # Video/stream URL
-        stream_url = ""
-        for vid in next_launch.get("vidURLs", []):
-            if vid:
-                stream_url = vid.get("url", "")
-                break
-        if not stream_url:
-            stream_url = "Check provider for livestream"
+        # Generate reliable links
+        links = link_utils.generate_launch_links(next_launch)
+        stream_url = links.get("stream", "Check provider")
         
         # Format tweet
         template = random.choice(templates.LAUNCH_TEMPLATES)
@@ -179,6 +183,8 @@ def fetch_upcoming_launches() -> Optional[dict]:
             date=launch_date,
             provider=provider,
             location=location,
+            pad=pad_name,
+            orbit=orbit,
             stream_url=stream_url,
             description_short=templates.truncate_text(
                 next_launch.get("mission", {}).get("description", ""), 80

@@ -40,9 +40,11 @@ NEO_TEMPLATES = [
 # =============================================================================
 
 LAUNCH_TEMPLATES = [
-    "🚀 Upcoming Launch\n\n{mission_name}\n📅 {date}\n🏢 {provider}\n📍 {location}\n\nWatch: {stream_url}\n\n#SpaceLaunch",
+    "🚀 Upcoming Launch\n\nMission: {mission_name}\nVehicle: {provider}\nOrbit: {orbit} 🌍\nPad: {pad}\n\n📅 {date}\n\n🔴 Watch: {stream_url}\n\n#SpaceLaunch #FALAk",
     
-    "🔴 Launch Alert: {mission_name}\n\n{provider} • {date}\nLocation: {location}\n\n{description_short}\n\n🔗 {stream_url}",
+    "🔴 Launch Alert: {mission_name}\n\nTarget: {orbit}\nLiftoff: {pad}, {location}\n\n{description_short}\n\n🔗 {stream_url}",
+    
+    "Systems Check 🚀\n\n{mission_name} is go for launch.\n\n📍 {pad}\n🌍 Target Orbit: {orbit}\n🏢 Provider: {provider}\n\nWatch live: {stream_url}",
 ]
 
 # =============================================================================
