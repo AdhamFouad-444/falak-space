@@ -8,6 +8,7 @@ All sources are free and require no API keys.
 """
 
 import json
+import os
 import html as html_module
 import re
 import xml.etree.ElementTree as ET
@@ -317,7 +318,9 @@ def main():
         })
 
     # Write to repo root (same level as index.html)
-    output_path = "news_data.json"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.dirname(script_dir)
+    output_path = os.path.join(repo_root, "news_data.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
