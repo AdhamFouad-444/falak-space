@@ -239,12 +239,37 @@ h3 {
   content: '✦';
   color: var(--color-primary);
   font-size: 1.25rem;
+  /* Ensure icon aligns with text */
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure right-side actions are perfectly aligned */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-links {
   display: flex;
   gap: 2.5rem;
   list-style: none;
+  align-items: center;
+  /* Ensure vertical alignment */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a {

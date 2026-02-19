@@ -1,0 +1,2361 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>FALAk - Opening Pathways Into Space</title>
+    <meta name="google-site-verification" content="ugVgLMKeJP7Uidr18PIVWNj2dHgEPPFFgq4WTL-Ew2A" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="OfficialFALAk.png">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <style>
+        /* ============================================================================
+           CSS ORGANIZATION GUIDE
+           ============================================================================
+           This stylesheet is organized by device breakpoints for clarity:
+           
+           1. DESKTOP/DEFAULT STYLES (no media query) - Lines 18-910
+              - Base styles for desktop (>1100px width)
+              - All default component styles
+           
+           2. LARGE TABLET/SMALL DESKTOP (max-width: 1100px) - Lines 911-921
+              - Path grid: 4 columns → 2 columns
+           
+           3. TABLET/SMALL LAPTOP (max-width: 900px) - Lines 977-1147
+              - Features grid: 2 columns → 1 column
+              - Hero text size adjustments
+              - Navigation changes
+           
+           When editing, make sure to apply changes in the correct section!
+           ============================================================================ */
+
+        :root {
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --accent-blue: #38bdf8;
+            --bg-overlay: rgba(0, 0, 0, 0.85);
+        }
+
+        /* Utility Classes replacement for inline styles */
+        .nav-beta-link {
+            position: relative;
+        }
+
+        .nav-actions-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-icon-link {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s;
+        }
+
+        .social-icon-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 4px;
+        }
+
+        .menu-toggle-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+        }
+
+        /* Mobile Menu Utility Classes */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .mobile-menu-link {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .mobile-social-container {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mobile-social-link {
+            color: var(--text-secondary);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .section-tag {
+            font-family: var(--font-display);
+        }
+
+        /* Starfield Canvas */
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Floating Planets */
+        .floating-planet {
+            position: fixed;
+            z-index: 5;
+            /* Raised z-index for interaction */
+            /* pointer-events: none; REMOVED */
+            cursor: pointer;
+            /* Interaction cursor */
+        }
+
+        .planet-earth {
+            width: 90px;
+            top: 20%;
+            right: calc(5% + 90px);
+            /* Ensures full planet is visible */
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        /* Hover Effect Helper */
+        .planet-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27), filter 0.3s ease;
+        }
+
+        .floating-planet:hover .planet-img {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+        }
+
+        /* HARD FIX: Clip floating planets to circles */
+        .planet-img {
+            border-radius: 50%;
+            clip-path: circle(49% at 50% 50%);
+            -webkit-clip-path: circle(49% at 50% 50%);
+        }
+
+        /* Hero Utility Classes */
+        .hero-badge-container {
+            margin-top: 48px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-badge-link {
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-badge {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .hero-badge:hover {
+            background: rgba(56, 189, 248, 0.2);
+            border-color: rgba(56, 189, 248, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #38bdf8;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #38bdf8;
+        }
+
+        .badge-text {
+            color: #38bdf8;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn-solar {
+            min-width: 200px;
+        }
+
+        .hero-btn-sim {
+            min-width: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-btn-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Framework Utility Classes */
+        .framework-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 60px;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 32px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .framework-tag {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        .framework-code {
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .framework-beta-btn {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            display: inline-block;
+        }
+
+        /* Launch Systems Utility Classes */
+        .launch-systems-section {
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: visible;
+            background: transparent;
+            perspective: 1000px;
+        }
+
+        .launch-systems-header {
+            position: relative;
+            z-index: 10;
+        }
+
+        .launch-systems-tag {
+            color: #4ade80;
+            border-color: rgba(74, 222, 128, 0.3);
+        }
+
+        .launch-grid {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 750px;
+            height: auto;
+            position: relative;
+            display: flex;
+            gap: 60px;
+            text-align: left;
+        }
+
+        .launch-image-wrapper {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .launch-rocket-container {
+            position: relative;
+            height: 100%;
+            aspect-ratio: 400/1100;
+            margin: 0 auto;
+        }
+
+        .launch-rocket-img {
+            height: 100%;
+            width: 100%;
+            filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+            overflow: visible;
+        }
+
+        /* Orbit Visualization CSS */
+        .orbit-section {
+            padding: 120px 24px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .orbit-container {
+            width: 800px;
+            height: 800px;
+            margin: 120px auto 0;
+            /* Pushed down for header clearance */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .orbit-center {
+            position: absolute;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            z-index: 10;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Critical: Allow clicks to pass through rings to planets */
+            pointer-events: none;
+        }
+
+        .ring-1 {
+            width: 120px;
+            height: 120px;
+            animation: orbitSpin 30s linear infinite;
+        }
+
+        .ring-2 {
+            width: 180px;
+            height: 180px;
+            animation: orbitSpin 55s linear infinite;
+        }
+
+        .ring-3 {
+            width: 240px;
+            height: 240px;
+            animation: orbitSpin 90s linear infinite;
+        }
+
+        .ring-4 {
+            width: 300px;
+            height: 300px;
+            animation: orbitSpin 140s linear infinite;
+        }
+
+        .ring-5 {
+            width: 400px;
+            height: 400px;
+            animation: orbitSpin 280s linear infinite;
+        }
+
+        .ring-6 {
+            width: 520px;
+            height: 520px;
+            animation: orbitSpin 420s linear infinite;
+        }
+
+        .ring-7 {
+            width: 640px;
+            height: 640px;
+            animation: orbitSpin 600s linear infinite;
+        }
+
+        .ring-8 {
+            width: 760px;
+            height: 760px;
+            animation: orbitSpin 800s linear infinite;
+        }
+
+        /* Intermediate rings removed, standardizing to 8 optimized rings */
+
+        .orbit-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #38bdf8;
+            top: 50%;
+            right: -4px;
+            margin-top: -4px;
+        }
+
+        @keyframes orbitSpin {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Modal Styles */
+        .pm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .pm-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .pm-content {
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .pm-overlay.active .pm-content {
+            transform: scale(1);
+        }
+
+        .pm-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .planet-mars {
+            width: 60px;
+            top: 50%;
+            left: calc(5% + 60px);
+            /* Ensures full planet is visible */
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        .planet-saturn {
+            width: 120px;
+            bottom: 25%;
+            right: calc(5% + 120px);
+            /* Ensures full planet is visible */
+            animation: float3 22s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-15px) translateX(10px);
+            }
+        }
+
+        @keyframes float3 {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+
+
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            /* Darker background to prevent text collision */
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-brand {
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        .nav-actions {
+            flex-shrink: 0;
+        }
+
+        /* Particle Logo Reveal */
+        .logo-reveal-container {
+            position: relative;
+            width: 140px;
+            /* Expanded for canvas to fit logo */
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-base {
+            height: 100%;
+            width: auto;
+            opacity: 0;
+            /* Hidden initially, revealed by JS */
+            display: block;
+        }
+
+        #logo-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .beta-badge {
+            position: absolute;
+            top: -12px;
+            right: -25px;
+            font-size: 0.6rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+            pointer-events: none;
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+        }
+
+        /* Integrated Logo */
+        .logo-container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hero-logo-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Orbital Rings - Extracted */
+        .logo-rings {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: contain;
+            animation: ringsGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes ringsGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.5));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.8));
+            }
+        }
+
+        /* Star - Extracted */
+        .logo-star {
+            position: absolute;
+            width: 40px;
+            top: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: starTwinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes starTwinkle {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+
+            50% {
+                opacity: 0.7;
+                transform: translateX(-50%) scale(1.15);
+            }
+        }
+
+        /* Rocket - Extracted */
+        .logo-rocket {
+            position: absolute;
+            width: 100px;
+            top: 15%;
+            right: 10%;
+            animation: rocketFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes rocketFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(8px, -12px);
+            }
+        }
+
+        /* Logo Text Overlay */
+        .logo-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 5;
+        }
+
+        .logo-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            letter-spacing: 10px;
+            color: #fff;
+            text-shadow: 0 0 60px rgba(56, 189, 248, 0.6);
+        }
+
+        .logo-tagline {
+            font-size: 1.1rem;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 10px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-text p {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: #fff;
+            box-shadow: 0 4px 25px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(56, 189, 248, 0.5);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-badge {
+            margin-top: 48px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 140px 48px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Learning Path */
+        /* Learning Path - Framework 001 Identity */
+        .framework-header {
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .framework-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #94a3b8;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            padding: 8px 16px;
+            border-radius: 4px;
+            background: rgba(15, 23, 42, 0.4);
+            margin-bottom: 12px;
+        }
+
+        .framework-subtitle {
+            font-size: 0.9rem;
+            color: rgba(148, 163, 184, 0.6);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .framework-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+            margin-top: 20px;
+        }
+
+        .path-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .path-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.3), rgba(15, 23, 42, 0.6));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .path-card:hover {
+            transform: scale(1.02);
+            border-color: rgba(56, 189, 248, 0.2);
+            box-shadow:
+                inset 0 0 30px rgba(56, 189, 248, 0.05),
+                0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .path-number {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 24px;
+            color: #38bdf8;
+            display: inline-block;
+            opacity: 0.8;
+            transition: all 0.5s ease;
+        }
+
+        .path-card:hover .path-number {
+            opacity: 1;
+            color: #7dd3fc;
+        }
+
+        /* Animations */
+        @keyframes orbit-slow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes vector-flow {
+            0% {
+                transform: translateY(-3px);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(3px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-3px);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes ignition-pulse {
+            0% {
+                filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.3));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.3));
+            }
+        }
+
+        .anim-orbit {
+            animation: orbit-slow 60s linear infinite;
+        }
+
+        .anim-flow {
+            animation: vector-flow 4s ease-in-out infinite;
+        }
+
+        .anim-pulse {
+            animation: ignition-pulse 3s ease-in-out infinite;
+        }
+
+        .path-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #f1f5f9;
+            letter-spacing: -0.01em;
+        }
+
+        .microcopy {
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.5);
+            margin-bottom: 20px;
+            line-height: 1.4;
+            min-height: 2.8em;
+            display: block;
+        }
+
+        .lesson-count-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            color: rgba(56, 189, 248, 0.6);
+            background: rgba(56, 189, 248, 0.05);
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 48px;
+            transition: all 0.3s;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .feature-card:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(56, 189, 248, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-content p {
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.7;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            padding: 100px 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 160px 48px;
+            background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.08) 0%, transparent 60%);
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            max-width: 500px;
+            margin: 48px auto 0;
+        }
+
+        .cta-form input {
+            flex: 1;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .cta-form input:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+
+        .cta-form input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.875rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+
+        /* ============================================================================
+           LARGE TABLET / SMALL DESKTOP STYLES (max-width: 1100px)
+           - Applies to: Large iPads, small desktop windows
+           - Features: Path grid changes from 4 columns to 2 columns
+           ============================================================================ */
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .path-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* RTL & Language Support */
+        body.rtl {
+            font-family: 'IBM Plex Sans Arabic', 'Outfit', sans-serif;
+            direction: rtl;
+        }
+
+        body.rtl .nav-links {
+            flex-direction: row-reverse;
+        }
+
+        body.rtl .nav-links li:last-child {
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        body.rtl .section-tag,
+        body.rtl .framework-label,
+        body.rtl .stat-label,
+        body.rtl .logo-title,
+        body.rtl .hero-text h1,
+        body.rtl .nav-brand {
+            letter-spacing: 0;
+        }
+
+        body.rtl .feature-card {
+            text-align: right;
+        }
+
+        body.rtl .cta-form input {
+            text-align: right;
+        }
+
+        .lang-toggle {
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 6px 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s;
+            display: inline-block;
+            vertical-align: middle;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .lang-toggle:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+
+        /* ============================================================================
+           TABLET & SMALL LAPTOP STYLES (max-width: 900px)
+           - Applies to: iPads, small laptops, portrait tablets
+           - Features: 2-column grids, adjusted spacing, hidden desktop nav
+           ============================================================================ */
+        @media (max-width: 900px) {
+            nav {
+                padding: 12px 16px !important;
+            }
+
+            .nav-links {
+                display: none !important;
+            }
+
+            section {
+                padding: 60px 20px !important;
+            }
+
+            /* Orbit Visualization */
+            .orbit-container {
+                width: 100% !important;
+                height: 500px !important;
+                max-width: 500px;
+                margin: 40px auto 0 !important;
+                transform: scale(1.0) !important;
+                transform-origin: center center;
+            }
+
+            .orbit-section {
+                padding: 40px 20px !important;
+                /* Tighten up gaps */
+                overflow: visible !important;
+            }
+
+            .orbit-planet {
+                pointer-events: auto !important;
+            }
+
+            .orbit-ring {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            /* Rocket Launch Scene - Force Stacking */
+            .rocket-scene {
+                flex-direction: column !important;
+                height: auto !important;
+                gap: 40px !important;
+                display: flex !important;
+            }
+
+            .rocket-scene>div:first-child {
+                height: 480px !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+            }
+
+            .rocket-scene #stage-info-content {
+                width: 100% !important;
+                padding: 0 !important;
+            }
+
+            .tech-label-box {
+                margin-top: 20px;
+            }
+
+            /* Navigation & Logo */
+            .logo-container {
+                max-width: 100%;
+                height: 240px !important;
+            }
+
+            .logo-title {
+                font-size: 2.2rem !important;
+                letter-spacing: 3px !important;
+            }
+
+            h1 {
+                font-size: 1.5rem !important;
+            }
+
+            h2 {
+                font-size: 1.8rem !important;
+            }
+
+            .hero-text h1 {
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .section-desc {
+                font-size: 1rem !important;
+                padding: 0;
+            }
+
+            /* Mobile Menu & UI */
+            #menu-toggle {
+                display: block !important;
+            }
+
+            .nav-actions {
+                gap: 8px !important;
+            }
+
+            .stat-value {
+                font-size: 2.5rem !important;
+            }
+
+            /* Principles Grid */
+            .principles-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            /* Features Grid - Single column on mobile */
+            .features-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            /* Feature cards - contained width */
+            .feature-card {
+                padding: 24px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            /* Global overflow prevention */
+            html,
+            body {
+                overflow-x: hidden !important;
+                max-width: 100vw !important;
+            }
+
+            /* Stats container - column layout on mobile only */
+            .stats-container {
+                flex-direction: column;
+                gap: 40px;
+                padding: 60px 24px;
+            }
+
+            .stat-value {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Mobile Planet Adjustments - only for small screens */
+        @media (max-width: 768px) {
+            .floating-planet {
+                display: block !important;
+                position: fixed !important;
+                opacity: 0.6 !important;
+                z-index: 5 !important;
+                pointer-events: none;
+            }
+
+            .planet-earth {
+                width: 70px !important;
+                top: 10% !important;
+                right: 20px !important;
+                left: auto !important;
+            }
+
+            .planet-mars {
+                width: 45px !important;
+                top: 40% !important;
+                left: 20px !important;
+                right: auto !important;
+            }
+
+            .planet-saturn {
+                width: 90px !important;
+                bottom: 12% !important;
+                right: 20px !important;
+                left: auto !important;
+            }
+        }
+
+
+
+        /* Additional Utility Fixes */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .principle-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.4));
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: 20px;
+            padding: 32px 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            text-align: left;
+            /* Better readability */
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Hover Glow Effect */
+        .principle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-8px);
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.7));
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(56, 189, 248, 0.05);
+        }
+
+        .principle-card:hover::before {
+            opacity: 1;
+        }
+
+        .principle-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 8px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            color: #38bdf8;
+            transition: all 0.3s ease;
+        }
+
+        .principle-card:hover .principle-icon {
+            background: #38bdf8;
+            color: #0f172a;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+
+        .principle-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .principle-desc {
+            font-size: 0.95rem;
+            color: rgba(148, 163, 184, 0.8);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+
+            /* Framework / "System Thinking" Block Fix */
+            .framework-container {
+                padding: 30px 20px !important;
+                margin: 20px 10px !important;
+                border-radius: 20px !important;
+            }
+
+            .framework-code {
+                font-size: 0.85rem !important;
+                text-align: center !important;
+                word-break: normal !important;
+                overflow-wrap: break-word !important;
+                white-space: normal !important;
+                margin-bottom: 20px !important;
+                line-height: 1.5 !important;
+            }
+
+            /* Orbit Visualization Scaling */
+            .orbit-container {
+                width: 100% !important;
+                height: 400px !important;
+                margin: 40px auto 0 !important;
+                transform: scale(0.85) !important;
+            }
+
+            .orbit-ring {
+                border-width: 1px !important;
+            }
+
+            .ring-1 {
+                width: 65px !important;
+                height: 65px !important;
+            }
+
+            .ring-2 {
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            .ring-3 {
+                width: 140px !important;
+                height: 140px !important;
+            }
+
+            .ring-4 {
+                width: 180px !important;
+                height: 180px !important;
+            }
+
+            .ring-5 {
+                width: 230px !important;
+                height: 230px !important;
+            }
+
+            .ring-6 {
+                width: 280px !important;
+                height: 280px !important;
+            }
+
+            .ring-7 {
+                width: 340px !important;
+                height: 340px !important;
+            }
+
+            .ring-8 {
+                width: 400px !important;
+                height: 400px !important;
+            }
+
+            .orbit-planet {
+                width: 32px !important;
+                height: 32px !important;
+            }
+
+            .p-jupiter {
+                width: 40px !important;
+                height: 40px !important;
+                right: -20px !important;
+            }
+
+            .p-saturn {
+                width: 50px !important;
+                height: 50px !important;
+                left: -25px !important;
+            }
+
+            .p-mercury {
+                right: -16px !important;
+            }
+
+            .p-venus {
+                left: -16px !important;
+            }
+
+            .p-earth {
+                top: -16px !important;
+            }
+
+            .p-mars {
+                bottom: -16px !important;
+            }
+
+            .p-uranus {
+                top: -16px !important;
+            }
+
+            .p-neptune {
+                bottom: -16px !important;
+            }
+
+            /* Rocket Launch Scene */
+            .rocket-scene {
+                flex-direction: column !important;
+                height: auto !important;
+                gap: 40px !important;
+            }
+
+            .rocket-scene>div:first-child {
+                /* Rocket Visual Container */
+                height: 500px !important;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            /* Typography Scaling */
+            h1 {
+                font-size: 2.5rem !important;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .section-desc {
+                font-size: 1rem !important;
+                padding: 0 10px;
+            }
+
+            /* Navigation Tweak */
+            nav {
+                padding: 16px !important;
+            }
+
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+
+            .nav-cta {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .lang-toggle {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+
+            /* Mobile Menu Toggle Visibility */
+            #menu-toggle {
+                display: block !important;
+            }
+
+            .nav-links {
+                display: none !important;
+            }
+
+            .nav-actions {
+                gap: 8px !important;
+            }
+
+            /* Social Icons Hide on Super Small Screens if needed */
+            @media (max-width: 400px) {
+                .nav-actions a[aria-label] {
+                    display: none;
+                }
+            }
+
+            .stat-value {
+                font-size: 3rem;
+            }
+        }
+
+        /* About Section Styles */
+        .vision-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .vision-lead {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .vision-text {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .about-text p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .team-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .team-banner {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .team-banner:hover img {
+            transform: scale(1.02);
+        }
+
+        .team-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .team-role {
+            font-size: 0.85rem;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .team-bio {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Starfield Canvas -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Floating Planets (Background Ambient - Restored) -->
+    <div class="floating-planet planet-earth" style="opacity: 0.3;" onclick="openPlanet('earth')">
+        <img src="planet_earth.png" alt="" class="planet-img">
+    </div>
+    <div class="floating-planet planet-mars" style="opacity: 0.3;" onclick="openPlanet('mars')">
+        <img src="planet_mars.png" alt="" class="planet-img">
+    </div>
+    <div class="floating-planet planet-saturn" style="opacity: 0.3;" onclick="openPlanet('saturn')">
+        <img src="planet_saturn.png" alt="" class="planet-img">
+    </div>
+
+    <!-- Shooting Stars -->
+
+
+    <div class="content">
+        <nav>
+            <div class="nav-brand">FALAk</div>
+            <ul class="nav-links">
+                <li><a href="#journey" id="nav-journey">Learning Path</a></li>
+                <li><a href="#simlab-section" class="nav-beta-link"><span data-i18n="nav-beta">Academy</span> <span
+                            class="beta-badge" data-i18n="beta-badge">BETA</span></a></li>
+                <li><a href="#news" id="nav-news">News</a></li>
+                <li><a href="#features" id="nav-features">Features</a></li>
+                <li><a href="#about" id="nav-about" data-i18n="nav-about">About</a></li>
+                <li><a href="#community" id="nav-community">Community</a></li>
+                <li><a href="#join" id="nav-join">Join</a></li>
+            </ul>
+            <div class="nav-actions-container nav-actions">
+                <!-- Social Icons (Navbar) -->
+                <a href="https://x.com/FALAkPlatforms" target="_blank" aria-label="X (Twitter)"
+                    class="social-icon-link">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/FALAkPlatforms" target="_blank" aria-label="Instagram"
+                    class="social-icon-link">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <div class="nav-divider"></div>
+
+                <button id="lang-toggle" class="lang-toggle">AR</button>
+                <a href="#join" class="btn nav-cta" id="nav-cta">Follow Progress</a>
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="menu-toggle-btn" aria-label="Toggle Menu">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay">
+            <div class="mobile-menu-content">
+                <a href="#journey" onclick="closeMenu()" data-i18n="nav-journey" class="mobile-menu-link">Learning
+                    Path</a>
+                <a href="#simlab-section" onclick="closeMenu()" class="mobile-menu-link"
+                    style="position: relative;"><span data-i18n="nav-beta">Academy</span> <span class="beta-badge"
+                        data-i18n="beta-badge" style="top: -10px; right: -45px;">BETA</span></a>
+                <a href="#news" onclick="closeMenu()" data-i18n="nav-news" class="mobile-menu-link">News</a>
+                <a href="#features" onclick="closeMenu()" data-i18n="nav-features" class="mobile-menu-link">Features</a>
+                <a href="#about" onclick="closeMenu()" data-i18n="nav-about" class="mobile-menu-link">About</a>
+                <a href="#community" onclick="closeMenu()" data-i18n="nav-community"
+                    class="mobile-menu-link">Community</a>
+                <a href="#join" onclick="closeMenu()" data-i18n="nav-join" class="mobile-menu-link">Join</a>
+                <div class="mobile-social-container">
+                    <a href="https://x.com/FALAkPlatforms" target="_blank" class="mobile-social-link"><svg
+                            viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                            </path>
+                        </svg></a>
+                    <a href="https://instagram.com/FALAkPlatforms" target="_blank" class="mobile-social-link"><svg
+                            viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+
+        <section class="hero" style="min-height: 50vh; padding-bottom: 0;">
+            <!-- Integrated Logo -->
+            <!-- Integrated Logo with Swoop Reveal -->
+            <div class="logo-container" id="hero-logo-container"
+                style="position: relative; width: 100%; max-width: 600px; height: 320px; overflow: visible;">
+
+                <!-- The Main Logo: Hidden by clip-path initially -->
+                <!-- Uses a CSS clip-path which will be animated by JS -->
+                <!-- The Main Logo: Hidden by clip-path initially -->
+                <!-- Uses a CSS clip-path which will be animated by JS -->
+                <!-- Vignette Mask to hide box edges + Lighten Blend for seamless background -->
+                <div id="logo-reveal-mask"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip-path: circle(0% at 0% 100%); -webkit-clip-path: circle(0% at 0% 100%); z-index: 2;">
+                    <img src="OfficialFALAk.png" alt="FALAk Logo" class="logo-main" id="hero-logo-img"
+                        style="width: 100%; height: 100%; object-fit: contain; filter: contrast(1.2) brightness(0.9); mix-blend-mode: lighten; -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%); mask-image: radial-gradient(circle at center, black 40%, transparent 80%);">
+                </div>
+
+                <!-- Ghost/Placeholder (Optional: subtle outline so user knows something is there? No, user requested seamless) -->
+                <!-- We leave it empty as requested, purely background stars -->
+
+                <!-- The Rocket Actor -->
+                <div id="rocket-actor"
+                    style="position: absolute; top: 0; left: 0; width: 40px; height: 80px; z-index: 10; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 10px #38bdf8);">
+                    <!-- Sleek SVG Rocket -->
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="width: 100%; height: 100%; transform: rotate(45deg);">
+                        <path
+                            d="M12 2.5C12 2.5 16 6.5 16 11.5C16 16.5 14 20 14 20L12 18L10 20C10 20 8 16.5 8 11.5C8 6.5 12 2.5 12 2.5Z"
+                            fill="white" />
+                        <path d="M12 18V22" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <!-- Engine Glow -->
+                    <div
+                        style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 8px; height: 20px; background: linear-gradient(to bottom, #38bdf8, transparent); opacity: 0.8; border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero text and CTA removed for cleaner design -->
+
+
+
+            <!-- Banner Image Removed by User Request -->
+        </section>
+
+
+        <section id="advisors" style="padding: 20px 48px 100px; text-align: center;">
+            <div class="section-header">
+                <div class="section-tag">Governance</div>
+                <h2>Scientific Integrity</h2>
+                <p class="section-desc">FALAk's educational framework is reviewed by leading academics to ensure
+                    accuracy and pedagogical value.</p>
+            </div>
+
+            <div class="team-grid" style="max-width: 1000px; margin: 0 auto;">
+                <!-- Dr. Rob Purdy -->
+                <div class="team-card">
+                    <div
+                        style="width: 120px; height: 120px; margin: 0 auto 20px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                        <span style="font-size: 3rem;">🎓</span>
+                    </div>
+                    <div class="team-name">Dr. Rob Purdy</div>
+                    <div class="team-role">Academic Advisor</div>
+                    <p class="team-bio">
+                        Head of Physics at the University of Leeds. Supporting FALAk's educational integrity and
+                        curriculum structure.
+                    </p>
+                </div>
+
+                <!-- Placeholder 1 -->
+                <div class="team-card" style="opacity: 0.5; border-style: dashed;">
+                    <div
+                        style="width: 120px; height: 120px; margin: 0 auto 20px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 2rem; color: rgba(255,255,255,0.2);">?</span>
+                    </div>
+                    <div class="team-name">Future Advisor</div>
+                    <div class="team-role">Call for participation</div>
+                    <p class="team-bio">
+                        We are actively seeking advisors in Aerospace Engineering and Planetary Science.
+                    </p>
+                </div>
+
+                <!-- Placeholder 2 -->
+                <div class="team-card" style="opacity: 0.5; border-style: dashed;">
+                    <div
+                        style="width: 120px; height: 120px; margin: 0 auto 20px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 2rem; color: rgba(255,255,255,0.2);">?</span>
+                    </div>
+                    <div class="team-name">Future Advisor</div>
+                    <div class="team-role">Call for participation</div>
+                    <p class="team-bio">
+                        Join our board to help shape the next generation of space education.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <footer style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding-bottom: 40px;">
+            <div class="social-links" style="display: flex; gap: 20px;">
+                <!-- X (Twitter) -->
+                <a href="https://x.com/FALAkPlatforms" target="_blank" aria-label="X (Twitter)"
+                    style="color: rgba(255,255,255,0.6); transition: color 0.3s;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                        </path>
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://instagram.com/FALAkPlatforms" target="_blank" aria-label="Instagram"
+                    style="color: rgba(255,255,255,0.6); transition: color 0.3s;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+            <div data-i18n="footer-copy">© 2026 FALAk · Abu Dhabi, UAE · Opening Pathways Into Space</div>
+        </footer>
+    </div>
+
+    <!-- Optimized script is loaded externally -->
+    <script src="orbital_simulation.js"></script>
+    <script src="curriculum.js"></script>
+    <script src="translations.js?v=6"></script>
+    <script src="main_app.js"></script>
+    <script>
+        // Curriculum UI Controller
+        let curriculumNav = null;
+
+        function initCurriculumUI() {
+            // Bilingual Support
+            const isAr = window.appTranslator && window.appTranslator.currentLang === 'ar';
+            const data = (window.appTranslator) ? window.appTranslator.getCurriculumData(FALAK_CURRICULUM) : FALAK_CURRICULUM;
+
+            if (!data) return;
+            curriculumNav = new CurriculumNavigator(data);
+
+            const grid = document.getElementById('curriculum-grid');
+            if (!grid) return;
+
+            // Microcopy data
+            let subtitles = {
+                "1": "Understanding the environment we operate in",
+                "2": "Energy, propulsion, and constraints",
+                "3": "Where theory meets risk",
+                "4": "Surviving the void of space",
+                "5": "Virtual proving grounds",
+                "6": "Pushing physics to the limit",
+                "7": "Responsible exploration"
+            };
+
+            if (isAr && window.appTranslator.getLocalizedSubtitles()) {
+                subtitles = window.appTranslator.getLocalizedSubtitles();
+            }
+
+            const animations = {
+                "1": "anim-orbit",
+                "2": "anim-flow",
+                "3": "anim-pulse"
+            };
+
+            const t = (k) => (window.appTranslator) ? window.appTranslator.t(k) : k; // Helper
+            const lblLessons = (window.appTranslator) ? window.appTranslator.t('ui-lesson-label') : 'Lessons';
+
+            grid.innerHTML = '';
+            data.sections.forEach((section, idx) => {
+                const card = document.createElement('div');
+                card.className = 'path-card';
+                card.style.cursor = 'pointer';
+                card.onclick = () => openSection(section.id);
+
+                const animClass = animations[section.id] || '';
+                const subtitle = subtitles[section.id] || '';
+                const lessonCount = section.lessons.length;
+                const layerNum = String(idx + 1).padStart(2, '0');
+
+                let iconHtml = section.icon;
+                if (animClass) {
+                    iconHtml = iconHtml.replace('<svg', `<svg class="${animClass}"`);
+                }
+
+                card.innerHTML = `
+                    <div style="font-family: monospace; color: rgba(56, 189, 248, 0.5); font-size: 0.75rem; margin-bottom: 12px; letter-spacing: 1px;">LAYER ${layerNum}</div>
+                    <div class="path-number">${iconHtml}</div>
+                    <h3>${section.title}</h3>
+                    <span class="microcopy">${subtitle}</span>
+                    <div class="lesson-count-tag" style="opacity: 0.5; font-size: 0.8rem; transform: scale(0.9);">
+                        <span>●</span> ${lessonCount} ${lblLessons}
+                    </div>
+                    `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openSection(sectionId) {
+            curriculumNav.goToLesson(sectionId, FALAK_CURRICULUM.sections.find(s => s.id === sectionId).lessons[0].id);
+            renderLesson();
+            const modal = document.getElementById('lesson-modal');
+            modal.style.display = 'block';
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLessonModal() {
+            const modal = document.getElementById('lesson-modal');
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        function renderLesson() {
+            const lesson = curriculumNav.getCurrentLesson();
+            const section = curriculumNav.getCurrentSection();
+            const progress = curriculumNav.getProgress();
+
+            // Labels
+            const t = (k) => (window.appTranslator) ? window.appTranslator.t(k) : k;
+
+            const lblSec = t('ui-section-prefix') || 'Section';
+            const lblOutcome = t('ui-outcome') || 'Learning Outcome';
+            const lblLesson = t('ui-lesson-n') || 'Lesson';
+            const lblOf = t('ui-of') || 'of';
+            const lblPrev = t('ui-prev') || 'Previous';
+            const lblNext = t('ui-next') || 'Next';
+            const lblClose = t('ui-close') || 'Close';
+
+            document.getElementById('lesson-section-tag').textContent = `${lblSec} ${section.id} · ${section.title}`;
+            document.getElementById('lesson-title').textContent = `${lblLesson} ${lesson.id} ${lesson.title}`;
+            document.getElementById('lesson-content').textContent = lesson.content;
+            document.getElementById('lesson-outcome').textContent = lesson.learningOutcome;
+
+            // Update labels that aren't dynamic content but part of the UI structure
+            // We need to target the static elements for translation or update them here
+            document.getElementById('lbl-outcome-header').textContent = lblOutcome;
+            document.getElementById('btn-close-text').textContent = lblClose;
+
+            // Update buttons
+            const btnPrev = document.getElementById('btn-prev-lesson');
+            btnPrev.innerHTML = (window.appTranslator && window.appTranslator.currentLang === 'ar')
+                ? `${lblPrev} →` // RTL arrow
+                : `← ${lblPrev}`;
+
+            const btnNext = document.getElementById('btn-next-lesson');
+            btnNext.innerHTML = (window.appTranslator && window.appTranslator.currentLang === 'ar')
+                ? `← ${lblNext}` // RTL arrow
+                : `${lblNext} →`;
+
+            document.getElementById('lesson-progress').textContent = `${lblLesson} ${progress.current} ${lblOf} ${progress.total}`;
+        }
+
+        // Add IDs to modal elements for targeting
+        document.addEventListener('DOMContentLoaded', () => {
+            // One-time static label updates if needed, though renderLesson handles most.
+            // We need to ensure the HTML structure has IDs for 'lbl-outcome-header' etc.
+        });
+
+        function navigateLesson(direction) {
+            if (direction > 0) {
+                curriculumNav.nextLesson();
+            } else {
+                curriculumNav.prevLesson();
+            }
+            renderLesson();
+        }
+
+        // Mobile Menu Logic
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                menu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add event listener to toggle button
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('menu-toggle');
+            if (toggle) toggle.onclick = toggleMenu;
+        });
+
+        document.addEventListener('DOMContentLoaded', initCurriculumUI);
+
+    </script>
+
+    <!-- Planet Modals -->
+    <div id="planet-modal-overlay" class="pm-overlay" style="display: none;">
+        <div class="pm-content">
+            <button class="pm-close" onclick="closePlanet()">×</button>
+            <h3 id="pm-title" data-i18n="pm-title"
+                style="font-size: 2rem; margin-bottom: 8px; background: linear-gradient(135deg, #fff, #38bdf8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Planet</h3>
+            <div id="pm-subtitle" data-i18n="pm-level"
+                style="text-transform: uppercase; color: #38bdf8; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 24px; opacity: 0.8;">
+                Level</div>
+
+            <p id="pm-desc" data-i18n="pm-desc-placeholder"
+                style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 32px; font-size: 1.1rem;">
+                Description</p>
+
+            <!-- Scientific Stats Grid -->
+            <div id="pm-stats"
+                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px; text-align: left;">
+                <!-- Stats injected via JS -->
+            </div>
+
+            <a href="#join" class="btn btn-primary" onclick="closePlanet()" data-i18n="pm-btn">Start Learning</a>
+        </div>
+    </div>
+
+    <script>
+        // Emergency Fallback for Mobile Menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('mobile-menu');
+
+            if (toggle && menu) {
+                // Remove any existing listeners by cloning (optional, but safe)
+                const newToggle = toggle.cloneNode(true);
+                toggle.parentNode.replaceChild(newToggle, toggle);
+
+                newToggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    menu.classList.toggle('active');
+                    console.log('Mobile menu toggled via inline script. Active:', menu.classList.contains('active'));
+                });
+
+                // Close when clicking links
+                const links = menu.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
