@@ -21,12 +21,22 @@ RSS_FEEDS = [
     {
         "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
         "source": "NASA",
-        "priority": 1,
+        "priority": 2,
     },
     {
         "url": "https://spacenews.com/feed/",
         "source": "SpaceNews",
+        "priority": 1,  # Best for international + MENA coverage
+    },
+    {
+        "url": "https://www.esa.int/rssfeed/Our_Activities/Space_News",
+        "source": "ESA",
         "priority": 2,
+    },
+    {
+        "url": "https://www.space.com/feeds/all",
+        "source": "Space.com",
+        "priority": 3,
     },
 ]
 
