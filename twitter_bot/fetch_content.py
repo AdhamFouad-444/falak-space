@@ -252,8 +252,28 @@ def main():
     print("=" * 50)
     print()
     
-    # Load existing pending tweets
+    # Load existing pending and posted tweets
     pending = load_pending_tweets()
+    
+    # helper to check if we already fetched/posted this today
+    try:
+        with open(config.POSTED_LOG_FILE, "r") as f:
+            posted = json.load(f)
+    except:
+        posted = []
+        
+    all_history = pending + posted
+    
+    def already_exists(source, date_val):
+        for t in all_history:
+            if t.get("source") == source and t.get("date") == date_val:
+                return True
+            # For launches and others without date
+            if t.get("source") == source and t.get("date") is None and date_val is None:
+                # Basic check if it was recently added
+                pass
+        return False
+
     new_tweets = []
     
     # Fetch from each enabled source
@@ -284,8 +304,29 @@ def main():
         new_tweets.append(edu)
         print(f"   ✅ Generated educational tweet")
     
+    # Add auto-scheduling logic for today
+    today = datetime.now().replace(minute=0, second=0, microsecond=0)
+    slots = [10, 14, 18, 22] # 10 AM, 2 PM, 6 PM, 10 PM
+    
+    # Filter out exact duplicates by text just in case
+    existing_texts = [t.get("text") for t in all_history]
+    
+    valid_new_tweets = []
+    for t in new_tweets:
+        if t["text"] not in existing_texts:
+            t["approved"] = True
+            valid_new_tweets.append(t)
+            
+    # Assign times
+    for i, t in enumerate(valid_new_tweets):
+        if i < len(slots):
+            scheduled_time = today.replace(hour=slots[i])
+            if scheduled_time < datetime.now():
+                scheduled_time = datetime.now() + timedelta(minutes=5)
+            t["scheduled_for"] = scheduled_time.isoformat()
+    
     # Add new tweets to pending
-    pending.extend(new_tweets)
+    pending.extend(valid_new_tweets)
     save_pending_tweets(pending)
     
     # Summary
