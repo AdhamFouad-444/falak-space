@@ -99,4 +99,4 @@ def set_schedule(start_date_str):
 
 if __name__ == "__main__":
     # Default start date: Today (2026-02-10)
-    set_schedule("2026-02-10")
+    set_schedule("2026-02-23")

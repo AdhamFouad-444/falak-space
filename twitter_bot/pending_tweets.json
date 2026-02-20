@@ -22,5 +22,335 @@
     "source": "FALAk Framework 001 - Section 2.5",
     "approved": false,
     "created_at": "2026-02-16T17:13:38.443375"
+  },
+  {
+    "type": "Week 1 - Pillar B (Learning-in-public)",
+    "text": "Our current research into orbital mechanics highlights a common misconception. Orbit is not about altitude; it is about horizontal velocity. Getting high enough is easy; going fast enough to stay there is the engineering challenge.",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Clarify the physics of LEO (Low Earth Orbit) velocity if asked.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169145",
+    "scheduled_for": "2026-02-23T09:30:00"
+  },
+  {
+    "type": "Week 1 - Pillar B (Learning-in-public)",
+    "text": "We are mapping the dependencies between propulsion types and mission duration. The trade-offs between chemical and electric propulsion define the boundaries of the feasible commercial market.",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Share a thought on specific impulse (Isp) trade-offs.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169203",
+    "scheduled_for": "2026-02-23T18:30:00"
+  },
+  {
+    "type": "Week 1 - Pillar A (First Principles)",
+    "text": "Space isn\u2019t a secret\u2014it\u2019s physics. FALAk is building the intellectual foundations for understanding how these systems interact. Join the exploration: https://falak-space.vercel.app/",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Welcome users to the framework.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169238",
+    "scheduled_for": "2026-02-24T09:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar E (Signals)",
+    "text": "The proliferation of CubeSats signals a shift toward distributed orbital systems. We are moving from single, expensive assets to resilient constellations. \ud83d\udef0\ufe0f",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Discuss resilience in distributed systems.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169252",
+    "scheduled_for": "2026-02-24T18:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar A (Principles)",
+    "text": "Thermal management is the silent killer in space. Without air to carry heat away via convection, you rely entirely on radiation. Efficiency is everything.",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Explain why heat rejection is harder in a vacuum.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169262",
+    "scheduled_for": "2026-02-25T09:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar B (Learning)",
+    "text": "Our internal simulation tests show that 'falling' is the baseline state of orbit. You aren't floating; you are falling and missing the ground. \ud83c\udf0e",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Reiterate the centrifugal force vs gravity balance.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169272",
+    "scheduled_for": "2026-02-25T18:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar C (Questions)",
+    "text": "In a post-scarcity launch environment, what becomes the most valuable orbital asset?",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Prompt for answers like \"Spectrum,\" \"Real estate,\" or \"Materials.\"",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169280",
+    "scheduled_for": "2026-02-26T09:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar D (Explainer)",
+    "text": "Geostationary orbit (GEO) is the point where an object's orbital period matches Earth's rotation. This allows it to stay fixed over one spot. #SpaceScience",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Mention the specific altitude (~35,786 km).",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169290",
+    "scheduled_for": "2026-02-26T18:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar E (Signals)",
+    "text": "We are observing a shift in space-tech hiring. The industry is looking for systems engineers who understand software as much as they understand hardware. \ud83d\udcbb",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Support the need for multidisciplinary talent.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169300",
+    "scheduled_for": "2026-02-27T09:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar A (Principles)",
+    "text": "Redundancy in space isn't an option; it's a requirement. If a single point of failure exists, the mission is fundamentally high-risk.",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Discuss 2oo3 (2 out of 3) voting systems or similar.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169309",
+    "scheduled_for": "2026-02-27T18:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar B (Learning)",
+    "text": "Researching the history of the Apollo Guidance Computer reminds us that reliability is more important than raw processing power in harsh environments. \ud83d\ude80",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Note the radiation hardening of space-grade chips.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169319",
+    "scheduled_for": "2026-03-02T09:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar C (Questions)",
+    "text": "How do we bridge the gap between 'space fans' and 'space builders'?",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Guide toward structured education and tooling.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169326",
+    "scheduled_for": "2026-03-02T18:30:00"
+  },
+  {
+    "type": "Week 2 - Pillar D (Explainer)",
+    "text": "Atmospheric drag is why LEO satellites eventually fall. Even at 400km, there are enough particles to slow you down over time. \ud83d\udd17 https://falak-space.vercel.app/",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Discuss station-keeping and fuel requirements.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169336",
+    "scheduled_for": "2026-03-03T09:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar D (Explainer)",
+    "text": "Delta-v is the currency of space. It represents the total change in velocity a spacecraft can achieve. Every maneuver costs 'currency'. #Physics",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Explain the Tsiolkovsky rocket equation simply.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169345",
+    "scheduled_for": "2026-03-03T18:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar E (Signals)",
+    "text": "Private space stations are the next logical step as the ISS approaches retirement. We are watching the transition from research outposts to industrial parks. \ud83c\udfd7\ufe0f",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Mention Axiom or Orbital Reef as signals.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169355",
+    "scheduled_for": "2026-03-04T09:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar A (Principles)",
+    "text": "Gravity is a well. Scaling out of it requires overcoming the 'tyranny of the rocket equation' where fuel mass adds to the work required.",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Discuss why chemical rockets have a theoretical limit.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169364",
+    "scheduled_for": "2026-03-04T18:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar B (Learning)",
+    "text": "We are analyzing how orbital debris distributions affect future mission planning. Sustainability is a systems problem, not just a cleanup problem. \ud83d\udef0\ufe0f",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Share a thought on Kessler Syndrome.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169374",
+    "scheduled_for": "2026-03-05T09:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar C (Questions)",
+    "text": "If you could remove one physical constraint from space engineering, which would it be?",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Watch for answers like \"Inertia\" or \"Radiation.\"",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169381",
+    "scheduled_for": "2026-03-05T18:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar D (Explainer)",
+    "text": "Most people think rockets push against the air. They don't. They work by expelling mass in one direction to move in the other (Newton's 3rd Law). #FALAk",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Clarify that they work better in a vacuum.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169391",
+    "scheduled_for": "2026-03-06T09:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar E (Signals)",
+    "text": "Edge computing in space reduces the bandwidth bottleneck. Why send raw data to Earth when you can process it on the satellite? \ud83c\udf29\ufe0f",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Discuss AI on the edge for orbital imaging.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169400",
+    "scheduled_for": "2026-03-06T18:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar A (Principles)",
+    "text": "Payload fairings are the most expensive 'disposable' part of a rocket besides the engines. Recovering them was a major signal for commercial viability.",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Note the cost of aerospace-grade carbon fiber.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169410",
+    "scheduled_for": "2026-03-09T09:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar B (Learning)",
+    "text": "Understanding the Sun-synchronous orbit: it allows a satellite to pass over a spot at the same local solar time. Essential for consistent shadows. \u2600\ufe0f",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Mention why this is critical for Earth observation.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169420",
+    "scheduled_for": "2026-03-09T18:30:00"
+  },
+  {
+    "type": "Week 3 - Pillar C (Questions)",
+    "text": "As we move toward productization, what systems do you feel are most underserved in the current space-ed market? \ud83d\udd17 https://falak-space.vercel.app/",
+    "source": "Content Plan - Week 3",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Capture feedback for product roadmap.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169430",
+    "scheduled_for": "2026-03-10T09:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar C (Questions)",
+    "text": "What is the 'Netscape moment' for the space industry?",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Facilitate discussion on the catalyst for mass adoption.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169436",
+    "scheduled_for": "2026-03-10T18:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar D (Explainer)",
+    "text": "Cryogenic fuels like liquid oxygen and methane are hard to store but offer high performance. The shift to 'Methalox' is a key industry trend. \u2744\ufe0f",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Mention the benefits of Methane for Mars ISRU.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169446",
+    "scheduled_for": "2026-03-11T09:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar E (Signals)",
+    "text": "Software-defined satellites allow for mission updates long after launch. This flexibility is the new standard for orbital hardware. #SystemsEngineering",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Discuss OTA (Over-The-Air) updates for satellites.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169456",
+    "scheduled_for": "2026-03-11T18:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar A (Principles)",
+    "text": "Every gram matters. Space engineering is the art of extreme optimization under the most unforgiving constraints known to man.",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Talk about 'mass budgets' in mission design.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169465",
+    "scheduled_for": "2026-03-12T09:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar B (Learning)",
+    "text": "We've been looking at how orbital mechanics change when approaching non-spherical bodies. Even 'gravity' isn't simple when the math gets real. \ud83e\ude90",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Explain mascons (mass concentrations) on the Moon.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169474",
+    "scheduled_for": "2026-03-12T18:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar C (Questions)",
+    "text": "How does space tourism affect the public's perception of space as a serious industrial domain?",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Listen for views on \"seriousness\" vs \"spectacle.\"",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169482",
+    "scheduled_for": "2026-03-13T09:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar D (Explainer)",
+    "text": "Hohmann Transfer: The most fuel-efficient way to move between two orbits. It requires two engine burns and a lot of patience. \ud83d\udef0\ufe0f",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Explain why 'patience' refers to orbital alignment.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169490",
+    "scheduled_for": "2026-03-13T18:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar E (Signals)",
+    "text": "In-space manufacturing will fundamentally change how we design rockets. If we build in space, we don't have to design for the stress of launch. \ud83c\udfd7\ufe0f",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Elaborate on the \"Launch Stress\" constraint.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169500",
+    "scheduled_for": "2026-03-16T09:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar A (Principles)",
+    "text": "Systems engineering isn't about the parts; it's about the interfaces. In space, an interface failure is a mission failure.",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Discuss the importance of rigorous documentation.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169509",
+    "scheduled_for": "2026-03-16T18:30:00"
+  },
+  {
+    "type": "Week 4 - Pillar B (Learning)",
+    "text": "We've spent 4 weeks exploring the intellectual foundations of the orbital domain. The journey from physics to product continues. \ud83d\udd17 https://falak-space.vercel.app/",
+    "source": "Content Plan - Week 4",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Thank the audience for joining the research phase.",
+    "approved": true,
+    "created_at": "2026-02-20T20:02:29.169518",
+    "scheduled_for": "2026-03-17T09:30:00"
   }
 ]
