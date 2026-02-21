@@ -1,41 +1,41 @@
 {
-  "last_updated": "2026-02-19T20:39:42Z",
+  "last_updated": "2026-02-21T07:45:11Z",
   "articles": [
     {
-      "title": "Earth from Space: Sending love from above",
-      "summary": "Image:\n\t\t\tFor Valentine’s Day, the Copernicus Sentinel-2 mission sends love from space, capturing the heart-shaped oasis of Faiyum, just south of Cairo, Egypt.",
+      "title": "Earth from Space: Ouarzazate, Morocco",
+      "summary": "Image:\n\t\t\tThe Copernicus Sentinel-2 mission takes us over south-central Morocco, near the city of Ouarzazate.",
       "source": "ESA",
-      "region": "🇪🇬 Egypt",
-      "date": "Feb 13, 2026",
+      "region": "🇲🇦 Morocco",
+      "date": "Feb 20, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.esa.int/ESA_Multimedia/Images/2026/02/Earth_from_Space_Sending_love_from_above"
+      "link": "https://www.esa.int/ESA_Multimedia/Images/2026/02/Earth_from_Space_Ouarzazate_Morocco"
     },
     {
-      "title": "NASA Releases Report on Starliner Crewed Flight Test Investigation",
-      "summary": "At a news conference on Thursday, NASA released a report of findings from the Program Investigation Team examining the Boeing CST-100 Starliner Crewed Flight Test as part of the agency’s Commercial...",
+      "title": "NASA Is Helping Bring Giant Tortoises Back to the Galápagos",
+      "summary": "Giant tortoises are returning to Floreana Island after more than 150 years, guided by NASA data that shows suitable areas for release.",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Feb 19, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/news-release/nasa-releases-report-on-starliner-crewed-flight-test-investigation/"
+      "date": "Feb 20, 2026",
+      "image": "https://images-assets.nasa.gov/image/2013-1859/2013-1859~thumb.jpg",
+      "link": "https://science.nasa.gov/earth/nasa-is-helping-bring-giant-tortoises-back-to-the-galapagos/"
     },
     {
-      "title": "NASA to Provide Starliner Crew Flight Test Review Findings Today",
-      "summary": "During a news conference at 2 p.m. EST on Thursday NASA will discuss the findings of investigations into the 2024 crewed test flight of Boeing Starliner to the International Space Station. The news...",
+      "title": "Artemis II Crew Trains on T-38",
+      "summary": "NASA astronaut Christina Koch and Canadian Space Agency astronaut Jeremy Hansen take off on a T-38 training flight from Ellington Field on Feb. 11, 2026, as a waning crescent Moon hovers above. Koc...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Feb 19, 2026",
-      "image": "https://images-assets.nasa.gov/image/NHQ202406160012/NHQ202406160012~thumb.jpg",
-      "link": "https://www.nasa.gov/news-release/nasa-to-provide-starliner-crew-flight-test-review-findings-today/"
+      "date": "Feb 20, 2026",
+      "image": "https://images-assets.nasa.gov/image/jsc2023e041422/jsc2023e041422~thumb.jpg",
+      "link": "https://www.nasa.gov/image-article/artemis-ii-crew-trains-on-t-38/"
     },
     {
-      "title": "Award-Winning NASA Camera Revolutionizes How We See the Invisible",
-      "summary": "Imagine trying to photograph wind. That’s similar to what NASA engineers dealt with during a recent effort to study how air moves around planes, rockets, and other kinds of aerospace vehicles. Air ...",
+      "title": "Winds Whip Up Fires and Dust on the Southern Plains",
+      "summary": "Dry, gusty conditions spurred fast-growing fires in Oklahoma and Kansas, along with dangerous dust storms across the region.",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Feb 19, 2026",
+      "date": "Feb 20, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/aeronautics/award-winning-nasa-camera-revolutionizes-how-we-see-the-invisible/"
+      "link": "https://science.nasa.gov/earth/earth-observatory/winds-whip-up-fires-and-dust-on-the-southern-plains/"
     }
   ]
 }
