@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>The Aeterna Codex | Research — FALAk</title>
+    <meta name="description"
+        content="The Aeterna Codex: An Engineering Blueprint for Digital Consciousness and AGI. Explore high-fidelity whole brain emulation and neuromorphic hardware architecture.">
+    <meta name="keywords"
+        content="AGI, Artificial General Intelligence, Whole Brain Emulation, Neuromorphic Engineering, Aeterna Codex, FALAk Space, Digital Consciousness">
+    <link rel="canonical" href="https://falakplatforms.co.uk/codex.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://falakplatforms.co.uk/codex.html">
+    <meta property="og:title" content="The Aeterna Codex | Research — FALAk">
+    <meta property="og:description"
+        content="An Engineering Blueprint for Digital Consciousness and Artificial General Intelligence by Adham Fouad.">
+    <meta property="og:image" content="https://falakplatforms.co.uk/OfficialFALAk.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://falakplatforms.co.uk/codex.html">
+    <meta property="twitter:title" content="The Aeterna Codex | Research — FALAk">
+    <meta property="twitter:description"
+        content="An Engineering Blueprint for Digital Consciousness and Artificial General Intelligence by Adham Fouad.">
+    <meta property="twitter:image" content="https://falakplatforms.co.uk/OfficialFALAk.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "The Aeterna Codex",
+      "description": "An Engineering Blueprint for Digital Consciousness and Artificial General Intelligence.",
+      "author": {
+        "@type": "Person",
+        "name": "Adham Fouad"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "FALAk",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://falakplatforms.co.uk/OfficialFALAk.png"
+        }
+      },
+      "url": "https://falakplatforms.co.uk/codex.html"
+    }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="OfficialFALAk.png">
+    <style>
+        /* ===== EXACT FALAK DESIGN SYSTEM COPIED FROM INDEX.HTML ===== */
+        :root {
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --accent-blue: #38bdf8;
+            --bg-overlay: rgba(0, 0, 0, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .section-tag {
+            font-family: var(--font-display);
+        }
+
+        /* Starfield Canvas */
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Navigation - EXACT COPIED FROM INDEX.HTML */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-brand {
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a.active {
+            color: #38bdf8 !important;
+        }
+
+        .nav-beta-link {
+            position: relative;
+        }
+
+        .beta-badge {
+            position: absolute;
+            top: -12px;
+            right: -25px;
+            font-size: 0.6rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+            pointer-events: none;
+        }
+
+        .nav-actions-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .social-icon-link {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s;
+        }
+
+        .social-icon-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 4px;
+        }
+
+        .lang-toggle {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .nav-cta {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+            font-family: var(--font-display);
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-toggle-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .mobile-menu-link {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .mobile-social-container {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mobile-social-link {
+            color: var(--text-secondary);
+        }
+
+        /* Page Content Styling */
+        .page-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .codex-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 48px 80px;
+            position: relative;
+        }
+
+        .codex-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(ellipse at center top, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 6px 18px;
+            border-radius: 50px;
+            background: rgba(56, 189, 248, 0.05);
+            margin-bottom: 32px;
+        }
+
+        .codex-title {
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .codex-title .accent {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .codex-subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 16px;
+            line-height: 1.7;
+        }
+
+        .codex-byline {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 48px;
+            line-height: 1.8;
+        }
+
+        .content-section {
+            padding: 100px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-top: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            margin-top: 12px;
+            font-size: 1rem;
+            max-width: 560px;
+        }
+
+        /* Vision Grid */
+        .vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .vision-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .vision-text p span {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .vision-graphic {
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .vision-graphic::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+        }
+
+        /* Research Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .research-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .research-card:hover {
+            background: rgba(56, 189, 248, 0.04);
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(56, 189, 248, 0.08);
+        }
+
+        .card-part {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 4px 14px;
+            border-radius: 50px;
+            background: rgba(56, 189, 248, 0.05);
+            display: inline-block;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .card-number {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.04);
+            line-height: 1;
+            position: absolute;
+            right: 28px;
+            top: 28px;
+        }
+
+        .research-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            max-width: 80%;
+        }
+
+        .card-divider {
+            width: 40px;
+            height: 2px;
+            background: rgba(56, 189, 248, 0.4);
+            margin: 16px 0 20px;
+        }
+
+        .card-bullets {
+            list-style: none;
+            flex-grow: 1;
+            margin-bottom: 28px;
+        }
+
+        .card-bullets li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .card-bullets li::before {
+            content: '▸';
+            color: var(--accent-blue);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .download-btn.primary {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            border: none;
+            color: #fff;
+        }
+
+        .download-btn.primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* About Author Card */
+        .about-card {
+            max-width: 780px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 48px;
+            text-align: center;
+        }
+
+        .about-card p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .about-card strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .codex-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 48px;
+            text-align: center;
+        }
+
+        .disclaimer {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+
+        .back-link {
+            color: rgba(255, 255, 255, 0.25);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .section-separator {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+            margin: 0 48px;
+        }
+
+        /* MEDIA QUERIES - MATCHING INDEX.HTML NAV BEHAVIOR */
+        @media (max-width: 1100px) {
+            .nav-links {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-actions-container {
+                gap: 8px;
+            }
+
+            .nav-divider,
+            .lang-toggle,
+            .nav-cta {
+                display: none !important;
+            }
+
+            .menu-toggle-btn {
+                display: block;
+            }
+
+            .codex-hero {
+                padding: 120px 24px 60px;
+            }
+
+            .content-section {
+                padding: 64px 24px;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .vision-graphic {
+                aspect-ratio: 4/3;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-card {
+                padding: 32px 24px;
+            }
+
+            .codex-footer {
+                padding: 40px 24px;
+            }
+
+            .section-separator {
+                margin: 0 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Starfield Canvas -->
+    <canvas id="starfield"></canvas>
+
+    <!-- NAVIGATION - EXACT MATCHING INDEX.HTML -->
+    <nav>
+        <div class="nav-brand">FALAk</div>
+        <ul class="nav-links">
+            <li><a href="index.html#journey" id="nav-journey">Learning Path</a></li>
+            <li><a href="index.html#simlab-section" class="nav-beta-link">Academy <span
+                        class="beta-badge">BETA</span></a></li>
+            <li><a href="codex.html" class="active">Research</a></li>
+            <li><a href="index.html#news" id="nav-news">News</a></li>
+            <li><a href="index.html#features" id="nav-features">Features</a></li>
+            <li><a href="index.html#about" id="nav-about">About</a></li>
+            <li><a href="index.html#community" id="nav-community">Community</a></li>
+            <li><a href="index.html#join" id="nav-join">Join</a></li>
+        </ul>
+        <div class="nav-actions-container nav-actions">
+            <!-- Social Icons -->
+            <a href="https://x.com/FALAkPlatforms" target="_blank" aria-label="X (Twitter)" class="social-icon-link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path
+                        d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://instagram.com/FALAkPlatforms" target="_blank" aria-label="Instagram"
+                class="social-icon-link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <div class="nav-divider"></div>
+
+            <button id="lang-toggle" class="lang-toggle">AR</button>
+            <a href="index.html#join" class="btn nav-cta" id="nav-cta">Follow Progress</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="menu-toggle-btn" aria-label="Toggle Menu">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <a href="index.html#journey" class="mobile-menu-link">Learning Path</a>
+            <a href="index.html#simlab-section" class="mobile-menu-link">Academy</a>
+            <a href="codex.html" class="mobile-menu-link" style="color: var(--accent-blue);">Research</a>
+            <a href="index.html#news" class="mobile-menu-link">News</a>
+            <a href="index.html#features" class="mobile-menu-link">Features</a>
+            <a href="index.html#about" class="mobile-menu-link">About</a>
+            <a href="index.html#community" class="mobile-menu-link">Community</a>
+            <a href="index.html#join" class="mobile-menu-link">Join</a>
+            <div class="mobile-social-container">
+                <a href="https://x.com/FALAkPlatforms" target="_blank" class="mobile-social-link">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://instagram.com/FALAkPlatforms" target="_blank" class="mobile-social-link">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-content">
+
+        <!-- HERO -->
+        <section class="codex-hero">
+            <span class="section-tag">Independent Research Publication</span>
+            <h1 class="codex-title">
+                The Aeterna<br><span class="accent">Codex</span>
+            </h1>
+            <p class="codex-subtitle">
+                An Engineering Blueprint for Digital Consciousness<br>and Artificial General Intelligence.
+            </p>
+            <p class="codex-byline">
+                Authored independently by <strong>Adham Fouad</strong>, Founder of FALAK. This 30,000-word roadmap
+                details the theoretical physics, neuromorphic hardware, and economic models required to achieve AGI
+                through High-Fidelity Whole Brain Emulation.
+            </p>
+            <a href="#papers" class="btn nav-cta" style="font-size:0.95rem; padding: 14px 36px; margin-top: 32px;">
+                Read the Executive Summary
+            </a>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- THE VISION -->
+        <section class="content-section">
+            <div class="section-header">
+                <div class="section-tag">The Vision</div>
+                <h2>Reverse-Engineering Consciousness</h2>
+                <p class="section-desc">From biological neurons to silicon substrate — a blueprint for the next
+                    threshold of intelligence.</p>
+            </div>
+
+            <div class="vision-grid">
+                <div class="vision-text">
+                    <p>
+                        True Artificial General Intelligence (AGI) requires reverse-engineering the human brain's
+                        <span>86 billion neurons</span> onto a 3D neuromorphic substrate — moving beyond algorithmic
+                        approximations toward structural emulation.
+                    </p>
+                    <p>
+                        The Aeterna Codex leverages <span>silicon photonics</span> and <span>memristor synapses</span>
+                        to host high-fidelity neural networks that mirror biological complexity, enabling genuine
+                        substrate-independent cognition at planetary scale.
+                    </p>
+                </div>
+
+                <div class="vision-graphic">
+                    <svg viewBox="0 0 300 300" style="width:80%; height:80%; opacity:0.6;"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="nodeGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#38bdf8" />
+                                <stop offset="100%" stop-color="#818cf8" />
+                            </radialGradient>
+                        </defs>
+                        <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1" />
+                        <circle cx="150" cy="150" r="80" fill="none" stroke="rgba(56,189,248,0.08)" stroke-width="1" />
+                        <circle cx="150" cy="150" r="40" fill="none" stroke="rgba(56,189,248,0.1)" stroke-width="1" />
+                        <line x1="150" y1="30" x2="150" y2="270" stroke="rgba(56,189,248,0.15)" stroke-width="0.8" />
+                        <line x1="30" y1="150" x2="270" y2="150" stroke="rgba(56,189,248,0.15)" stroke-width="0.8" />
+                        <line x1="150" y1="70" x2="230" y2="150" stroke="rgba(129,140,248,0.2)" stroke-width="0.8" />
+                        <line x1="230" y1="150" x2="150" y2="230" stroke="rgba(129,140,248,0.2)" stroke-width="0.8" />
+                        <line x1="150" y1="230" x2="70" y2="150" stroke="rgba(129,140,248,0.2)" stroke-width="0.8" />
+                        <line x1="70" y1="150" x2="150" y2="70" stroke="rgba(129,140,248,0.2)" stroke-width="0.8" />
+                        <circle cx="150" cy="30" r="4" fill="url(#nodeGrad)" opacity="0.7" />
+                        <circle cx="150" cy="270" r="4" fill="url(#nodeGrad)" opacity="0.7" />
+                        <circle cx="30" cy="150" r="4" fill="url(#nodeGrad)" opacity="0.7" />
+                        <circle cx="270" cy="150" r="4" fill="url(#nodeGrad)" opacity="0.7" />
+                        <circle cx="150" cy="150" r="10" fill="url(#nodeGrad)" opacity="1" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- RESEARCH PAPERS -->
+        <section id="papers" class="content-section">
+            <div class="section-header">
+                <div class="section-tag">The Publication</div>
+                <h2>The Research Codex</h2>
+                <p class="section-desc">Three volumes spanning neuromorphic hardware, biological emulation, and
+                    civilisational economics.</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Part I -->
+                <div class="research-card">
+                    <span class="card-number">01</span>
+                    <span class="card-part">Part I</span>
+                    <h3>Foundation &amp; Tech Specs</h3>
+                    <div class="card-divider"></div>
+                    <ul class="card-bullets">
+                        <li>The Aeterna-Pearl HHC-1 architecture.</li>
+                        <li>Hosting 86 billion neurons and synapses.</li>
+                        <li>Silicon photonics for neural bandwidth.</li>
+                    </ul>
+                    <a href="assets/docs/codex/The Aeterna Codex - Part 1_ Foundation &amp; Technical Specifications.pdf"
+                        download class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+
+                <!-- Part II (featured) -->
+                <div class="research-card"
+                    style="border-color: rgba(56,189,248,0.2); background: rgba(56,189,248,0.03);">
+                    <span class="card-number">02</span>
+                    <span class="card-part">Part II</span>
+                    <h3>Implementation &amp; Validation</h3>
+                    <div class="card-divider"></div>
+                    <ul class="card-bullets">
+                        <li>Simulating the "Chemical Brain" logic.</li>
+                        <li>Hardware-native learning via STDP logic.</li>
+                        <li>Consciousness validation using PCI complexity.</li>
+                    </ul>
+                    <a href="assets/docs/codex/The Aeterna Codex - Academic Edition - Part 2.pdf" download
+                        class="download-btn primary">
+                        Download PDF
+                    </a>
+                </div>
+
+                <!-- Part III -->
+                <div class="research-card">
+                    <span class="card-number">03</span>
+                    <span class="card-part">Part III</span>
+                    <h3>Scale-up &amp; Future</h3>
+                    <div class="card-divider"></div>
+                    <ul class="card-bullets">
+                        <li>The 44-year economic scale-up model.</li>
+                        <li>The Digital Consciousness Rights Act.</li>
+                        <li>Space colonisation via mind substrates.</li>
+                    </ul>
+                    <a href="assets/docs/codex/The Aeterna Codex - Part 3_ Implementation &amp; Future.pdf" download
+                        class="download-btn">
+                        Download PDF
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- AUTHOR -->
+        <section class="content-section" style="text-align:center;">
+            <div class="section-header">
+                <div class="section-tag">About the Author</div>
+                <h2>Adham Fouad</h2>
+            </div>
+            <div class="about-card">
+                <p>
+                    Adham Fouad is a second-year student at the <strong>University of Leeds</strong> and founder of
+                    <strong>FALAK</strong>. The Aeterna Codex represents his independent research into neuroscience,
+                    neuromorphic engineering, and post-scarcity economics.
+                </p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="codex-footer">
+            <p class="disclaimer">
+                Disclaimer: This work was conducted independently by the author and does not represent the views of the
+                University of Leeds.
+            </p>
+            <a href="index.html" class="back-link">← Return to FALAk Space</a>
+        </footer>
+
+    </div>
+
+    <script>
+        // Starfield Canvas (Identical to index.html logic)
+        (function () {
+            const canvas = document.getElementById('starfield');
+            const ctx = canvas.getContext('2d');
+            let stars = [];
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function initStars() {
+                stars = [];
+                for (let i = 0; i < 200; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        r: Math.random() * 1.2 + 0.2,
+                        a: Math.random(),
+                        s: Math.random() * 0.003 + 0.001
+                    });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                stars.forEach(st => {
+                    st.a += st.s;
+                    if (st.a > 1 || st.a < 0) st.s *= -1;
+                    ctx.beginPath();
+                    ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255,255,255,${st.a * 0.8})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(draw);
+            }
+
+            resize();
+            initStars();
+            draw();
+            window.addEventListener('resize', () => { resize(); initStars(); });
+        })();
+
+        // Mobile Menu Toggle (Exact matching index.html logic)
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('mobile-menu');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    menu.classList.toggle('active');
+                });
+
+                // Close when clicking links
+                const links = menu.querySelectorAll('a');
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.remove('active');
+                    });
+                });
+
+                // Close on background click
+                menu.addEventListener('click', (e) => {
+                    if (e.target === menu) menu.classList.remove('active');
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

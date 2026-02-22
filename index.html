@@ -6,6 +6,28 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>FALAk - Opening Pathways Into Space</title>
+    <meta name="description"
+        content="FALAk Space: An interactive aerospace flight school and simulation platform. Learn orbital mechanics, rocket systems, and our latest research—The Aeterna Codex.">
+    <meta name="keywords"
+        content="Aerospace, Flight School, Space Simulation, Orbital Mechanics, Rocket Engineering, FALAk Space">
+    <meta name="author" content="FALAk Space">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://falakplatforms.co.uk/">
+    <meta property="og:title" content="FALAk - Opening Pathways Into Space">
+    <meta property="og:description"
+        content="Master the physics of space through high-fidelity simulations. Join the next generation of aerospace innovators.">
+    <meta property="og:image" content="https://falakplatforms.co.uk/OfficialFALAk.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://falakplatforms.co.uk/">
+    <meta property="twitter:title" content="FALAk - Opening Pathways Into Space">
+    <meta property="twitter:description"
+        content="Master the physics of space through high-fidelity simulations. Join the next generation of aerospace innovators.">
+    <meta property="twitter:image" content="https://falakplatforms.co.uk/OfficialFALAk.png">
+
     <meta name="google-site-verification" content="ugVgLMKeJP7Uidr18PIVWNj2dHgEPPFFgq4WTL-Ew2A" />
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
@@ -684,6 +706,10 @@
 
         .nav-links a:hover {
             color: #fff;
+        }
+
+        .nav-links a.active {
+            color: #38bdf8 !important;
         }
 
         .beta-badge {
@@ -1937,8 +1963,10 @@
             <div class="nav-brand">FALAk</div>
             <ul class="nav-links">
                 <li><a href="#journey" id="nav-journey">Learning Path</a></li>
-                <li><a href="#simlab-section" class="nav-beta-link"><span data-i18n="nav-beta">Academy</span> <span
-                            class="beta-badge" data-i18n="beta-badge">BETA</span></a></li>
+                <li><a href="#simlab-section" id="nav-simlab" class="nav-beta-link"><span
+                            data-i18n="nav-beta">Academy</span> <span class="beta-badge"
+                            data-i18n="beta-badge">BETA</span></a></li>
+                <li><a href="codex.html">Research</a></li>
                 <li><a href="#news" id="nav-news">News</a></li>
                 <li><a href="#features" id="nav-features">Features</a></li>
                 <li><a href="#about" id="nav-about" data-i18n="nav-about">About</a></li>
@@ -1987,6 +2015,7 @@
                 <a href="#simlab-section" onclick="closeMenu()" class="mobile-menu-link"
                     style="position: relative;"><span data-i18n="nav-beta">Academy</span> <span class="beta-badge"
                         data-i18n="beta-badge" style="top: -10px; right: -45px;">BETA</span></a>
+                <a href="codex.html" onclick="closeMenu()" class="mobile-menu-link">Research</a>
                 <a href="#news" onclick="closeMenu()" data-i18n="nav-news" class="mobile-menu-link">News</a>
                 <a href="#features" onclick="closeMenu()" data-i18n="nav-features" class="mobile-menu-link">Features</a>
                 <a href="#about" onclick="closeMenu()" data-i18n="nav-about" class="mobile-menu-link">About</a>
@@ -3941,7 +3970,7 @@
     <script src="orbital_simulation.js"></script>
     <script src="curriculum.js"></script>
     <script src="translations.js?v=6"></script>
-    <script src="main_app.js"></script>
+    <script src="main_app.js?v=2"></script>
     <script>
         // Curriculum UI Controller
         let curriculumNav = null;

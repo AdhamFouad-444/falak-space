@@ -225,6 +225,59 @@ function initNavigation() {
             closeMenu();
         }
     });
+
+    // Handle immediate active state on click for non-navigating links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function () {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
+
+    // Initialize ScrollSpy
+    initScrollSpy();
+}
+
+/**
+ * ScrollSpy: Highlights navigation links based on current scroll position
+ */
+function initScrollSpy() {
+    const sections = ['journey', 'simlab-section', 'news', 'features', 'about', 'community', 'join'];
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    // Create an IntersectionObserver for each section
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px', // Trigger when section is in the upper part of viewport
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                updateActiveLink(id);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) observer.observe(section);
+    });
+
+    function updateActiveLink(sectionId) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href && (href === `#${sectionId}` || href.endsWith(`#${sectionId}`))) {
+                link.classList.add('active');
+            }
+        });
+    }
 }
 
 // Global Close Menu function
