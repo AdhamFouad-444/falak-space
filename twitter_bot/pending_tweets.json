@@ -25,16 +25,6 @@
   },
   {
     "type": "Week 1 - Pillar B (Learning-in-public)",
-    "text": "Our current research into orbital mechanics highlights a common misconception. Orbit is not about altitude; it is about horizontal velocity. Getting high enough is easy; going fast enough to stay there is the engineering challenge.",
-    "source": "Content Plan - Week 1",
-    "post_time_uk": "6:30 PM",
-    "reply_strategy": "Clarify the physics of LEO (Low Earth Orbit) velocity if asked.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169145",
-    "scheduled_for": "2026-02-23T09:30:00"
-  },
-  {
-    "type": "Week 1 - Pillar B (Learning-in-public)",
     "text": "We are mapping the dependencies between propulsion types and mission duration. The trade-offs between chemical and electric propulsion define the boundaries of the feasible commercial market.",
     "source": "Content Plan - Week 1",
     "post_time_uk": "9:30 AM",
@@ -352,5 +342,16 @@
     "approved": true,
     "created_at": "2026-02-20T20:02:29.169518",
     "scheduled_for": "2026-03-17T09:30:00"
+  },
+  {
+    "type": "Week 1 - Pillar B (Learning-in-public)",
+    "text": "Our current research into orbital mechanics highlights a common misconception. Orbit is not about altitude; it is about horizontal velocity. Getting high enough is easy; going fast enough to stay there is the engineering challenge.",
+    "source": "Content Plan - Week 1",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Clarify the physics of LEO (Low Earth Orbit) velocity if asked.",
+    "approved": false,
+    "created_at": "2026-02-20T20:02:29.169145",
+    "scheduled_for": "2026-02-23T09:30:00",
+    "last_error": "401 Unauthorized\nUnauthorized"
   }
 ]
