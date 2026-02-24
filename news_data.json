@@ -1,6 +1,15 @@
 {
-  "last_updated": "2026-02-23T08:06:28Z",
+  "last_updated": "2026-02-24T07:09:50Z",
   "articles": [
+    {
+      "title": "Israeli startup targets the economics of high-resolution Earth observation",
+      "summary": "Remondo says its imaging payload could deliver sub-30 centimeter resolution from suitcase-size satellites\nThe post Israeli startup targets the economics of high-resolution Earth observation appeare...",
+      "source": "SpaceNews",
+      "region": "🇮🇱 Israel",
+      "date": "Feb 23, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://spacenews.com/israeli-startup-targets-economics-of-high-resolution-earth-observation/"
+    },
     {
       "title": "Earth from Space: Ouarzazate, Morocco",
       "summary": "Image:\n\t\t\tThe Copernicus Sentinel-2 mission takes us over south-central Morocco, near the city of Ouarzazate.",
@@ -11,31 +20,22 @@
       "link": "https://www.esa.int/ESA_Multimedia/Images/2026/02/Earth_from_Space_Ouarzazate_Morocco"
     },
     {
-      "title": "NASA Is Helping Bring Giant Tortoises Back to the Galápagos",
-      "summary": "Giant tortoises are returning to Floreana Island after more than 150 years, guided by NASA data that shows suitable areas for release.",
+      "title": "Showy Swirls Around Jeju Island",
+      "summary": "Winds blowing past the volcanic landmass near the Korean Peninsula created a trail of spiraling clouds, while murky water churned nearby.",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Feb 20, 2026",
-      "image": "https://images-assets.nasa.gov/image/2013-1859/2013-1859~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/nasa-is-helping-bring-giant-tortoises-back-to-the-galapagos/"
-    },
-    {
-      "title": "Artemis II Crew Trains on T-38",
-      "summary": "NASA astronaut Christina Koch and Canadian Space Agency astronaut Jeremy Hansen take off on a T-38 training flight from Ellington Field on Feb. 11, 2026, as a waning crescent Moon hovers above. Koc...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 20, 2026",
-      "image": "https://images-assets.nasa.gov/image/jsc2023e041422/jsc2023e041422~thumb.jpg",
-      "link": "https://www.nasa.gov/image-article/artemis-ii-crew-trains-on-t-38/"
-    },
-    {
-      "title": "Winds Whip Up Fires and Dust on the Southern Plains",
-      "summary": "Dry, gusty conditions spurred fast-growing fires in Oklahoma and Kansas, along with dangerous dust storms across the region.",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 20, 2026",
+      "date": "Feb 24, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/winds-whip-up-fires-and-dust-on-the-southern-plains/"
+      "link": "https://science.nasa.gov/earth/earth-observatory/showy-swirls-around-jeju-island/"
+    },
+    {
+      "title": "Young ‘Sun’ Caught Blowing Bubbles by NASA’s Chandra",
+      "summary": "For the first time, a much younger version of the Sun has been caught red-handed blowing bubbles in the galaxy, by astronomers using NASA’s Chandra X-ray Observatory. The bubble – called an “astros...",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Feb 23, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://www.nasa.gov/missions/chandra/young-sun-caught-blowing-bubbles-by-nasas-chandra/"
     }
   ]
 }
