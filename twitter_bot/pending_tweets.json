@@ -24,16 +24,6 @@
     "created_at": "2026-02-16T17:13:38.443375"
   },
   {
-    "type": "Week 2 - Pillar E (Signals)",
-    "text": "The proliferation of CubeSats signals a shift toward distributed orbital systems. We are moving from single, expensive assets to resilient constellations. \ud83d\udef0\ufe0f",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "9:30 AM",
-    "reply_strategy": "Discuss resilience in distributed systems.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169252",
-    "scheduled_for": "2026-02-24T18:30:00"
-  },
-  {
     "type": "Week 2 - Pillar A (Principles)",
     "text": "Thermal management is the silent killer in space. Without air to carry heat away via convection, you rely entirely on radiation. Efficiency is everything.",
     "source": "Content Plan - Week 2",
@@ -354,6 +344,17 @@
     "approved": false,
     "created_at": "2026-02-20T20:02:29.169238",
     "scheduled_for": "2026-02-24T09:30:00",
+    "last_error": "401 Unauthorized\nUnauthorized"
+  },
+  {
+    "type": "Week 2 - Pillar E (Signals)",
+    "text": "The proliferation of CubeSats signals a shift toward distributed orbital systems. We are moving from single, expensive assets to resilient constellations. \ud83d\udef0\ufe0f",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Discuss resilience in distributed systems.",
+    "approved": false,
+    "created_at": "2026-02-20T20:02:29.169252",
+    "scheduled_for": "2026-02-24T18:30:00",
     "last_error": "401 Unauthorized\nUnauthorized"
   }
 ]
