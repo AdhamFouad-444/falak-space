@@ -1,15 +1,6 @@
 {
-  "last_updated": "2026-02-24T07:09:50Z",
+  "last_updated": "2026-02-25T07:11:21Z",
   "articles": [
-    {
-      "title": "Israeli startup targets the economics of high-resolution Earth observation",
-      "summary": "Remondo says its imaging payload could deliver sub-30 centimeter resolution from suitcase-size satellites\nThe post Israeli startup targets the economics of high-resolution Earth observation appeare...",
-      "source": "SpaceNews",
-      "region": "🇮🇱 Israel",
-      "date": "Feb 23, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://spacenews.com/israeli-startup-targets-economics-of-high-resolution-earth-observation/"
-    },
     {
       "title": "Earth from Space: Ouarzazate, Morocco",
       "summary": "Image:\n\t\t\tThe Copernicus Sentinel-2 mission takes us over south-central Morocco, near the city of Ouarzazate.",
@@ -20,22 +11,31 @@
       "link": "https://www.esa.int/ESA_Multimedia/Images/2026/02/Earth_from_Space_Ouarzazate_Morocco"
     },
     {
-      "title": "Showy Swirls Around Jeju Island",
-      "summary": "Winds blowing past the volcanic landmass near the Korean Peninsula created a trail of spiraling clouds, while murky water churned nearby.",
+      "title": "Landslide and Avalanche Debris Litter Hubbard Glacier",
+      "summary": "Satellite-based radar images show where a powerful earthquake in the Yukon, Canada, sent rock, snow, and ice spilling across the frozen landscapes of the St. Elias Mountains.",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Feb 25, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://science.nasa.gov/earth/earth-observatory/landslide-and-avalanche-debris-litter-hubbard-glacier/"
+    },
+    {
+      "title": "Curiosity Blog, Sols 4812-4819: Back Into the Hollows",
+      "summary": "Written by Diana Hayes, Graduate student at York University, Toronto Earth planning date: Friday, Feb. 20, 2026 This has been a pretty routine week for Curiosity. As was mentioned last week, we’re ...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Feb 24, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/showy-swirls-around-jeju-island/"
+      "link": "https://science.nasa.gov/blog/curiosity-blog-sols-4812-4819-back-into-the-hollows/"
     },
     {
-      "title": "Young ‘Sun’ Caught Blowing Bubbles by NASA’s Chandra",
-      "summary": "For the first time, a much younger version of the Sun has been caught red-handed blowing bubbles in the galaxy, by astronomers using NASA’s Chandra X-ray Observatory. The bubble – called an “astros...",
+      "title": "New Volunteer Data from 143 Observatories Unveils the 2024 Total Solar Eclipse",
+      "summary": "On April 8, 2024, volunteers participating in NASA’s Eclipse Megamovie citizen science project all around the United States hurried to photograph the solar eclipse with the latest, greatest equipme...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Feb 23, 2026",
+      "date": "Feb 24, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/missions/chandra/young-sun-caught-blowing-bubbles-by-nasas-chandra/"
+      "link": "https://science.nasa.gov/get-involved/citizen-science/new-volunteer-data-from-143-observatories-unveils-the-2024-total-solar-eclipse/"
     }
   ]
 }
