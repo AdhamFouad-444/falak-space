@@ -24,16 +24,6 @@
     "created_at": "2026-02-16T17:13:38.443375"
   },
   {
-    "type": "Week 2 - Pillar D (Explainer)",
-    "text": "Geostationary orbit (GEO) is the point where an object's orbital period matches Earth's rotation. This allows it to stay fixed over one spot. #SpaceScience",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "9:30 AM",
-    "reply_strategy": "Mention the specific altitude (~35,786 km).",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169290",
-    "scheduled_for": "2026-02-26T18:30:00"
-  },
-  {
     "type": "Week 2 - Pillar E (Signals)",
     "text": "We are observing a shift in space-tech hiring. The industry is looking for systems engineers who understand software as much as they understand hardware. \ud83d\udcbb",
     "source": "Content Plan - Week 2",
@@ -359,5 +349,16 @@
     "created_at": "2026-02-20T20:02:29.169280",
     "scheduled_for": "2026-02-26T09:30:00",
     "last_error": "403 Forbidden"
+  },
+  {
+    "type": "Week 2 - Pillar D (Explainer)",
+    "text": "Geostationary orbit (GEO) is the point where an object's orbital period matches Earth's rotation. This allows it to stay fixed over one spot. #SpaceScience",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "9:30 AM",
+    "reply_strategy": "Mention the specific altitude (~35,786 km).",
+    "approved": false,
+    "created_at": "2026-02-20T20:02:29.169290",
+    "scheduled_for": "2026-02-26T18:30:00",
+    "last_error": "401 Unauthorized\nUnauthorized"
   }
 ]
