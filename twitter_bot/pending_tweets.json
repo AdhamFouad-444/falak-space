@@ -24,16 +24,6 @@
     "created_at": "2026-02-16T17:13:38.443375"
   },
   {
-    "type": "Week 2 - Pillar C (Questions)",
-    "text": "In a post-scarcity launch environment, what becomes the most valuable orbital asset?",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "6:30 PM",
-    "reply_strategy": "Prompt for answers like \"Spectrum,\" \"Real estate,\" or \"Materials.\"",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169280",
-    "scheduled_for": "2026-02-26T09:30:00"
-  },
-  {
     "type": "Week 2 - Pillar D (Explainer)",
     "text": "Geostationary orbit (GEO) is the point where an object's orbital period matches Earth's rotation. This allows it to stay fixed over one spot. #SpaceScience",
     "source": "Content Plan - Week 2",
@@ -357,6 +347,17 @@
     "approved": false,
     "created_at": "2026-02-20T20:02:29.169272",
     "scheduled_for": "2026-02-25T18:30:00",
+    "last_error": "403 Forbidden"
+  },
+  {
+    "type": "Week 2 - Pillar C (Questions)",
+    "text": "In a post-scarcity launch environment, what becomes the most valuable orbital asset?",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Prompt for answers like \"Spectrum,\" \"Real estate,\" or \"Materials.\"",
+    "approved": false,
+    "created_at": "2026-02-20T20:02:29.169280",
+    "scheduled_for": "2026-02-26T09:30:00",
     "last_error": "403 Forbidden"
   }
 ]
