@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-25T07:11:21Z",
+  "last_updated": "2026-02-26T07:09:28Z",
   "articles": [
     {
       "title": "Earth from Space: Ouarzazate, Morocco",
@@ -11,31 +11,31 @@
       "link": "https://www.esa.int/ESA_Multimedia/Images/2026/02/Earth_from_Space_Ouarzazate_Morocco"
     },
     {
-      "title": "Landslide and Avalanche Debris Litter Hubbard Glacier",
-      "summary": "Satellite-based radar images show where a powerful earthquake in the Yukon, Canada, sent rock, snow, and ice spilling across the frozen landscapes of the St. Elias Mountains.",
+      "title": "Dry-Season Floods Drench Northern Colombia",
+      "summary": "Villages and farmland were swamped after unusually heavy early-February rains pushed the Sinú River over its banks.",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Feb 26, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://science.nasa.gov/earth/earth-observatory/dry-season-floods-drench-northern-colombia/"
+    },
+    {
+      "title": "NASA’s Aerospace Safety Advisory Panel Releases 2025 Annual Report",
+      "summary": "The Aerospace Safety Advisory Panel (ASAP), which advises NASA and Congress on safety, has released its 2025 annual report on NASA’s performance and challenges.   While the panel acknowledged NASA’...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Feb 25, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/landslide-and-avalanche-debris-litter-hubbard-glacier/"
+      "link": "https://www.nasa.gov/news-release/nasas-aerospace-safety-advisory-panel-releases-2025-annual-report/"
     },
     {
-      "title": "Curiosity Blog, Sols 4812-4819: Back Into the Hollows",
-      "summary": "Written by Diana Hayes, Graduate student at York University, Toronto Earth planning date: Friday, Feb. 20, 2026 This has been a pretty routine week for Curiosity. As was mentioned last week, we’re ...",
+      "title": "Making an Entrance",
+      "summary": "NASA astronaut Jack Hathaway smiles up at the camera as he enters the International Space Station Feb. 14, 2026, after docking to the orbiting laboratory aboard a SpaceX Dragon spacecraft. Since Ha...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Feb 24, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/blog/curiosity-blog-sols-4812-4819-back-into-the-hollows/"
-    },
-    {
-      "title": "New Volunteer Data from 143 Observatories Unveils the 2024 Total Solar Eclipse",
-      "summary": "On April 8, 2024, volunteers participating in NASA’s Eclipse Megamovie citizen science project all around the United States hurried to photograph the solar eclipse with the latest, greatest equipme...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 24, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/get-involved/citizen-science/new-volunteer-data-from-143-observatories-unveils-the-2024-total-solar-eclipse/"
+      "date": "Feb 25, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA10697/PIA10697~thumb.jpg",
+      "link": "https://www.nasa.gov/image-article/making-an-entrance/"
     }
   ]
 }
