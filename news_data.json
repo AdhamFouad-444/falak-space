@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-26T07:09:28Z",
+  "last_updated": "2026-02-27T07:03:42Z",
   "articles": [
     {
       "title": "Earth from Space: Ouarzazate, Morocco",
@@ -11,31 +11,31 @@
       "link": "https://www.esa.int/ESA_Multimedia/Images/2026/02/Earth_from_Space_Ouarzazate_Morocco"
     },
     {
-      "title": "Dry-Season Floods Drench Northern Colombia",
-      "summary": "Villages and farmland were swamped after unusually heavy early-February rains pushed the Sinú River over its banks.",
+      "title": "Chesapeake Bay Locked in Ice",
+      "summary": "Nearly 50 years ago, the first Landsat satellite captured the rare sight of Mid-Atlantic waterways frozen over.",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Feb 27, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://science.nasa.gov/earth/earth-observatory/chesapeake-bay-locked-in-ice/"
+    },
+    {
+      "title": "JPL 3D-Printed Part Springs Forward",
+      "summary": "Description With a simple motion, a jack-in-the-box-like spring designed at NASA’s Jet Propulsion Laboratory showed the potential of additive manufacturing, also known as 3D printing, to cut costs ...",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Feb 26, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA26424/PIA26424~thumb.jpg",
+      "link": "https://science.nasa.gov/photojournal/jpl-3d-printed-part-springs-forward/"
+    },
+    {
+      "title": "Landsat 9: More Than Just A Picture",
+      "summary": "For over 50 years, the Landsat program has provided the longest continuous satellite record of Earth’s land surface from space. Landsat 9, launched in 2021, is the latest mission in this remarkable...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Feb 26, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/dry-season-floods-drench-northern-colombia/"
-    },
-    {
-      "title": "NASA’s Aerospace Safety Advisory Panel Releases 2025 Annual Report",
-      "summary": "The Aerospace Safety Advisory Panel (ASAP), which advises NASA and Congress on safety, has released its 2025 annual report on NASA’s performance and challenges.   While the panel acknowledged NASA’...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 25, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/news-release/nasas-aerospace-safety-advisory-panel-releases-2025-annual-report/"
-    },
-    {
-      "title": "Making an Entrance",
-      "summary": "NASA astronaut Jack Hathaway smiles up at the camera as he enters the International Space Station Feb. 14, 2026, after docking to the orbiting laboratory aboard a SpaceX Dragon spacecraft. Since Ha...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 25, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA10697/PIA10697~thumb.jpg",
-      "link": "https://www.nasa.gov/image-article/making-an-entrance/"
+      "link": "https://science.nasa.gov/missions/landsat/landsat-9-more-than-just-a-picture/"
     }
   ]
 }
