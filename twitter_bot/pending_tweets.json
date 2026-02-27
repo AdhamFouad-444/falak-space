@@ -24,16 +24,6 @@
     "created_at": "2026-02-16T17:13:38.443375"
   },
   {
-    "type": "Week 2 - Pillar E (Signals)",
-    "text": "We are observing a shift in space-tech hiring. The industry is looking for systems engineers who understand software as much as they understand hardware. \ud83d\udcbb",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "6:30 PM",
-    "reply_strategy": "Support the need for multidisciplinary talent.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169300",
-    "scheduled_for": "2026-02-27T09:30:00"
-  },
-  {
     "type": "Week 2 - Pillar A (Principles)",
     "text": "Redundancy in space isn't an option; it's a requirement. If a single point of failure exists, the mission is fundamentally high-risk.",
     "source": "Content Plan - Week 2",
@@ -359,6 +349,17 @@
     "approved": false,
     "created_at": "2026-02-20T20:02:29.169290",
     "scheduled_for": "2026-02-26T18:30:00",
+    "last_error": "401 Unauthorized\nUnauthorized"
+  },
+  {
+    "type": "Week 2 - Pillar E (Signals)",
+    "text": "We are observing a shift in space-tech hiring. The industry is looking for systems engineers who understand software as much as they understand hardware. \ud83d\udcbb",
+    "source": "Content Plan - Week 2",
+    "post_time_uk": "6:30 PM",
+    "reply_strategy": "Support the need for multidisciplinary talent.",
+    "approved": false,
+    "created_at": "2026-02-20T20:02:29.169300",
+    "scheduled_for": "2026-02-27T09:30:00",
     "last_error": "401 Unauthorized\nUnauthorized"
   }
 ]
