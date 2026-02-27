@@ -217,7 +217,7 @@ def generate_educational_tweet() -> dict:
     tweet_text = template.format(
         question=content["question"],
         answer=content["answer"],
-        link="https://falak-space.vercel.app/#",
+        link=config.FALAK_WEBSITE + "/#",
     )
     
     return {

@@ -56,9 +56,9 @@ EDUCATIONAL_TEMPLATES = [
     
     "❓ {question}\n\n{answer}\n\nThis is part of FALAk's mission: making space education accessible to everyone.\n\n#SpaceEducation",
     
-    "Wait, what? 🤯\n\n{question}\n\n{answer}\n\nSpace physics is wild. 🚀 https://falak-space.vercel.app/#",
+    "Wait, what? 🤯\n\n{question}\n\n{answer}\n\nSpace physics is wild. 🚀 https://falakplatforms.co.uk/#",
     
-    "Space is counter-intuitive. 🧠\n\n{question}\n\n{answer}\n\nStay grounded, look up. 🔗 https://falak-space.vercel.app/#",
+    "Space is counter-intuitive. 🧠\n\n{question}\n\n{answer}\n\nStay grounded, look up. 🔗 https://falakplatforms.co.uk/#",
 ]
 
 # Educational content library (grounded in Framework 001)
