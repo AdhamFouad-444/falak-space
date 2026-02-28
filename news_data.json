@@ -1,14 +1,32 @@
 {
-  "last_updated": "2026-02-27T07:03:42Z",
+  "last_updated": "2026-02-28T06:49:49Z",
   "articles": [
     {
-      "title": "Earth from Space: Ouarzazate, Morocco",
-      "summary": "Image:\n\t\t\tThe Copernicus Sentinel-2 mission takes us over south-central Morocco, near the city of Ouarzazate.",
-      "source": "ESA",
-      "region": "🇲🇦 Morocco",
-      "date": "Feb 20, 2026",
+      "title": "Harnessing the Sun to Extract Oxygen on the Moon",
+      "summary": "Light shines onto a solar concentrator being tested in this Aug. 7, 2025, photo. The concentrator is part of the Carbothermal Reduction Demonstration (CaRD) project, which aims to produce oxygen fr...",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Feb 27, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.esa.int/ESA_Multimedia/Images/2026/02/Earth_from_Space_Ouarzazate_Morocco"
+      "link": "https://www.nasa.gov/image-article/harnessing-the-sun-to-extract-oxygen-on-the-moon/"
+    },
+    {
+      "title": "NASA’s Home for Experimental Flight Advances Aeronautics Mission",
+      "summary": "Nestled in the Mojave Desert, NASA’s Armstrong Flight Research Center in Edwards, California, pushes the boundaries of flight to advance the agency’s aeronautics mission. This is where Chuck Yeager...",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Feb 27, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://www.nasa.gov/centers-and-facilities/armstrong/nasas-home-for-experimental-flight-advances-aeronautics-mission/"
+    },
+    {
+      "title": "NASA Adds Mission to Artemis Lunar Program, Updates Architecture",
+      "summary": "As part of a Golden Age of exploration and discovery, NASA announced Friday the agency is increasing its cadence of missions under the Artemis program to achieve the national objective of returning...",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Feb 27, 2026",
+      "image": "https://images-assets.nasa.gov/image/KSC-20210510-PH-GEB01_0303/KSC-20210510-PH-GEB01_0303~thumb.jpg",
+      "link": "https://www.nasa.gov/news-release/nasa-adds-mission-to-artemis-lunar-program-updates-architecture/"
     },
     {
       "title": "Chesapeake Bay Locked in Ice",
@@ -18,24 +36,6 @@
       "date": "Feb 27, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
       "link": "https://science.nasa.gov/earth/earth-observatory/chesapeake-bay-locked-in-ice/"
-    },
-    {
-      "title": "JPL 3D-Printed Part Springs Forward",
-      "summary": "Description With a simple motion, a jack-in-the-box-like spring designed at NASA’s Jet Propulsion Laboratory showed the potential of additive manufacturing, also known as 3D printing, to cut costs ...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 26, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA26424/PIA26424~thumb.jpg",
-      "link": "https://science.nasa.gov/photojournal/jpl-3d-printed-part-springs-forward/"
-    },
-    {
-      "title": "Landsat 9: More Than Just A Picture",
-      "summary": "For over 50 years, the Landsat program has provided the longest continuous satellite record of Earth’s land surface from space. Landsat 9, launched in 2021, is the latest mission in this remarkable...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 26, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/missions/landsat/landsat-9-more-than-just-a-picture/"
     }
   ]
 }
