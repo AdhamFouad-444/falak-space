@@ -10,7 +10,7 @@
   },
   {
     "type": "intro",
-    "text": "Space isn\u2019t a secret \u2014 it\u2019s physics.\n\nFALAk is an early-stage, research-led initiative exploring how space can be understood openly, without gatekeeping.\n\nLearning-first. Built carefully.\n\nhttps://falakplatforms.co.uk/",
+    "text": "Space isn\u2019t a secret \u2014 it\u2019s physics.\n\nFALAk is an early-stage, research-led initiative exploring how space can be understood openly, without gatekeeping.\n\nLearning-first. Built carefully.\n\nhttps://falak-space.vercel.app/",
     "media_path": "/Users/driver444/Desktop/FALAk Space /OfficialFALAk.png",
     "source": "Manual Intro",
     "approved": true,
@@ -114,7 +114,7 @@
   },
   {
     "type": "update",
-    "text": "Space education needs a human element. We've just updated our platform with our story and the team behind FALAk. Check it out: https://falakplatforms.co.uk/#about \ud83d\ude80 #SpaceEducation #EdTech",
+    "text": "Space education needs a human element. We've just updated our platform with our story and the team behind FALAk. Check it out: https://falak-space.vercel.app/#about \ud83d\ude80 #SpaceEducation #EdTech",
     "source": "Manual Update",
     "approved": true,
     "created_at": "2026-02-14T12:00:00.000000",
@@ -144,113 +144,5 @@
     "created_at": "2026-02-15T13:12:28.296219",
     "tweet_id": "2023023351845765298",
     "posted_at": "2026-02-15T13:15:27.830640"
-  },
-  {
-    "type": "Week 1 - Pillar B (Learning-in-public)",
-    "text": "Our current research into orbital mechanics highlights a common misconception. Orbit is not about altitude; it is about horizontal velocity. Getting high enough is easy; going fast enough to stay there is the engineering challenge.",
-    "source": "Content Plan - Week 1",
-    "post_time_uk": "6:30 PM",
-    "reply_strategy": "Clarify the physics of LEO (Low Earth Orbit) velocity if asked.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169145",
-    "scheduled_for": "2026-02-23T09:30:00",
-    "tweet_id": "2026322422031425707",
-    "posted_at": "2026-02-24T15:44:47.469321"
-  },
-  {
-    "type": "Week 1 - Pillar B (Learning-in-public)",
-    "text": "We are mapping the dependencies between propulsion types and mission duration. The trade-offs between chemical and electric propulsion define the boundaries of the feasible commercial market.",
-    "source": "Content Plan - Week 1",
-    "post_time_uk": "9:30 AM",
-    "reply_strategy": "Share a thought on specific impulse (Isp) trade-offs.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169203",
-    "scheduled_for": "2026-02-23T18:30:00",
-    "tweet_id": "2026322423226806708",
-    "posted_at": "2026-02-24T15:44:47.743496"
-  },
-  {
-    "type": "Week 1 - Pillar A (First Principles)",
-    "text": "Space isn\u2019t a secret\u2014it\u2019s physics. FALAk is building the intellectual foundations for understanding how these systems interact. Join the exploration: https://falakplatforms.co.uk/",
-    "source": "Content Plan - Week 1",
-    "post_time_uk": "6:30 PM",
-    "reply_strategy": "Welcome users to the framework.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169238",
-    "scheduled_for": "2026-02-24T09:30:00",
-    "tweet_id": "2026322424367607991",
-    "posted_at": "2026-02-24T15:44:48.086374"
-  },
-  {
-    "type": "Week 2 - Pillar E (Signals)",
-    "text": "The proliferation of CubeSats signals a shift toward distributed orbital systems. We are moving from single, expensive assets to resilient constellations. \ud83d\udef0\ufe0f",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "9:30 AM",
-    "reply_strategy": "Discuss resilience in distributed systems.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169252",
-    "scheduled_for": "2026-02-24T18:30:00",
-    "tweet_id": "2026364154534043666",
-    "posted_at": "2026-02-24T18:30:37.274033"
-  },
-  {
-    "type": "Week 2 - Pillar A (Principles)",
-    "text": "Thermal management is the silent killer in space. Without air to carry heat away via convection, you rely entirely on radiation. Efficiency is everything.",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "6:30 PM",
-    "reply_strategy": "Explain why heat rejection is harder in a vacuum.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169262",
-    "scheduled_for": "2026-02-25T09:30:00",
-    "tweet_id": "2026590527513051348",
-    "posted_at": "2026-02-25T09:30:08.848442"
-  },
-  {
-    "type": "Week 2 - Pillar B (Learning)",
-    "text": "Our internal simulation tests show that 'falling' is the baseline state of orbit. You aren't floating; you are falling and missing the ground. \ud83c\udf0e",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "9:30 AM",
-    "reply_strategy": "Reiterate the centrifugal force vs gravity balance.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169272",
-    "scheduled_for": "2026-02-25T18:30:00",
-    "tweet_id": "2026727036983693654",
-    "posted_at": "2026-02-25T18:32:35.211724"
-  },
-  {
-    "type": "Week 2 - Pillar C (Questions)",
-    "text": "In a post-scarcity launch environment, what becomes the most valuable orbital asset?",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "6:30 PM",
-    "reply_strategy": "Prompt for answers like \"Spectrum,\" \"Real estate,\" or \"Materials.\"",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169280",
-    "scheduled_for": "2026-02-26T09:30:00",
-    "tweet_id": "2026954949595136089",
-    "posted_at": "2026-02-26T09:38:13.826482"
-  },
-  {
-    "type": "Week 2 - Pillar D (Explainer)",
-    "text": "Geostationary orbit (GEO) is the point where an object's orbital period matches Earth's rotation. This allows it to stay fixed over one spot. #SpaceScience",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "9:30 AM",
-    "reply_strategy": "Mention the specific altitude (~35,786 km).",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169290",
-    "scheduled_for": "2026-02-26T18:30:00",
-    "tweet_id": "2027092969178694125",
-    "posted_at": "2026-02-26T18:46:40.231289"
-  },
-  {
-    "type": "Week 2 - Pillar E (Signals)",
-    "text": "We are observing a shift in space-tech hiring. The industry is looking for systems engineers who understand software as much as they understand hardware. \ud83d\udcbb",
-    "source": "Content Plan - Week 2",
-    "post_time_uk": "6:30 PM",
-    "reply_strategy": "Support the need for multidisciplinary talent.",
-    "approved": true,
-    "created_at": "2026-02-20T20:02:29.169300",
-    "scheduled_for": "2026-02-27T09:30:00",
-    "tweet_id": "2027408914795372948",
-    "posted_at": "2026-02-27T15:42:07.579297"
   }
 ]

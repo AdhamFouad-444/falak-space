@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Principles of Rocketry | FALAk Space</title>
+    <meta name="description"
+        content="A comprehensive primer on the physics of aerospace, orbital mechanics, and rocket engineering by FALAk Space.">
+    <meta property="og:title" content="First Principles of Rocketry">
+    <meta property="og:description"
+        content="A comprehensive, interactive primer on the physics of aerospace, orbital mechanics, and rocket engineering.">
+    <link rel="icon" type="image/x-icon" href="OfficialFALAk.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #38bdf8;
+            --primary-dark: #0284c7;
+            --bg-dark: #030014;
+            --bg-panel: rgba(15, 23, 42, 0.7);
+            --border: rgba(56, 189, 248, 0.15);
+            --text-main: rgba(255, 255, 255, 0.9);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Outfit', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(124, 58, 237, 0.05), transparent 25%);
+            background-attachment: fixed;
+            padding: 40px 20px;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--bg-panel);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 60px 80px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .logo-mark {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            color: var(--primary);
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 50px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo-mark:hover {
+            background: rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .pdf-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pdf-button:hover {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .pdf-button svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-logo {
+            width: 80px;
+            height: auto;
+            margin: 0 auto 24px auto;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .intro-box {
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-2px);
+            border-color: rgba(56, 189, 248, 0.2);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            color: white;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .chapter-num {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            background: rgba(56, 189, 248, 0.15);
+            border-radius: 8px;
+            font-size: 1.2rem;
+            color: white;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 8px;
+        }
+
+        li::marker {
+            color: var(--primary);
+        }
+
+        .highlight {
+            background: rgba(56, 189, 248, 0.15);
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #7dd3fc;
+            font-weight: 500;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .highlight:hover {
+            background: rgba(56, 189, 248, 0.25);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+        }
+
+        .document-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 24px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: -16px;
+            margin-bottom: 30px;
+            font-style: italic;
+            display: block;
+        }
+
+        .formula-box {
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 1.4rem;
+            color: #e2e8f0;
+            margin: 24px 0;
+            letter-spacing: 2px;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .formula-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: -16px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        strong {
+            color: white;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+        }
+
+        .footer p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .cta-box {
+            margin-top: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(124, 58, 237, 0.15));
+            border-radius: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+Cjwvc3ZnPg==') repeat;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* --- INTERACTIVITY CSS --- */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Interactive Calculator UI */
+        .interactive-calculator {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-calculator::after {
+            content: "INTERACTIVE MODULE";
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            color: var(--primary);
+            opacity: 0.5;
+            font-family: var(--font-display);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .calc-group label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-family: var(--font-display);
+        }
+
+        .calc-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--primary);
+            cursor: pointer;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .calc-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .calc-value-display {
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 500;
+            float: right;
+            font-family: monospace;
+            background: rgba(56, 189, 248, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .calc-result-box {
+            text-align: center;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .result-val {
+            font-size: 3rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+            line-height: 1;
+            margin: 8px 0;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .result-unit {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .pdf-button {
+                display: flex;
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .formula-box {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* --- PRINT CSS --- */
+        @media print {
+
+            html,
+            body,
+            .container,
+            .content {
+                display: block !important;
+                position: static !important;
+                height: auto !important;
+                min-height: auto !important;
+                overflow: visible !important;
+                background: white !important;
+                background-image: none !important;
+                color: black !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
+            }
+
+            .grid-overlay,
+            .pdf-button,
+            .logo-mark,
+            .top-bar,
+            .cta-box,
+            .container::before {
+                display: none !important;
+            }
+
+            * {
+                color: black !important;
+                text-shadow: none !important;
+                box-shadow: none !important;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #000 !important;
+                -webkit-text-fill-color: #000 !important;
+                background: none !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+                margin-bottom: 15px !important;
+            }
+
+            .header {
+                margin-bottom: 20px !important;
+                padding-bottom: 20px !important;
+                border-bottom: 1px solid #000 !important;
+            }
+
+            .subtitle {
+                color: #666 !important;
+            }
+
+            .intro-box {
+                background: transparent !important;
+                border: 1px solid #000 !important;
+                color: #000 !important;
+                padding: 16px !important;
+                margin-bottom: 24px !important;
+            }
+
+            .highlight {
+                background: transparent !important;
+                color: black !important;
+                border: 1px solid #999 !important;
+            }
+
+            .section {
+                background: none !important;
+                border: none !important;
+                padding: 0 0 24px 0 !important;
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+                transform: none !important;
+                opacity: 1 !important;
+                box-shadow: none !important;
+            }
+
+            .chapter-num {
+                background: transparent !important;
+                color: #000 !important;
+                border: 1px solid #000 !important;
+            }
+
+            .interactive-calculator {
+                display: none !important;
+            }
+
+            .formula-box {
+                background: transparent !important;
+                color: black !important;
+                border: 1px dashed #666 !important;
+                box-shadow: none !important;
+            }
+
+            .formula-desc {
+                color: #555 !important;
+            }
+
+            .document-image {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+                width: auto !important;
+                height: 400px !important;
+                object-fit: contain !important;
+                display: block !important;
+                margin: 15px auto !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .image-caption {
+                color: #555 !important;
+            }
+
+            strong {
+                color: black !important;
+                font-weight: bold !important;
+            }
+
+            ul {
+                page-break-inside: auto !important;
+                break-inside: auto !important;
+                margin-bottom: 12px !important;
+            }
+
+            li,
+            p {
+                color: black !important;
+                font-size: 12pt !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                widows: 3 !important;
+                orphans: 3 !important;
+                margin-bottom: 12px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <div class="content">
+            <div class="top-bar">
+                <a href="index.html" class="logo-mark">← Back to FALAk Space</a>
+                <button onclick="window.print()" class="pdf-button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download as PDF
+                </button>
+            </div>
+
+            <div class="header">
+                <img src="OfficialFALAk.png" alt="FALAk Space Logo" class="header-logo">
+                <h1>The Physics of Escape</h1>
+                <div class="subtitle">First Principles of Rocketry | Volume 1</div>
+            </div>
+
+            <div class="intro-box">
+                "Rocket science is rarely about discovering new laws of physics. It is the unforgiving art of
+                engineering right up to the absolute limits of the laws we already know."
+            </div>
+
+            <div class="section reveal-section">
+                <h2><span class="chapter-num">1</span> The Gravity Well & Delta-V</h2>
+                <p>Space is not measured in distance; it is governed entirely by energy. Earth resides at the absolute
+                    bottom of a steep, unforgiving <strong>Gravity Well</strong>. Escaping it is the single greatest
+                    mechanical challenge our species undertakes.</p>
+
+                <img src="assets/realistic_rocket.png" alt="Orbital Rocket Ascending" class="document-image">
+                <span class="image-caption">Fig 1. Fighting the Gravity Well requires immense energy and structural
+                    resilience.</span>
+
+                <p>In a frictionless vacuum, conventional "miles" are irrelevant. The only currency that dictates
+                    orbital mechanics is <strong>Delta-v (Δv)</strong>—the capacity to induce a violent, sustained
+                    change in velocity. You do not simply drive to orbit; you must expend monumental propulsive energy
+                    to fundamentally rewrite your kinetic state.</p>
+
+                <ul>
+                    <li><strong>Low Earth Orbit (LEO):</strong> Requires a staggering ~9.3 km/s (33,000 km/h) of Δv to
+                        reach.</li>
+                    <li><strong>The Moon:</strong> Requires roughly an additional +6 km/s of Δv from LEO.</li>
+                    <li><strong>Mars:</strong> Requires roughly an additional +4.3 km/s of Δv from LEO (assuming optimal
+                        planetary alignment).</li>
+                </ul>
+                <p>The vast majority of a launch vehicle's energy is consumed just crossing the first 400km into LEO.
+                    The old aerospace adage is true: once you are in orbit, you are halfway to anywhere in the solar
+                    system.</p>
+            </div>
+
+            <div class="section reveal-section">
+                <h2><span class="chapter-num">2</span> The Tyranny of the Rocket Equation</h2>
+                <p>The architecture of every spacecraft in existence is subjugated by a single, ruthless mathematical
+                    truth formulated in 1903. It dictates the exact ceiling of performance a vehicle can achieve based
+                    on its mass and its propulsion system.</p>
+
+                <div class="formula-box" id="formula-text">
+                    Δv = Ve * ln(m0 / mf)
+                </div>
+                <span class="formula-desc">The Tsiolkovsky Rocket Equation</span>
+
+                <!-- INTERACTIVE CALCULATOR -->
+                <div class="interactive-calculator">
+                    <p style="font-size:0.95rem; margin-bottom: 20px; color:var(--primary);"><strong>Try it
+                            yourself:</strong> Adjust the sliders to see how exponentially difficult it is to get more
+                        Delta-V. Notice how adding more fuel eventually stops giving you meaningful speed!</p>
+
+                    <div class="calc-grid">
+                        <div class="calc-group">
+                            <label>Starting Mass (m0) <span class="calc-value-display"><span id="val-m0">100</span>
+                                    t</span></label>
+                            <input type="range" id="slider-m0" min="50" max="500" value="100" step="10">
+                        </div>
+                        <div class="calc-group">
+                            <label>Empty Mass (mf) <span class="calc-value-display"><span id="val-mf">20</span>
+                                    t</span></label>
+                            <input type="range" id="slider-mf" min="5" max="100" value="20" step="1">
+                        </div>
+                        <div class="calc-group" style="grid-column: span 2;">
+                            <label>Engine Exhaust Velocity (Ve) <span class="calc-value-display"><span
+                                        id="val-ve">3000</span> m/s</span></label>
+                            <input type="range" id="slider-ve" min="2000" max="4500" value="3000" step="50">
+                        </div>
+                    </div>
+
+                    <div class="calc-result-box">
+                        <div
+                            style="font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; color:rgba(255,255,255,0.5);">
+                            Resulting Delta-V (Δv)</div>
+                        <div class="result-val"><span id="calc-result">4828</span> <span class="result-unit">m/s</span>
+                        </div>
+                        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:8px;">(You need ~9,300 m/s to
+                            reach orbit)</div>
+
+                        <!-- Warning message for physically impossible mass -->
+                        <div id="mass-warning"
+                            style="display:none; color:#ef4444; font-size:0.85rem; margin-top:10px; font-weight:bold; background:rgba(239, 68, 68, 0.1); padding:8px; border-radius:4px;">
+                            Warning: Empty Mass (mf) cannot be greater than Starting Mass (m0).
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 30px;">The equation hides a punishing reality: orbital mechanics are governed by
+                    logarithmic scaling. To achieve more Δv, you must carry more propellant. But propellant has immense
+                    mass. Therefore, you are forced to burn exponentially more fuel <em>simply to lift the unburned
+                        fuel</em> required later in the flight.</p>
+                <p>This mathematical tyranny dictates rocket design. You cannot build a spacecraft out of thick steel
+                    like a naval battleship. A modern orbital launch vehicle is little more than a gossamer-thin
+                    aluminum balloon, composed of <strong>90% to 94% explosive propellant by mass</strong>. Barely 1% is
+                    the actual payload. Spaceflight is the art of strapping a chair to a highly-controlled detonation.
+                </p>
+            </div>
+
+            <div class="section reveal-section">
+                <h2><span class="chapter-num">3</span> Staging: Throwing Away the Ship</h2>
+                <p>Because of the exponential mass penalty outlined above, building a Single-Stage-To-Orbit (SSTO)
+                    vehicle using chemical propulsion borders on the impossible. The colossal tanks required to store
+                    launch fuel become parasitic dead weight the millisecond they run dry.</p>
+
+                <p>The brutal engineering compromise is <strong>Staging</strong>. We build rockets that intentionally
+                    destroy themselves as they ascend. When a primary booster (Stage 1) exhausts its propellant, it is
+                    instantly jettisoned. The subsequent stage (Stage 2) then ignites in the near-vacuum, entirely
+                    liberated from the metric tons of dead metal below it, achieving an instant, vital spike in
+                    mathematical efficiency.</p>
+
+                <p>This is why launch vehicles are vertically stacked cylinders, and why securing access to space has
+                    historically required discarding multi-million dollar hardware into the ocean after mere minutes of
+                    flight.</p>
+            </div>
+
+            <div class="section reveal-section">
+                <h2><span class="chapter-num">4</span> Specific Impulse (Isp) vs Thrust</h2>
+                <p>Propulsion systems are governed by inescapable thermodynamic compromises. Engineers must constantly
+                    balance between two opposing forces: <strong>Thrust</strong> (raw, immediate power) and
+                    <strong>Specific Impulse (Isp)</strong> (fuel efficiency).
+                </p>
+
+                <img src="assets/blueprint_engine.png" alt="Engine Schematic Blueprint" class="document-image">
+                <span class="image-caption">Fig 2. Cross-section schematic of a complex orbital rocket engine turbopump
+                    assembly.</span>
+
+                <h3>High Thrust, Low Efficiency: Solid Motors</h3>
+                <p>Solid Rocket Boosters are essentially enormous, controlled pipe bombs. They consume solid propellant
+                    at terrifying, uncontrollable rates with abysmal fuel efficiency (<strong>Low Isp</strong>).
+                    However, they deliver millions of pounds of instantaneous thrust—the exact violent force required to
+                    punch a heavy vehicle through the densest bottom layers of Earth's atmosphere before being
+                    discarded.</p>
+
+                <h3>High Efficiency, Low Thrust: Ion Thrusters</h3>
+                <p>They operate exclusively in the vacuum of deep space, where gravity and aerodynamic drag are
+                    negligible. A
+                    traditional Ion thruster electrically accelerates Xenon gas. Its efficiency (<strong>High
+                        Isp</strong>) is unparalleled, but its physical thrust is so incredibly weak it feels
+                    like the
+                    weight of a sheet of notebook paper resting on your hand. It could never lift a rocket off Earth,
+                    but in the frictionless void, pushing softly for six months straight will ultimately carry you to
+                    Jupiter.</p>
+            </div>
+
+            <div class="section reveal-section">
+                <h2><span class="chapter-num">5</span> Orbit Means Going Sideways Fast</h2>
+                <p>Spaceflight is rarely strictly vertical. While a launch vehicle must initially ascend straight up to
+                    pierce the thickest atmospheric drag (navigating peak aerodynamic stress, or
+                    <strong>Max-Q</strong>), it rapidly executes a programmed "gravity turn" to fly parallel to the
+                    curvature of the Earth.
+                </p>
+
+                <p>Reaching altitude is relatively trivial; maintaining it is monumental. If you fly directly up 400km
+                    into space and cut the engines, gravity will immediately pull you back into the ocean in a parabolic
+                    ballistic arc. Achieving orbit requires accelerating horizontally to an astonishing <strong>28,000
+                        km/h (17,500 mph)</strong>.</p>
+
+                <p>At terminal orbital velocity, gravity does not vanish. It is actively pulling the spacecraft downward
+                    every second. However, because you possess such immense lateral speed, the spherical surface of the
+                    Earth curves away from you at the exact same rate you fall toward it. <strong>Orbit is not
+                        zero-gravity; it is the state of falling infinitely and continually missing the ground.</strong>
+                    This perpetual free-fall is why astronauts inside the International Space Station appear to float.
+                </p>
+            </div>
+
+            <div class="footer">
+                <div class="cta-box">
+                    <h3 style="margin-top:0; font-size: 1.4rem; color: #fff;">Visualizing the Math</h3>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 0;">Reading about Delta-v
+                        is one thing; burning an engine at the periapsis of a maneuver node to circularize an orbit is
+                        another. The FALAk <strong>SimLab</strong> is being built to let you intuitively feel orbital
+                        mechanics, turning dry math equations into an interactive sandbox.</p>
+                </div>
+                <p style="margin-top: 40px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">© 2026
+                    FALAk Space Initiative • Internal Training Document</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Javascript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- SCROLL ANIMATION (Intersection Observer) ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.reveal-section');
+            sections.forEach(sec => observer.observe(sec));
+
+
+            // --- CALCULATOR LOGIC ---
+            const sliderM0 = document.getElementById('slider-m0');
+            const sliderMf = document.getElementById('slider-mf');
+            const sliderVe = document.getElementById('slider-ve');
+
+            const valM0 = document.getElementById('val-m0');
+            const valMf = document.getElementById('val-mf');
+            const valVe = document.getElementById('val-ve');
+
+            const resultDisplay = document.getElementById('calc-result');
+            const warningBox = document.getElementById('mass-warning');
+
+            // Sound effect helper (optional, subtle click)
+            const playTick = () => {
+                try {
+                    // Extremely subtle, high frequency click synthesized
+                    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(800, ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.05);
+                    gain.gain.setValueAtTime(0.01, ctx.currentTime); // Very quiet
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.05);
+                } catch (e) { } // Ignore if browser blocks auto-play
+            };
+
+            const updateCalculator = () => {
+                const m0 = parseFloat(sliderM0.value);
+                const mf = parseFloat(sliderMf.value);
+                const ve = parseFloat(sliderVe.value);
+
+                // Update UI Labels
+                valM0.textContent = m0;
+                valMf.textContent = mf;
+                valVe.textContent = ve;
+
+                // Validate physically possible scenario (mf cannot be > m0)
+                if (mf >= m0) {
+                    warningBox.style.display = 'block';
+                    resultDisplay.textContent = "ERR";
+                    resultDisplay.style.color = "#ef4444";
+                } else {
+                    warningBox.style.display = 'none';
+                    resultDisplay.style.color = "#fff";
+
+                    // Tsiolkovsky Equation: Δv = Ve * ln(m0/mf)
+                    const massRatio = m0 / mf;
+                    const deltaV = ve * Math.log(massRatio);
+
+                    // Format with commas, no decimals
+                    resultDisplay.textContent = Math.round(deltaV).toLocaleString();
+                }
+            };
+
+            // Attach listeners
+            [sliderM0, sliderMf, sliderVe].forEach(slider => {
+                slider.addEventListener('input', () => {
+                    updateCalculator();
+                });
+            });
+
+            // Initial calculate
+            updateCalculator();
+        });
+    </script>
+</body>
+
+</html>

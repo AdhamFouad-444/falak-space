@@ -2084,21 +2084,68 @@
                     frameworks, simulation, and AI-assisted learning.</p>
             </div>
 
-            <div class="hero-cta" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="#journey" class="btn btn-primary" id="hero-btn-primary">Explore the Platform</a>
-                <a href="#orbit-viz" class="btn btn-secondary" id="hero-btn-solar" style="
-                    background: rgba(255, 255, 255, 0.1);
-                    border: 1px solid rgba(255, 255, 255, 0.3);
-                    backdrop-filter: blur(10px);
-                    color: white;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 10px;
-                    transition: all 0.3s ease;
-                " onmouseover="this.style.background='rgba(56, 189, 248, 0.2)'; this.style.borderColor='#38bdf8'; this.style.transform='translateY(-2px)';"
-                    onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.borderColor='rgba(255, 255, 255, 0.3)'; this.style.transform='translateY(0)';">
-                    Launch Solar System 🪐
-                </a>
+            <div id="join" class="hero-cta"
+                style="display: flex; flex-direction: column; align-items: center; gap: 24px; margin-top: 32px; width: 100%; max-width: 600px;">
+
+                <div
+                    style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(56, 189, 248, 0.2); padding: 8px 16px; border-radius: 8px; backdrop-filter: blur(10px);">
+                    <p
+                        style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; font-family: var(--font-display); margin: 0;">
+                        Join the Early Access waitlist & get the <strong style="color: #38bdf8; font-weight: 700;">First
+                            Principles of Rocketry Guide</strong> instantly.
+                    </p>
+                </div>
+
+                <style>
+                    .waitlist-form-container {
+                        display: flex;
+                        width: 100%;
+                        gap: 12px;
+                        position: relative;
+                        flex-direction: row;
+                    }
+
+                    @media (max-width: 600px) {
+                        .waitlist-form-container {
+                            flex-direction: column;
+                        }
+                    }
+                </style>
+                <form id="waitlist-form" class="waitlist-form-container" onsubmit="handleWaitlistSubmit(event)">
+                    <input type="email" id="waitlist-email" placeholder="Enter your email address..." required
+                        style="flex: 1; padding: 20px 28px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(0, 0, 0, 0.6); color: white; font-family: var(--font-body); font-size: 1.1rem; outline: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);"
+                        onfocus="this.style.borderColor='#38bdf8'; this.style.boxShadow='0 0 20px rgba(56, 189, 248, 0.2), inset 0 2px 10px rgba(0,0,0,0.5)';"
+                        onblur="this.style.borderColor='rgba(255, 255, 255, 0.15)'; this.style.boxShadow='inset 0 2px 10px rgba(0,0,0,0.5)';">
+
+                    <button type="submit" class="btn btn-primary" id="waitlist-submit"
+                        style="min-width: 180px; padding: 20px 28px; font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; flex-shrink: 0; outline: none; border: none; cursor: pointer; border-radius: 50px;">
+                        <span id="waitlist-btn-text">Get Access</span>
+                        <div id="waitlist-spinner"
+                            style="display: none; width: 20px; height: 20px; border: 2px solid white; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;">
+                        </div>
+                    </button>
+                </form>
+
+                <div id="waitlist-success"
+                    style="display: none; width: 100%; text-align: center; color: #4ade80; background: rgba(74, 222, 128, 0.1); padding: 16px 24px; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.3); font-weight: 500; font-family: var(--font-body); letter-spacing: 0.5px;">
+                    <span style="font-size: 1.2rem; display: block; margin-bottom: 8px;">🚀 You're on the list!</span>
+                    <a href="First_Principles_of_Rocketry.html" target="_blank"
+                        style="color: #fff; text-decoration: underline; font-weight: 700;">Click here to open your free
+                        guide.</a>
+                </div>
+
+                <div id="waitlist-error"
+                    style="display: none; color: #f87171; font-size: 0.9rem; font-family: var(--font-body);">
+                    Something went wrong. Please try again.
+                </div>
+
+                <style>
+                    @keyframes spin {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                </style>
             </div>
 
 
@@ -3909,7 +3956,7 @@
     </div>
     </section>
 
-    <section id="join" class="cta-section">
+    <section id="community" class="cta-section">
         <div class="section-tag" id="cta-tag">Start Learning</div>
         <h2 id="cta-title">Space education limits, removed.</h2>
         <p class="section-desc" id="cta-desc">
@@ -3970,7 +4017,7 @@
     <script src="orbital_simulation.js"></script>
     <script src="curriculum.js"></script>
     <script src="translations.js?v=6"></script>
-    <script src="main_app.js?v=2"></script>
+    <script src="main_app.js?v=3"></script>
     <script>
         // Curriculum UI Controller
         let curriculumNav = null;
