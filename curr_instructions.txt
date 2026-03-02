@@ -1,0 +1,100 @@
+--- 1.1 What 'Space' Means ---
+INSTRUCTION (explore): Push the altitude slider. Observe how the air density (ρ) drops. Try to fly the vehicle above 100km.
+HINT (explore): Push the slider past 100km to enter space.
+CHALLENGE (elaborate): The vehicle flew on a suborbital trajectory. It uses both aerodynamic fins AND reaction thrusters. Try to maintain control above the Karman Line.
+--- 1.2 Earth's Atmospheric Layers ---
+INSTRUCTION (explore): Ascend through the layers. Note how temperature and pressure change drastically. Find the 'Kármán Line' where space legally begins.
+HINT (explore): Ascend past the Mesosphere (85km).
+CHALLENGE (elaborate): High-altitude balloons expand as they rise because pressure drops. You are planning a jump from the Stratosphere (39km). If your balloon is 100% full at the ground, it will burst before you reach altitude. How full should it be at launch?
+--- 1.3 Why Space Is 'Hostile by Default' ---
+INSTRUCTION (explore): Interact with the environmental sensors. Observe how pressure drops to zero and radiation spikes as you leave the magnetosphere.
+HINT (explore): Find a high orbit above the debris field (>1000km).
+CHALLENGE (elaborate): Your spacesuit has a localized puncture. Pressure is dropping. ALl oxygen is venting. You have 15 seconds of useful consciousness. Do you prioritize: A) Patching the hole, or B) Increasing oxygen flow rate?
+--- 1.4 Motion Beyond Earth ---
+INSTRUCTION (explore): Fire the cannon. Observe how the projectile falls. Increase the velocity until the curve of the fall matches the curve of the Earth.
+HINT (explore): Aim for at least 7.8 km/s.
+CHALLENGE (elaborate): Newton's Cannon is firing too slow (falling back to Earth) or too fast (escaping). Adjust the velocity to achieve a CIRCULAR orbit at 500km altitude. Hint: It's between 7 and 8 km/s.
+--- 1.5 Orbits ---
+INSTRUCTION (explore): Switch between LEO, GEO, and Polar orbits. Note the altitude difference and how much of the Earth they can see.
+HINT (explore): Select the Geostationary Orbit (GEO).
+CHALLENGE (elaborate): You are launching a forest-fire monitoring satellite. It needs to scan the ENTIRE globe every 24 hours. Which orbit do you select?
+--- 2.1 The Launch Problem ---
+INSTRUCTION (explore): Increase thrust to overcome drag. Watch how 'Max-Q' (maximum pressure) peaks around 12km altitude, then drops as the air thins.
+HINT (explore): Balance throttle to reach the Karman Line.
+CHALLENGE (elaborate): Your rocket is disintegrating at Max-Q. You need to reduce aerodynamic stress without losing too much speed. What is your strategy?
+--- 2.2 Why Rockets, Not Planes ---
+INSTRUCTION (explore): Test both engines in a vacuum chamber. Remove the air and see which one still produces thrust.
+HINT (explore): Reduce pressure to near zero to simulate vacuum.
+CHALLENGE (elaborate): You are designing a probe to land on the Moon (no atmosphere). Which engine do you choose for the descent?
+--- 2.3 The Rocket as a System ---
+INSTRUCTION (explore): Inspect the rocket's primary subsystems: Propulsion, Structure (Tanks), and Avionics. Note how much of the vehicle is just fuel.
+HINT (explore): Install all components (Engines, Tanks, Interstage, Second Stage, Payload, Fairing).
+CHALLENGE (elaborate): Your rocket is 500kg too heavy to reach orbit. You must remove one component. Which one is safe to discard?
+--- 2.4 Propulsion (Conceptual) ---
+INSTRUCTION (explore): Adjust the Nozzle Expansion ratio. A larger bell (high expansion) is required for efficiency in a vacuum.
+HINT (explore): Increase the Nozzle Expansion to over 3.0:1 for vacuum operations.
+CHALLENGE (elaborate): You are building a mission to Pluto. You need maximum fuel efficiency (High Isp), even if thrust is low. Low thrust is fine because you are already in space. What do you choose?
+--- 2.5 The Mass Problem ---
+INSTRUCTION (explore): Build a rocket. Notice that as you add payload, the fuel required grows exponentially. Try to achieve a mass fraction that can actually reach orbit (Logic: >90% fuel).
+HINT (explore): Optimize the rocket to reach the target Delta-V (9.4 km/s).
+CHALLENGE (elaborate): If you double your fuel mass, does your Delta-V (range) double?
+--- 2.6 Staging ---
+INSTRUCTION (explore): Trigger the staging sequence at the correct altitude. Too early, and you lose speed. Too late, and you waste fuel dragging a dead booster.
+HINT (explore): Wait for Main Engine Cutoff (MECO) before separation.
+CHALLENGE (elaborate): You have two rockets with the same total mass. Rocket A has 1 giant stage. Rocket B has 2 stages (drop tanks). Which one can carry more payload to orbit?
+--- 2.7 Guidance, Navigation & Control ---
+INSTRUCTION (explore): Watch how the GNC system corrects for errors automatically. Ensure the system is ACTIVE.
+HINT (explore): Ensure the GNC system is initialized.
+CHALLENGE (elaborate): The rocket needs to turn horizontal to reach orbit. If you pitch over too early, you burn up in the atmosphere. If you pitch too late, you waste fuel fighting gravity. When should the 'Gravity Turn' start?
+--- 2.8 Structural & Thermal Loads ---
+INSTRUCTION (explore): As the rocket accelerates, aerodynamic pressure (Q) rises. If it goes too high, the rocket breaks. Throttle down the engines to keep Q in the green zone.
+HINT (explore): Increase velocity at low altitude to maximize dynamic pressure.
+CHALLENGE (elaborate): Approaching Max-Q. Aerodynamic pressure is peaking. What do you do to save the rocket structure?
+--- 2.9 Launch Profile ---
+INSTRUCTION (explore): Launch and steer the rocket. You must turn pitch gradually horizontal. If you turn too late, you run out of fuel. If you turn too early, you burn up.
+HINT (explore): Adjust your turn altitude and angle to achieve a stable circular orbit.
+CHALLENGE (elaborate): Commander, you are cleared for orbital insertion. Execute the full sequence: Liftoff -> Gravity Turn -> Staging -> MECO -> SECO. Target Orbit: 200km Circular.
+--- 3.1 What a Launch Sequence Is ---
+INSTRUCTION (explore): The rocket is on the pad. Initiate the propellant loading sequence to begin the countdown.
+HINT (explore): Locate the loading control and hold to initiate fueling.
+--- 3.2 Ground Systems ---
+INSTRUCTION (explore): We are approaching launch. Retract the Strongback to clear the path for the vehicle.
+HINT (explore): Access the T.E.L. Control panel and retract the strongback.
+--- 3.3 Fueling Operations ---
+INSTRUCTION (explore): Open the valves and monitor the flow. Fill both LOX and RP-1 tanks to at least 90%.
+HINT (explore): Open the valves on the propellant control panel.
+--- 3.4 Terminal Count ---
+INSTRUCTION (explore): Monitor the terminal count. When the clock hits zero, give the final GO command.
+HINT (explore): Wait for T-0 and press the LAUNCH button.
+--- 3.5 Ignition Sequence ---
+INSTRUCTION (explore): Initiate the ignition sequence. Watch for the green flash. Confirm liftoff.
+HINT (explore): Press INITIATE LAUNCH and watch the sequence.
+--- 3.6 Launch Abort ---
+INSTRUCTION (explore): Simulate a catastrophic failure. Trigger the Launch Abort System manually.
+HINT (explore): Press the ABORT button.
+--- 3.7 Abort Philosophy ---
+--- 3.8 Control Room ---
+--- 4.1 Spacecraft Systems ---
+INSTRUCTION (explore): Inspect the major subsystems. Locate the Power system.
+HINT (explore): Hover over the solar panels or the power icon ⚡.
+--- 4.2 Space Environment ---
+INSTRUCTION (explore): Observe the degradation over time. Enable shielding to protect the spacecraft's sensitive components.
+HINT (explore): Toggle the SHIELD button.
+--- 4.3 Failure & Risk ---
+--- 4.4 Failure Analysis ---
+INSTRUCTION (explore): Trigger a component failure and observe the downstream effects on other systems.
+HINT (explore): Click on a subsystem to simulate a failure.
+--- 5.1 Simulation Architecture ---
+INSTRUCTION (explore): Explore the different layers of the simulation. View the raw Data Layer.
+HINT (explore): Click the 'DATA LAYER' button.
+--- 5.2 Limits of Simulation ---
+--- 5.3 AI's Role ---
+--- 6.1 Dyson Spheres ---
+INSTRUCTION (explore): Increase the scale of the satellite swarm. Observe how energy output grows exponentially.
+HINT (explore): Use the slider to expand the swarm.
+--- 6.2 Advanced Propulsion ---
+INSTRUCTION (explore): Compare engine types. Select the 'Solar Sail' to see how light can push a spacecraft without any fuel.
+HINT (explore): Click the 'SOLAR SAIL' button.
+--- 7.1 The Overview Effect ---
+INSTRUCTION (explore): Move the camera away from Earth. Watch it shrink from a world to a marble, and then to a star.
+HINT (explore): Use the slider to increase distance to 40 AU.

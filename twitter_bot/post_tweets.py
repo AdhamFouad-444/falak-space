@@ -86,32 +86,53 @@ def save_posted_log(tweets: list):
 
 def post_tweet(client: tweepy.Client, api: tweepy.API, tweet_data: dict) -> dict:
     """
-    Post a single tweet to Twitter, with optional media.
+    Post a single tweet or a thread to Twitter, with optional media on the first tweet.
     Returns response or error information.
     """
-    text = tweet_data.get("text", "")
+    text_content = tweet_data.get("text", "")
     media_path = tweet_data.get("media_path")
     
+    # Normalize to a list to support both single tweets and threads
+    tweets_to_post = text_content if isinstance(text_content, list) else [text_content]
+    
     try:
-        # Ensure tweet is within limits
-        if len(text) > config.MAX_TWEET_LENGTH:
-            text = text[:config.MAX_TWEET_LENGTH - 3] + "..."
-        
         media_ids = []
         if media_path:
             # Upload media via v1.1 API
             media = api.media_upload(filename=media_path)
             media_ids = [media.media_id]
         
-        # Post tweet via v2 Client
-        if media_ids:
-            response = client.create_tweet(text=text, media_ids=media_ids)
-        else:
-            response = client.create_tweet(text=text)
+        posted_ids = []
+        previous_tweet_id = None
+        
+        for i, text in enumerate(tweets_to_post):
+            # Ensure tweet is within limits
+            if len(text) > config.MAX_TWEET_LENGTH:
+                text = text[:config.MAX_TWEET_LENGTH - 3] + "..."
+            
+            # Post first tweet with media (if any)
+            if i == 0 and media_ids:
+                response = client.create_tweet(text=text, media_ids=media_ids)
+            # Post subsequent tweets in the thread
+            elif previous_tweet_id:
+                response = client.create_tweet(text=text, in_reply_to_tweet_id=previous_tweet_id)
+            # Post a regular text tweet
+            else:
+                response = client.create_tweet(text=text)
+                
+            current_id = response.data["id"]
+            posted_ids.append(current_id)
+            previous_tweet_id = current_id
+            
+            # Small delay between thread tweets to be safe
+            import time
+            if i < len(tweets_to_post) - 1:
+                time.sleep(1)
             
         return {
             "success": True,
-            "tweet_id": response.data["id"],
+            "tweet_id": posted_ids[0], # Return the ID of the head of the thread
+            "thread_ids": posted_ids,
             "posted_at": datetime.now().isoformat(),
         }
         

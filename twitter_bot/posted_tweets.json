@@ -144,5 +144,19 @@
     "created_at": "2026-02-15T13:12:28.296219",
     "tweet_id": "2023023351845765298",
     "posted_at": "2026-02-15T13:15:27.830640"
+  },
+  {
+    "type": "Week 1 - The 'MPG' of Spaceflight (Specific Impulse)",
+    "text": [
+      "Why are rockets so wildly inefficient? \ud83d\ude80\n\nIf spaceflight had an 'MPG' rating, it would be terrible. But in aerospace, we don\u2019t use MPG. We use something called Specific Impulse (Isp).\n\nHere is a short breakdown of the most important metric in rocketry \ud83e\uddf5 \ud83d\udc47",
+      "Isp essentially measures 'bang for your buck.'\n\nHow much thrust do you get from burning one pound of fuel for one second?\nHigher Isp = highly efficient, but usually produces lower immediate thrust.\nLower Isp = chugs fuel fast, but gives a massive burst of power.",
+      "This is why rockets use different engines at different stages!\n\nYou need massive, fuel-chugging (low Isp) engines just to fight Earth\u2019s gravity off the pad. Once in the vacuum of space, you switch to highly efficient (high Isp) vacuum engines.",
+      "Space engineering is the art of extreme optimization. \u2696\ufe0f\n\nWant to dive deeper into the physics of propulsion and stage design? We are building an open, interactive space education framework.\n\nStart exploring the math behind the thrust: https://falakplatforms.co.uk/ \ud83d\udd17"
+    ],
+    "source": "New Thread Strategy - Demo",
+    "approved": true,
+    "created_at": "2026-03-01T22:40:04.490718",
+    "tweet_id": "2028239034804285521",
+    "posted_at": "2026-03-01T22:40:47.586034"
   }
 ]

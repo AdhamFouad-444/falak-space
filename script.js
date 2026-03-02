@@ -596,3 +596,53 @@ document.getElementById('planet-modal-overlay')?.addEventListener('click', funct
 // Ensure openPlanet is globally available
 window.openPlanet = openPlanet;
 window.closePlanet = closePlanet;
+
+// ============================================
+// Waitlist Form Submission Logic
+// ============================================
+window.handleWaitlistSubmit = async function (event) {
+    event.preventDefault();
+
+    // UI Elements
+    const emailInput = document.getElementById('waitlist-email');
+    const submitBtn = document.getElementById('waitlist-submit');
+    const btnText = document.getElementById('waitlist-btn-text');
+    const spinner = document.getElementById('waitlist-spinner');
+    const successMsg = document.getElementById('waitlist-success');
+    const errorMsg = document.getElementById('waitlist-error');
+    const form = document.getElementById('waitlist-form');
+
+    // Supabase Credentials
+    const SUPABASE_URL = 'https://bqdhpossxxkexlpixunb.supabase.co';
+    const apiKey = 'sb_publishable_FBPC5SGfKW2mYHbZGABEEw_WXhlQ2wG';
+
+    btnText.style.display = 'none';
+    spinner.style.display = 'block';
+    submitBtn.disabled = true;
+    errorMsg.style.display = 'none';
+
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+            method: 'POST',
+            headers: {
+                'apikey': apiKey,
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({ email: emailInput.value })
+        });
+
+        if (!response.ok) throw new Error();
+
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+
+    } catch (error) {
+        console.error(error);
+        errorMsg.style.display = 'block';
+        btnText.style.display = 'block';
+        spinner.style.display = 'none';
+        submitBtn.disabled = false;
+    }
+};
