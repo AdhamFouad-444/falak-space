@@ -1,41 +1,41 @@
 {
-  "last_updated": "2026-03-02T07:07:54Z",
+  "last_updated": "2026-03-02T19:00:00Z",
   "articles": [
     {
-      "title": "Harnessing the Sun to Extract Oxygen on the Moon",
-      "summary": "Light shines onto a solar concentrator being tested in this Aug. 7, 2025, photo. The concentrator is part of the Carbothermal Reduction Demonstration (CaRD) project, which aims to produce oxygen fr...",
-      "source": "NASA",
+      "title": "Europa's Ocean May Contain Building Blocks of Life",
+      "summary": "New research suggests that Jupiter's moon Europa, and potentially other Jovian moons, may have formed with their own supply of life's essential building blocks, boosting prospects for the habitability of Europa's subsurface ocean.",
+      "source": "NASA Research",
       "region": "Global 🌍",
-      "date": "Feb 27, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/image-article/harnessing-the-sun-to-extract-oxygen-on-the-moon/"
+      "date": "Mar 2, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA19666/PIA19666~thumb.jpg",
+      "link": "https://science.nasa.gov/mission/europa-clipper/"
     },
     {
-      "title": "NASA’s Home for Experimental Flight Advances Aeronautics Mission",
-      "summary": "Nestled in the Mojave Desert, NASA’s Armstrong Flight Research Center in Edwards, California, pushes the boundaries of flight to advance the agency’s aeronautics mission. This is where Chuck Yeager...",
-      "source": "NASA",
+      "title": "JUICE Spacecraft Captures Interstellar Comet",
+      "summary": "The European Space Agency's JUICE mission successfully captured detailed images of interstellar comet 3I/ATLAS, revealing a glowing coma and tail as it passed through our solar system.",
+      "source": "ESA",
       "region": "Global 🌍",
-      "date": "Feb 27, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/centers-and-facilities/armstrong/nasas-home-for-experimental-flight-advances-aeronautics-mission/"
+      "date": "Mar 2, 2026",
+      "image": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2023/04/juice_liftoff_2/24810757-1-eng-GB/JUICE_liftoff_2_pillars.jpg",
+      "link": "https://www.esa.int/Science_Exploration/Space_Science/Juice"
     },
     {
-      "title": "NASA Adds Mission to Artemis Lunar Program, Updates Architecture",
-      "summary": "As part of a Golden Age of exploration and discovery, NASA announced Friday the agency is increasing its cadence of missions under the Artemis program to achieve the national objective of returning...",
+      "title": "Chandra Observatory Translates Gas Giants into Audio",
+      "summary": "NASA's Chandra X-ray Observatory has released new 'sonifications'—audio translations of visual data—allowing audiences to literally hear the atmospheric dynamics of Jupiter, Saturn, and Uranus.",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Feb 27, 2026",
+      "date": "Mar 1, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA21422/PIA21422~thumb.jpg",
+      "link": "https://chandra.harvard.edu/"
+    },
+    {
+      "title": "SpaceX Launches 54 Starlink Satellites on Falcon 9",
+      "summary": "A SpaceX Falcon 9 rocket successfully launched 54 Starlink satellites into low Earth orbit from Vandenberg Space Force Base, continuing the rapid expansion of the orbital constellation.",
+      "source": "SpaceX",
+      "region": "Global 🌍",
+      "date": "Mar 1, 2026",
       "image": "https://images-assets.nasa.gov/image/KSC-20210510-PH-GEB01_0303/KSC-20210510-PH-GEB01_0303~thumb.jpg",
-      "link": "https://www.nasa.gov/news-release/nasa-adds-mission-to-artemis-lunar-program-updates-architecture/"
-    },
-    {
-      "title": "Chesapeake Bay Locked in Ice",
-      "summary": "Nearly 50 years ago, the first Landsat satellite captured the rare sight of Mid-Atlantic waterways frozen over.",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Feb 27, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/chesapeake-bay-locked-in-ice/"
+      "link": "https://www.spacex.com/launches/"
     }
   ]
 }

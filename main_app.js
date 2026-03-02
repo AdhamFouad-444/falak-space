@@ -659,6 +659,15 @@ window.handleWaitlistSubmit = async function (event) {
     const errorMsg = document.getElementById('waitlist-error');
     const form = document.getElementById('waitlist-form');
 
+    // Validation Check
+    const emailVal = emailInput.value.trim();
+    if (!emailVal || !emailVal.includes('@') || !emailVal.includes('.')) {
+        errorMsg.textContent = "[ERROR] Invalid clearance code. Must be a valid email.";
+        errorMsg.style.color = "#ef4444";
+        errorMsg.style.display = 'block';
+        return;
+    }
+
     // Supabase Credentials
     const SUPABASE_URL = 'https://bqdhpossxxkexlpixunb.supabase.co';
     const apiKey = 'sb_publishable_FBPC5SGfKW2mYHbZGABEEw_WXhlQ2wG';
@@ -682,8 +691,18 @@ window.handleWaitlistSubmit = async function (event) {
         });
 
         if (!response.ok) {
-            console.error("Supabase Error Response:", await response.text());
-            throw new Error('Supabase response was not ok');
+            const errorData = await response.json();
+            console.error("Supabase Error Details:", errorData);
+
+            // Check specifically for duplicate key error (code 23505)
+            if (errorData.code === '23505') {
+                errorMsg.textContent = "You're already on the list! Check your inbox 🚀";
+                errorMsg.style.color = "#4ade80";
+            } else {
+                errorMsg.textContent = "Something went wrong. Please try again.";
+                errorMsg.style.color = "#f87171";
+            }
+            throw new Error(errorData.message || 'Supabase response was not ok');
         }
 
         form.style.display = 'none';
@@ -692,6 +711,78 @@ window.handleWaitlistSubmit = async function (event) {
     } catch (error) {
         console.error("Waitlist Submission Error:", error);
         errorMsg.style.display = 'block';
+        btnText.style.display = 'block';
+        spinner.style.display = 'none';
+        submitBtn.disabled = false;
+    }
+};
+
+window.handleWaitlistSubmitBottom = async function (event) {
+    event.preventDefault();
+
+    // UI Elements
+    const emailInput = document.getElementById('waitlist-email-bottom');
+    const submitBtn = document.getElementById('waitlist-submit-bottom');
+    const btnText = document.getElementById('waitlist-btn-text-bottom');
+    const spinner = document.getElementById('waitlist-spinner-bottom');
+    const form = document.getElementById('waitlist-form-bottom');
+
+    // Validation Check
+    const emailVal = emailInput.value.trim();
+    let errDiv = document.getElementById('waitlist-error-bottom');
+    if (!errDiv) {
+        errDiv = document.createElement('div');
+        errDiv.id = 'waitlist-error-bottom';
+        errDiv.style = "color: #ef4444; font-size: 0.9rem; font-family: 'Courier New', monospace; margin-top: 8px; background: rgba(239, 68, 68, 0.1); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(239, 68, 68, 0.2); max-width: 580px; width: 100%; text-align: left;";
+        form.parentNode.appendChild(errDiv);
+    }
+    errDiv.style.display = 'none';
+
+    if (!emailVal || !emailVal.includes('@') || !emailVal.includes('.')) {
+        errDiv.textContent = "[ERROR] Invalid clearance code. Must be a valid email.";
+        errDiv.style.display = 'block';
+        return;
+    }
+
+    // We can reuse the success and error messages from the top form for simplicity,
+    // or just display an alert if they are far away. Let's create a dynamic success message.
+
+    // Supabase Credentials
+    const SUPABASE_URL = 'https://bqdhpossxxkexlpixunb.supabase.co';
+    const apiKey = 'sb_publishable_FBPC5SGfKW2mYHbZGABEEw_WXhlQ2wG';
+
+    // Reset States
+    btnText.style.display = 'none';
+    spinner.style.display = 'block';
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+            method: 'POST',
+            headers: {
+                'apikey': apiKey,
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({ email: emailInput.value })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Supabase Error Details:", errorData);
+            if (errorData.code === '23505') {
+                alert("You're already on the list! Check your inbox 🚀");
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+            throw new Error(errorData.message || 'Supabase response was not ok');
+        }
+
+        form.innerHTML = '<div style="color: #10b981; font-weight: bold; text-align: center; padding: 20px;">Clearance Granted. Check your inbox.</div>';
+
+    } catch (error) {
+        console.error("Waitlist Submission Error:", error);
         btnText.style.display = 'block';
         spinner.style.display = 'none';
         submitBtn.disabled = false;

@@ -17,16 +17,16 @@
     <meta property="og:url" content="https://falakplatforms.co.uk/">
     <meta property="og:title" content="FALAk - Opening Pathways Into Space">
     <meta property="og:description"
-        content="Master the physics of space through high-fidelity simulations. Join the next generation of aerospace innovators.">
-    <meta property="og:image" content="https://falakplatforms.co.uk/OfficialFALAk.png">
+        content="Learn how space works — from fundamentals to real systems. Join the waitlist for exclusive access.">
+    <meta property="og:image" content="https://falakplatforms.co.uk/OfficialFALAk2.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://falakplatforms.co.uk/">
     <meta property="twitter:title" content="FALAk - Opening Pathways Into Space">
     <meta property="twitter:description"
-        content="Master the physics of space through high-fidelity simulations. Join the next generation of aerospace innovators.">
-    <meta property="twitter:image" content="https://falakplatforms.co.uk/OfficialFALAk.png">
+        content="Learn how space works — from fundamentals to real systems. Join the waitlist for exclusive access.">
+    <meta property="twitter:image" content="https://falakplatforms.co.uk/OfficialFALAk2.png">
 
     <meta name="google-site-verification" content="ugVgLMKeJP7Uidr18PIVWNj2dHgEPPFFgq4WTL-Ew2A" />
     <link
@@ -109,16 +109,16 @@
             z-index: 101;
         }
 
-        /* Mobile Menu Utility Classes */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(20px);
-            z-index: 100;
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -187,6 +187,14 @@
             font-family: var(--font-display);
         }
 
+        #hero-title {
+            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(165, 180, 252, 0.15);
+        }
+
         /* Starfield Canvas */
         #starfield {
             position: fixed;
@@ -202,10 +210,13 @@
         .floating-planet {
             position: fixed;
             z-index: 5;
-            /* Raised z-index for interaction */
-            /* pointer-events: none; REMOVED */
             cursor: pointer;
-            /* Interaction cursor */
+            filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.15));
+            transition: filter 0.3s ease;
+        }
+
+        .floating-planet:hover {
+            filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.35));
         }
 
         .planet-earth {
@@ -633,11 +644,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 100;
-            /* Darker background to prevent text collision */
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
         }
 
         .nav-brand {
@@ -1056,11 +1068,12 @@
         }
 
         .path-card:hover {
-            transform: scale(1.02);
-            border-color: rgba(56, 189, 248, 0.2);
+            transform: translateY(-4px) scale(1.01);
+            border-color: rgba(56, 189, 248, 0.4);
             box-shadow:
-                inset 0 0 30px rgba(56, 189, 248, 0.05),
-                0 10px 30px rgba(0, 0, 0, 0.3);
+                inset 0 0 30px rgba(56, 189, 248, 0.1),
+                0 10px 40px rgba(56, 189, 248, 0.15),
+                0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
         .path-number {
@@ -1182,8 +1195,9 @@
 
         .feature-card:hover {
             background: rgba(30, 41, 59, 0.6);
-            border-color: rgba(56, 189, 248, 0.2);
-            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(56, 189, 248, 0.15), inset 0 0 20px rgba(56, 189, 248, 0.05);
         }
 
         .feature-icon {
@@ -1215,8 +1229,9 @@
             justify-content: center;
             gap: 100px;
             padding: 100px 48px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            border-image: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent) 1;
         }
 
         .stat {
@@ -1282,7 +1297,8 @@
             padding: 60px 24px;
             color: rgba(255, 255, 255, 0.3);
             font-size: 0.875rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid transparent;
+            border-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent) 1;
         }
 
 
@@ -1945,14 +1961,17 @@
     <canvas id="starfield"></canvas>
 
     <!-- Floating Planets (Background Ambient - Restored) -->
-    <div class="floating-planet planet-earth" style="opacity: 0.3;" onclick="openPlanet('earth')">
-        <img src="planet_earth.png" alt="" class="planet-img">
+    <div class="floating-planet planet-earth" style="opacity: 0.3;" onclick="openPlanet('earth')" role="button"
+        tabindex="0" aria-label="Learn about Earth">
+        <img src="planet_earth.png" alt="Stylized 3D render of Earth" class="planet-img">
     </div>
-    <div class="floating-planet planet-mars" style="opacity: 0.3;" onclick="openPlanet('mars')">
-        <img src="planet_mars.png" alt="" class="planet-img">
+    <div class="floating-planet planet-mars" style="opacity: 0.3;" onclick="openPlanet('mars')" role="button"
+        tabindex="0" aria-label="Learn about Mars">
+        <img src="planet_mars.png" alt="Stylized 3D render of Mars" class="planet-img">
     </div>
-    <div class="floating-planet planet-saturn" style="opacity: 0.3;" onclick="openPlanet('saturn')">
-        <img src="planet_saturn.png" alt="" class="planet-img">
+    <div class="floating-planet planet-saturn" style="opacity: 0.3;" onclick="openPlanet('saturn')" role="button"
+        tabindex="0" aria-label="Learn about Saturn">
+        <img src="planet_saturn.png" alt="Stylized 3D render of Saturn" class="planet-img">
     </div>
 
     <!-- Shooting Stars -->
@@ -1994,7 +2013,7 @@
                 </a>
                 <div class="nav-divider"></div>
 
-                <button id="lang-toggle" class="lang-toggle">AR</button>
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language to Arabic">AR</button>
                 <a href="#join" class="btn nav-cta" id="nav-cta">Follow Progress</a>
                 <!-- Mobile Menu Toggle -->
                 <button id="menu-toggle" class="menu-toggle-btn" aria-label="Toggle Menu">
@@ -2023,15 +2042,15 @@
                     class="mobile-menu-link">Community</a>
                 <a href="#join" onclick="closeMenu()" data-i18n="nav-join" class="mobile-menu-link">Join</a>
                 <div class="mobile-social-container">
-                    <a href="https://x.com/FALAkPlatforms" target="_blank" class="mobile-social-link"><svg
-                            viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <a href="https://x.com/FALAkPlatforms" target="_blank" class="mobile-social-link"
+                        aria-label="X (Twitter)"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                             <path
                                 d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z">
                             </path>
                         </svg></a>
-                    <a href="https://instagram.com/FALAkPlatforms" target="_blank" class="mobile-social-link"><svg
-                            viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="https://instagram.com/FALAkPlatforms" target="_blank" class="mobile-social-link"
+                        aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -2064,7 +2083,7 @@
                 <div id="rocket-actor"
                     style="position: absolute; top: 0; left: 0; width: 40px; height: 80px; z-index: 10; opacity: 0; pointer-events: none; filter: drop-shadow(0 0 10px #38bdf8);">
                     <!-- Sleek SVG Rocket -->
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                         style="width: 100%; height: 100%; transform: rotate(45deg);">
                         <path
                             d="M12 2.5C12 2.5 16 6.5 16 11.5C16 16.5 14 20 14 20L12 18L10 20C10 20 8 16.5 8 11.5C8 6.5 12 2.5 12 2.5Z"
@@ -2078,25 +2097,30 @@
                 </div>
             </div>
 
-            <div class="hero-text">
+            <div id="join" class="hero-text">
                 <h1 id="hero-title">LEARN HOW SPACE WORKS — FROM FUNDAMENTALS TO REAL SYSTEMS.</h1>
                 <p id="hero-desc">FALAk is a platform designed to help anyone understand space through structured
                     frameworks, simulation, and AI-assisted learning.</p>
             </div>
 
-            <div id="join" class="hero-cta"
-                style="display: flex; flex-direction: column; align-items: center; gap: 24px; margin-top: 32px; width: 100%; max-width: 600px;">
+            <div class="hero-cta"
+                style="display: flex; flex-direction: column; align-items: center; gap: 28px; margin-top: 40px; width: 100%; max-width: 580px; position: relative; z-index: 10;">
 
+                <!-- Sleek Context Pill -->
                 <div
-                    style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(56, 189, 248, 0.2); padding: 8px 16px; border-radius: 8px; backdrop-filter: blur(10px);">
+                    style="background: rgba(10, 10, 12, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 20px; border-radius: 100px; backdrop-filter: blur(16px); display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                    <div
+                        style="width: 6px; height: 6px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 10px #38bdf8, 0 0 4px #fff;">
+                    </div>
                     <p
-                        style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; font-family: var(--font-display); margin: 0;">
-                        Join the Early Access waitlist & get the <strong style="color: #38bdf8; font-weight: 700;">First
-                            Principles of Rocketry Guide</strong> instantly.
+                        style="color: rgba(255, 255, 255, 0.85); font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; font-family: var(--font-display); margin: 0; padding-top: 1px;">
+                        Join the <strong style="color: #ffffff; font-weight: 700;">Waitlist</strong> & Get The Rocketry
+                        Guide Instantly
                     </p>
                 </div>
 
                 <style>
+                    /* Waitlist Form CSS */
                     .waitlist-form-container {
                         display: flex;
                         width: 100%;
@@ -2105,47 +2129,155 @@
                         flex-direction: row;
                     }
 
+                    /* The Glass Input */
+                    .lux-input {
+                        flex: 1;
+                        padding: 22px 30px;
+                        border-radius: 16px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        background: rgba(10, 10, 12, 0.65);
+                        backdrop-filter: blur(12px);
+                        color: #ffffff;
+                        font-family: "Courier New", Courier, monospace;
+                        font-size: 1.05rem;
+                        outline: none;
+                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.8), 0 4px 20px rgba(0, 0, 0, 0.4);
+                        letter-spacing: 0.5px;
+                    }
+
+                    .lux-input::placeholder {
+                        color: rgba(255, 255, 255, 0.3);
+                    }
+
+                    .lux-input:focus {
+                        border-color: rgba(56, 189, 248, 0.6);
+                        background: rgba(15, 20, 25, 0.8);
+                        box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15), inset 0 2px 15px rgba(0, 0, 0, 0.8);
+                    }
+
+                    /* The Magnetic Button */
+                    .lux-btn {
+                        min-width: 180px;
+                        padding: 0 32px;
+                        border-radius: 16px;
+                        border: 1px solid rgba(255, 255, 255, 0.08);
+                        background: linear-gradient(135deg, #1a1a2e 0%, #0d0d14 100%);
+                        color: #ffffff;
+                        font-family: var(--font-display);
+                        font-weight: 700;
+                        font-size: 0.95rem;
+                        letter-spacing: 1.5px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        outline: none;
+                        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                        position: relative;
+                        overflow: hidden;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+                    }
+
+                    /* Shimmer Effect */
+                    .lux-btn::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 50%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+                        transform: skewX(-20deg);
+                        transition: all 0.6s ease;
+                    }
+
+                    .lux-btn:hover {
+                        border-color: rgba(112, 47, 219, 0.5);
+                        box-shadow: 0 0 25px rgba(112, 47, 219, 0.3), inset 0 0 15px rgba(112, 47, 219, 0.2);
+                        transform: translateY(-2px);
+                    }
+
+                    .lux-btn:hover::before {
+                        left: 150%;
+                    }
+
+                    .lux-btn:active {
+                        transform: translateY(1px);
+                        box-shadow: 0 2px 10px rgba(112, 47, 219, 0.2);
+                    }
+
                     @media (max-width: 600px) {
                         .waitlist-form-container {
                             flex-direction: column;
+                            gap: 16px;
+                        }
+
+                        .lux-btn {
+                            padding: 22px 30px;
                         }
                     }
-                </style>
-                <form id="waitlist-form" class="waitlist-form-container" onsubmit="handleWaitlistSubmit(event)">
-                    <input type="email" id="waitlist-email" placeholder="Enter your email address..." required
-                        style="flex: 1; padding: 20px 28px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(0, 0, 0, 0.6); color: white; font-family: var(--font-body); font-size: 1.1rem; outline: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);"
-                        onfocus="this.style.borderColor='#38bdf8'; this.style.boxShadow='0 0 20px rgba(56, 189, 248, 0.2), inset 0 2px 10px rgba(0,0,0,0.5)';"
-                        onblur="this.style.borderColor='rgba(255, 255, 255, 0.15)'; this.style.boxShadow='inset 0 2px 10px rgba(0,0,0,0.5)';">
 
-                    <button type="submit" class="btn btn-primary" id="waitlist-submit"
-                        style="min-width: 180px; padding: 20px 28px; font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; flex-shrink: 0; outline: none; border: none; cursor: pointer; border-radius: 50px;">
-                        <span id="waitlist-btn-text">Get Access</span>
-                        <div id="waitlist-spinner"
-                            style="display: none; width: 20px; height: 20px; border: 2px solid white; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;">
-                        </div>
-                    </button>
-                </form>
-
-                <div id="waitlist-success"
-                    style="display: none; width: 100%; text-align: center; color: #4ade80; background: rgba(74, 222, 128, 0.1); padding: 16px 24px; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.3); font-weight: 500; font-family: var(--font-body); letter-spacing: 0.5px;">
-                    <span style="font-size: 1.2rem; display: block; margin-bottom: 8px;">🚀 You're on the list!</span>
-                    <a href="First_Principles_of_Rocketry.html" target="_blank"
-                        style="color: #fff; text-decoration: underline; font-weight: 700;">Click here to open your free
-                        guide.</a>
-                </div>
-
-                <div id="waitlist-error"
-                    style="display: none; color: #f87171; font-size: 0.9rem; font-family: var(--font-body);">
-                    Something went wrong. Please try again.
-                </div>
-
-                <style>
-                    @keyframes spin {
-                        100% {
+                    /* Spinner */
+                    @keyframes spin-lux {
+                        to {
                             transform: rotate(360deg);
                         }
                     }
+
+                    .lux-spinner {
+                        display: none;
+                        width: 20px;
+                        height: 20px;
+                        border: 2px solid rgba(255, 255, 255, 0.2);
+                        border-top-color: #ffffff;
+                        border-radius: 50%;
+                        animation: spin-lux 0.8s linear infinite;
+                    }
                 </style>
+
+                <form id="waitlist-form" class="waitlist-form-container" novalidate
+                    onsubmit="handleWaitlistSubmit(event)">
+                    <input type="email" id="waitlist-email" class="lux-input" placeholder="> Enter comms email..."
+                        required aria-label="Email address for waitlist">
+
+                    <button type="submit" class="lux-btn" id="waitlist-submit" aria-label="Join Waitlist">
+                        <span id="waitlist-btn-text">Join Waitlist &rarr;</span>
+                        <div id="waitlist-spinner" class="lux-spinner"></div>
+                    </button>
+                </form>
+
+                <!-- Success State (Replaces Form visually) -->
+                <div id="waitlist-success"
+                    style="display: none; width: 100%; text-align: center; color: #e2e8f0; background: rgba(16, 185, 129, 0.05); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.2); backdrop-filter: blur(12px); font-family: var(--font-body); box-shadow: 0 4px 30px rgba(0,0,0,0.5);">
+
+                    <div
+                        style="width: 40px; height: 40px; background: rgba(16, 185, 129, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px auto; border: 1px solid rgba(16, 185, 129, 0.3);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+
+                    <h2
+                        style="font-size: 1.25rem; font-weight: 600; margin: 0 0 8px 0; color: #ffffff; font-family: var(--font-display); letter-spacing: 0.5px;">
+                        Clearance Granted</h2>
+                    <p style="font-size: 0.95rem; color: #94a3b8; margin: 0 0 20px 0;">Check your inbox. Your payload is
+                        secure.</p>
+
+                    <a href="First_Principles_of_Rocketry.html" target="_blank"
+                        style="display: inline-block; padding: 10px 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border-radius: 8px; transition: all 0.2s;">
+                        Open Payload Now &rarr;
+                    </a>
+                </div>
+
+                <div id="waitlist-error"
+                    style="display: none; color: #ef4444; font-size: 0.9rem; font-family: 'Courier New', monospace; margin-top: 8px; background: rgba(239, 68, 68, 0.1); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                    [ERROR] Transmission failed. System offline.
+                </div>
+
             </div>
 
 
@@ -2161,7 +2293,7 @@
             <div
                 style="max-width: 900px; margin: 0 auto; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; justify-content: center;">
                 <div style="flex: 1; min-width: 300px;">
-                    <img src="OfficialFALAk2.png" alt="FALAk Vision"
+                    <img src="OfficialFALAk2.png" alt="FALAk Vision - Abstract representation of space exploration"
                         style="width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                 </div>
                 <div class="vision-content" style="flex: 1; min-width: 300px; text-align: left;">
@@ -2192,9 +2324,10 @@
             <div class="framework-container">
                 <div class="framework-code" id="sim-code">&lt;system&gt; initializing_physics_engine... &lt;/system&gt;
                 </div>
-                <span class="btn-launch-beta framework-beta-btn" id="sim-btn-dev" data-i18n="sim-btn-dev">
-                    CURRENTLY IN DEVELOPMENT
-                </span>
+                <a href="#join" class="btn-launch-beta framework-beta-btn" id="sim-btn-dev" data-i18n="sim-btn-dev"
+                    style="text-decoration: none; display: inline-block;">
+                    ACCESS RESTRICTED — JOIN WAITLIST
+                </a>
             </div>
         </section>
 
@@ -2422,7 +2555,8 @@
 
                             <!-- 1. Launch Abort System / Orion -->
                             <div class="tech-reticle" onmouseover="focusStage('orion', 250, 90)"
-                                onmouseout="clearFocus()" style="top: 12%; left: 50%;">
+                                onmouseout="clearFocus()" style="top: 12%; left: 50%;" role="button" tabindex="0"
+                                aria-label="Focus Orion Spacecraft">
                                 <div class="reticle-core"></div>
                                 <div class="reticle-ring"></div>
                                 <div class="reticle-label">ORION</div>
@@ -2430,21 +2564,24 @@
 
                             <!-- 2. ICPS (Upper Stage) -->
                             <div class="tech-reticle" onmouseover="focusStage('icps', 250, 120)"
-                                onmouseout="clearFocus()" style="top: 16%; left: 50%;">
+                                onmouseout="clearFocus()" style="top: 16%; left: 50%;" role="button" tabindex="0"
+                                aria-label="Focus ICPS Stage">
                                 <div class="reticle-core"></div>
                                 <div class="reticle-ring"></div>
                             </div>
 
                             <!-- 3. Core Stage (Center Tank) -->
                             <div class="tech-reticle" onmouseover="focusStage('core', 250, 390)"
-                                onmouseout="clearFocus()" style="top: 52%; left: 50%;">
+                                onmouseout="clearFocus()" style="top: 52%; left: 50%;" role="button" tabindex="0"
+                                aria-label="Focus Core Stage">
                                 <div class="reticle-core"></div>
                                 <div class="reticle-ring"></div>
                             </div>
 
                             <!-- 4. SRBs (Left Booster) -->
                             <div class="tech-reticle" onmouseover="focusStage('srb', 156, 400)"
-                                onmouseout="clearFocus()" style="top: 53%; left: 31.25%;">
+                                onmouseout="clearFocus()" style="top: 53%; left: 31.25%;" role="button" tabindex="0"
+                                aria-label="Focus Solid Rocket Boosters">
                                 <div class="reticle-core"></div>
                                 <div class="reticle-ring"></div>
                                 <div class="reticle-label">SRB</div>
@@ -2870,11 +3007,11 @@
                                 </p>
                                 <div class="stats-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; direction: ${isAr ? 'rtl' : 'ltr'};">
                                     <div class="hud-stat-box" style="text-align: ${isAr ? 'right' : 'left'};">
-                                        <div style="font-size: 0.7rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">${data.statLabel1}</div>
+                                        <div style="font-size: 0.7rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px;">${data.statLabel1}</div>
                                         <div style="font-size: 1.6rem; font-weight: 700; color: #fff; font-family: 'Courier New', monospace;">${data.stat1}</div>
                                     </div>
                                     <div class="hud-stat-box" style="text-align: ${isAr ? 'right' : 'left'};">
-                                        <div style="font-size: 0.7rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">${data.statLabel2}</div>
+                                        <div style="font-size: 0.7rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 1px;">${data.statLabel2}</div>
                                         <div style="font-size: 1.6rem; font-weight: 700; color: #fff; font-family: 'Courier New', monospace;">${data.stat2}</div>
                                     </div>
                                 </div>
@@ -2921,8 +3058,8 @@
             <div class="orbit-container">
                 <!-- Center: Sun -->
                 <div class="orbit-center" style="width: 80px; height: 80px; z-index: 15; cursor: pointer;"
-                    onclick="openPlanet('sun')">
-                    <img src="planet_sun.png?v=5" alt="Sun" class="planet-visual">
+                    onclick="openPlanet('sun')" role="button" tabindex="0" aria-label="Learn about the Sun">
+                    <img src="planet_sun.png?v=5" alt="The Sun" class="planet-visual">
                 </div>
 
                 <!-- Milky Way Background (Outer Edge) -->
@@ -2932,26 +3069,27 @@
 
                 <div class="orbit-ring ring-1">
                     <div class="orbit-planet p-mercury" style="top: 50%; right: -22px; transform: translate(0, -50%);"
-                        onclick="openPlanet('mercury')">
-                        <img src="planet_mercury.png?v=5" alt="Mercury" class="planet-visual">
+                        onclick="openPlanet('mercury')" role="button" tabindex="0" aria-label="Learn about Mercury">
+                        <img src="planet_mercury.png?v=5" alt="Mercury planet" class="planet-visual">
                     </div>
                 </div>
                 <div class="orbit-ring ring-2">
                     <div class="orbit-planet p-venus" style="top: 50%; left: -22px; transform: translate(0, -50%);"
-                        onclick="openPlanet('venus')">
-                        <img src="planet_venus.png?v=5" alt="Venus" class="planet-visual">
+                        onclick="openPlanet('venus')" role="button" tabindex="0" aria-label="Learn about Venus">
+                        <img src="planet_venus.png?v=5" alt="Venus planet" class="planet-visual">
                     </div>
                 </div>
                 <div class="orbit-ring ring-3">
                     <div class="orbit-planet p-earth" style="top: 0; left: 50%; transform: translate(-50%, -50%);"
-                        onclick="openPlanet('earth')">
-                        <img src="planet_earth.png" alt="Earth" style="width: 100%; height: 100%; object-fit: contain;">
+                        onclick="openPlanet('earth')" role="button" tabindex="0" aria-label="Learn about Earth">
+                        <img src="planet_earth.png" alt="Earth planet"
+                            style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
                 </div>
                 <div class="orbit-ring ring-4">
                     <div class="orbit-planet p-mars" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);"
-                        onclick="openPlanet('mars')">
-                        <img src="planet_mars.png?v=5" alt="Mars" class="planet-visual">
+                        onclick="openPlanet('mars')" role="button" tabindex="0" aria-label="Learn about Mars">
+                        <img src="planet_mars.png?v=5" alt="Mars planet" class="planet-visual">
                     </div>
                 </div>
                 <div class="orbit-ring ring-5">
@@ -3956,13 +4094,27 @@
     </div>
     </section>
 
-    <section id="community" class="cta-section">
+    <section id="community" class="cta-section" style="padding-top: 80px;">
         <div class="section-tag" id="cta-tag">Start Learning</div>
         <h2 id="cta-title">Space education limits, removed.</h2>
         <p class="section-desc" id="cta-desc">
             FALAk is a dedicated platform for space education.<br>We are constantly expanding our curriculum to
             cover more advanced topics.
         </p>
+
+        <!-- Bottom Waitlist Form (Duplicated for UX) -->
+        <div
+            style="display: flex; flex-direction: column; align-items: center; gap: 28px; margin: 40px auto 60px; width: 100%; max-width: 580px; position: relative; z-index: 10;">
+            <form id="waitlist-form-bottom" class="waitlist-form-container" novalidate
+                onsubmit="handleWaitlistSubmitBottom(event)">
+                <input type="email" id="waitlist-email-bottom" class="lux-input" placeholder="> Enter comms email..."
+                    required>
+                <button type="submit" class="lux-btn" id="waitlist-submit-bottom">
+                    <span id="waitlist-btn-text-bottom">Join Waitlist &rarr;</span>
+                    <div id="waitlist-spinner-bottom" class="lux-spinner"></div>
+                </button>
+            </form>
+        </div>
 
         <div class="cta-social-container">
             <a href="https://x.com/FALAkPlatforms" target="_blank" class="btn btn-primary btn-social">
