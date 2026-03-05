@@ -1,41 +1,41 @@
 {
-  "last_updated": "2026-03-04T06:58:52Z",
+  "last_updated": "2026-03-05T07:02:01Z",
   "articles": [
     {
-      "title": "Pentagon details cyber, space ‘first mover’ role in Iran operations",
-      "summary": "U.S. Cyber Command and U.S. Space Command have ‘continuously layered effects to disrupt, disorient and confuse the enemy’\nThe post Pentagon details cyber, space ‘first mover’ role in Iran operation...",
-      "source": "SpaceNews",
-      "region": "🇮🇷 Iran",
-      "date": "Mar 02, 2026",
+      "title": "A Little Town with a Long Name",
+      "summary": "A NASA luminary from the Apollo era grew up in Wales near Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch.",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Mar 05, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://spacenews.com/pentagon-details-cyber-space-first-mover-role-in-iran-operations/"
+      "link": "https://science.nasa.gov/earth/earth-observatory/a-little-town-with-a-long-name/"
     },
     {
-      "title": "Searching for Selenite",
-      "summary": "Oklahoma’s Salt Plains National Wildlife Refuge attracts rare and diverse species—and enthusiasts looking for a distinct type of crystallized gypsum.",
+      "title": "High-Speed Flight Project Overview",
+      "summary": "What We do The High-Speed Flight (HSF) project develops technologies that make high-speed, airbreathing, commercial flight possible from Mach 1 to Mach 5 and above. HSF creates tools, technologies,...",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Mar 05, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://www.nasa.gov/directorates/armd/aavp/hsf/high-speed-flight-project-overview/"
+    },
+    {
+      "title": "About Advanced Air Vehicles Program (AAVP)",
+      "summary": "NASA’s Advanced Air Vehicles Program (AAVP) studies, evaluates, and develops technologies and capabilities for new aircraft systems and explores far-future concepts for revolutionary air travel imp...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Mar 04, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/searching-for-selenite/"
+      "image": "https://images-assets.nasa.gov/image/9807313/9807313~thumb.jpg",
+      "link": "https://www.nasa.gov/directorates/armd/aavp/about-aavp/"
     },
     {
-      "title": "La NASA refuerza Artemis: añade una misión y perfecciona su arquitectura general",
-      "summary": "Read this story in English here. A fin de lograr el objetivo nacional de llevar astronautas estadounidenses a la superficie de la Luna y mantener la superioridad de Estados Unidos en exploración y ...",
+      "title": "Blowing Stellar Bubbles",
+      "summary": "For the first time, a young, Sun-like star has been caught red-handed blowing bubbles in the galaxy, by astronomers using NASA’s Chandra X-ray Observatory. The bubble – called an “astrosphere” – co...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Mar 03, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/missions/artemis/la-nasa-refuerza-artemis-anade-una-mision-y-perfecciona-su-arquitectura-general/"
-    },
-    {
-      "title": "NASA Strengthens Artemis: Adds Mission, Refines Overall Architecture",
-      "summary": "Lee esta historia en español aquí. To achieve the national goal of landing American astronauts on the surface of the Moon and maintaining U.S. superiority in exploration and discovery, NASA announc...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Mar 03, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/directorates/esdmd/nasa-strengthens-artemis-adds-mission-refines-overall-architecture/"
+      "date": "Mar 04, 2026",
+      "image": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000086/GSFC_20171208_Archive_e000086~thumb.jpg",
+      "link": "https://www.nasa.gov/image-article/blowing-stellar-bubbles/"
     }
   ]
 }
