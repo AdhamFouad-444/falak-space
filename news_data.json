@@ -1,41 +1,41 @@
 {
-  "last_updated": "2026-03-06T07:00:43Z",
+  "last_updated": "2026-03-07T06:52:29Z",
   "articles": [
     {
-      "title": "Enormous solar power array seen from orbit | Space photo of the day for March 5, 2026",
-      "summary": "This stunning satellite image of Ouarzazate, Morocco, was taken by Europe's Copernicus Sentinel-2 mission.",
-      "source": "Space.com",
-      "region": "🇲🇦 Morocco",
-      "date": "Mar 05, 2026",
-      "image": "https://cdn.mos.cms.futurecdn.net/fYNeGxt3odetfo2BijcDXk-1280-80.jpg",
-      "link": "https://www.space.com/space-exploration/satellites/enormous-solar-power-array-seen-from-orbit-space-photo-of-the-day-for-march-5-2026"
-    },
-    {
-      "title": "Ailing “Megaberg” Sparks Surge of Microscopic Life",
-      "summary": "As Iceberg A-23A disintegrated, it shed meltwater that helped fuel an extensive phytoplankton bloom in the South Atlantic Ocean.",
+      "title": "ARMD Research Solicitations (Updated March 6)",
+      "summary": "THIS PAGE WAS UPDATED ON MARCH 6, 2026 This Aeronautics Research Mission Directorate (ARMD) solicitations page compiles the opportunities to collaborate with NASA’s aeronautical innovators and/or c...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Mar 06, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/ailing-megaberg-sparks-surge-of-microscopic-life/"
+      "link": "https://www.nasa.gov/aeronautics/armd-solicitations/"
     },
     {
-      "title": "About Air Traffic Management and Safety Project",
-      "summary": "The Air Traffic Management and Safety (ATMS) project defines, validates, and transfers advanced requirements and technologies to shift air traffic management from tactical to strategic.  This chang...",
+      "title": "NASA Invites Media to Northrop Grumman CRS-24 Station Resupply Launch",
+      "summary": "Media accreditation is open for the next launch to deliver NASA science investigations, supplies, and equipment to the International Space Station. A Northrop Grumman Cygnus XL spacecraft will laun...",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Mar 06, 2026",
+      "image": "https://images-assets.nasa.gov/image/KSC-20190816-PH_KLS01_0153/KSC-20190816-PH_KLS01_0153~thumb.jpg",
+      "link": "https://www.nasa.gov/news-release/nasa-invites-media-to-northrop-grumman-crs-24-station-resupply-launch/"
+    },
+    {
+      "title": "NASA’s DART Mission Changed Orbit of Asteroid Didymos Around Sun",
+      "summary": "New research reveals that when NASA’s DART (Double Asteroid Redirection Test) spacecraft intentionally impacted the asteroid moonlet Dimorphos in September 2022, it didn’t just change the motion of...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Mar 06, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/directorates/armd/aosp/atms/about-atms/"
+      "link": "https://www.nasa.gov/missions/dart/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun/"
     },
     {
-      "title": "About Advanced Air Mobility Pathfinders Project",
-      "summary": "The Advanced Air Mobility Pathfinders (AAMP) project accelerates advanced air mobility technologies for wildfire response and urban transportation through real-world demonstrations and strategic pa...",
+      "title": "Track NASA’s Artemis II Mission in Real Time",
+      "summary": "As NASA invites the public to follow the Artemis II mission as a crew of four astronauts venture around the Moon inside the agency’s Orion spacecraft, people around the world can pinpoint Orion dur...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Mar 06, 2026",
-      "image": "https://images-assets.nasa.gov/image/AFRC2024-0143-18/AFRC2024-0143-18~thumb.jpg",
-      "link": "https://www.nasa.gov/directorates/armd/aosp/amp/about-aamp/"
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://www.nasa.gov/missions/artemis/artemis-2/track-nasas-artemis-ii-mission-in-real-time/"
     }
   ]
 }
