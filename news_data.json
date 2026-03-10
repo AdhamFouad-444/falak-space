@@ -1,41 +1,41 @@
 {
-  "last_updated": "2026-03-09T07:11:27Z",
+  "last_updated": "2026-03-10T07:00:41Z",
   "articles": [
     {
-      "title": "ARMD Research Solicitations (Updated March 6)",
-      "summary": "THIS PAGE WAS UPDATED ON MARCH 6, 2026 This Aeronautics Research Mission Directorate (ARMD) solicitations page compiles the opportunities to collaborate with NASA’s aeronautical innovators and/or c...",
+      "title": "Shades of a Lunar Eclipse",
+      "summary": "A series of nighttime satellite images revealed how moonlight reaching Earth varied throughout a total lunar eclipse.",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Mar 06, 2026",
+      "date": "Mar 10, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/aeronautics/armd-solicitations/"
+      "link": "https://science.nasa.gov/earth/earth-observatory/shades-of-a-lunar-eclipse/"
     },
     {
-      "title": "NASA Invites Media to Northrop Grumman CRS-24 Station Resupply Launch",
-      "summary": "Media accreditation is open for the next launch to deliver NASA science investigations, supplies, and equipment to the International Space Station. A Northrop Grumman Cygnus XL spacecraft will laun...",
+      "title": "NASA’s Van Allen Probe A to Re-Enter Atmosphere",
+      "summary": "NASA’s Van Allen Probe A is expected to re-enter Earth’s atmosphere almost 14 years after launch. From 2012 to 2019, the spacecraft and its twin, Van Allen Probe B, flew through the Van Allen belts...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Mar 06, 2026",
-      "image": "https://images-assets.nasa.gov/image/KSC-20190816-PH_KLS01_0153/KSC-20190816-PH_KLS01_0153~thumb.jpg",
-      "link": "https://www.nasa.gov/news-release/nasa-invites-media-to-northrop-grumman-crs-24-station-resupply-launch/"
+      "date": "Mar 09, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://www.nasa.gov/missions/van-allen-probes/nasa-van-allen-probe-a-to-re-enter-atmosphere/"
     },
     {
-      "title": "NASA’s DART Mission Changed Orbit of Asteroid Didymos Around Sun",
-      "summary": "New research reveals that when NASA’s DART (Double Asteroid Redirection Test) spacecraft intentionally impacted the asteroid moonlet Dimorphos in September 2022, it didn’t just change the motion of...",
+      "title": "About Subsonic Flight Demonstrator (SFD) Project",
+      "summary": "The purpose of the Subsonic Flight Demonstrator (SFD) project is to engage with industry and other government organizations to identify, select, and mature key airframe technologies, such as new wi...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Mar 06, 2026",
+      "date": "Mar 09, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/missions/dart/nasas-dart-mission-changed-orbit-of-asteroid-didymos-around-sun/"
+      "link": "https://www.nasa.gov/directorates/armd/iasp/sfd/about-sfd/"
     },
     {
-      "title": "Track NASA’s Artemis II Mission in Real Time",
-      "summary": "As NASA invites the public to follow the Artemis II mission as a crew of four astronauts venture around the Moon inside the agency’s Orion spacecraft, people around the world can pinpoint Orion dur...",
+      "title": "About Flight Demonstrations and Capabilities (FDC) Project",
+      "summary": "The FDC project conducts complex integrated small-scale flight research to validate the benefits of new technologies. By modifying aircraft from FDC’s support fleet, the project enables aggressive,...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Mar 06, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/missions/artemis/artemis-2/track-nasas-artemis-ii-mission-in-real-time/"
+      "date": "Mar 09, 2026",
+      "image": "https://images-assets.nasa.gov/image/jsc2022e046415/jsc2022e046415~thumb.jpg",
+      "link": "https://www.nasa.gov/directorates/armd/iasp/fdc/about-fdc/"
     }
   ]
 }
