@@ -1,41 +1,41 @@
 {
-  "last_updated": "2026-03-11T07:03:55Z",
+  "last_updated": "2026-03-12T07:05:17Z",
   "articles": [
     {
-      "title": "Curiosity Blog, Sols 4825-4831: Exploring the Borderlands",
-      "summary": "Written by William Farrand, Senior Research Scientist, Space Science Institute Earth planning date: Friday, March 6, 2026 Curiosity is in the last stage of its exploration of the spiderweb-like box...",
+      "title": "Missile strike hits SES teleport in Israel",
+      "summary": "Satellite operator SES said a missile “targeted and struck” its teleport facility in Israel March 9 as tensions spill across the region amid ongoing Israeli and U.S. military operations against Ira...",
+      "source": "SpaceNews",
+      "region": "🇮🇱 Israel",
+      "date": "Mar 11, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://spacenews.com/missile-strike-hits-ses-teleport-in-israel/"
+    },
+    {
+      "title": "Dust Outbreak Reaches Europe",
+      "summary": "Clouds of dust lofted from the Sahara Desert brought hazy skies and muddy rain to Western Europe.",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Mar 12, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://science.nasa.gov/earth/earth-observatory/dust-outbreak-reaches-europe/"
+    },
+    {
+      "title": "2026 William T. Pecora Award Nominations Now Being Accepted",
+      "summary": "The William T. Pecora Award is presented annually to individuals or teams using satellite or aerial remote sensing that make outstanding contributions toward understanding the Earth (land, oceans, ...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Mar 11, 2026",
       "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/blog/curiosity-blog-sols-4825-4831-exploring-the-borderlands/"
+      "link": "https://science.nasa.gov/missions/landsat/2026-william-t-pecora-award-nominations-now-being-accepted/"
     },
     {
-      "title": "A Most Unusual Lake",
-      "summary": "Lake Unter-See in Antarctica, sealed beneath thick ice, contains unusually high levels of dissolved oxygen and cone-shaped microbial reefs resembling some of Earth’s oldest fossils.",
+      "title": "About University Innovation Project (UI)",
+      "summary": "NASA’s University Innovation (UI) project funds university-led innovation to address the agency’s Aeronautics Research Mission Directorate’s system-level challenges via independent, NASA-alternate-...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Mar 11, 2026",
-      "image": "https://images-assets.nasa.gov/image/iss030e009271/iss030e009271~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/a-most-unusual-lake/"
-    },
-    {
-      "title": "About Subsonic Vehicle Technologies and Tools Project",
-      "summary": "Project Overview NASA’s Subsonic Vehicle Technologies and Tools (SVTT) project develops technologies and tools for various types of aircraft that fly in different speed regimes, including next-gene...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Mar 11, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/directorates/armd/aavp/svtt/about-svtt/"
-    },
-    {
-      "title": "Insights into Spallation Mechanisms of Thermal Protection System Materials from Mass Spectrometry and HyMETS Testing",
-      "summary": "Download PDF: Insights into Spallation Mechanisms of Thermal Protection System Materials from Mass Spectrometry and HyMETS Testing An effort was undertaken to investigate the mechanisms responsible...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Mar 10, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://www.nasa.gov/centers-and-facilities/nesc/insights-into-spallation-mechanisms-of-thermal-protection-system-materials-from-mass-spectrometry-and-hymets-testing/"
+      "image": "https://images-assets.nasa.gov/image/KSC-20170525-PH_SWW01_0044/KSC-20170525-PH_SWW01_0044~thumb.jpg",
+      "link": "https://www.nasa.gov/directorates/armd/tacp/ui/about-ui/"
     }
   ]
 }
