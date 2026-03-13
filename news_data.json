@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-12T07:05:17Z",
+  "last_updated": "2026-03-13T07:04:12Z",
   "articles": [
     {
       "title": "Missile strike hits SES teleport in Israel",
@@ -11,31 +11,31 @@
       "link": "https://spacenews.com/missile-strike-hits-ses-teleport-in-israel/"
     },
     {
-      "title": "Dust Outbreak Reaches Europe",
-      "summary": "Clouds of dust lofted from the Sahara Desert brought hazy skies and muddy rain to Western Europe.",
+      "title": "Eruption at Mayon",
+      "summary": "Activity at the volcano in the Philippines sent lava and pyroclastic flows down the volcano’s flanks and prompted evacuations in nearby communities.",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Mar 13, 2026",
+      "image": "https://images-assets.nasa.gov/image/sts083-747-088/sts083-747-088~thumb.jpg",
+      "link": "https://science.nasa.gov/earth/earth-observatory/eruption-at-mayon/"
+    },
+    {
+      "title": "About Low Boom Flight Demonstrator (LBFD) Project",
+      "summary": "The Low Boom Flight Demonstrator project (LBFD) is part of NASA’s effort to help enable new aircraft noise standards that are required to open the market to commercial supersonic flight over land. ...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Mar 12, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/dust-outbreak-reaches-europe/"
+      "image": "https://images-assets.nasa.gov/image/KSC-20170823-PH_SWW01_0087/KSC-20170823-PH_SWW01_0087~thumb.jpg",
+      "link": "https://www.nasa.gov/directorates/armd/iasp/armd-iasp-lbfd/about-lbfd/"
     },
     {
-      "title": "2026 William T. Pecora Award Nominations Now Being Accepted",
-      "summary": "The William T. Pecora Award is presented annually to individuals or teams using satellite or aerial remote sensing that make outstanding contributions toward understanding the Earth (land, oceans, ...",
+      "title": "NASA to Cover Upcoming US Spacewalks 94, 95 Outside Space Station",
+      "summary": "NASA astronauts will conduct a pair of spacewalks beginning Wednesday, March 18, outside of the International Space Station to prepare for the installation of two roll-out solar arrays. Experts fro...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Mar 11, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://science.nasa.gov/missions/landsat/2026-william-t-pecora-award-nominations-now-being-accepted/"
-    },
-    {
-      "title": "About University Innovation Project (UI)",
-      "summary": "NASA’s University Innovation (UI) project funds university-led innovation to address the agency’s Aeronautics Research Mission Directorate’s system-level challenges via independent, NASA-alternate-...",
-      "source": "NASA",
-      "region": "Global 🌍",
-      "date": "Mar 11, 2026",
-      "image": "https://images-assets.nasa.gov/image/KSC-20170525-PH_SWW01_0044/KSC-20170525-PH_SWW01_0044~thumb.jpg",
-      "link": "https://www.nasa.gov/directorates/armd/tacp/ui/about-ui/"
+      "date": "Mar 12, 2026",
+      "image": "https://images-assets.nasa.gov/image/KSC-06pd0739/KSC-06pd0739~thumb.jpg",
+      "link": "https://www.nasa.gov/news-release/nasa-to-cover-upcoming-us-spacewalks-94-95-outside-space-station/"
     }
   ]
 }
