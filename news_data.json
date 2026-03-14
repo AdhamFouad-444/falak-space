@@ -1,41 +1,41 @@
 {
-  "last_updated": "2026-03-13T07:04:12Z",
+  "last_updated": "2026-03-14T06:58:12Z",
   "articles": [
     {
-      "title": "Missile strike hits SES teleport in Israel",
-      "summary": "Satellite operator SES said a missile “targeted and struck” its teleport facility in Israel March 9 as tensions spill across the region amid ongoing Israeli and U.S. military operations against Ira...",
-      "source": "SpaceNews",
-      "region": "🇮🇱 Israel",
-      "date": "Mar 11, 2026",
-      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
-      "link": "https://spacenews.com/missile-strike-hits-ses-teleport-in-israel/"
-    },
-    {
-      "title": "Eruption at Mayon",
-      "summary": "Activity at the volcano in the Philippines sent lava and pyroclastic flows down the volcano’s flanks and prompted evacuations in nearby communities.",
+      "title": "Volunteers Find Oddly High Solar Flare Rates",
+      "summary": "Patches of the Sun’s surface often show strong magnetic fields. These fields can emerge within a matter of hours, and can decay slowly or quickly, sometimes over days, weeks, or even months. Thanks...",
       "source": "NASA",
       "region": "Global 🌍",
       "date": "Mar 13, 2026",
-      "image": "https://images-assets.nasa.gov/image/sts083-747-088/sts083-747-088~thumb.jpg",
-      "link": "https://science.nasa.gov/earth/earth-observatory/eruption-at-mayon/"
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://science.nasa.gov/get-involved/citizen-science/volunteers-find-oddly-high-solar-flare-rates/"
     },
     {
-      "title": "About Low Boom Flight Demonstrator (LBFD) Project",
-      "summary": "The Low Boom Flight Demonstrator project (LBFD) is part of NASA’s effort to help enable new aircraft noise standards that are required to open the market to commercial supersonic flight over land. ...",
+      "title": "Extra Extra! Extra Data Stream Added to the Daily Minor Planet!",
+      "summary": "The Daily Minor Planet citizen science project is expanding! In addition to data received nightly from the Catalina Sky Survey’s Mt. Lemmon telescope in Arizona, the project’s science team is now p...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Mar 12, 2026",
-      "image": "https://images-assets.nasa.gov/image/KSC-20170823-PH_SWW01_0087/KSC-20170823-PH_SWW01_0087~thumb.jpg",
-      "link": "https://www.nasa.gov/directorates/armd/iasp/armd-iasp-lbfd/about-lbfd/"
+      "date": "Mar 13, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://science.nasa.gov/get-involved/citizen-science/extra-extra-extra-data-stream-added-to-the-daily-minor-planet/"
     },
     {
-      "title": "NASA to Cover Upcoming US Spacewalks 94, 95 Outside Space Station",
-      "summary": "NASA astronauts will conduct a pair of spacewalks beginning Wednesday, March 18, outside of the International Space Station to prepare for the installation of two roll-out solar arrays. Experts fro...",
+      "title": "NASA Selects Finalists in Student Aircraft Maintenance Competition",
+      "summary": "NASA has selected eight student teams as finalists in the 2026 Gateways to Blue Skies Competition, giving them the resources to help address a critical challenge for U.S. aviation: maintenance.  Ch...",
       "source": "NASA",
       "region": "Global 🌍",
-      "date": "Mar 12, 2026",
-      "image": "https://images-assets.nasa.gov/image/KSC-06pd0739/KSC-06pd0739~thumb.jpg",
-      "link": "https://www.nasa.gov/news-release/nasa-to-cover-upcoming-us-spacewalks-94-95-outside-space-station/"
+      "date": "Mar 13, 2026",
+      "image": "https://images-assets.nasa.gov/image/KSC-2014-3540/KSC-2014-3540~thumb.jpg",
+      "link": "https://www.nasa.gov/aeronautics/nasa-selects-finalists-in-student-aircraft-maintenance-competition/"
+    },
+    {
+      "title": "NASA Armstrong to Host Partnership Days April 15-16",
+      "summary": "NASA’s Armstrong Flight Research Center in Edwards, California, invites innovative companies, government agencies, and organizations to attend Partnership Days, scheduled for Wednesday and Thursday...",
+      "source": "NASA",
+      "region": "Global 🌍",
+      "date": "Mar 13, 2026",
+      "image": "https://images-assets.nasa.gov/image/PIA25969/PIA25969~thumb.jpg",
+      "link": "https://www.nasa.gov/news-release/nasa-armstrong-to-host-partnership-days-april-15-16/"
     }
   ]
 }
